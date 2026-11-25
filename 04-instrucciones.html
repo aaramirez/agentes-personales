@@ -136,32 +136,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <text x="534" y="398" class="t t-s">Lo último suele pesar más si dos reglas chocan,</text>
   <text x="534" y="414" class="t t-s">pero «suele» no es «siempre»: mejor que no choquen.</text>
 </svg></div><figcaption><b>Tres niveles de instrucciones y cómo se apilan en el contexto.</b> A la izquierda, las carpetas de Daniela: su carpeta personal con el archivo global, la carpeta <code>agente-prueba</code> con el de proyecto y la subcarpeta <code>actas</code> con el suyo. A la derecha, el contexto que recibe el modelo, de arriba hacia abajo: las instrucciones del sistema (gris), el archivo global, el de proyecto y el de subcarpeta (los tres en magenta, cada vez más específicos) y, debajo, el resto del contexto. La flecha recuerda la regla de casi todos los agentes: lo más cercano a la carpeta de trabajo se lee al final y, si dos reglas chocan, suele pesar más; pero «suele» no es «siempre».</figcaption></figure><div class="prose"><p>¿Qué pasa si dos niveles dicen cosas distintas? Los agentes no fusionan las reglas con lógica de abogado: concatenan los textos, uno debajo del otro, y el modelo los lee todos. La documentación de Codex explica que los archivos más cercanos a la carpeta de trabajo «aparecen después» y por eso sus indicaciones pesan más. La de AGENTS.md dice que gana el más cercano. La de Claude Code advierte otra cosa que conviene tomar al pie de la letra: si dos instrucciones se contradicen, el modelo «puede elegir una de forma arbitraria». La conclusión práctica es la misma para todos: no uses los niveles para corregirse entre sí. Pon en el global solo lo que vale de verdad en todas partes, y en el de proyecto lo propio de esa carpeta.</p></div></section>
-<section><h2>Qué poner: contexto, preferencias, reglas y prohibiciones</h2><div class="prose"><p>Un buen archivo de instrucciones responde cuatro preguntas que un ayudante nuevo te haría el primer día:</p><ul><li><b>Contexto: ¿dónde estoy y para quién trabajo?</b> Quién eres, qué hace tu equipo, qué hay en cada subcarpeta y quiénes son las personas que van a aparecer en los archivos.</li><li><b>Preferencias: ¿cómo te gusta el trabajo?</b> Formato, tono, idioma, largo, nombres de archivo.</li><li><b>Reglas: ¿qué significa cada cosa aquí?</b> Las definiciones que evitan que el mismo pedido salga distinto dos veces, como la de «reprogramada» del capítulo 2, y los pasos que no se saltan, como revisar que los totales cuadren.</li><li><b>Prohibiciones: ¿qué no hago nunca?</b> Pocas, claras y con su razón.</li></ul><p>Este es el archivo de Daniela. Va en <code>agente-prueba/AGENTS.md</code>:</p><div class="code-copia"><pre><code># Agente de Daniela: operaciones de campo
-
-## Quién soy
-Daniela Rivas, coordinadora de operaciones de campo. Coordino 14 técnicos
-(entre ellos Tomás, Inés y Raúl) que instalan y mantienen servicios en hogares.
-Mi jefe es Andrés Molina. La supervisora de técnicos es Julia Paredes.
-
-## Esta carpeta
-- visitas/: una planilla CSV por semana (fecha, tecnico, zona, estado).
-- correo/: correos de prueba, uno por archivo.
-- agenda/: la agenda de la semana.
-- informes/: aquí escribes. No escribas en otras carpetas.
-
-## Informe semanal de visitas
-- Una tabla por técnico con hechas, reprogramadas y pendientes, y una fila de totales.
-- «Reprogramada»: visita movida a otra fecha. No cuenta como no realizada.
-- «Pendiente»: visita sin hacer y sin fecha nueva.
-- Antes de terminar, comprueba que los totales sumen las filas de la planilla.
-- Nombre: informes/informe-semana-NN.md
-
-## Reglas
-- Sin nombres de clientes en informes ni borradores: usa la zona.
-  (Los informes circulan por el comité y no deben llevar datos personales.)
-- Nunca envíes correos: deja borradores para que yo los revise.
-- Si falta un dato o algo no cuadra, pregúntame. No lo inventes.
-- Español, frases cortas, sin adornos.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Son 26 líneas. Fíjate en tres decisiones. Las definiciones de «reprogramada» y «pendiente» terminan con el problema de los dos informes distintos del capítulo 2. La regla sobre los clientes dice su porqué, y eso ayuda al modelo a aplicarla en un caso que no está escrito, como un correo a Julia. Y la prohibición de enviar está escrita, aunque, como verás, no es la que de verdad impide que salga un correo.</p></div><figure class="fig fig-esquema" id="04-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" style="min-width:720px" role="img" aria-label="Anatomía del archivo de instrucciones de Daniela. Cuatro bloques: contexto, preferencias, reglas y prohibiciones. Cada uno cambia algo del trabajo del agente: a quién escribe, cómo se ve el informe, cómo cuenta las visitas y qué no hace. A la derecha, lo que no va en el archivo: los secretos, que no van a ningún lugar que el agente lea; lo que aprende semana a semana, que va a la memoria del capítulo 6; y lo que nunca debe poder hacer, que va a los permisos del capítulo 7.">
+<section><h2>Qué poner: contexto, preferencias, reglas y prohibiciones</h2><div class="prose"><p>Un buen archivo de instrucciones responde cuatro preguntas que un ayudante nuevo te haría el primer día:</p><ul><li><b>Contexto: ¿dónde estoy y para quién trabajo?</b> Quién eres, qué hace tu equipo, qué hay en cada subcarpeta y quiénes son las personas que van a aparecer en los archivos.</li><li><b>Preferencias: ¿cómo te gusta el trabajo?</b> Formato, tono, idioma, largo, nombres de archivo.</li><li><b>Reglas: ¿qué significa cada cosa aquí?</b> Las definiciones que evitan que el mismo pedido salga distinto dos veces, como la de «reprogramada» del capítulo 2, y los pasos que no se saltan, como revisar que los totales cuadren.</li><li><b>Prohibiciones: ¿qué no hago nunca?</b> Pocas, claras y con su razón.</li></ul><p>Este es el archivo de Daniela. Va en <code>agente-prueba/AGENTS.md</code>:</p><div class="code-copia code-lineas"><pre><code><span class="ln"># Agente de Daniela: operaciones de campo</span>
+<span class="ln"></span>
+<span class="ln">## Quién soy</span>
+<span class="ln">Daniela Rivas, coordinadora de operaciones de campo. Coordino 14 técnicos</span>
+<span class="ln">(entre ellos Tomás, Inés y Raúl) que instalan y mantienen servicios en hogares.</span>
+<span class="ln">Mi jefe es Andrés Molina. La supervisora de técnicos es Julia Paredes.</span>
+<span class="ln"></span>
+<span class="ln">## Esta carpeta</span>
+<span class="ln">- visitas/: una planilla CSV por semana (fecha, tecnico, zona, estado).</span>
+<span class="ln">- correo/: correos de prueba, uno por archivo.</span>
+<span class="ln">- agenda/: la agenda de la semana.</span>
+<span class="ln">- informes/: aquí escribes. No escribas en otras carpetas.</span>
+<span class="ln"></span>
+<span class="ln">## Informe semanal de visitas</span>
+<span class="ln">- Una tabla por técnico con hechas, reprogramadas y pendientes, y una fila de totales.</span>
+<span class="ln">- «Reprogramada»: visita movida a otra fecha. No cuenta como no realizada.</span>
+<span class="ln">- «Pendiente»: visita sin hacer y sin fecha nueva.</span>
+<span class="ln">- Antes de terminar, comprueba que los totales sumen las filas de la planilla.</span>
+<span class="ln">- Nombre: informes/informe-semana-NN.md</span>
+<span class="ln"></span>
+<span class="ln">## Reglas</span>
+<span class="ln">- Sin nombres de clientes en informes ni borradores: usa la zona.</span>
+<span class="ln">  (Los informes circulan por el comité y no deben llevar datos personales.)</span>
+<span class="ln">- Nunca envíes correos: deja borradores para que yo los revise.</span>
+<span class="ln">- Si falta un dato o algo no cuadra, pregúntame. No lo inventes.</span>
+<span class="ln">- Español, frases cortas, sin adornos.</span></code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Son 26 líneas. Fíjate en tres decisiones. Las definiciones de «reprogramada» y «pendiente» terminan con el problema de los dos informes distintos del capítulo 2. La regla sobre los clientes dice su porqué, y eso ayuda al modelo a aplicarla en un caso que no está escrito, como un correo a Julia. Y la prohibición de enviar está escrita, aunque, como verás, no es la que de verdad impide que salga un correo.</p></div><figure class="fig fig-esquema" id="04-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" style="min-width:720px" role="img" aria-label="Anatomía del archivo de instrucciones de Daniela. Cuatro bloques: contexto, preferencias, reglas y prohibiciones. Cada uno cambia algo del trabajo del agente: a quién escribe, cómo se ve el informe, cómo cuenta las visitas y qué no hace. A la derecha, lo que no va en el archivo: los secretos, que no van a ningún lugar que el agente lea; lo que aprende semana a semana, que va a la memoria del capítulo 6; y lo que nunca debe poder hacer, que va a los permisos del capítulo 7.">
   <defs>
     <marker id="d04c-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-apl"/></marker>
   </defs>
