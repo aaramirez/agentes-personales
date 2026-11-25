@@ -4,7 +4,7 @@ Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permiso
 
 **Ver en línea:** https://aaramirez.github.io/agentes-personales/
 
-Este repositorio solo tiene el sitio generado. El curso está en preparación: la tabla de contenido ya está publicada para revisión.
+Este repositorio solo tiene el sitio generado. Curso completo: 13 capítulos con laboratorios interactivos, diagramas y prácticas.
 
 | # | Capítulo |
 |---|---|

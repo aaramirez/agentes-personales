@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aprobación humana · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="aprobacion-humana">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 10 DE 13</span><h1>Aprobación humana y puntos de control</h1><p class="lede">Un archivo mal escrito se arregla; un correo enviado, no. Antes de dejar que el agente actúe, Daniela decide qué puede hacer solo, qué le muestra antes, cómo se deshace lo que hizo y dónde queda anotado. La regla que lo ordena todo: borrador primero.</p></header>
+<section><h2>Acciones reversibles e irreversibles</h2><div class="prose"><p>Jueves 26 de noviembre, 8:10. Andrés respondió al informe de la semana 47 con un pedido: «¿Puedes agregar cuántas visitas hubo por zona?». Daniela se lo pasa al agente, que en pocos minutos le propone seis cosas: agregar una tabla por zona, poner el nombre de Andrés como destinatario, reemplazar las reprogramadas por un total de «no realizadas», anotar en una visita el nombre del cliente «para dar contexto», proponer una fecha para la pendiente de Raúl y, al final, enviar el informe. Algunas son buenas, dos rompen reglas y una no se puede deshacer.</p><p>En el capítulo 9 viste cómo revisar un resultado. Este capítulo trata de algo anterior: decidir qué acciones necesitan una revisión antes de pasar y cuáles pueden pasar solas. La pregunta que ordena todo es simple: si esto sale mal, ¿se puede deshacer?</p><p>Una acción es <b>reversible</b> (<i>reversible</i>) cuando puedes volver al estado anterior sin que nadie note la diferencia: crear un archivo nuevo, guardar un borrador, escribir en la memoria del agente. Es <b>irreversible</b> (<i>irreversible</i>) cuando sus efectos ya salieron de tus manos: un correo enviado, una invitación aceptada, un mensaje publicado en el chat del equipo, un archivo borrado sin papelera, un pago. Entre las dos hay una zona intermedia que conviene reconocer: lo <b>reversible con costo</b>, como sobrescribir un acta (se recupera solo si había copia), mover una reunión que otros ya vieron o borrar correos que pasan treinta días en la papelera antes de desaparecer.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en la diferencia entre escribir con lápiz y firmar con tinta. Con el lápiz pruebas, borras y vuelves a escribir, y nadie se entera. La firma, en cambio, compromete: una vez que el papel sale de tu escritorio, ya no es tuyo. Nadie le pide permiso a su jefe para escribir con lápiz; casi todos lo piensan dos veces antes de firmar. Con un agente pasa lo mismo: lo que escribe con lápiz puede hacerlo solo; lo que firma con tinta pasa por ti.</p></div><div class="prose"><p>La reversibilidad no es lo único que cuenta. También importa <b>quién lo ve</b>. Un borrador en tu carpeta solo lo ves tú; un cambio en un documento compartido lo ve todo el equipo apenas ocurre, aunque después lo reviertas. Cruzando las dos preguntas, ¿se deshace? y ¿quién lo ve?, salen cuatro niveles de aprobación que sirven con cualquier agente:</p><div class="tbl"><table><thead><tr><th>Nivel</th><th>Cuándo</th><th>Ejemplos en el agente de Daniela</th></tr></thead><tbody><tr><td>Pasa solo</td><td>No cambia nada o solo lo ve ella</td><td>Leer la planilla, buscar en el correo</td></tr><tr><td>Pasa y avisa</td><td>Cambia algo, pero se deshace fácil y no lo ve nadie más</td><td>Crear un archivo nuevo en <code>informes/</code>, guardar un borrador, anotar en <code>MEMORIA.md</code></td></tr><tr><td>Pregunta antes</td><td>Se deshace con costo o lo ven otras personas</td><td>Sobrescribir un acta, mover archivos, borrar correos</td></tr><tr><td>Solo borrador</td><td>No se deshace</td><td>Enviar un correo, aceptar una invitación, publicar en el chat</td></tr></tbody></table></div></div><figure class="fig fig-comparacion" id="10-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" style="min-width:720px" role="img" aria-label="Cuadrícula de seis celdas. Las filas son la reversibilidad: se deshace fácil, se deshace con costo y no se deshace. Las columnas son el alcance: solo lo ve Daniela o lo ven otras personas. Lo que se deshace fácil y solo ve Daniela pasa solo o pasa y avisa; lo que se deshace con costo, o lo ven otras personas, pregunta antes; lo que no se deshace queda en borrador o bloqueado.">
+  <defs>
+    <marker id="d10a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <line x1="100" y1="410" x2="100" y2="34" class="ln" style="stroke-width:1.6" marker-end="url(#d10a-n)"/>
+  <line x1="100" y1="410" x2="884" y2="410" class="ln" style="stroke-width:1.6" marker-end="url(#d10a-n)"/>
+  <text transform="translate(40 222) rotate(-90)" class="t t-xs t-b t-m" text-anchor="middle">¿SE PUEDE DESHACER?</text>
+  <g class="t t-s t-m" text-anchor="end">
+    <text x="92" y="88">no se</text><text x="92" y="102">deshace</text>
+    <text x="92" y="212">con</text><text x="92" y="226">costo</text>
+    <text x="92" y="336">fácil</text>
+  </g>
+  <text x="300" y="432" class="t t-s t-m" text-anchor="middle">solo lo ve Daniela</text>
+  <text x="690" y="432" class="t t-s t-m" text-anchor="middle">lo ven otras personas</text>
+  <text x="492" y="460" class="t t-xs t-b t-m" text-anchor="middle">¿QUIÉN LO VE?</text>
+
+  
+  <rect x="112" y="40" width="375" height="116" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="126" y="62" class="t t-b k-warm">Solo borrador o bloqueado</text>
+  <text x="126" y="84" class="t t-s">• vaciar la papelera del correo</text>
+  <text x="126" y="102" class="t t-s">• borrar un archivo sin papelera</text>
+  <rect x="497" y="40" width="380" height="116" rx="8" style="fill:var(--warm-soft);stroke:var(--warm);stroke-width:2.5"/>
+  <text x="511" y="62" class="t t-b k-warm">Solo borrador</text>
+  <text x="511" y="84" class="t t-s">• enviar el informe a Andrés</text>
+  <text x="511" y="102" class="t t-s">• aceptar la invitación del proveedor</text>
+  <text x="511" y="120" class="t t-s">• publicar el resumen en el chat del equipo</text>
+  <text x="511" y="142" class="t t-s t-m">la decisión siempre es de Daniela</text>
+
+  
+  <rect x="112" y="164" width="375" height="116" rx="8" class="c-tra"/>
+  <text x="126" y="186" class="t t-b k-tra">Pregunta antes</text>
+  <text x="126" y="208" class="t t-s">• sobrescribir el acta del comité</text>
+  <text x="126" y="226" class="t t-s">• borrar correos viejos (30 días en la papelera)</text>
+  <text x="126" y="244" class="t t-s">• mover archivos de carpeta</text>
+  <rect x="497" y="164" width="380" height="116" rx="8" class="c-tra"/>
+  <text x="511" y="186" class="t t-b k-tra">Pregunta antes</text>
+  <text x="511" y="208" class="t t-s">• mover una reunión que otros ya vieron</text>
+  <text x="511" y="226" class="t t-s">• cambiar una planilla compartida</text>
+
+  
+  <rect x="112" y="288" width="375" height="114" rx="8" class="d-casa"/>
+  <text x="126" y="310" class="t t-b">Pasa solo · pasa y avisa</text>
+  <text x="126" y="332" class="t t-s">• leer la planilla, buscar en el correo (solo)</text>
+  <text x="126" y="350" class="t t-s">• crear un archivo nuevo en informes/ (avisa)</text>
+  <text x="126" y="368" class="t t-s">• guardar un borrador o un recuerdo (avisa)</text>
+  <rect x="497" y="288" width="380" height="114" rx="8" class="c-tra"/>
+  <text x="511" y="310" class="t t-b k-tra">Pregunta antes</text>
+  <text x="511" y="332" class="t t-s">• comentar en un documento compartido</text>
+  <text x="511" y="350" class="t t-s">• proponer un horario en la agenda del equipo</text>
+  <text x="511" y="372" class="t t-s t-m">se deshace, pero otros lo ven al instante</text>
+</svg></div><figcaption><b>Reversibilidad y alcance deciden el nivel de aprobación.</b> Las filas son la reversibilidad, de «se deshace fácil» abajo a «no se deshace» arriba; las columnas, el alcance: «solo lo ve Daniela» o «lo ven otras personas». Cada celda tiene su nivel y acciones del agente de ejemplo. Abajo a la izquierda, en verde azulado, lo que pasa solo o avisa; en violeta, el color de los permisos, lo que pregunta antes; arriba, en rojo, lo que queda en borrador o bloqueado, porque ahí la decisión siempre es de Daniela.</figcaption></figure><div class="prose"><p>La última fila de la tabla no dice «pregunta antes», sino «solo borrador». La diferencia importa. Una pregunta depende de que Daniela lea bien cada vez; un borrador no depende de nada, porque el agente no tiene cómo enviarlo. Es lo que hicieron los capítulos 5, 7 y 8 con su configuración: no le dieron la herramienta <code>enviar_correo</code>, la prohibieron en los permisos y pusieron el gancho «sin envíos», que bloquea cualquier envío. Tres capas para la misma acción, porque es la que no tiene vuelta atrás.</p></div><div class="lab" id="10-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>¿Se puede deshacer?</h3></div><p class="hint">Diez acciones que el agente de Daniela hace en una semana. Para cada una elige un nivel: pasa solo, pasa y avisa, pregunta antes o solo borrador. Al elegir verás si se puede deshacer, quién la ve y qué nivel se sugiere. Abajo, dos contadores: cuántas veces por semana te va a preguntar el agente con tu configuración y cuántas acciones irreversibles quedaron sin pasar por ti. Busca la configuración que deja el segundo en cero sin disparar el primero.</p><style>
+[id="10-lab-2"] .c10l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="10-lab-2"] .c10l2-lista{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+[id="10-lab-2"] .c10l2-acc{border:1px solid var(--line);border-left:5px solid var(--line);border-radius:0 10px 10px 0;background:var(--card);padding:8px 10px;display:grid;gap:6px}
+[id="10-lab-2"] .c10l2-acc h4{margin:0;font:600 .9rem/1.3 var(--f-body)}
+[id="10-lab-2"] .c10l2-acc h4 small{font:500 .74rem var(--f-mono);color:var(--muted);margin-left:6px}
+[id="10-lab-2"] .c10l2-acc .btns button{font-size:.78rem;padding:4px 8px}
+[id="10-lab-2"] .c10l2-acc.ok{border-left-color:var(--good)}
+[id="10-lab-2"] .c10l2-acc.peligro{border-left-color:var(--warm);background:var(--warm-soft)}
+[id="10-lab-2"] .c10l2-acc.distinto{border-left-color:var(--accent)}
+[id="10-lab-2"] .c10l2-fb{margin:0;font:400 .82rem/1.4 var(--f-body)}
+[id="10-lab-2"] .c10l2-tag{display:inline-block;font:700 .64rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border-radius:4px;margin-right:6px;border:1px solid var(--line)}
+[id="10-lab-2"] .c10l2-tag.irr{border-color:var(--warm);color:var(--warm)}
+[id="10-lab-2"] .c10l2-tag.cos{border-color:var(--c-tra);color:var(--c-tra)}
+[id="10-lab-2"] .c10l2-tag.rev{border-color:var(--good);color:var(--good)}
+[id="10-lab-2"] .c10l2-tarj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+@media (max-width:560px){[id="10-lab-2"] .c10l2-tarj{grid-template-columns:minmax(0,1fr)}}
+[id="10-lab-2"] .c10l2-tarj div{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+[id="10-lab-2"] .c10l2-tarj b{display:block;font:700 1.15rem var(--f-display);color:var(--ink)}
+[id="10-lab-2"] .c10l2-tarj small{font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+[id="10-lab-2"] .c10l2-barra{height:8px;border-radius:4px;background:var(--grid);overflow:hidden;margin-top:4px}
+[id="10-lab-2"] .c10l2-barra i{display:block;height:100%;background:var(--accent);transition:width .3s}
+@media (prefers-reduced-motion: reduce){[id="10-lab-2"] .c10l2-barra i{transition:none}}
+</style>
+<div class="btns" id="c10l2-pre">
+  <button type="button" data-p="todo">Preguntar por todo</button>
+  <button type="button" data-p="nada">Que pase todo solo</button>
+  <button type="button" data-p="sug">Ver la configuración sugerida</button>
+  <button type="button" data-p="borrar">Borrar mis elecciones</button>
+</div>
+<div class="c10l2-tarj" id="c10l2-tarj"></div>
+<ol class="c10l2-lista" id="c10l2-lista" aria-label="Acciones del agente"></ol>
+<div class="readout texto" id="c10l2-out" aria-live="polite"></div></div></section>
+<section><h2>Revisar un cambio: diferencias (<i>diffs</i>), vistas previas y borradores</h2><div class="prose"><p>Cuando el agente pide permiso para cambiar algo, la pregunta «¿puedo editar <code>informe-semana-47.md</code>?» no sirve de mucho. Para aprobar con criterio necesitas ver <b>qué</b> va a cambiar. Hay tres formas de mostrarlo, y conviene saber pedir cada una.</p><p>Una <b>diferencia</b> (<i>diff</i>) muestra solo lo que cambia entre dos versiones de un texto: las líneas que salen, marcadas con un signo menos, y las que entran, con un signo más. Es la forma natural de revisar cambios en archivos de texto, y la que usan los agentes de terminal cuando piden permiso para editar. El cambio malo de esta mañana, visto como diferencia, se ve así:</p><div class="code-copia"><pre><code>--- informe-semana-47.md (antes)
++++ informe-semana-47.md (después)
+ Hechas: 7
+-Reprogramadas: 2 (Raúl el 17, Tomás el 19)
+-Pendientes: 1 (Raúl el 20)
++No realizadas: 3</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>No hace falta leer el informe completo: en cuatro líneas se ve que el agente borró un detalle que Andrés necesita y juntó dos estados que la regla dice separar. Una diferencia convierte «¿apruebas este cambio?» en una pregunta que se responde en segundos.</p><p>Una <b>vista previa</b> (<i>preview</i>) muestra cómo va a quedar el resultado antes de aplicarlo: la tabla por zona tal como se verá en el informe, el correo tal como lo leerá Andrés, la reunión tal como aparecerá en la agenda. Sirve para lo que no es texto plano o cuando importa la forma. Un <b>borrador</b> (<i>draft</i>) va un paso más allá: el resultado ya existe, completo, pero en un lugar donde no tiene efecto todavía. Lo puedes abrir, corregir y decidir.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Mira la diferencia entre dos versiones</h3></div><p>Vas a crear dos versiones de un informe en <code>agente-prueba</code> y compararlas con un comando, como hace un agente cuando te muestra lo que va a cambiar. Los comandos de comparación solo leen.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>New-Item -ItemType Directory -Force revision</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Set-Content -Encoding utf8 revision\informe-v1.md "# Informe semana 47","Hechas: 7","Reprogramadas: 2 (Raúl el 17, Tomás el 19)","Pendientes: 1 (Raúl el 20)"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Set-Content -Encoding utf8 revision\informe-v2.md "# Informe semana 47","Para: Andrés Molina","Hechas: 7","No realizadas: 3"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Compare-Object (Get-Content revision\informe-v1.md) (Get-Content revision\informe-v2.md)</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>mkdir -p revision</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "# Informe semana 47" "Hechas: 7" "Reprogramadas: 2 (Raúl el 17, Tomás el 19)" "Pendientes: 1 (Raúl el 20)" &gt; revision/informe-v1.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "# Informe semana 47" "Para: Andrés Molina" "Hechas: 7" "No realizadas: 3" &gt; revision/informe-v2.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>diff -u revision/informe-v1.md revision/informe-v2.md</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Mira la salida. En Windows, <code>&lt;=</code> marca lo que solo está en la versión 1 (lo que sale) y <code>=&gt;</code> lo que solo está en la versión 2 (lo que entra). En macOS y Linux, <code>-</code> es lo que sale y <code>+</code> lo que entra; las líneas sin signo no cambian.</span></li><li><span>Decide, línea por línea, qué aprobarías y qué rechazarías del cambio.</span></li><li><span>Si tienes Git instalado, prueba también <code>git diff --no-index revision/informe-v1.md revision/informe-v2.md</code>, que da el mismo formato con colores en cualquier sistema.</span></li></ol><p><b>Qué observar:</b> la diferencia te muestra cuatro líneas en lugar de dos documentos enteros, y en ellas se ven las dos cosas que importan: un cambio bueno (el destinatario) y uno malo (se pierden las reprogramadas y la pendiente). Aprobar o rechazar un cambio entero no alcanza cuando trae una mezcla así. Por eso muchos agentes te dejan aceptar una parte, o rechazar con un comentario para que lo rehaga.</p></div></section>
+<section><h2>Puntos de control y deshacer</h2><div class="prose"><p>Aunque revises bien, algo se va a colar. Por eso la segunda defensa no es mirar mejor, sino poder volver atrás. Un <b>punto de control</b> (<i>checkpoint</i>) es una foto del estado de tus archivos tomada antes de un cambio, a la que puedes regresar si el cambio sale mal. <b>Deshacer</b> (<i>undo</i>) o <b>retroceder</b> (<i>rewind</i>) es volver a esa foto.</p></div><div class="analogia"><b>Imagínalo así</b><p>Es el «guardar partida» de un videojuego antes del jefe final. Si pierdes, no empiezas el juego desde cero: vuelves al último punto guardado. Pero la partida guardada solo cubre lo que pasa dentro del juego. Si en un arrebato tiraste el control por la ventana, ningún punto guardado lo devuelve.</p></div><div class="prose"><p>Los puntos de control vienen de tres lugares, y conviene saber cuál tienes:</p><ul><li><b>Del agente.</b> Muchos agentes guardan solos el estado de los archivos que van a editar. A noviembre de 2026, por ejemplo, Claude Code guarda un punto de control antes de cada mensaje tuyo que empieza una vuelta y permite volver con el comando <code>/rewind</code> o pulsando Esc dos veces. Su documentación advierte lo que no cubre: los archivos que cambió solo un comando de terminal, ni nada fuera de tu equipo.</li><li><b>De tus herramientas.</b> El historial de versiones de un documento en la nube, la papelera, una copia de la carpeta antes de una tarea grande o un <b>control de versiones</b> (<i>version control</i>) como Git, el sistema que usan los programadores para guardar cada versión de sus archivos.</li><li><b>Del propio diseño de la tarea.</b> Pedirle al agente que escriba en un archivo nuevo en lugar de sobrescribir el original. El original es el punto de control.</li></ul></div><figure class="fig fig-esquema" id="10-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" style="min-width:720px" role="img" aria-label="Arriba, la línea de tiempo de la mañana con cuatro puntos de control, P0 a P3, antes de cada cambio del agente. Entre P2 y P3 entra un cambio malo y una flecha curva vuelve a P2. Abajo, dos columnas: lo que un punto de control devuelve, los archivos que el agente editó en la carpeta; y lo que no devuelve, el correo enviado, la invitación aceptada, el mensaje en el chat, lo que cambió un comando y los servicios externos.">
+  <defs>
+    <marker id="d10c-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d10c-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" style="fill:var(--accent)"/></marker>
+  </defs>
+  <text x="20" y="24" class="t t-xs t-b t-m">JUEVES 26 · EL INFORME DE LA SEMANA 47, CAMBIO A CAMBIO</text>
+  <line x1="40" y1="90" x2="870" y2="90" class="ln" style="stroke-width:2" marker-end="url(#d10c-n)"/>
+  <g class="t t-s" text-anchor="middle">
+    <circle cx="120" cy="90" r="11" style="fill:var(--card);stroke:var(--accent);stroke-width:2.5"/><text x="120" y="122" class="t-b">P0</text><text x="120" y="138" class="t-m">8:15</text>
+    <circle cx="320" cy="90" r="11" style="fill:var(--card);stroke:var(--accent);stroke-width:2.5"/><text x="320" y="122" class="t-b">P1</text><text x="320" y="138" class="t-m">8:16</text>
+    <circle cx="520" cy="90" r="11" style="fill:var(--card);stroke:var(--accent);stroke-width:2.5"/><text x="520" y="122" class="t-b">P2</text><text x="520" y="138" class="t-m">8:17</text>
+    <circle cx="720" cy="90" r="11" style="fill:var(--card);stroke:var(--accent);stroke-width:2.5"/><text x="720" y="122" class="t-b">P3</text><text x="720" y="138" class="t-m">8:18</text>
+    <text x="220" y="62">tabla por zona</text><text x="220" y="78" style="fill:var(--good)" class="t-b">✓ aprobado</text>
+    <text x="420" y="62">destinatario</text><text x="420" y="78" style="fill:var(--good)" class="t-b">✓ aprobado</text>
+    <text x="620" y="62">«no realizadas: 3»</text><text x="620" y="78" class="k-warm t-b">✗ aprobado sin leer</text>
+  </g>
+  <path d="M708 104 C680 170 560 170 530 106" class="ln" style="stroke:var(--accent);stroke-width:2;fill:none" marker-end="url(#d10c-a)"/>
+  <text x="620" y="176" class="t t-s t-b" text-anchor="middle" style="fill:var(--accent)">volver a P2: el informe queda como a las 8:17</text>
+
+  
+  <rect x="20" y="200" width="420" height="160" rx="8" class="d-casa"/>
+  <text x="36" y="224" class="t t-b">Lo devuelve un punto de control</text>
+  <text x="36" y="244" class="t t-s t-m">dentro de la carpeta de trabajo</text>
+  <g class="t t-s">
+    <text x="36" y="270">• los archivos que el agente editó: el informe, el acta</text>
+    <text x="36" y="290">• los archivos nuevos que creó</text>
+    <text x="36" y="310">• en algunos agentes, también la conversación</text>
+    <text x="36" y="334" class="t-m">(cada agente documenta qué cubre: léelo)</text>
+  </g>
+  <line x1="460" y1="196" x2="460" y2="364" class="ln ln-d" style="stroke-width:2"/>
+  <text transform="translate(452 280) rotate(-90)" class="t t-xs t-b t-m" text-anchor="middle">BORDE DE LA CARPETA</text>
+  <rect x="480" y="200" width="400" height="160" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="496" y="224" class="t t-b k-warm">No lo devuelve</text>
+  <text x="496" y="244" class="t t-s t-m">lo que ya salió de la carpeta</text>
+  <g class="t t-s">
+    <text x="496" y="270">• el correo enviado y la invitación aceptada</text>
+    <text x="496" y="290">• el mensaje publicado en el chat del equipo</text>
+    <text x="496" y="310">• lo que cambió un comando de terminal</text>
+    <text x="496" y="330">• los cambios en servicios externos</text>
+  </g>
+  <rect x="20" y="378" width="860" height="40" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="403" class="t t-s" text-anchor="middle">Puntos de control para lo reversible; borradores para lo que sale de la carpeta.</text>
+</svg></div><figcaption><b>Puntos de control: qué cubren y qué no.</b> Arriba, una línea de tiempo de la mañana de Daniela con cuatro puntos de control (P0 a P3) antes de cada cambio del agente. Entre P2 y P3 entra el cambio malo; la flecha curva vuelve a P2 y el informe queda como estaba. Abajo, dos columnas. En verde, lo que un punto de control devuelve: los archivos que el agente editó en la carpeta. En rojo, lo que no: el correo que salió, la invitación aceptada, el mensaje en el chat, lo que cambió un comando en otro lugar y cualquier cosa en un servicio externo.</figcaption></figure><div class="prose"><p>La columna roja del diagrama es la lección más importante de esta sección. Un punto de control deshace lo que el agente hizo <b>dentro</b> de tu carpeta. No deshace nada que haya salido de ella. Por eso los puntos de control y los borradores no compiten: se complementan. Los puntos de control te dejan ser generoso con lo reversible; los borradores protegen lo que no lo es.</p><p>Ahora prueba las dos cosas juntas sobre el informe de esta mañana.</p></div><div class="lab" id="10-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Aprueba, rechaza y vuelve a un punto de control</h3></div><p class="hint">El agente propone seis cambios al informe de la semana 47. Cada uno llega como una diferencia: lo que sale en rojo, lo que entra en verde. Apruébalo o recházalo. Antes de cada cambio aprobado se guarda un punto de control en la línea de abajo; si te equivocas, vuelve a cualquiera de ellos. El último cambio es un envío: mira qué pasa al aprobarlo. Prueba también «Aprobar todo sin leer» y después intenta dejar el informe en orden.</p><style>
+[id="10-lab-1"] .c10l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="10-lab-1"] .c10l1-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="10-lab-1"] .c10l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="10-lab-1"] .c10l1-col{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:8px;min-width:0}
+[id="10-lab-1"] .c10l1-prop h4{margin:0;font:700 .92rem var(--f-display)}
+[id="10-lab-1"] .c10l1-prop p{margin:0;font:400 .82rem/1.4 var(--f-body);color:var(--muted)}
+[id="10-lab-1"] .c10l1-diff{margin:0;padding:6px 0;border:1px solid var(--line);border-radius:8px;background:var(--paper);font:400 .76rem/1.45 var(--f-mono);overflow-x:auto}
+[id="10-lab-1"] .c10l1-diff div{padding:0 8px;white-space:pre-wrap;overflow-wrap:anywhere}
+[id="10-lab-1"] .c10l1-diff .m{background:var(--warm-soft);color:var(--ink)}
+[id="10-lab-1"] .c10l1-diff .m::before{content:"− ";font-weight:700;color:var(--warm)}
+[id="10-lab-1"] .c10l1-diff .p{background:var(--d-casa-s);color:var(--ink)}
+[id="10-lab-1"] .c10l1-diff .p::before{content:"+ ";font-weight:700;color:var(--good)}
+[id="10-lab-1"] .c10l1-diff .c{color:var(--muted)}
+[id="10-lab-1"] .c10l1-diff .c::before{content:"  "}
+[id="10-lab-1"] .c10l1-envio{padding:8px 10px;border-left:5px solid var(--warm);background:var(--warm-soft);border-radius:0 8px 8px 0;font:400 .84rem/1.4 var(--f-body)}
+[id="10-lab-1"] .c10l1-doc{margin:0;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font:400 .76rem/1.5 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+[id="10-lab-1"] .c10l1-check{list-style:none;margin:0;padding:0;display:grid;gap:3px;font:400 .84rem/1.35 var(--f-body)}
+[id="10-lab-1"] .c10l1-check li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:6px}
+[id="10-lab-1"] .c10l1-check li::before{content:"✓";font-weight:700;color:var(--good)}
+[id="10-lab-1"] .c10l1-check li.no::before{content:"✗";color:var(--warm)}
+[id="10-lab-1"] .c10l1-check li.esp::before{content:"…";color:var(--muted)}
+[id="10-lab-1"] .c10l1-cps{display:flex;flex-wrap:wrap;gap:6px}
+[id="10-lab-1"] .c10l1-cps button{font-family:var(--f-mono);font-size:.78rem}
+[id="10-lab-1"] .c10l1-correo{font:400 .82rem/1.4 var(--f-body);padding:6px 8px;border:1px dashed var(--line);border-radius:8px}
+[id="10-lab-1"] .c10l1-correo.hay{border-color:var(--warm);border-style:solid}
+[id="10-lab-1"] .c10l1-log{list-style:none;margin:0;padding:0;display:grid;gap:2px;font:400 .76rem/1.4 var(--f-mono);max-height:180px;overflow-y:auto}
+[id="10-lab-1"] .c10l1-log li{padding:2px 6px;border-left:3px solid var(--line);overflow-wrap:anywhere}
+[id="10-lab-1"] .c10l1-log li.ap{border-left-color:var(--good)}
+[id="10-lab-1"] .c10l1-log li.re{border-left-color:var(--muted)}
+[id="10-lab-1"] .c10l1-log li.bl{border-left-color:var(--warm)}
+[id="10-lab-1"] .c10l1-log li.cp{border-left-color:var(--accent)}
+</style>
+<div class="c10l1-grid">
+  <div class="c10l1-col">
+    <p class="c10l1-rot" id="c10l1-cuenta">Propuesta del agente</p>
+    <div class="c10l1-prop" id="c10l1-prop" aria-live="polite"></div>
+    <div class="btns">
+      <button type="button" class="primary" id="c10l1-si">Aprobar</button>
+      <button type="button" id="c10l1-no">Rechazar</button>
+      <button type="button" id="c10l1-todo">Aprobar todo sin leer</button>
+      <button type="button" id="c10l1-reset">Empezar de nuevo</button>
+    </div>
+    <p class="c10l1-rot">Puntos de control (pulsa uno para volver)</p>
+    <div class="c10l1-cps" id="c10l1-cps"></div>
+  </div>
+  <div class="c10l1-col">
+    <p class="c10l1-rot">informes/informe-semana-47.md</p>
+    <pre class="c10l1-doc" id="c10l1-doc"></pre>
+    <p class="c10l1-rot">Reglas y pedido de Andrés</p>
+    <ul class="c10l1-check" id="c10l1-check"></ul>
+    <p class="c10l1-rot">Correo (fuera de la carpeta)</p>
+    <div class="c10l1-correo" id="c10l1-correo"></div>
+  </div>
+</div>
+<p class="c10l1-rot">Registro de acciones</p>
+<ol class="c10l1-log" id="c10l1-log" aria-label="Registro de acciones"></ol>
+<div class="readout texto" id="c10l1-out" aria-live="polite"></div></div><div class="prose"><p>Si pulsaste «Aprobar todo sin leer», viste cómo el informe terminó con un nombre de cliente y sin el detalle de las reprogramadas, y cómo volviste a un punto de control para arreglarlo. Pero el envío no lo aprobó nadie: el gancho lo convirtió en borrador. Esa es la combinación que buscas: lo reversible se arregla con un punto de control, y lo irreversible ni siquiera llega a depender de tu atención.</p></div></section>
+<section><h2>Borradores en lugar de envíos: correos, mensajes y publicaciones</h2><div class="prose"><p>La regla de Daniela, «nunca enviar, solo borradores», no es exclusiva del correo. Vale para todo lo que sale hacia otras personas:</p><ul><li><b>Correos.</b> El agente redacta en la carpeta de borradores; tú abres, lees, ajustas y envías.</li><li><b>Mensajes de chat.</b> En lugar de publicar en el canal del equipo, el agente deja el texto en un archivo o en un mensaje a ti misma.</li><li><b>Invitaciones y respuestas de agenda.</b> El agente propone un horario y redacta la respuesta; aceptar o rechazar es tuyo, porque la otra persona recibe el aviso al instante.</li><li><b>Publicaciones y formularios.</b> Una entrada en un sistema compartido, un ticket, un formulario enviado: el agente deja todo listo hasta el último botón y se detiene.</li></ul></div><figure class="fig fig-flujo" id="10-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 712" style="min-width:720px" role="img" aria-label="Diagrama de secuencia de una aprobación. Arriba, el modelo pide editar el informe; el arnés guarda un punto de control, muestra la diferencia a Daniela, ella aprueba, el arnés aplica el cambio y lo anota en el registro. Abajo, el modelo pide enviar el informe; un gancho lo bloquea, el arnés le devuelve el motivo, el modelo crea un borrador, el arnés avisa y Daniela lo revisa y lo envía ella misma.">
+  <defs>
+    <marker id="d10b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d10b-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d10b-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-red"/></marker>
+    <marker id="d10b-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-tra"/></marker>
+  </defs>
+  <rect x="10" y="14" width="110" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="65" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="65" y="54" class="t t-s t-m" text-anchor="middle">aprueba</text>
+  <rect x="200" y="14" width="160" height="52" rx="10" class="c-tra"/><text x="280" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="280" y="54" class="t t-s" text-anchor="middle">compuerta y ganchos</text>
+  <rect x="460" y="14" width="120" height="52" rx="10" class="d-inet"/><text x="520" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="520" y="54" class="t t-s t-m" text-anchor="middle">propone</text>
+  <rect x="650" y="14" width="160" height="52" rx="10" class="d-casa"/><text x="730" y="36" class="t t-b" text-anchor="middle">Carpeta y correo</text><text x="730" y="54" class="t t-s t-m" text-anchor="middle">el mundo de Daniela</text>
+  <line x1="65" y1="66" x2="65" y2="640" class="vida"/>
+  <line x1="280" y1="66" x2="280" y2="640" class="vida"/>
+  <line x1="520" y1="66" x2="520" y2="640" class="vida"/>
+  <line x1="730" y1="66" x2="730" y2="640" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="520" y1="106" x2="283" y2="106" class="ln s-red" style="stroke-width:2" marker-end="url(#d10b-r)"/>
+    <text x="290" y="99">① pide escribir_archivo(informe)</text>
+    <rect x="288" y="120" width="190" height="26" rx="6" class="caja"/>
+    <text x="298" y="137">② guarda el punto de control P0</text>
+    <line x1="280" y1="176" x2="68" y2="176" class="ln" style="stroke:var(--c-tra);stroke-width:2" marker-end="url(#d10b-t)"/>
+    <text x="78" y="169">③ muestra la diferencia (− / +)</text>
+    <line x1="65" y1="212" x2="277" y2="212" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d10b-w)"/>
+    <text x="78" y="205">④ «Aprobado»</text>
+    <line x1="280" y1="248" x2="727" y2="248" class="ln s-red" style="stroke-width:2" marker-end="url(#d10b-r)"/>
+    <text x="545" y="241">⑤ aplica el cambio</text>
+    <rect x="288" y="262" width="190" height="26" rx="6" class="caja"/>
+    <text x="298" y="279">⑥ lo anota en el registro</text>
+  </g>
+
+  <line x1="20" y1="314" x2="820" y2="314" class="ln ln-d"/>
+
+  <g class="t t-s">
+    <line x1="520" y1="354" x2="283" y2="354" class="ln s-red" style="stroke-width:2" marker-end="url(#d10b-r)"/>
+    <text x="290" y="347">⑦ pide enviar_correo(Andrés)</text>
+    <rect x="288" y="368" width="222" height="26" rx="6" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <text x="298" y="385">⑧ el gancho bloquea: nada sale</text>
+    <line x1="280" y1="424" x2="517" y2="424" class="ln" style="stroke-width:2" marker-end="url(#d10b-n)"/>
+    <text x="290" y="417">⑨ «Bloqueado: enviar no está permitido»</text>
+    <line x1="520" y1="464" x2="283" y2="464" class="ln s-red" style="stroke-width:2" marker-end="url(#d10b-r)"/>
+    <text x="290" y="457">⑩ pide crear_borrador(Andrés)</text>
+    <line x1="280" y1="500" x2="727" y2="500" class="ln s-red" style="stroke-width:2" marker-end="url(#d10b-r)"/>
+    <text x="545" y="493">⑪ guarda el borrador</text>
+    <line x1="280" y1="540" x2="68" y2="540" class="ln" style="stroke-width:2" marker-end="url(#d10b-n)"/>
+    <text x="78" y="533">⑫ aviso: borrador listo</text>
+    <line x1="65" y1="600" x2="727" y2="600" class="ln" style="stroke:var(--warm);stroke-width:2.5" marker-end="url(#d10b-w)"/>
+    <text x="78" y="579">⑬ lo abre, lo revisa</text><text x="78" y="593">y lo envía ella misma</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M836 92v206" class="ln" style="stroke:var(--c-tra);stroke-width:3"/>
+    <text transform="translate(856 195) rotate(-90)" class="k-tra" text-anchor="middle">APROBAR UN CAMBIO</text>
+    <path d="M836 334v280" class="ln" style="stroke:var(--warm);stroke-width:3"/>
+    <text transform="translate(856 474) rotate(-90)" class="k-warm" text-anchor="middle">BLOQUEAR UN ENVÍO</text>
+  </g>
+  <rect x="10" y="656" width="880" height="44" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="683" class="t t-s" text-anchor="middle">Lo reversible pasa por la compuerta con un punto de control. Lo irreversible no pasa: sale como borrador.</text>
+</svg></div><figcaption><b>Flujo de una aprobación: un cambio que se aprueba y un envío que se bloquea.</b> Los participantes son Daniela, el arnés (con su compuerta de permisos y sus ganchos), el modelo y la carpeta y el correo. Arriba, el modelo pide editar el informe (①); el arnés guarda un punto de control (②) y le muestra la diferencia a Daniela (③); ella aprueba (④), el arnés aplica el cambio (⑤) y lo anota en el registro (⑥). Abajo, el modelo pide enviar el informe (⑦); el gancho lo bloquea antes de que llegue a la compuerta (⑧) y el arnés le devuelve al modelo el motivo (⑨). El modelo crea un borrador (⑩ y ⑪) y avisa (⑫). Daniela lo abre, lo revisa y lo envía ella misma desde su correo (⑬).</figcaption></figure><div class="prose"><p>El borrador tiene un costo: Daniela tiene que abrirlo y pulsar «Enviar». Ese costo es el punto. Es un momento de atención obligatorio justo antes de lo que no se puede deshacer, y suele tomar treinta segundos. Si un borrador del agente sale bien diez veces seguidas, la tentación es darle permiso para enviar. Resístela en todo lo que va a personas fuera de tu equipo o a muchas personas a la vez: el día once, un correo con la cifra equivocada al comité no tiene punto de control.</p></div></section>
+<section><h2>El cansancio de aprobar: cuándo dar más autonomía</h2><div class="prose"><p>Hay un problema con pedir permiso para todo: funciona los primeros días y después deja de funcionar. Si el agente te pregunta cuarenta veces en una mañana, a la décima apruebas sin leer. Se llama <b>cansancio de aprobar</b> (<i>approval fatigue</i>), y convierte cada pregunta en un trámite. El capítulo 7 lo anticipó al hablar de los modos de permiso: preguntar siempre no es lo más seguro si las preguntas peligrosas pasan mezcladas con las inocentes.</p></div><div class="ml"><b>En la práctica</b><p>La primera semana con permisos estrictos, Daniela aprobó treinta y una acciones en una mañana: lecturas de archivos, borradores, cambios en informes. La número treinta y dos era «sobrescribir <code>actas/acta-comite-noviembre.md</code>» con un resumen del agente, y la aprobó con el mismo clic que las demás. Recuperó el acta original desde un punto de control, pero la lección fue otra: el problema no era que el agente preguntara mal, sino que preguntaba demasiado. Esa tarde reordenó sus reglas para que las lecturas y los archivos nuevos en <code>informes/</code> pasaran solos, y dejó la pregunta para lo que sobrescribe, mueve o borra. Al día siguiente el agente le preguntó cuatro veces, y las cuatro las leyó.</p></div><div class="prose"><p>Tres prácticas reducen el cansancio sin perder control:</p><ul><li><b>Aprobar el plan, no cada paso.</b> Con un plan aprobado (capítulo 9), las acciones que estaban en él pueden pasar sin otra pregunta; solo las que se salen del plan te interrumpen.</li><li><b>Agrupar.</b> Mejor una pregunta con seis cambios en una sola diferencia que seis preguntas sueltas.</li><li><b>Subir de nivel con evidencia.</b> Una acción gana autonomía cuando tienes pruebas de que sale bien. Una regla práctica: si durante un mes aprobaste todas las veces una acción reversible sin cambiar nada, puede pasar de «pregunta antes» a «pasa y avisa». Si la rechazaste o la corregiste alguna vez en ese mes, todavía no.</li></ul><p>La subida tiene un techo: lo irreversible no sube nunca a «pasa solo», por bien que haya salido hasta ahora. La escalera de la autonomía del capítulo 1 lo decía en su franja de abajo, y aquí se vuelve regla de configuración. También tiene vuelta atrás: si una acción que pasaba sola empieza a salir mal (cambió la planilla, cambió el formato del acta), vuelve a preguntar hasta que recupere la confianza.</p></div></section>
+<section><h2>Dejar rastro: qué hizo el agente y por qué</h2><div class="prose"><p>Si el agente trabaja con más autonomía, la revisión se mueve de antes a después. Para revisar después necesitas un <b>registro de acciones</b> (<i>audit log</i>): la lista de lo que hizo el agente, en orden, con lo necesario para entender cada paso. Un buen registro responde seis preguntas por cada acción: cuándo, qué herramienta, sobre qué, por qué, con qué resultado y quién la aprobó.</p><div class="code-copia"><pre><code>2026-11-26 08:14  leer_archivo      visitas/visitas-semana-47.csv   para la tabla por zona        ok        pasa solo
+2026-11-26 08:15  escribir_archivo  informes/informe-semana-47.md   agregar tabla por zona        ok        aprobado por Daniela
+2026-11-26 08:16  escribir_archivo  informes/informe-semana-47.md   nombre de cliente en fila 3   rechazado por Daniela
+2026-11-26 08:17  enviar_correo     andres.molina@ejemplo.com       pedido de Andrés              bloqueado por el gancho
+2026-11-26 08:17  crear_borrador    andres.molina@ejemplo.com       en lugar del envío            ok        pasa y avisa</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Hay tres lugares donde puede vivir ese rastro, y no son excluyentes:</p><ul><li><b>La sesión.</b> El archivo de la sesión del capítulo 2 ya guarda cada llamada a herramienta y su resultado. Es completo, pero largo y difícil de leer.</li><li><b>Un archivo de bitácora.</b> Una línea en las instrucciones permanentes («al terminar cada tarea, agrega a <code>informes/bitacora.md</code> qué hiciste, qué archivos tocaste y qué quedó pendiente») deja un resumen que tú lees en un minuto.</li><li><b>Un gancho.</b> Un gancho del capítulo 8 que corre después de cada acción y anota una línea en un archivo. Es el más confiable, porque no depende de que el modelo se acuerde.</li></ul><p>La columna «por qué» es la que más falta hace y la que más se olvida. Un registro que dice «escribió <code>informe-semana-47.md</code>» te dice qué pasó; uno que dice «escribió <code>informe-semana-47.md</code> para agregar la tabla por zona que pidió Andrés» te deja saber si el agente entendió. Cuando algo sale mal, como en el capítulo 7, el registro es lo primero que miras.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Lee qué cubren los puntos de control de un agente real</h3></div><p>Vas a leer la documentación pública de puntos de control de un agente del mercado y compararla con lo que viste en este capítulo. Es un ejemplo, no una recomendación; si usas otro agente, busca la página equivalente en su documentación.</p><ol class="steps"><li><span>Abre <a href="https://code.claude.com/docs/en/checkpointing" target="_blank" rel="noopener">code.claude.com/docs/en/checkpointing</a>, la página de puntos de control de Claude Code (en inglés; el traductor del navegador sirve).</span></li><li><span>Busca cuándo se guarda un punto de control y cómo se vuelve a uno.</span></li><li><span>Busca la sección de limitaciones (<i>Limitations</i>) y anota qué cambios <b>no</b> se pueden deshacer.</span></li><li><span>Arma una tabla de dos columnas, «se deshace» y «no se deshace», con lo que encontraste, y agrega tres acciones del trabajo de Daniela en cada columna.</span></li></ol><p><b>Qué observar:</b> la documentación separa lo que el agente edita con sus propias herramientas de lo que cambia por otros caminos, como un comando de terminal o algo fuera del equipo. Es la misma frontera de la figura de puntos de control: un deshacer cubre lo que pasa dentro de la carpeta, nunca lo que ya salió de ella. Si tu agente no documenta qué cubre su deshacer, supón que no cubre nada y trabaja con borradores y copias.</p></div><div class="prose"><p>Lo que te llevas de este capítulo cabe en una frase: <b>borrador primero: lo irreversible siempre pasa por una persona</b>. Lo reversible puede ganar autonomía con evidencia, siempre que haya un punto de control para volver; lo que sale hacia otras personas se queda en borrador hasta que lo mires. Y todo deja rastro, para que revisar después sea posible. En el capítulo 11 el agente empieza a trabajar mientras Daniela no mira, y estas tres piezas (borradores, puntos de control y registro) son las que hacen que eso sea seguro.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué diferencia hay entre una acción reversible, una reversible con costo y una irreversible? Da un ejemplo de cada una.</summary><p>Reversible: se vuelve al estado anterior sin que nadie lo note (crear un archivo nuevo, guardar un borrador). Reversible con costo: se recupera solo con una copia o con efectos visibles (sobrescribir un acta, mover una reunión, borrar correos que van a la papelera). Irreversible: sus efectos ya salieron (enviar un correo, aceptar una invitación, publicar en el chat).</p></details><details><summary>¿Por qué para enviar un correo el nivel es «solo borrador» y no «pregunta antes»?</summary><p>Porque una pregunta depende de que la persona lea bien cada vez, y con el cansancio deja de hacerlo. Si el agente no tiene cómo enviar, no hay atención que pueda fallar: lo irreversible siempre pasa por una persona.</p></details><details><summary>¿Qué muestra una diferencia (<i>diff</i>) y por qué ayuda a aprobar?</summary><p>Muestra solo las líneas que salen (con menos) y las que entran (con más) entre dos versiones. Permite decidir en segundos sin releer el documento entero, y deja ver mezclas de cambios buenos y malos.</p></details><details><summary>Un punto de control del agente, ¿puede deshacer un correo enviado?</summary><p>No. Un punto de control devuelve los archivos que el agente editó dentro de la carpeta. Lo que salió de ella (un correo, una invitación, un mensaje, cambios en servicios externos) no se deshace.</p></details><details><summary>¿Qué es el cansancio de aprobar y qué tres prácticas lo reducen?</summary><p>Es aprobar por reflejo, sin leer, cuando el agente pregunta demasiado. Se reduce aprobando el plan en lugar de cada paso, agrupando cambios en una sola pregunta y subiendo de nivel las acciones reversibles que tienen evidencia de salir bien.</p></details><details><summary>¿Qué seis preguntas responde un buen registro de acciones?</summary><p>Cuándo, qué herramienta, sobre qué, por qué, con qué resultado y quién la aprobó.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es el principio de las «cuatro miradas» (<i>four-eyes principle</i>) y en qué procesos de bancos o empresas es obligatorio?</li><li>¿Cómo funciona por dentro el historial de versiones de un documento en la nube: guarda copias completas o solo las diferencias?<small>Pista: busca «operational transformation» o «version history» junto con el nombre de tu editor de documentos.</small></li><li>¿Qué es la «fatiga de alarmas» (<i>alarm fatigue</i>) en hospitales y qué medidas se tomaron para reducirla?<small>Pista: busca «alarm fatigue» junto con «Joint Commission».</small></li><li>¿Qué es un registro inmutable (<i>append-only log</i>) y por qué los registros de auditoría se guardan así?</li><li>¿Por qué muchos servicios de correo ofrecen «deshacer envío» durante unos segundos y cómo funciona realmente esa opción?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://code.claude.com/docs/en/checkpointing" target="_blank" rel="noopener">Checkpointing <small>un ejemplo del mercado: qué guarda y qué no guarda el deshacer de un agente de terminal (en inglés)</small></a><a class="vid" href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Hooks reference <small>un ejemplo del mercado: ganchos que bloquean acciones o las anotan en un registro (en inglés)</small></a><a class="vid" href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" target="_blank" rel="noopener">The lethal trifecta for AI agents <small>por qué conviene que un agente no pueda enviar datos hacia afuera sin una persona (en inglés)</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="10-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const NIV=['Pasa solo','Pasa y avisa','Pregunta antes','Solo borrador'];
+  // r: 0 sin efecto, 1 reversible, 2 con costo, 3 irreversible; f: veces por semana; s: nivel sugerido
+  const ACC=[
+    {t:'Leer la planilla de visitas',h:'leer_archivo',r:0,f:12,s:0,x:'No cambia nada. Preguntar aquí solo entrena a aprobar sin leer.'},
+    {t:'Crear informes/informe-semana-48.md',h:'escribir_archivo',r:1,f:3,s:1,x:'Archivo nuevo: se borra y listo, y solo lo ve Daniela.'},
+    {t:'Guardar un recuerdo: «Raúl sin vehículo el jueves 26»',h:'memoria',r:1,f:4,s:1,x:'Se revisa y se borra en el archivo de memoria (capítulo 6). Conviene que avise, para revisarlo.'},
+    {t:'Crear un borrador de respuesta a Julia',h:'crear_borrador',r:1,f:8,s:1,x:'Un borrador no tiene efecto hasta que alguien lo envía.'},
+    {t:'Sobrescribir actas/acta-comite-noviembre.md',h:'escribir_archivo',r:2,f:2,s:2,x:'Se recupera solo si hay punto de control o copia. Merece una mirada a la diferencia.'},
+    {t:'Borrar correos viejos (30 días en la papelera)',h:'borrar_correo',r:2,f:2,s:2,x:'Se recupera durante un plazo; después, no. Pregunta antes.'},
+    {t:'Enviar el informe a Andrés',h:'enviar_correo',r:3,f:1,s:3,x:'Un correo enviado no vuelve. En la configuración de Daniela ni siquiera existe la herramienta.'},
+    {t:'Aceptar la invitación del proveedor del jueves',h:'responder_invitacion',r:3,f:1,s:3,x:'El organizador recibe el aviso al instante. El agente propone; Daniela acepta.'},
+    {t:'Publicar el resumen en el chat del equipo',h:'publicar_mensaje',r:3,f:2,s:3,x:'Catorce personas lo leen apenas sale. Borrarlo después no lo des-lee.'},
+    {t:'Vaciar la papelera del correo',h:'vaciar_papelera',r:3,f:1,s:3,x:'Borrado definitivo: no hay plazo ni copia.'}];
+  const RTXT=['Sin efecto','Reversible','Reversible con costo','Irreversible'];
+  const RCLS=['rev','rev','cos','irr'];
+  const sel=new Array(ACC.length).fill(-1);
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function pintar(){
+    const ol=q('#c10l2-lista');ol.innerHTML='';
+    let preg=0,peligro=0,acierto=0,elegidas=0;
+    ACC.forEach((a,i)=>{
+      const v=sel[i];
+      let cls='';
+      if(v>=0){elegidas++;if(v===a.s){cls='ok';acierto++;}else if(a.r===3&&v<3)cls='peligro';else cls='distinto';}
+      if(v===2)preg+=a.f;
+      if(a.r===3&&v>=0&&v<2)peligro++;
+      const li=el('li','c10l2-acc '+cls);
+      const h=el('h4',null,a.t);h.appendChild(el('small',null,a.h));li.appendChild(h);
+      const g=el('div','btns');g.setAttribute('role','group');g.setAttribute('aria-label','Nivel para: '+a.t);
+      NIV.forEach((n,k)=>{const b=el('button',null,n);b.type='button';b.setAttribute('aria-pressed',v===k);b.addEventListener('click',()=>{sel[i]=k;pintar();});g.appendChild(b);});
+      li.appendChild(g);
+      if(v>=0){
+        const p=el('p','c10l2-fb');p.appendChild(el('span','c10l2-tag '+RCLS[a.r],RTXT[a.r]));
+        let txt=a.x+' Sugerido: «'+NIV[a.s]+'».';
+        if(a.r===3&&v<2)txt='Peligro: esta acción no se deshace y con tu elección no pasa por nadie. '+txt;
+        else if(a.r===3&&v===2)txt='Pasa por ti, pero depende de que leas bien cada vez. '+txt;
+        else if(a.r<=1&&v===2)txt='Te preguntará '+a.f+' veces por semana por algo que se deshace fácil. '+txt;
+        p.appendChild(document.createTextNode(txt));li.appendChild(p);
+      }
+      ol.appendChild(li);
+    });
+    // preguntas: irreversibles en «pregunta antes» también cuentan
+    const tj=q('#c10l2-tarj');tj.innerHTML='';
+    const d1=el('div');d1.appendChild(el('small',null,'Preguntas por semana'));d1.appendChild(el('b',null,String(preg)));const br=el('div','c10l2-barra');const bi=el('i');bi.style.width=Math.min(100,preg/36*100)+'%';br.appendChild(bi);d1.appendChild(br);tj.appendChild(d1);
+    const d2=el('div');d2.appendChild(el('small',null,'Irreversibles sin pasar por ti'));const b2=el('b',null,String(peligro));if(peligro)b2.style.color='var(--warm)';d2.appendChild(b2);tj.appendChild(d2);
+    const d3=el('div');d3.appendChild(el('small',null,'Coinciden con lo sugerido'));d3.appendChild(el('b',null,acierto+' de '+ACC.length));tj.appendChild(d3);
+    let t;
+    if(!elegidas)t='Elige un nivel para cada acción, o empieza por uno de los extremos de arriba y compara los contadores.';
+    else if(peligro)t='Hay '+peligro+(peligro===1?' acción irreversible':' acciones irreversibles')+' que pueden pasar sin ti. Ningún contador de preguntas compensa eso: llévalas a «Solo borrador».';
+    else if(preg>20)t='Nada irreversible se escapa, pero el agente te preguntaría '+preg+' veces por semana. Con tantas preguntas, la número veinte se aprueba sin leer. Baja a «Pasa y avisa» lo que se deshace fácil.';
+    else if(elegidas<ACC.length)t='Vas bien: '+preg+' preguntas por semana y nada irreversible sin ti. Te faltan '+(ACC.length-elegidas)+' acciones.';
+    else t='Configuración equilibrada: '+preg+' preguntas por semana, y todas sobre cosas que vale la pena mirar. Lo irreversible no depende de tu atención: queda en borrador.';
+    q('#c10l2-out').textContent=t;
+  }
+  q('#c10l2-pre').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const p=b.dataset.p;ACC.forEach((a,i)=>{sel[i]=p==='todo'?2:p==='nada'?0:p==='sug'?a.s:-1;});pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="10-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const BASE=['# Informe de visitas · semana 47','Hechas: 7','Reprogramadas: 2 (Raúl el 17, Tomás el 19)','Pendientes: 1 (Raúl el 20)','Total: 10'];
+  const ZONA=['Norte: 4 visitas, 3 hechas, 1 reprogramada','Centro: 3 visitas, 3 hechas','Sur: 3 visitas, 1 hecha, 1 reprogramada, 1 pendiente'];
+  const CH=[
+    {id:0,t:'Agregar la tabla por zona',por:'Andrés pidió las visitas por zona.',ap:d=>{const i=d.indexOf('Total: 10');const r=d.slice();r.splice(i+1,0,...ZONA);return r;}},
+    {id:1,t:'Poner el destinatario',por:'El informe es para Andrés.',ap:d=>{const r=d.slice();r.splice(1,0,'Para: Andrés Molina');return r;}},
+    {id:2,t:'Simplificar los estados',por:'«Más corto para el comité.»',ap:d=>{const r=[];let puesto=false;d.forEach(l=>{if(l.startsWith('Reprogramadas:')||l.startsWith('Pendientes:')){if(!puesto){r.push('No realizadas: 3');puesto=true;}}else r.push(l);});return r;}},
+    {id:3,t:'Dar contexto a la pendiente',por:'«Para que Andrés sepa de qué visita se trata.»',ap:d=>d.concat(['Nota: la visita del 20 es de la familia Ortega, calle 5.'])},
+    {id:4,t:'Proponer fecha para la pendiente',por:'Raúl no tiene vehículo el jueves 26.',ap:d=>d.concat(['Propuesta: la pendiente de Raúl pasa al viernes 27, 9:00.'])},
+    {id:5,t:'Enviar el informe a Andrés',por:'«Andrés lo necesita antes del comité.»',envio:true}];
+  let doc,cola,cps,aprob,log,borrador,hora;
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function hh(){hora++;return '08:'+String(hora).padStart(2,'0');}
+  function diff(a,b){
+    const n=a.length,m=b.length,L=[];for(let i=0;i<=n;i++){L.push(new Array(m+1).fill(0));}
+    for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)L[i][j]=a[i]===b[j]?L[i+1][j+1]+1:Math.max(L[i+1][j],L[i][j+1]);
+    const out=[];let i=0,j=0;
+    while(i<n&&j<m){if(a[i]===b[j]){out.push(['c',a[i]]);i++;j++;}else if(L[i+1][j]>=L[i][j+1]){out.push(['m',a[i]]);i++;}else{out.push(['p',b[j]]);j++;}}
+    while(i<n){out.push(['m',a[i++]]);}while(j<m){out.push(['p',b[j++]]);}
+    // contexto: solo 1 línea alrededor de cambios
+    return out.filter((x,k)=>x[0]!=='c'||(out[k-1]&&out[k-1][0]!=='c')||(out[k+1]&&out[k+1][0]!=='c'));
+  }
+  function reiniciar(){doc=BASE.slice();cola=CH.map(c=>c.id);cps=[];aprob=[];log=[];borrador=false;hora=13;pintar('');}
+  function aprobar(silencio){
+    if(!cola.length)return;const c=CH[cola.shift()];
+    if(c.envio){
+      log.push(['bl',hh()+'  enviar_correo  andres.molina@ejemplo.com  bloqueado por el gancho']);
+      if(!borrador){borrador=true;log.push(['ap',hh()+'  crear_borrador  andres.molina@ejemplo.com  en lugar del envío · pasa y avisa']);}
+      return 'Aprobaste el envío, pero no salió nada: el gancho bloquea cualquier envío antes de la compuerta y el agente dejó un borrador. Tu aprobación no puede abrir lo que la configuración cerró.';
+    }
+    cps.push({doc:doc.slice(),t:c.t});
+    doc=c.ap(doc);aprob.push({id:c.id,cp:cps.length-1});
+    log.push(['cp',hh()+'  punto de control P'+(cps.length-1)+' antes de «'+c.t+'»']);
+    log.push(['ap',hh()+'  escribir_archivo  informe-semana-47.md  '+c.t.toLowerCase()+' · aprobado por Daniela']);
+    return '';
+  }
+  function rechazar(){if(!cola.length)return;const c=CH[cola.shift()];log.push(['re',hh()+'  '+(c.envio?'enviar_correo':'escribir_archivo')+'  '+c.t.toLowerCase()+' · rechazado por Daniela']);}
+  function volver(i){
+    const vuelven=aprob.filter(a=>a.cp>=i).map(a=>a.id);
+    doc=cps[i].doc.slice();aprob=aprob.filter(a=>a.cp<i);cps=cps.slice(0,i);
+    cola=vuelven.concat(cola);
+    log.push(['cp',hh()+'  volver a P'+i+': se deshacen '+vuelven.length+' cambio'+(vuelven.length===1?'':'s')+'; el agente los vuelve a proponer']);
+    let t='Volviste a P'+i+'. El informe quedó como estaba antes de «'+(CH[vuelven[0]]?CH[vuelven[0]].t:'')+'», y el agente vuelve a proponer los '+vuelven.length+' cambios deshechos: ahora puedes aprobar solo los buenos.';
+    if(borrador){t+=' El borrador para Andrés sigue en el correo: el punto de control solo cubre la carpeta.';log.push(['bl',hh()+'  el borrador del correo no se deshace con el punto de control']);}
+    return t;
+  }
+  function reglas(){
+    const sep=doc.some(l=>l.startsWith('Reprogramadas:'))&&doc.some(l=>l.startsWith('Pendientes:'));
+    const cli=doc.some(l=>/familia|calle/i.test(l));
+    const zona=doc.some(l=>l.startsWith('Norte:'));
+    const para=doc.some(l=>l.startsWith('Para:'));
+    return [[sep?'':'no','Reprogramadas y pendientes por separado'],[cli?'no':'','Sin nombres ni datos de clientes'],[zona?'':'esp','Tabla por zona (lo que pidió Andrés)'],[para?'':'esp','Destinatario: Andrés'],[borrador?'':'esp','Borrador para Andrés, sin enviar']];
+  }
+  function pintar(msg){
+    const prop=q('#c10l1-prop');prop.innerHTML='';
+    q('#c10l1-cuenta').textContent=cola.length?'Propuesta del agente · quedan '+cola.length:'Propuestas del agente: ninguna pendiente';
+    if(cola.length){
+      const c=CH[cola[0]];
+      prop.appendChild(el('h4',null,c.t));prop.appendChild(el('p',null,'Motivo del agente: '+c.por));
+      if(c.envio){prop.appendChild(el('div','c10l1-envio','Acción: enviar_correo a andres.molina@ejemplo.com con el informe adjunto. Es irreversible: no hay diferencia que mostrar ni punto de control que la deshaga.'));}
+      else{const d=el('div','c10l1-diff');diff(doc,c.ap(doc)).forEach(([k,l])=>d.appendChild(el('div',k,l)));prop.appendChild(d);}
+    } else prop.appendChild(el('p',null,'El agente terminó. Revisa el informe y las reglas; si algo quedó mal, vuelve a un punto de control.'));
+    q('#c10l1-si').disabled=q('#c10l1-no').disabled=q('#c10l1-todo').disabled=!cola.length;
+    q('#c10l1-doc').textContent=doc.join('\n');
+    const ul=q('#c10l1-check');ul.innerHTML='';reglas().forEach(([c,t])=>ul.appendChild(el('li',c,t)));
+    const co=q('#c10l1-correo');co.className='c10l1-correo'+(borrador?' hay':'');co.textContent=borrador?'Borrador para andres.molina@ejemplo.com con el informe adjunto · sin enviar. Daniela lo revisa y lo envía ella.':'Sin borradores ni envíos.';
+    const cp=q('#c10l1-cps');cp.innerHTML='';
+    if(!cps.length)cp.appendChild(el('span','c10l1-rot','todavía ninguno: se crean al aprobar un cambio'));
+    cps.forEach((x,i)=>{const b=el('button',null,'P'+i);b.type='button';b.title='Volver a antes de «'+x.t+'»';b.setAttribute('aria-label','Volver al punto de control P'+i+', antes de '+x.t);b.addEventListener('click',()=>pintar(volver(i)));cp.appendChild(b);});
+    const lg=q('#c10l1-log');lg.innerHTML='';
+    if(!log.length)lg.appendChild(el('li',null,'Aún no hay acciones.'));
+    log.forEach(([c,t])=>lg.appendChild(el('li',c,t)));lg.scrollTop=lg.scrollHeight;
+    const malas=reglas().filter(r=>r[0]==='no').length;
+    let t=msg;
+    if(!t){
+      if(cola.length===CH.length)t='Mira la diferencia: en rojo lo que sale, en verde lo que entra. Aprueba lo que respeta las reglas y el pedido de Andrés; rechaza lo demás.';
+      else if(!cola.length&&malas===0)t='El informe cumple las reglas'+(reglas()[2][0]===''?' y tiene la tabla por zona':'')+'. Lo irreversible quedó en borrador para que Daniela lo envíe. Así se ve «borrador primero».';
+      else if(!cola.length)t='El informe rompe '+malas+(malas===1?' regla':' reglas')+'. Vuelve al punto de control anterior al primer cambio malo: lo bueno que vino después se vuelve a proponer.';
+      else t=malas?'Ojo: el documento ya rompe una regla. Puedes seguir y volver a un punto de control al final.':'Sigue con la próxima propuesta.';
+    }
+    q('#c10l1-out').textContent=t;
+  }
+  q('#c10l1-si').addEventListener('click',()=>pintar(aprobar()));
+  q('#c10l1-no').addEventListener('click',()=>{rechazar();pintar('');});
+  q('#c10l1-todo').addEventListener('click',()=>{let m='';while(cola.length){const r=aprobar(true);if(r)m=r;}const malas=reglas().filter(r=>r[0]==='no').length;pintar('Aprobaste todo sin leer: el informe rompe '+malas+' reglas (un cliente con nombre y los estados mezclados). El envío no salió porque lo bloqueó el gancho. Ahora usa los puntos de control para arreglarlo.');});
+  q('#c10l1-reset').addEventListener('click',reiniciar);
+  reiniciar();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cómo trabaja por dentro · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="como-trabaja">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 02 DE 13</span><h1>Cómo trabaja un agente, sin código</h1><p class="lede">El lunes le contaste al agente que Raúl no tiene vehículo el jueves. El martes le preguntas por Raúl y no tiene idea. No es descuido: el modelo nunca recuerda nada. Todo lo que sabe en cada vuelta es lo que el programa le pone delante.</p></header>
+<section><h2>El contexto: todo lo que el modelo ve en cada vuelta</h2><div class="prose"><p>Martes, 8:15. El lunes, Daniela trabajó una hora con su agente: armaron el informe de la semana 47, revisaron el correo y le contó que Raúl no tendrá vehículo el jueves. Hoy abre una conversación nueva y escribe: «¿Qué hacemos con las visitas de Raúl?». El agente responde: «¿Quién es Raúl? No tengo información sobre sus visitas. ¿Me das más detalles?».</p><p>Para entender por qué, hay que mirar qué recibe el modelo cada vez que trabaja. En el capítulo 1 viste que el agente avanza por vueltas: en cada una, el arnés le pasa al modelo todo lo que necesita y el modelo decide el paso siguiente. Ese paquete que el modelo recibe en cada vuelta se llama <b>contexto</b> (<i>context</i>). Y aquí está la regla que explica casi todo lo que te va a sorprender de un agente: el modelo no ve nada más que su contexto.</p></div><div class="analogia"><b>Imagínalo así</b><p>Imagina a un experto que trabaja en una sala sin ventanas y sin archivador. Cada vez que necesitas algo, le pasas por debajo de la puerta una caja con todos los papeles del caso: tus notas, lo que él respondió antes, las copias de los documentos que pidió. Él lee la caja entera, escribe su respuesta y te la devuelve con la caja. No se queda con nada. Si mañana le pasas una caja nueva sin los papeles de ayer, para él el caso empieza de cero. El contexto es esa caja.</p></div><div class="prose"><p>¿Qué hay en la caja? En un agente personal, el contexto de cada vuelta se arma con varias capas, y cada una corresponde a una pieza que vas a configurar en el curso:</p><ol class="steps"><li><span><b>Las instrucciones del sistema</b> (<i>system prompt</i>): el texto que escribió el fabricante del agente para explicarle al modelo cómo usar sus herramientas, cómo hablar y qué cuidar. No lo ves, pero siempre está.</span></li><li><span><b>Tus instrucciones permanentes</b>: el archivo donde dices quién eres y cómo trabajas. El agente de Daniela todavía no lo tiene; llega en el capítulo 4.</span></li><li><span><b>Las descripciones de las herramientas</b>: el nombre y la explicación de cada herramienta disponible (capítulo 5). Cuantas más herramientas, más espacio ocupan.</span></li><li><span><b>La memoria cargada</b>: lo que el agente guardó de otras sesiones y decide traer (capítulo 6).</span></li><li><span><b>El historial de la sesión</b>: tus mensajes y las respuestas del agente desde que empezó la conversación.</span></li><li><span><b>Los resultados de las herramientas</b>: todo lo que el agente leyó o buscó. Casi siempre es la capa más grande.</span></li><li><span><b>Tu pedido actual.</b></span></li></ol></div><figure class="fig fig-capas" id="02-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" style="min-width:700px" role="img" aria-label="Capas del contexto en la vuelta 4 del informe, con su tamaño en tokens: instrucciones del sistema 4.000, instrucciones permanentes 0, descripciones de herramientas 3.000, memoria 0, historial 1.200, resultados de herramientas 2.300 y pedido actual 40; en total 10.540 tokens, que el arnés vuelve a enviar en cada vuelta.">
+  <defs><marker id="d02a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker></defs>
+  <text x="20" y="41" class="t t-b">Instrucciones del sistema</text>
+  <text x="20" y="57" class="t t-s t-m">las escribe el fabricante</text>
+  <rect x="290" y="30" width="470.0" height="30" rx="6" class="d-inet"/>
+  <text x="880" y="50" class="t t-b t-mono" text-anchor="end">4.000</text>
+  <text x="20" y="87" class="t t-b">Instrucciones permanentes</text>
+  <text x="20" y="103" class="t t-s t-m">quién es Daniela</text>
+  <rect x="290" y="76" width="470" height="30" rx="6" class="c-apl" style="fill:none;stroke-dasharray:5 4"/>
+  <text x="302" y="96" class="t t-s t-m">vacía: llega en el cap. 4</text>
+  <text x="880" y="96" class="t t-b t-mono" text-anchor="end">0</text>
+  <text x="20" y="133" class="t t-b">Descripciones de herramientas</text>
+  <text x="20" y="149" class="t t-s t-m">5 herramientas</text>
+  <rect x="290" y="122" width="352.5" height="30" rx="6" class="c-red"/>
+  <text x="880" y="142" class="t t-b t-mono" text-anchor="end">3.000</text>
+  <text x="20" y="179" class="t t-b">Memoria cargada</text>
+  <text x="20" y="195" class="t t-s t-m">lo aprendido antes</text>
+  <rect x="290" y="168" width="470" height="30" rx="6" class="c-enl" style="fill:none;stroke-dasharray:5 4"/>
+  <text x="302" y="188" class="t t-s t-m">vacía: llega en el cap. 6</text>
+  <text x="880" y="188" class="t t-b t-mono" text-anchor="end">0</text>
+  <text x="20" y="225" class="t t-b">Historial de la sesión</text>
+  <text x="20" y="241" class="t t-s t-m">mensajes de Daniela y del agente</text>
+  <rect x="290" y="214" width="141.0" height="30" rx="6" class="caja"/>
+  <text x="880" y="234" class="t t-b t-mono" text-anchor="end">1.200</text>
+  <text x="20" y="271" class="t t-b">Resultados de herramientas</text>
+  <text x="20" y="287" class="t t-s t-m">carpeta, planilla y borrador</text>
+  <rect x="290" y="260" width="270.2" height="30" rx="6" class="d-casa"/>
+  <text x="880" y="280" class="t t-b t-mono" text-anchor="end">2.300</text>
+  <text x="20" y="317" class="t t-b">Pedido actual</text>
+  <text x="20" y="333" class="t t-s t-m">«prepara el informe…»</text>
+  <rect x="290" y="306" width="6.0" height="30" rx="6" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="880" y="326" class="t t-b t-mono" text-anchor="end">40</text>
+  <line x1="20" y1="354" x2="880" y2="354" class="ln"/>
+  <text x="20" y="376" class="t t-b">Total de la vuelta 4</text>
+  <text x="880" y="376" class="t t-b t-mono" text-anchor="end">10.540 tokens</text>
+  <line x1="290" y1="402" x2="730" y2="402" class="ln" style="stroke-width:2" marker-end="url(#d02a-n)"/>
+  <text x="290" y="422" class="t t-s">en cada vuelta el arnés vuelve a enviar el paquete completo al modelo</text>
+</svg></div><figcaption><b>El contexto por dentro: lo que el modelo recibe en la vuelta 4 del informe.</b> Cada franja es una capa del contexto, con el color de la pieza que la controla: instrucciones del sistema (gris), instrucciones permanentes (magenta, vacía por ahora), descripciones de herramientas (azul), memoria (verde, vacía por ahora), historial de la sesión, resultados de herramientas (verde azulado) y el pedido de Daniela (rojo). El ancho de cada franja es proporcional a los tokens que ocupa; a la derecha, la cifra. La flecha de abajo recuerda que en cada vuelta el arnés vuelve a enviar todo el paquete.</figcaption></figure><div class="prose"><p>Fíjate en las proporciones. El pedido de Daniela es una línea. Lo que llena el contexto son las instrucciones que nadie ve y, sobre todo, lo que el agente lee. Una planilla de diez filas ocupa poco; un acta de doce páginas o un hilo de cuarenta correos ocupan mucho.</p></div></section>
+<section><h2>La ventana de contexto y qué pasa cuando se llena</h2><div class="prose"><p>La caja tiene un tamaño máximo. Se llama <b>ventana de contexto</b> (<i>context window</i>) y se mide en <b>tokens</b> (<i>tokens</i>), los pedazos de palabra con los que el modelo lee y escribe; qué es exactamente un token y cómo se cortan las palabras está en <a href="https://aaramirez.github.io/modelos-de-ia/temario.html" target="_blank" rel="noopener">Modelos de IA</a>. Para trabajar alcanza con una regla práctica: una página de texto en español ronda los 700 tokens. A noviembre de 2026, las ventanas de los modelos que usan los agentes van de unos cien mil tokens a más de un millón, según el modelo y el plan.</p><p>Parece muchísimo, y para una conversación lo es. Pero un agente no conversa: lee. Cada archivo abierto, cada búsqueda y cada página web visitada entra en el contexto y se queda ahí, vuelta tras vuelta. En una tarea larga la ventana se llena, y además la calidad suele bajar antes de llegar al tope: con la caja muy llena, al modelo le cuesta más encontrar el papel importante.</p><p>Cuando la ventana se llena, el programa tiene tres salidas:</p><ul><li><b>Detenerse</b> con un aviso de que la conversación es demasiado larga.</li><li><b>Recortar</b> lo más viejo, sin avisarte, y seguir.</li><li><b>Compactar</b>: resumir lo viejo y seguir con el resumen. Es lo que hacen hoy la mayoría de los agentes, y lo verás en una sección propia.</li></ul></div><div class="lab" id="02-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>La ventana que se llena</h3></div><p class="hint">Empiezas con una ventana de juguete de 40.000 tokens que ya trae las instrucciones del sistema, las herramientas y un primer pedido de Daniela. Agrega archivos y mensajes con los botones: cada uno es una vuelta más. Mira cómo crece la barra, cuántos tokens se envían en total y qué pasa cerca del límite. Después de una compactación, hazle al agente las cuatro preguntas de abajo y mira qué recuerda y qué olvidó. Prueba también con la compactación automática apagada.</p><style>
+[id="02-lab-1"] .c2l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="02-lab-1"] .c2l1-barra{position:relative;display:flex;height:42px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper)}
+[id="02-lab-1"] .c2l1-barra i{display:block;height:100%;border-right:1px solid var(--card);transition:width .3s ease;min-width:2px}
+[id="02-lab-1"] .c2l1-aviso{position:absolute;top:-4px;bottom:-4px;left:85%;border-left:2px dashed var(--warm)}
+[id="02-lab-1"] .c2l1-escala{display:flex;justify-content:space-between;font:500 .72rem var(--f-mono);color:var(--muted);margin-top:3px}
+[id="02-lab-1"] .c2l1-items{display:flex;flex-wrap:wrap;gap:5px}
+[id="02-lab-1"] .c2l1-items span{font:500 .76rem var(--f-display);padding:3px 8px;border-radius:5px;border:1px solid var(--line);border-left:5px solid var(--cc);background:var(--card)}
+[id="02-lab-1"] .c2l1-items span.res{border-style:dashed;border-left-style:solid;background:var(--mark)}
+[id="02-lab-1"] .c2l1-items span small{font-family:var(--f-mono);color:var(--muted);margin-left:4px}
+[id="02-lab-1"] .c2l1-resp{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 12px;font:400 .92rem/1.45 var(--f-body);min-height:3em}
+[id="02-lab-1"] .c2l1-resp b{font-family:var(--f-display)}
+[id="02-lab-1"] .c2l1-resp .si{color:var(--good)}
+[id="02-lab-1"] .c2l1-resp .no{color:var(--warm)}
+@media (prefers-reduced-motion: reduce){[id="02-lab-1"] .c2l1-barra i{transition:none}}
+</style>
+<div>
+  <p class="c2l1-rot">Ventana de contexto (de juguete: 40.000 tokens)</p>
+  <div class="c2l1-barra" id="c2l1-barra" role="img" aria-label="Ocupación de la ventana de contexto"><span class="c2l1-aviso" title="Aviso al 85 %"></span></div>
+  <div class="c2l1-escala"><span>0</span><span>10 mil</span><span>20 mil</span><span>30 mil</span><span>40 mil</span></div>
+</div>
+<div class="legend" id="c2l1-ley"></div>
+<div>
+  <p class="c2l1-rot" id="c2l1-ra">Agrega una vuelta</p>
+  <div class="btns" role="group" aria-labelledby="c2l1-ra" id="c2l1-add"></div>
+</div>
+<div class="btns">
+  <button type="button" id="c2l1-auto" aria-pressed="true">Compactación automática al 85 %</button>
+  <button type="button" id="c2l1-comp">Compactar ahora</button>
+  <button type="button" id="c2l1-reset">Empezar de nuevo</button>
+</div>
+<div>
+  <p class="c2l1-rot">Qué hay hoy en el contexto</p>
+  <div class="c2l1-items" id="c2l1-items" aria-live="polite"></div>
+</div>
+<div>
+  <p class="c2l1-rot" id="c2l1-rq">Pregúntale al agente</p>
+  <div class="btns" role="group" aria-labelledby="c2l1-rq" id="c2l1-preg"></div>
+</div>
+<div class="c2l1-resp" id="c2l1-resp" aria-live="polite">Elige una pregunta para ver si el agente todavía tiene ese dato en su contexto.</div>
+<div class="readout texto" id="c2l1-out" aria-live="polite"></div></div><div class="prose"><p>Lo más llamativo del laboratorio no es la barra que se llena, sino lo que se pierde al compactar: la regla que Daniela dijo al principio («no pongas nombres de clientes») y un acuerdo enterrado en el acta. Los totales de visitas sobreviven porque el resumen los consideró importantes. Lo que el resumen decide guardar no lo decides tú.</p><p>Para tener una idea de cuánto ocupan tus propios archivos, mide la carpeta de prueba.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>¿Cuánto pesa tu carpeta en tokens?</h3></div><p>Vas a contar los caracteres de los archivos de <code>agente-prueba</code>, la carpeta que armaste en el capítulo 1, y convertirlos en una estimación de tokens. Son comandos de solo lectura.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-ChildItem -Recurse -File | ForEach-Object { "{0,-24} {1,6} caracteres" -f $_.Name, (Get-Content -Raw -Encoding utf8 $_.FullName).Length }</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-ChildItem -Recurse -File | Get-Content -Raw -Encoding utf8 | Measure-Object -Character).Characters</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>wc -m visitas/* correo/* agenda/*</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Anota los caracteres de cada archivo y el total.</span></li><li><span>Divide el total por 4: es una estimación gruesa de los tokens que ocuparía la carpeta completa en el contexto.</span></li><li><span>Si quieres una cifra más fina, abre <a href="https://tiktokenizer.vercel.app/" target="_blank" rel="noopener">tiktokenizer.vercel.app</a>, un contador de tokens público y gratuito, y pega el contenido de <code>visitas-semana-47.csv</code>. Compara su cifra con tu estimación.</span></li><li><span>Calcula cuántas carpetas como esta cabrían en una ventana de 200.000 tokens.</span></li></ol><p><b>Qué observar:</b> la carpeta entera ocupa unos pocos cientos de tokens: cabría cientos de veces en una ventana grande. Lo que llena el contexto en la vida real no son cuatro archivos chicos, sino un acta de doce páginas (unos 9.000 tokens), una carpeta con doscientos PDF o una página web completa. El contador exacto cambia según el tokenizador de cada modelo; la división por 4 sirve solo para órdenes de magnitud.</p></div></section>
+<section><h2>El modelo no tiene memoria: la sesión la guarda el programa</h2><div class="prose"><p>Volvamos al martes de Daniela. El modelo que respondió «¿quién es Raúl?» es el mismo que el lunes escuchó lo del vehículo. No lo olvidó: nunca lo supo de forma duradera. Un modelo es <b>sin estado</b> (<i>stateless</i>): cada llamada empieza en blanco, y lo único que sabe es lo que viene en el contexto de esa llamada.</p><p>¿Por qué entonces el lunes, a mitad de la conversación, sí se acordaba de lo que Daniela dijo veinte minutos antes? Porque el arnés le volvía a enviar todo el historial en cada vuelta. Quien recuerda es el programa. El registro que el programa guarda de una conversación (tus mensajes, las respuestas, las herramientas usadas y sus resultados) se llama <b>sesión</b> (<i>session</i>). Algunos agentes la guardan como un archivo en tu disco; otros, en los servidores del proveedor.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en alguien que cada mañana despierta sin recuerdos del día anterior y, antes de empezar, lee el diario que dejó escrito la noche anterior. Si el diario está completo, actúa como si recordara. Si alguien le da un cuaderno en blanco, empieza de cero, por inteligente que sea. El modelo es esa persona; la sesión y los archivos de memoria son el diario; y el arnés es quien decide qué cuaderno le entrega cada mañana.</p></div><div class="prose"><p>Cuando abres una conversación nueva, el arnés arranca una sesión nueva: el contexto lleva las instrucciones del sistema, las herramientas y, si existen, tus instrucciones permanentes y la memoria. Nada del historial de ayer. Muchos agentes permiten <b>reanudar</b> (<i>resume</i>) una sesión anterior: el programa vuelve a cargar el historial guardado y lo envía de nuevo. Por ejemplo, a noviembre de 2026, Claude Code y Codex permiten retomar la última sesión desde la terminal, y los asistentes de chat guardan cada conversación en una lista lateral a la que puedes volver.</p></div><figure class="fig fig-flujo" id="02-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 580" style="min-width:720px" role="img" aria-label="Diagrama de secuencia de dos sesiones. El lunes, Daniela cuenta que Raúl no tiene vehículo; el arnés envía el historial al modelo, recibe la respuesta y guarda la conversación en el archivo de la sesión. El martes, en una sesión nueva, el arnés envía solo instrucciones y pedido y el modelo no sabe quién es Raúl. En una sesión reanudada, el arnés lee el archivo, reenvía el historial y el modelo responde bien.">
+  <defs>
+    <marker id="d02b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d02b-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d02b-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-casa"/></marker>
+  </defs>
+  <rect x="10" y="14" width="120" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="70" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="70" y="54" class="t t-s t-m" text-anchor="middle">pregunta</text>
+  <rect x="230" y="14" width="120" height="52" rx="10" class="caja"/><text x="290" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="290" y="54" class="t t-s t-m" text-anchor="middle">arma el contexto</text>
+  <rect x="460" y="14" width="120" height="52" rx="10" class="d-inet"/><text x="520" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="520" y="54" class="t t-s t-m" text-anchor="middle">sin estado</text>
+  <rect x="670" y="14" width="140" height="52" rx="10" class="d-casa"/><text x="740" y="36" class="t t-b" text-anchor="middle">Archivo de sesión</text><text x="740" y="54" class="t t-s t-m" text-anchor="middle">en el disco</text>
+  <line x1="70" y1="66" x2="70" y2="510" class="vida"/>
+  <line x1="290" y1="66" x2="290" y2="510" class="vida"/>
+  <line x1="520" y1="66" x2="520" y2="510" class="vida"/>
+  <line x1="740" y1="66" x2="740" y2="510" class="vida"/>
+
+  <g class="t t-s">
+    
+    <line x1="70" y1="104" x2="287" y2="104" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d02b-w)"/>
+    <text x="78" y="97">① «Raúl no tiene vehículo el jueves»</text>
+    <line x1="290" y1="140" x2="517" y2="140" class="ln" style="stroke-width:2" marker-end="url(#d02b-n)"/>
+    <text x="298" y="133">② historial + lo de Raúl</text>
+    <line x1="520" y1="176" x2="293" y2="176" class="ln" style="stroke-width:2" marker-end="url(#d02b-n)"/>
+    <text x="300" y="169">③ «Entendido, lo tengo en cuenta»</text>
+    <line x1="290" y1="212" x2="737" y2="212" class="ln" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d02b-c)"/>
+    <text x="545" y="205">④ guarda la conversación</text>
+
+    <line x1="20" y1="236" x2="810" y2="236" class="ln ln-d"/>
+
+    
+    <line x1="70" y1="270" x2="287" y2="270" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d02b-w)"/>
+    <text x="78" y="263">⑤ «¿Qué hacemos con Raúl?»</text>
+    <line x1="290" y1="306" x2="517" y2="306" class="ln" style="stroke-width:2" marker-end="url(#d02b-n)"/>
+    <text x="298" y="299">⑥ solo instrucciones + pedido</text>
+    <line x1="520" y1="342" x2="293" y2="342" class="ln" style="stroke:var(--warm);stroke-width:2;stroke-dasharray:6 4" marker-end="url(#d02b-w)"/>
+    <text x="300" y="335">⑦ «¿Quién es Raúl?»</text>
+
+    <line x1="20" y1="366" x2="810" y2="366" class="ln ln-d"/>
+
+    
+    <line x1="740" y1="400" x2="293" y2="400" class="ln" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d02b-c)"/>
+    <text x="545" y="393">⑧ el historial del lunes</text>
+    <line x1="290" y1="436" x2="517" y2="436" class="ln" style="stroke-width:2" marker-end="url(#d02b-n)"/>
+    <text x="298" y="429">⑨ historial del lunes + pedido</text>
+    <line x1="520" y1="472" x2="293" y2="472" class="ln" style="stroke-width:2" marker-end="url(#d02b-n)"/>
+    <text x="300" y="465">⑩ «Hay que mover sus visitas»</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M832 86v136" class="ln" style="stroke:var(--warm);stroke-width:3"/><text x="842" y="150" class="k-warm">LUNES</text><text x="842" y="165" class="t-m">una sesión</text>
+    <path d="M832 252v100" class="ln" style="stroke-width:3"/><text x="842" y="297">MARTES</text><text x="842" y="312" class="t-m">sesión nueva</text>
+    <path d="M832 382v100" class="ln s-enl" style="stroke-width:3"/><text x="842" y="427" class="k-enl">MARTES</text><text x="842" y="442" class="t-m">reanudada</text>
+  </g>
+  <rect x="10" y="526" width="900" height="44" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="460" y="553" class="t t-s" text-anchor="middle">El modelo es el mismo en las tres partes. Lo único que cambia es lo que el arnés le envía.</text>
+</svg></div><figcaption><b>Flujo de dos sesiones: quién recuerda qué.</b> Los participantes son Daniela, el arnés, el modelo y el archivo de la sesión en el disco. Arriba, la sesión del lunes: Daniela cuenta lo de Raúl (①), el arnés lo envía al modelo junto con todo el historial (②), recibe la respuesta (③) y guarda la conversación en el archivo de la sesión (④). Abajo, el martes, hay dos caminos. Sesión nueva: el arnés envía solo las instrucciones y el pedido (⑥), y el modelo no sabe quién es Raúl (⑦). Sesión reanudada: el arnés lee el archivo (⑧), reenvía el historial completo (⑨) y el modelo responde bien (⑩). El modelo nunca guardó nada: lo que cambió es lo que el arnés le envió.</figcaption></figure><div class="lab" id="02-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Dos sesiones sin memoria</h3></div><p class="hint">A la izquierda está la sesión del lunes, donde Daniela le contó tres cosas al agente. A la derecha empieza la sesión del martes. Elige qué carga el programa al empezar (reanudar el lunes, un archivo de instrucciones permanentes, un archivo de memoria) y hazle las tres preguntas. Mira qué sabe el agente, de dónde lo sacó y cuántos tokens cuesta cada forma de recordar.</p><style>
+[id="02-lab-2"] .c2l2-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="02-lab-2"] .c2l2-grid{grid-template-columns:minmax(0,1fr)}}
+[id="02-lab-2"] .c2l2-col{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:8px;min-width:0}
+[id="02-lab-2"] .c2l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="02-lab-2"] .c2l2-m{padding:7px 10px;border-radius:10px;font:400 .88rem/1.4 var(--f-body);max-width:92%;overflow-wrap:anywhere}
+[id="02-lab-2"] .c2l2-m small{display:block;font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-bottom:2px}
+[id="02-lab-2"] .c2l2-d{background:var(--warm-soft);border:1px solid var(--warm);justify-self:end}
+[id="02-lab-2"] .c2l2-a{background:var(--paper);border:1px solid var(--line);justify-self:start}
+[id="02-lab-2"] .c2l2-nota{font:400 .8rem/1.4 var(--f-body);color:var(--muted);margin:0}
+[id="02-lab-2"] .c2l2-carga button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border-left:5px solid var(--cc);flex:1 1 180px}
+[id="02-lab-2"] .c2l2-carga button small{font:500 .72rem var(--f-mono);opacity:.85}
+[id="02-lab-2"] .c2l2-ctx{list-style:none;margin:0;padding:0;display:grid;gap:3px;font:400 .8rem/1.35 var(--f-mono)}
+[id="02-lab-2"] .c2l2-ctx li{display:flex;justify-content:space-between;gap:8px;padding:3px 7px;border-left:4px solid var(--cc);background:var(--paper);border-radius:0 5px 5px 0}
+[id="02-lab-2"] .c2l2-ctx li b{font-weight:600}
+[id="02-lab-2"] .c2l2-chat{display:grid;gap:6px;min-height:4em}
+[id="02-lab-2"] .c2l2-fuente{font:600 .72rem var(--f-display);color:var(--good)}
+[id="02-lab-2"] .c2l2-fuente.no{color:var(--warm)}
+</style>
+<div class="c2l2-grid">
+  <div class="c2l2-col">
+    <p class="c2l2-rot">Sesión del lunes (ya cerrada)</p>
+    <div class="c2l2-m c2l2-d"><small>Daniela</small>Mi jefe es Andrés Molina; el informe va para él.</div>
+    <div class="c2l2-m c2l2-d"><small>Daniela</small>Me gusta el informe en una tabla, con los totales al final.</div>
+    <div class="c2l2-m c2l2-d"><small>Daniela</small>Ojo: Raúl no tiene vehículo el jueves 26.</div>
+    <div class="c2l2-m c2l2-a"><small>Agente</small>Entendido, lo tengo en cuenta.</div>
+    <p class="c2l2-nota">El programa guardó esta sesión en un archivo: los mensajes y todo lo que el agente leyó ese día (la planilla, 20 correos, el acta). Ocupa unos 18.000 tokens.</p>
+  </div>
+  <div class="c2l2-col">
+    <p class="c2l2-rot" id="c2l2-rc">Sesión del martes: qué carga el programa al empezar</p>
+    <div class="btns c2l2-carga" role="group" aria-labelledby="c2l2-rc" id="c2l2-carga"></div>
+    <p class="c2l2-rot">Contexto con el que empieza</p>
+    <ul class="c2l2-ctx" id="c2l2-ctx"></ul>
+    <p class="c2l2-rot" id="c2l2-rp">Pregúntale</p>
+    <div class="btns" role="group" aria-labelledby="c2l2-rp" id="c2l2-preg"></div>
+    <div class="c2l2-chat" id="c2l2-chat" aria-live="polite"></div>
+  </div>
+</div>
+<div class="readout texto" id="c2l2-out" aria-live="polite"></div></div><div class="prose"><p>El laboratorio deja ver una diferencia que vuelve en todo el curso. Reanudar la sesión trae todo, incluidos los resultados de herramientas que ya no sirven, y cuesta muchos tokens. Un archivo de instrucciones o de memoria trae solo lo que importa y cuesta poco. La regla práctica: <b>reanuda para seguir la misma tarea; guarda en un archivo lo que debe valer para todas</b>. Lo estable (quién es tu jefe, cómo quieres el informe) va en las instrucciones permanentes del capítulo 4; lo que el agente va aprendiendo (lo de Raúl), en la memoria del capítulo 6.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Dos conversaciones, un modelo</h3></div><p>Usa cualquier asistente de IA gratuito en el navegador; cualquiera sirve. No uses datos reales: el nombre y el dato son inventados.</p><ol class="steps"><li><span>Abre una conversación nueva y escribe: «Me llamo Daniela y coordino visitas técnicas. El jueves 26 Raúl no tiene vehículo». Espera la respuesta.</span></li><li><span>En esa misma conversación, pregunta: «¿Qué pasa el jueves con Raúl?». Anota la respuesta.</span></li><li><span>Abre una conversación nueva (botón «Nuevo chat» o similar) y pregunta lo mismo: «¿Qué pasa el jueves con Raúl?».</span></li><li><span>Si tu asistente tiene una opción de «memoria» o «personalización» en su configuración, mira si está activada y qué dice que recuerda.</span></li><li><span>Al terminar, borra las dos conversaciones de prueba.</span></li></ol><p><b>Qué observar:</b> en la misma conversación responde bien, porque el programa reenvía el historial. En la conversación nueva no lo sabe, salvo que la función de memoria del asistente haya guardado el dato. Si lo sabe, fíjate en que no lo recordó el modelo: el programa guardó una nota y la puso en el contexto de la conversación nueva. Esa es la memoria del capítulo 6, y por eso conviene saber dónde se revisa y cómo se borra.</p></div></section>
+<section><h2>Compactar: resumir para seguir trabajando</h2><div class="prose"><p>Cuando una sesión larga se acerca al límite de la ventana, la mayoría de los agentes hacen lo mismo: le piden al modelo que resuma la parte vieja de la conversación, reemplazan esa parte por el resumen y siguen trabajando. Se llama <b>compactación</b> (<i>compaction</i>). Puede ser automática, cerca del tope, o manual: algunos agentes de terminal tienen un comando para compactar cuando tú lo decidas (en Claude Code y en Codex, a noviembre de 2026, se llama <code>/compact</code>).</p></div><div class="analogia"><b>Imagínalo así</b><p>Es lo que hace un buen secretario de actas en una reunión de tres horas. No transcribe todo: a la hora deja un resumen de lo decidido y tira los borradores. El resumen permite seguir sin perder el hilo. Pero si en el minuto cinco alguien dijo «ojo, esto no se comparte fuera del equipo» y el secretario no lo anotó, a las tres horas nadie lo recuerda.</p></div><figure class="fig fig-esquema" id="02-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" style="min-width:700px" role="img" aria-label="Dos barras que representan la ventana de contexto. Antes de compactar, la ventana está casi llena con las capas fijas y el historial de muchas vueltas. Después, las capas fijas siguen, lo viejo se reemplazó por un resumen corto y quedan completas las dos últimas vueltas. A la derecha, lo que sobrevive al resumen y lo que se pierde.">
+  <defs>
+    <marker id="d02c-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <text x="620" y="30" class="t t-xs t-b t-m" text-anchor="end">ANTES: LA VENTANA AL 93 %</text>
+  <rect x="20" y="42" width="600" height="46" rx="6" class="caja"/>
+  <rect x="20" y="42" width="60" height="46" class="d-inet"/>
+  <rect x="80" y="42" width="45" height="46" class="c-red"/>
+  <rect x="125" y="42" width="8" height="46" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <rect x="133" y="42" width="30" height="46" class="d-casa"/>
+  <rect x="163" y="42" width="18" height="46" class="caja"/>
+  <rect x="181" y="42" width="170" height="46" class="d-casa"/>
+  <rect x="351" y="42" width="18" height="46" class="caja"/>
+  <rect x="369" y="42" width="60" height="46" class="d-casa"/>
+  <rect x="429" y="42" width="18" height="46" class="caja"/>
+  <rect x="447" y="42" width="70" height="46" class="d-casa"/>
+  <rect x="517" y="42" width="18" height="46" class="caja"/>
+  <rect x="535" y="42" width="24" height="46" class="d-casa"/>
+  <rect x="559" y="42" width="18" height="46" class="caja"/>
+  <line x1="530" y1="34" x2="530" y2="96" class="ln" style="stroke:var(--warm);stroke-width:2;stroke-dasharray:4 3"/>
+  <text x="530" y="110" class="t t-xs t-b k-warm" text-anchor="middle">AVISO AL 85 %</text>
+  <text x="50" y="110" class="t t-xs t-m" text-anchor="middle">sistema</text>
+  <text x="102" y="110" class="t t-xs t-m" text-anchor="middle">herram.</text>
+  <text x="266" y="110" class="t t-xs t-m" text-anchor="middle">acta de 12 páginas</text>
+  <text x="129" y="26" class="t t-xs k-warm" text-anchor="middle">regla</text>
+  <line x1="129" y1="30" x2="129" y2="41" class="ln" style="stroke:var(--warm)"/>
+
+  <line x1="320" y1="122" x2="320" y2="160" class="ln" style="stroke-width:2" marker-end="url(#d02c-n)"/>
+  <text x="332" y="146" class="t t-s">el modelo resume todo lo viejo</text>
+
+  
+  <text x="620" y="182" class="t t-xs t-b t-m" text-anchor="end">DESPUÉS: LA VENTANA AL 35 %</text>
+  <rect x="20" y="194" width="600" height="46" rx="6" class="caja"/>
+  <rect x="20" y="194" width="60" height="46" class="d-inet"/>
+  <rect x="80" y="194" width="45" height="46" class="c-red"/>
+  <rect x="125" y="194" width="62" height="46" rx="0" style="fill:var(--mark);stroke:var(--accent);stroke-dasharray:4 3"/>
+  <rect x="187" y="194" width="24" height="46" class="d-casa"/>
+  <rect x="211" y="194" width="18" height="46" class="caja"/>
+  <text x="50" y="262" class="t t-xs t-m" text-anchor="middle">sistema</text>
+  <text x="102" y="262" class="t t-xs t-m" text-anchor="middle">herram.</text>
+  <text x="156" y="262" class="t t-xs t-b" text-anchor="middle">resumen</text>
+  <text x="208" y="282" class="t t-xs t-m" text-anchor="middle">últimas 2 vueltas</text>
+  <line x1="208" y1="270" x2="208" y2="244" class="ln"/>
+  <text x="420" y="222" class="t t-s t-m" text-anchor="middle">espacio libre para seguir</text>
+
+  
+  <rect x="650" y="20" width="235" height="140" rx="8" class="c-enl"/>
+  <text x="664" y="42" class="t t-xs t-b k-enl">SOBREVIVE AL RESUMEN</text>
+  <text x="664" y="66" class="t t-s">· El encargo: informe semana 47</text>
+  <text x="664" y="88" class="t t-s">· 7 hechas, 2 reprogramadas,</text>
+  <text x="676" y="104" class="t t-s">1 pendiente</text>
+  <text x="664" y="126" class="t t-s">· Raúl sin vehículo el jueves 26</text>
+  <rect x="650" y="172" width="235" height="140" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="664" y="194" class="t t-xs t-b k-warm">SE PIERDE</text>
+  <text x="664" y="218" class="t t-s">· La regla «sin nombres de</text>
+  <text x="676" y="234" class="t t-s">clientes», dicha una vez</text>
+  <text x="664" y="256" class="t t-s">· El acuerdo sobre el sábado,</text>
+  <text x="676" y="272" class="t t-s">en la página 9 del acta</text>
+  <text x="664" y="294" class="t t-s">· El texto exacto de cada correo</text>
+  <text x="20" y="316" class="t t-s">Lo que el resumen guarda lo decide el modelo. Lo que debe valer siempre va en un archivo.</text>
+</svg></div><figcaption><b>Antes y después de compactar.</b> Arriba, la ventana casi llena: las capas fijas (instrucciones, herramientas) a la izquierda y, a continuación, el historial y los resultados de herramientas de muchas vueltas, hasta la línea del límite. Abajo, la misma ventana después de compactar: las capas fijas siguen iguales, todo lo viejo se reemplazó por un resumen corto y solo quedan completas las dos últimas vueltas. A la derecha, lo que sobrevivió al resumen (en verde) y lo que se perdió (en rojo).</figcaption></figure><div class="prose"><p>La compactación tiene tres consecuencias prácticas para quien configura un agente:</p><ul><li><b>Las reglas no van en la conversación.</b> Una instrucción dicha una vez al principio puede no sobrevivir al resumen. Lo que debe valer siempre va en el archivo de instrucciones permanentes, que se vuelve a cargar entero en cada vuelta.</li><li><b>El avance va en archivos.</b> En una tarea larga, pídele al agente que deje el plan y lo que va encontrando en un archivo de la carpeta. Un archivo no se compacta: se vuelve a leer.</li><li><b>Una tarea nueva, una sesión nueva.</b> Si terminaste el informe y ahora vas a ordenar actas, empieza otra sesión. Arrastrar el historial del informe solo ocupa espacio.</li></ul></div><div class="ml"><b>En la práctica</b><p>El lunes, en la primera vuelta, Daniela le pidió al agente que no pusiera nombres de clientes en el informe. Una hora y muchas lecturas después, el agente compactó y en la versión final aparecieron dos nombres. El agente no desobedeció: la regla ya no estaba en su contexto. La solución no fue repetírsela en cada pedido, sino escribirla en el archivo de instrucciones permanentes, que es justo lo que hará en el capítulo 4.</p></div></section>
+<section><h2>Por qué el mismo pedido sale distinto dos veces</h2><div class="prose"><p>Daniela le pide el informe de la semana 47 dos veces, en dos sesiones nuevas, con la misma carpeta. Las dos versiones tienen bien las filas, pero una dice «3 visitas no realizadas» y la otra «2 reprogramadas y 1 pendiente». Ninguna está mal leída: el encargo no decía si «reprogramada» cuenta como no realizada.</p><p>Hay tres razones para que un agente no responda igual dos veces:</p><ul><li><b>El modelo elige con algo de azar.</b> Al escribir, el modelo no toma siempre la palabra más probable: elige entre varias candidatas, con una dosis de azar que regula un ajuste llamado <b>temperatura</b> (<i>temperature</i>). Cómo funciona por dentro está en <a href="https://aaramirez.github.io/modelos-de-ia/temario.html" target="_blank" rel="noopener">Modelos de IA</a>.</li><li><b>Las diferencias se encadenan.</b> En un chat, una palabra distinta es solo una palabra. En un agente, una decisión distinta en la vuelta 1 (leer primero el correo en vez de la planilla) cambia lo que observa, y eso cambia las vueltas siguientes.</li><li><b>El contexto no es el mismo.</b> Cambió un archivo, cambió la fecha, hay una memoria nueva o se compactó en un punto distinto.</li></ul><p>No se trata de eliminar la variación, sino de que no importe. Las herramientas para eso aparecen en el curso: definir en las instrucciones qué significa cada estado (capítulo 4), dar una plantilla fija para el informe (las habilidades del capítulo 8), escribir un criterio de terminado claro (capítulo 9) y, siempre, revisar el resultado en lugar de solo leerlo.</p></div></section>
+<section><h2>El costo y el tiempo de una tarea larga</h2><div class="prose"><p>Ahora puedes entender por qué una tarea larga cuesta más de lo que parece. En cada vuelta el arnés reenvía el contexto completo, que además crece con cada lectura. La vuelta 10 envía todo lo de las vueltas 1 a 9 más lo nuevo. Los proveedores cobran por tokens: los que entran (el contexto) y los que salen (lo que el modelo escribe), y los de salida suelen costar varias veces más.</p><p>Haz la cuenta con números de ejemplo. Una tarea arranca con un contexto de 8.000 tokens y cada vuelta agrega 3.000 (un archivo leído y lo que el agente escribió). Con un precio de ejemplo de US$ 3 por millón de tokens de entrada y US$ 15 por millón de salida:</p><div class="tbl"><table><thead><tr><th>Tarea</th><th>Vueltas</th><th>Tokens de entrada enviados en total</th><th>Costo aproximado</th><th>Tiempo aproximado</th></tr></thead><tbody><tr><td>Corta</td><td>12</td><td>294.000</td><td>US$ 0,95</td><td>1 a 2 minutos</td></tr><tr><td>Larga</td><td>40</td><td>2.660.000</td><td>US$ 8,22</td><td>5 a 8 minutos</td></tr></tbody></table></div><p>La tarea larga tiene algo más de tres veces las vueltas y cuesta más de ocho veces, porque cada vuelta nueva reenvía todo lo anterior. Los precios reales cambian según el modelo y el proveedor, y muchos planes de suscripción no cobran por token sino con un límite de uso por hora o por semana; cómo se comparan es parte del capítulo 3. Pero la forma de la curva es la misma en todos: las tareas largas crecen más rápido que su número de vueltas.</p></div><figure class="fig fig-comparacion" id="02-diagrama-4"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" style="min-width:700px" role="img" aria-label="Gráfico de barras: tokens enviados en cada una de las 12 vueltas de una tarea. Cada barra crece 3.000 tokens: la vuelta 1 envía 8.000 y la vuelta 12 envía 41.000. La suma de las doce barras, 294.000 tokens, es lo que se paga como entrada.">
+  <line x1="62" y1="300.0" x2="646" y2="300.0" class="ln" style="stroke-width:1.4;"/>
+  <text x="58" y="304.0" class="t t-xs t-m" text-anchor="end">0 mil</text>
+  <line x1="62" y1="241.5" x2="646" y2="241.5" class="ln" style="stroke-width:0.6;stroke-dasharray:2 4"/>
+  <text x="58" y="245.5" class="t t-xs t-m" text-anchor="end">10 mil</text>
+  <line x1="62" y1="182.9" x2="646" y2="182.9" class="ln" style="stroke-width:0.6;stroke-dasharray:2 4"/>
+  <text x="58" y="186.9" class="t t-xs t-m" text-anchor="end">20 mil</text>
+  <line x1="62" y1="124.4" x2="646" y2="124.4" class="ln" style="stroke-width:0.6;stroke-dasharray:2 4"/>
+  <text x="58" y="128.4" class="t t-xs t-m" text-anchor="end">30 mil</text>
+  <line x1="62" y1="65.9" x2="646" y2="65.9" class="ln" style="stroke-width:0.6;stroke-dasharray:2 4"/>
+  <text x="58" y="69.9" class="t t-xs t-m" text-anchor="end">40 mil</text>
+  <text x="58" y="30" class="t t-xs t-b t-m" text-anchor="end">TOKENS</text>
+  <rect x="76.0" y="270.7" width="36" height="29.3" class="d-inet"/>
+  <rect x="76.0" y="253.2" width="36" height="17.6" class="d-casa"/>
+  <text x="94.0" y="316" class="t t-s" text-anchor="middle">1</text>
+  <text x="94.0" y="247.2" class="t t-s t-b" text-anchor="middle">8 mil</text>
+  <rect x="124.0" y="253.2" width="36" height="46.8" class="d-inet"/>
+  <rect x="124.0" y="235.6" width="36" height="17.6" class="d-casa"/>
+  <text x="142.0" y="316" class="t t-s" text-anchor="middle">2</text>
+  <rect x="172.0" y="235.6" width="36" height="64.4" class="d-inet"/>
+  <rect x="172.0" y="218.0" width="36" height="17.6" class="d-casa"/>
+  <text x="190.0" y="316" class="t t-s" text-anchor="middle">3</text>
+  <rect x="220.0" y="218.0" width="36" height="82.0" class="d-inet"/>
+  <rect x="220.0" y="200.5" width="36" height="17.6" class="d-casa"/>
+  <text x="238.0" y="316" class="t t-s" text-anchor="middle">4</text>
+  <rect x="268.0" y="200.5" width="36" height="99.5" class="d-inet"/>
+  <rect x="268.0" y="182.9" width="36" height="17.6" class="d-casa"/>
+  <text x="286.0" y="316" class="t t-s" text-anchor="middle">5</text>
+  <rect x="316.0" y="182.9" width="36" height="117.1" class="d-inet"/>
+  <rect x="316.0" y="165.4" width="36" height="17.6" class="d-casa"/>
+  <text x="334.0" y="316" class="t t-s" text-anchor="middle">6</text>
+  <text x="334.0" y="159.4" class="t t-s t-b" text-anchor="middle">23 mil</text>
+  <rect x="364.0" y="165.4" width="36" height="134.6" class="d-inet"/>
+  <rect x="364.0" y="147.8" width="36" height="17.6" class="d-casa"/>
+  <text x="382.0" y="316" class="t t-s" text-anchor="middle">7</text>
+  <rect x="412.0" y="147.8" width="36" height="152.2" class="d-inet"/>
+  <rect x="412.0" y="130.2" width="36" height="17.6" class="d-casa"/>
+  <text x="430.0" y="316" class="t t-s" text-anchor="middle">8</text>
+  <rect x="460.0" y="130.2" width="36" height="169.8" class="d-inet"/>
+  <rect x="460.0" y="112.7" width="36" height="17.6" class="d-casa"/>
+  <text x="478.0" y="316" class="t t-s" text-anchor="middle">9</text>
+  <rect x="508.0" y="112.7" width="36" height="187.3" class="d-inet"/>
+  <rect x="508.0" y="95.1" width="36" height="17.6" class="d-casa"/>
+  <text x="526.0" y="316" class="t t-s" text-anchor="middle">10</text>
+  <rect x="556.0" y="95.1" width="36" height="204.9" class="d-inet"/>
+  <rect x="556.0" y="77.6" width="36" height="17.6" class="d-casa"/>
+  <text x="574.0" y="316" class="t t-s" text-anchor="middle">11</text>
+  <rect x="604.0" y="77.6" width="36" height="222.4" class="d-inet"/>
+  <rect x="604.0" y="60.0" width="36" height="17.6" class="d-casa"/>
+  <text x="622.0" y="316" class="t t-s" text-anchor="middle">12</text>
+  <text x="622.0" y="54.0" class="t t-s t-b" text-anchor="middle">41 mil</text>
+  <text x="358" y="336" class="t t-xs t-b t-m" text-anchor="middle">VUELTA</text>
+  <rect x="680" y="40" width="205" height="62" rx="8" class="caja"/>
+  <text x="692" y="62" class="t t-xs t-b t-m">TOTAL DE ENTRADA, 12 VUELTAS</text>
+  <text x="692" y="88" class="t t-b" style="font-size:20px">294.000 tokens</text>
+  <text x="692" y="126" class="t t-s">≈ US$ 0,88 a US$ 3 por millón</text>
+  <text x="692" y="142" class="t t-s t-m">(precio de ejemplo)</text>
+  <text x="692" y="176" class="t t-s">Con 40 vueltas: 2.660.000</text>
+  <text x="692" y="192" class="t t-s">tokens, unas 9 veces más.</text>
+  <rect x="692" y="226" width="14" height="14" rx="3" class="d-inet"/><text x="712" y="238" class="t t-s">ya venía de antes: se reenvía</text>
+  <rect x="692" y="250" width="14" height="14" rx="3" class="d-casa"/><text x="712" y="262" class="t t-s">nuevo en esta vuelta</text>
+</svg></div><figcaption><b>Lo que se envía en cada vuelta.</b> Cada barra es una vuelta de la tarea corta del ejemplo, de la 1 a la 12. La parte gris es el contexto que ya venía de antes y que se reenvía; la parte verde azulada, lo nuevo de esa vuelta. La barra 12 (41.000 tokens) es más de cinco veces la barra 1 (8.000). A la derecha, el total acumulado: la suma de todas las barras es lo que se paga como entrada.</figcaption></figure><div class="prose"><p>De ahí salen hábitos que ahorran dinero y tiempo sin pensar en precios: dividir una tarea grande en tareas más chicas, cada una en su sesión; pedirle al agente que busque dentro de un archivo largo en vez de leerlo completo; y no conectar herramientas que la tarea no usa, porque sus descripciones también viajan en cada vuelta.</p><p>Lo que te llevas de este capítulo cabe en una frase: <b>lo que no está en el contexto no existe para el agente</b>. El modelo no recuerda, no ve tu carpeta por su cuenta y no sabe lo que dijiste ayer. Todo lo que sabe en cada vuelta es lo que el programa le pone delante. Configurar un agente, de aquí en adelante, es decidir qué entra en esa caja, en qué orden y qué se queda fuera.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué es el contexto y qué capas lo forman en un agente personal?</summary><p>Es todo lo que el modelo recibe en una vuelta: las instrucciones del sistema, las instrucciones permanentes, las descripciones de las herramientas, la memoria cargada, el historial de la sesión, los resultados de las herramientas y el pedido actual.</p></details><details><summary>Si el modelo no tiene memoria, ¿por qué recuerda lo que dijiste hace veinte minutos en la misma conversación?</summary><p>Porque el arnés le reenvía todo el historial de la sesión en cada vuelta. Quien guarda la conversación es el programa, no el modelo.</p></details><details><summary>¿Por qué una regla dicha al principio de una sesión larga puede dejar de cumplirse?</summary><p>Porque al compactar, el resumen puede no incluirla y la regla sale del contexto. Las reglas que deben valer siempre van en el archivo de instrucciones permanentes, que se carga entero en cada vuelta.</p></details><details><summary>¿Cuándo conviene reanudar una sesión y cuándo guardar algo en un archivo?</summary><p>Reanudar sirve para seguir la misma tarea, pero trae todo el historial y cuesta muchos tokens. Lo que debe valer para todas las tareas se guarda en un archivo: instrucciones permanentes para lo estable, memoria para lo aprendido.</p></details><details><summary>Una tarea pasa de 12 a 40 vueltas. ¿Por qué el costo crece más de tres veces?</summary><p>Porque cada vuelta reenvía el contexto completo, que además crece con cada lectura. Las vueltas finales son mucho más caras que las primeras.</p></details><details><summary>El mismo pedido dio dos informes distintos. Nombra dos causas posibles.</summary><p>El modelo elige con algo de azar, una decisión distinta en una vuelta temprana cambia el camino del agente, o el contexto no era el mismo (un archivo cambió, hubo memoria nueva o una compactación distinta). Además, el encargo era ambiguo.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es el efecto «perdido en el medio» (<i>lost in the middle</i>) y qué experimento lo mostró?<small>Pista: busca «Lost in the Middle: How Language Models Use Long Contexts».</small></li><li>¿Qué es el caché de prompts (<i>prompt caching</i>) y por qué abarata una tarea que reenvía casi el mismo contexto en cada vuelta?</li><li>¿Por qué el mismo texto gasta más tokens en español que en inglés?<small>Pista: pega el mismo párrafo en los dos idiomas en un contador de tokens.</small></li><li>¿En qué formato guardan sus sesiones los agentes de terminal y qué información queda en esos archivos?<small>Pista: busca la documentación de sesiones de tu agente favorito y el formato JSONL.</small></li><li>¿Qué es la semilla (<i>seed</i>) de un modelo y por qué fijarla no siempre garantiza respuestas idénticas?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">Effective context engineering for AI agents <small>cómo se decide qué entra en el contexto de un agente (en inglés)</small></a><a class="vid" href="https://tiktokenizer.vercel.app/" target="_blank" rel="noopener">Tiktokenizer <small>contador de tokens público para ver cómo se corta un texto</small></a><a class="vid" href="https://code.claude.com/docs/en/costs" target="_blank" rel="noopener">Manage costs effectively <small>un ejemplo del mercado: cómo un agente de terminal explica el costo, la compactación y el contexto (en inglés)</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="02-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const VENTANA=40000,AVISO=0.85,PRECIO=3;
+  const COL={sistema:'--d-inet',herram:'--c-red',daniela:'--warm',resultado:'--d-casa',agente:'--line',resumen:'--mark'};
+  const NOM={sistema:'Instrucciones del sistema',herram:'Herramientas',daniela:'Mensajes de Daniela',resultado:'Resultados de herramientas',agente:'Respuestas del agente',resumen:'Resumen de la compactación'};
+  const ADD=[
+    {k:'csv',txt:'Leer la planilla de visitas',tipo:'resultado',n:'planilla de visitas',tok:2500,hecho:'totales',res:true},
+    {k:'julia',txt:'Leer el correo de Julia',tipo:'resultado',n:'correo de Julia',tok:900,hecho:'raul',res:true},
+    {k:'acta',txt:'Leer el acta del comité (12 páginas)',tipo:'resultado',n:'acta del comité',tok:9000,hecho:'sabado',res:false},
+    {k:'correos',txt:'Leer 20 correos más',tipo:'resultado',n:'20 correos',tok:6000,hecho:null,res:false},
+    {k:'web',txt:'Buscar en la web',tipo:'resultado',n:'búsqueda web',tok:4000,hecho:null,res:false},
+    {k:'msg',txt:'Daniela escribe otro mensaje',tipo:'daniela',n:'mensaje de Daniela',tok:200,hecho:null,res:false}];
+  const PREG=[
+    ['regla','¿Hay alguna regla para el informe?','Sí: no poner nombres de clientes.'],
+    ['totales','¿Cuántas visitas se hicieron?','7 hechas, 2 reprogramadas y 1 pendiente.'],
+    ['raul','¿Qué pasa el jueves con Raúl?','No tiene vehículo; hay que mover sus dos visitas de la zona Sur.'],
+    ['sabado','¿Qué acordó el comité sobre el sábado?','Cerrar las visitas del sábado a partir de diciembre.']];
+  const NOMHECHO={regla:'la regla de no poner nombres',totales:'los totales de visitas',raul:'lo de Raúl',sabado:'el acuerdo del sábado',encargo:'el encargo'};
+  let fijos,ctx,vuelta,enviados,comps,auto=true,resHechos,vistos;
+  function nuevo(){
+    fijos=[{tipo:'sistema',n:'instrucciones del sistema',tok:4000},{tipo:'herram',n:'5 herramientas',tok:3000}];
+    ctx=[{tipo:'daniela',n:'«no pongas nombres de clientes»',tok:150,hecho:'regla',res:false,v:0},
+         {tipo:'daniela',n:'«prepara el informe de la semana 47»',tok:120,hecho:'encargo',res:true,v:0}];
+    vuelta=0;comps=0;resHechos=[];vistos=new Set();
+    enviados=total();
+  }
+  const total=()=>fijos.concat(ctx).reduce((a,x)=>a+x.tok,0);
+  const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  function tiene(h){return ctx.some(x=>x.hecho===h)||ctx.some(x=>x.tipo==='resumen'&&x.hechos.includes(h));}
+  function compactar(){
+    const ult=vuelta, keep=ctx.filter(x=>x.tipo!=='resumen'&&x.v>=ult-1&&x.v>0);
+    const viejo=ctx.filter(x=>!keep.includes(x));
+    if(!viejo.length||viejo.every(x=>x.tipo==='resumen'))return false;
+    const hechos=[];
+    viejo.forEach(x=>{if(x.tipo==='resumen')x.hechos.forEach(h=>hechos.push(h));else if(x.hecho&&x.res)hechos.push(x.hecho);});
+    const r={tipo:'resumen',n:'resumen',tok:2500,hechos:[...new Set(hechos)],v:ult};
+    ctx=[r].concat(keep);comps++;return true;
+  }
+  let msg='';
+  function agregar(a){
+    const pareja=[{tipo:a.tipo,n:a.n,tok:a.tok,hecho:a.hecho,res:a.res,v:vuelta+1},{tipo:'agente',n:'respuesta del agente',tok:400,v:vuelta+1}];
+    const extra=a.tok+400;msg='';
+    if(total()+extra>VENTANA*AVISO&&auto){compactar();msg='compacto';}
+    if(total()+extra>VENTANA){
+      if(!auto){msg='lleno';pintar();return;}
+      compactar();
+      if(total()+extra>VENTANA){msg='lleno';pintar();return;}
+    }
+    vuelta++;ctx=ctx.concat(pareja);if(a.hecho)vistos.add(a.hecho);enviados+=total();pintar();
+  }
+  function pintar(){
+    const barra=q('#c2l1-barra');barra.querySelectorAll('i').forEach(e=>e.remove());
+    const aviso=barra.querySelector('.c2l1-aviso');
+    fijos.concat(ctx).forEach(x=>{const i=document.createElement('i');i.style.width=(x.tok/VENTANA*100)+'%';i.style.background='var('+COL[x.tipo]+')';i.title=x.n+': '+fmt(x.tok)+' tokens';barra.insertBefore(i,aviso);});
+    const it=q('#c2l1-items');it.innerHTML='';
+    fijos.concat(ctx).forEach(x=>{const s=document.createElement('span');s.style.setProperty('--cc','var('+COL[x.tipo]+')');
+      if(x.tipo==='resumen'){s.className='res';s.textContent='resumen: '+(x.hechos.length?x.hechos.map(h=>NOMHECHO[h]).join(', '):'sin datos clave');}
+      else s.textContent=x.n;
+      const sm=document.createElement('small');sm.textContent=fmt(x.tok);s.appendChild(sm);it.appendChild(s);});
+    const t=total(),pct=Math.round(t/VENTANA*100);
+    let h='<span>Contexto: <b>'+fmt(t)+' de '+fmt(VENTANA)+' tokens ('+pct+' %)</b> · vueltas: <b>'+vuelta+'</b> · compactaciones: <b>'+comps+'</b></span>'+
+      '<span>Tokens enviados en total (cada vuelta reenvía todo): <b>'+fmt(enviados)+'</b> · costo de entrada a US$ 3 por millón (ejemplo): <b>US$ '+(enviados*PRECIO/1e6).toFixed(2).replace('.',',')+'</b></span>';
+    if(msg==='compacto')h+='<span class="warn">Se pasó del 85 %: el agente compactó. Todo lo anterior a las dos últimas vueltas se reemplazó por un resumen. Pregúntale qué recuerda.</span>';
+    else if(msg==='lleno')h+='<span class="warn">No cabe: '+(auto?'ni compactando hay espacio para algo tan grande.':'con la compactación apagada, el programa se detiene y te avisa que la conversación es demasiado larga.')+' Prueba «Compactar ahora» o empieza de nuevo.</span>';
+    else if(pct>=60)h+='<span>La ventana pasa del 60 %: con la caja muy llena, al modelo le cuesta más encontrar el dato importante.</span>';
+    else h+='<span>Cada botón es una vuelta: entra lo que se leyó y la respuesta del agente.</span>';
+    q('#c2l1-out').innerHTML=h;
+  }
+  function preguntar(k){
+    const p=PREG.find(x=>x[0]===k);const ok=tiene(k);
+    const enRes=ctx.some(x=>x.tipo==='resumen'&&x.hechos.includes(k));
+    let txt;
+    if(ok)txt='<b class="si">Lo sabe.</b> «'+p[2]+'» <br><small>Está en el contexto'+(enRes?' gracias al resumen.':', completo.')+'</small>';
+    else{
+      txt='<b class="no">No está en su contexto.</b> «No tengo ese dato. ¿Me lo recuerdas?»<br><small>'+
+        (k==='regla'?'La regla se dijo una sola vez y el resumen no la guardó.':(vistos.has(k)?'Lo leyó en esta sesión, pero se perdió al compactar: el resumen no guardó ese detalle.':'Todavía no leyó el archivo que lo contiene.'))+
+        ' Un agente que no admite lo que no sabe podría inventar una respuesta plausible.</small>';
+    }
+    q('#c2l1-resp').innerHTML=txt;
+  }
+  q('#c2l1-ley').innerHTML=Object.keys(COL).map(k=>'<span><i style="background:var('+COL[k]+')"></i>'+NOM[k]+'</span>').join('');
+  q('#c2l1-add').innerHTML=ADD.map((a,i)=>'<button type="button" data-i="'+i+'">'+a.txt+' <small>+'+fmt(a.tok)+'</small></button>').join('');
+  q('#c2l1-preg').innerHTML=PREG.map(p=>'<button type="button" data-k="'+p[0]+'">'+p[1]+'</button>').join('');
+  q('#c2l1-add').addEventListener('click',e=>{const b=e.target.closest('button');if(b)agregar(ADD[+b.dataset.i]);});
+  q('#c2l1-preg').addEventListener('click',e=>{const b=e.target.closest('button');if(b)preguntar(b.dataset.k);});
+  q('#c2l1-auto').addEventListener('click',()=>{auto=!auto;q('#c2l1-auto').setAttribute('aria-pressed',auto);msg='';pintar();});
+  q('#c2l1-comp').addEventListener('click',()=>{msg=compactar()?'compacto':'';pintar();});
+  q('#c2l1-reset').addEventListener('click',()=>{nuevo();msg='';pintar();q('#c2l1-resp').textContent='Elige una pregunta para ver si el agente todavía tiene ese dato en su contexto.';});
+  nuevo();
+  agregar(ADD[0]);agregar(ADD[1]);
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="02-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const FUENTES=[
+    {k:'sesion',n:'Reanudar la sesión del lunes',d:'recarga todo el historial',tok:18000,hechos:['jefe','formato','raul'],c:'--d-casa'},
+    {k:'instr',n:'Instrucciones permanentes (cap. 4)',d:'jefe y formato del informe',tok:300,hechos:['jefe','formato'],c:'--c-apl'},
+    {k:'mem',n:'Memoria (cap. 6)',d:'«Raúl sin vehículo el jueves 26»',tok:80,hechos:['raul'],c:'--c-enl'}];
+  const PREG=[
+    ['jefe','¿Para quién es el informe?','Para Andrés Molina, tu jefe.'],
+    ['formato','¿Cómo armo el informe?','En una tabla, con los totales al final.'],
+    ['raul','¿Qué pasa con Raúl el jueves?','No tiene vehículo: hay que mover sus dos visitas de la zona Sur.']];
+  const on=new Set(),sabe={};
+  const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  function contexto(){
+    const l=[{n:'instrucciones del sistema',tok:4000,c:'--d-inet'},{n:'herramientas',tok:3000,c:'--c-red'}];
+    FUENTES.forEach(f=>{if(on.has(f.k))l.push({n:f.k==='sesion'?'historial del lunes':(f.k==='instr'?'instrucciones permanentes':'memoria'),tok:f.tok,c:f.c});});
+    l.push({n:'tu pregunta',tok:20,c:'--warm'});
+    return l;
+  }
+  function pintar(){
+    q('#c2l2-carga').innerHTML=FUENTES.map(f=>'<button type="button" data-k="'+f.k+'" aria-pressed="'+on.has(f.k)+'" style="--cc:var('+f.c+')">'+f.n+'<small>'+f.d+' · '+fmt(f.tok)+' tokens</small></button>').join('');
+    const l=contexto();const t=l.reduce((a,x)=>a+x.tok,0);
+    q('#c2l2-ctx').innerHTML=l.map(x=>'<li style="--cc:var('+x.c+')"><span>'+x.n+'</span><b>'+fmt(x.tok)+'</b></li>').join('')+'<li style="--cc:var(--ink)"><span>total por vuelta</span><b>'+fmt(t)+'</b></li>';
+    const n=PREG.filter(p=>donde(p[0]).length).length;
+    let h='<span>Con esta configuración, el agente puede responder <b>'+n+' de 3</b> preguntas · contexto inicial: <b>'+fmt(t)+' tokens por vuelta</b></span>';
+    if(!on.size)h+='<span class="warn">Sesión nueva y sin archivos: el agente empieza en blanco. Lo que Daniela dijo el lunes no está en ninguna parte de su contexto.</span>';
+    else if(on.has('sesion')&&on.size===1)h+='<span>Reanudar trae todo, pero también lo que ya no sirve: unos 18.000 tokens extra en cada vuelta. Sirve para seguir la misma tarea.</span>';
+    else if(on.has('sesion'))h+='<span>Reanudar y además cargar los archivos repite la información: los archivos bastan para lo que debe valer siempre.</span>';
+    else if(n===3)h+='<span class="ok">Con dos archivos chicos el agente sabe lo mismo que reanudando, por 380 tokens en lugar de 18.000. Lo estable va en instrucciones; lo aprendido, en memoria.</span>';
+    else h+='<span>Le falta algo: cada archivo trae solo lo que tiene escrito.</span>';
+    q('#c2l2-out').innerHTML=h;
+  }
+  function donde(h){return FUENTES.filter(f=>on.has(f.k)&&f.hechos.includes(h)).map(f=>f.n.replace(/ \(cap\. \d\)/,'').toLowerCase());}
+  function preguntar(k){
+    const p=PREG.find(x=>x[0]===k);const d=donde(k);
+    const chat=q('#c2l2-chat');chat.innerHTML='';
+    const m1=document.createElement('div');m1.className='c2l2-m c2l2-d';m1.innerHTML='<small>Daniela</small>';m1.appendChild(document.createTextNode(p[1]));
+    const m2=document.createElement('div');m2.className='c2l2-m c2l2-a';m2.innerHTML='<small>Agente</small>';
+    m2.appendChild(document.createTextNode(d.length?p[2]:'No tengo esa información. ¿Me la recuerdas?'));
+    const f=document.createElement('span');f.className='c2l2-fuente'+(d.length?'':' no');
+    f.textContent=d.length?'Lo sacó de: '+d.join(' y '):'No está en su contexto: el modelo no recuerda el lunes';
+    chat.appendChild(m1);chat.appendChild(m2);chat.appendChild(f);
+  }
+  q('#c2l2-carga').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);pintar();q('#c2l2-chat').innerHTML='';});
+  q('#c2l2-preg').innerHTML=PREG.map(p=>'<button type="button" data-k="'+p[0]+'">'+p[1]+'</button>').join('');
+  q('#c2l2-preg').addEventListener('click',e=>{const b=e.target.closest('button');if(b)preguntar(b.dataset.k);});
+  pintar();preguntar('raul');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Memoria · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="memoria">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 06 DE 13</span><h1>Memoria: qué recuerda el agente</h1><p class="lede">El martes, el agente de Daniela ya sabe que Raúl no tiene vehículo el jueves 26. No porque el modelo haya aprendido algo, sino porque el lunes alguien escribió una línea en un archivo. Esa línea se puede leer, corregir y borrar, y en eso está toda la diferencia.</p></header>
+<section><h2>Memoria de la sesión y memoria entre sesiones</h2><div class="prose"><p>Miércoles 25 de noviembre, 7:50. Daniela abre una sesión nueva y escribe: «Arma la propuesta de visitas del jueves». Hace una semana, ese pedido habría empezado con un «¿quién es Raúl?». Hoy el agente responde: «Ojo: Raúl no tiene vehículo el jueves 26, así que dejo sus dos visitas de la zona Sur para el viernes y te pregunto si las toma otro técnico». Nadie se lo repitió esta mañana. Lo sacó de su <b>memoria</b> (<i>memory</i>).</p><p>En el capítulo 2 viste la regla de fondo: el modelo no recuerda nada. Lo que llamamos memoria de un agente es siempre texto que el programa guarda en algún lado y vuelve a poner en el contexto. Hay dos tipos, y conviene no confundirlos:</p><ul><li><b>Memoria de la sesión</b> (<i>session memory</i>, también <i>short-term memory</i>, memoria de corto plazo): el historial de la conversación en curso. El arnés lo reenvía en cada vuelta, se compacta cuando la ventana se llena y desaparece del contexto cuando abres una sesión nueva.</li><li><b>Memoria entre sesiones</b> (<i>long-term memory</i>, memoria de largo plazo): notas que sobreviven al cierre de la sesión y que el programa carga al empezar la siguiente. Puede vivir en un archivo de tu carpeta o en los servidores del proveedor del agente.</li></ul></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en un turno de guardia en un hospital. Durante el turno, la enfermera lleva todo en la cabeza y en sus apuntes sueltos: eso es la memoria de la sesión. Al terminar, escribe en la hoja de relevo lo que la siguiente debe saber: «paciente de la cama 4, alérgico a la penicilina». Los apuntes sueltos se tiran; la hoja de relevo queda. La memoria entre sesiones es esa hoja: corta, escrita, y la lee quien llega antes de empezar.</p></div><div class="prose"><p>Con las instrucciones permanentes del capítulo 4, el agente de Daniela ya tiene una forma de memoria entre sesiones: un archivo que se carga siempre. La diferencia está en quién escribe y qué se guarda. Las instrucciones las escribe Daniela y cambian poco: quién es su jefe, cómo quiere el informe, qué está prohibido. La memoria la escribe el agente (o la escribe Daniela pidiéndoselo al agente) y cambia cada semana: lo que pasó, lo que se decidió, lo que aprendió de cómo trabaja ella.</p></div><figure class="fig fig-esquema" id="06-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" style="min-width:720px" role="img" aria-label="Esquema de lo que sobrevive al cierre de una sesión. A la izquierda, dentro de la sesión, el historial y los resultados de herramientas, que se pierden al cerrar. A la derecha, tres archivos que cruzan al día siguiente: las instrucciones permanentes que escribe Daniela, la memoria que escribe el agente y revisa Daniela, y el archivo de la sesión que guarda el programa. El arnés decide cuáles carga en la sesión siguiente: instrucciones y memoria siempre, la sesión solo si se reanuda.">
+  <defs>
+    <marker id="d06a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d06a-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-enl"/></marker>
+    <marker id="d06a-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-apl"/></marker>
+  </defs>
+
+  
+  <text x="20" y="34" class="t t-xs t-b t-m">DENTRO DE LA SESIÓN DEL LUNES</text>
+  <rect x="20" y="46" width="270" height="250" rx="10" class="caja"/>
+  <rect x="38" y="66" width="234" height="58" rx="8" class="caja"/>
+  <text x="52" y="90" class="t t-b">Historial de la conversación</text>
+  <text x="52" y="110" class="t t-s t-m">mensajes de Daniela y del agente</text>
+  <rect x="38" y="138" width="234" height="58" rx="8" class="d-casa"/>
+  <text x="52" y="162" class="t t-b">Resultados de herramientas</text>
+  <text x="52" y="182" class="t t-s t-m">planilla, 20 correos, acta</text>
+  <text x="155" y="232" class="t t-s t-b k-warm" text-anchor="middle">sale del contexto</text>
+  <text x="155" y="250" class="t t-s k-warm" text-anchor="middle">al cerrar la sesión</text>
+  <text x="155" y="278" class="t t-s t-m" text-anchor="middle">(o antes, al compactar)</text>
+
+  
+  <line x1="330" y1="40" x2="330" y2="300" class="ln ln-d" style="stroke-width:2"/>
+  <text transform="translate(320 232) rotate(-90)" class="t t-xs t-b t-m" text-anchor="middle">CIERRE DE LA SESIÓN</text>
+
+  
+  <text x="370" y="34" class="t t-xs t-b t-m">LO QUE CRUZA AL DÍA SIGUIENTE</text>
+  <rect x="370" y="52" width="270" height="66" rx="8" class="c-apl"/>
+  <text x="384" y="76" class="t t-b">Instrucciones permanentes</text>
+  <text x="384" y="96" class="t t-s">escribe: <tspan class="t-b k-apl">Daniela</tspan> · cambian poco</text>
+  <text x="384" y="111" class="t t-s t-m">reglas, formato, prohibiciones</text>
+  <rect x="370" y="136" width="270" height="66" rx="8" class="c-enl"/>
+  <text x="384" y="160" class="t t-b">Memoria (MEMORIA.md)</text>
+  <text x="384" y="180" class="t t-s">escribe: <tspan class="t-b k-enl">el agente</tspan> · revisa Daniela</text>
+  <text x="384" y="195" class="t t-s t-m">hechos con fecha, decisiones</text>
+  <rect x="370" y="220" width="270" height="66" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="384" y="244" class="t t-b">Archivo de la sesión</text>
+  <text x="384" y="264" class="t t-s">guarda: <tspan class="t-b">el programa</tspan> · todo el historial</text>
+  <text x="384" y="279" class="t t-s t-m">pesado: unos 18.000 tokens</text>
+
+  <path d="M290 98 C 320 98, 330 160, 366 168" class="ln s-enl" style="stroke-width:2;fill:none" marker-end="url(#d06a-e)"/>
+
+  
+  <rect x="720" y="110" width="165" height="110" rx="10" class="d-inet"/>
+  <text x="802" y="138" class="t t-b" text-anchor="middle">Sesión del</text>
+  <text x="802" y="156" class="t t-b" text-anchor="middle">miércoles</text>
+  <text x="802" y="180" class="t t-s t-m" text-anchor="middle">contexto nuevo</text>
+  <text x="802" y="198" class="t t-s t-m" text-anchor="middle">al empezar</text>
+  <line x1="640" y1="85" x2="716" y2="140" class="ln s-apl" style="stroke-width:2" marker-end="url(#d06a-a)"/>
+  <line x1="640" y1="169" x2="716" y2="169" class="ln s-enl" style="stroke-width:2" marker-end="url(#d06a-e)"/>
+  <line x1="640" y1="253" x2="716" y2="200" class="ln ln-d" style="stroke-width:2" marker-end="url(#d06a-n)"/>
+  <text x="652" y="98" class="t t-s k-apl">siempre</text>
+  <text x="652" y="162" class="t t-s k-enl">siempre</text>
+  <text x="660" y="262" class="t t-s t-m">si reanudas</text>
+
+  
+  <rect x="20" y="330" width="865" height="80" rx="10" class="caja"/>
+  <text x="40" y="358" class="t t-b">Arnés</text>
+  <text x="40" y="380" class="t t-s">Durante la sesión, escribe en la memoria lo que el agente propone y Daniela aprueba (flecha verde).</text>
+  <text x="40" y="398" class="t t-s">Al abrir la sesión siguiente, decide qué archivos pone en el contexto. El modelo solo «recuerda» lo que el arnés le carga.</text>
+</svg></div><figcaption><b>Dónde vive lo que el agente «recuerda».</b> La línea vertical del centro es el cierre de una sesión. A la izquierda, lo que se pierde: el historial de la conversación y los resultados de las herramientas, que viven solo dentro de la sesión. A la derecha, lo que cruza al día siguiente, en tres archivos: las instrucciones permanentes (magenta), que escribe Daniela; la memoria (verde), que escribe el agente y Daniela revisa; y el archivo de la sesión (gris), que guarda el programa y solo vuelve si reanudas. Abajo, el arnés: al abrir la sesión siguiente decide cuáles de esos archivos pone en el contexto.</figcaption></figure></section>
+<section><h2>Archivos de memoria que el propio agente escribe</h2><div class="prose"><p>La forma más clara de memoria entre sesiones es la más simple: un archivo de texto. El agente, al terminar un trabajo o cuando le cuentas algo que vale para después, escribe una línea en un archivo de memoria de la carpeta; en la sesión siguiente, el arnés lee ese archivo y lo pone en el contexto, junto a las instrucciones. Un archivo así suele estar en <b>Markdown</b> (<i>Markdown</i>, un formato de texto plano con marcas simples como <code>#</code> para títulos y <code>-</code> para listas), porque se lee bien tanto para una persona como para el modelo.</p><p>Los agentes del mercado lo resuelven de formas parecidas. A noviembre de 2026, Claude Code guarda notas en archivos Markdown por proyecto, que se ven y se editan con el comando <code>/memory</code>; ChatGPT y Claude, en sus aplicaciones de chat, tienen una función de memoria que guarda datos en los servidores del proveedor y se revisa desde la configuración. Son ejemplos, no recomendaciones. Lo que importa es poder contestar tres preguntas en cualquier agente: dónde está lo que recuerda, quién lo escribe y cómo se borra.</p></div><figure class="fig fig-flujo" id="06-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" style="min-width:720px" role="img" aria-label="Diagrama de secuencia de un recuerdo. El lunes, Daniela cuenta que Raúl no tiene vehículo el jueves 26; el modelo propone guardarlo; el arnés le muestra a Daniela la línea exacta; ella la aprueba y el arnés la escribe en el archivo de memoria. El miércoles, en una sesión nueva, el arnés lee el archivo, lo pone en el contexto con el pedido, y el modelo responde teniendo en cuenta a Raúl.">
+  <defs>
+    <marker id="d06b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d06b-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d06b-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-enl"/></marker>
+  </defs>
+  <rect x="10" y="14" width="120" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="70" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="70" y="54" class="t t-s t-m" text-anchor="middle">aprueba</text>
+  <rect x="230" y="14" width="120" height="52" rx="10" class="caja"/><text x="290" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="290" y="54" class="t t-s t-m" text-anchor="middle">lee y escribe</text>
+  <rect x="460" y="14" width="120" height="52" rx="10" class="d-inet"/><text x="520" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="520" y="54" class="t t-s t-m" text-anchor="middle">sin estado</text>
+  <rect x="670" y="14" width="140" height="52" rx="10" class="c-enl"/><text x="740" y="36" class="t t-b" text-anchor="middle">MEMORIA.md</text><text x="740" y="54" class="t t-s t-m" text-anchor="middle">en la carpeta</text>
+  <line x1="70" y1="66" x2="70" y2="450" class="vida"/>
+  <line x1="290" y1="66" x2="290" y2="450" class="vida"/>
+  <line x1="520" y1="66" x2="520" y2="450" class="vida"/>
+  <line x1="740" y1="66" x2="740" y2="450" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="70" y1="104" x2="287" y2="104" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d06b-w)"/>
+    <text x="78" y="97">① «Raúl sin vehículo el jueves 26»</text>
+    <line x1="520" y1="140" x2="293" y2="140" class="ln" style="stroke-width:2" marker-end="url(#d06b-n)"/>
+    <text x="300" y="133">② propone guardar una línea</text>
+    <line x1="290" y1="176" x2="73" y2="176" class="ln" style="stroke-width:2" marker-end="url(#d06b-n)"/>
+    <text x="80" y="169">③ muestra la línea exacta</text>
+    <line x1="70" y1="212" x2="287" y2="212" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d06b-w)"/>
+    <text x="78" y="205">④ aprueba (con fecha)</text>
+    <line x1="290" y1="248" x2="737" y2="248" class="ln s-enl" style="stroke-width:2" marker-end="url(#d06b-e)"/>
+    <text x="545" y="241">⑤ escribe la línea</text>
+
+    <line x1="20" y1="276" x2="810" y2="276" class="ln ln-d"/>
+
+    <line x1="740" y1="316" x2="293" y2="316" class="ln s-enl" style="stroke-width:2" marker-end="url(#d06b-e)"/>
+    <text x="545" y="309">⑥ lee el archivo</text>
+    <line x1="290" y1="356" x2="517" y2="356" class="ln" style="stroke-width:2" marker-end="url(#d06b-n)"/>
+    <text x="298" y="349">⑦ memoria + pedido</text>
+    <line x1="520" y1="396" x2="73" y2="396" class="ln" style="stroke-width:2" marker-end="url(#d06b-n)"/>
+    <text x="80" y="389">⑧ «Muevo las visitas de Raúl al viernes»</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M832 86v176" class="ln" style="stroke:var(--warm);stroke-width:3"/><text x="842" y="166" class="k-warm">LUNES</text><text x="842" y="181" class="t-m">se escribe</text>
+    <path d="M832 292v116" class="ln s-enl" style="stroke-width:3"/><text x="842" y="346" class="k-enl">MIÉRCOLES</text><text x="842" y="361" class="t-m">sesión nueva</text>
+  </g>
+  <rect x="10" y="466" width="900" height="44" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="460" y="493" class="t t-s" text-anchor="middle">El modelo no guardó nada. El recuerdo es una línea de texto que Daniela vio antes de que se escribiera.</text>
+</svg></div><figcaption><b>Flujo de un recuerdo: del lunes al miércoles.</b> Los participantes son Daniela, el arnés, el modelo y el archivo de memoria en la carpeta. Arriba, el lunes: Daniela cuenta lo de Raúl (①), el modelo propone guardarlo (②), el arnés le muestra a Daniela la línea exacta que va a escribir (③), ella aprueba (④) y el arnés escribe el archivo (⑤). Abajo, el miércoles, en una sesión nueva: el arnés lee el archivo (⑥) y lo pone en el contexto junto al pedido (⑦), y el modelo responde teniendo en cuenta a Raúl (⑧). Las flechas rojas son las de Daniela: el recuerdo no se escribe sin que ella lo vea.</figcaption></figure><div class="prose"><p>El paso ③ del diagrama es una decisión de configuración. Hay tres formas de manejar la escritura de la memoria:</p><ol class="steps"><li><span><b>Memoria automática.</b> El agente decide solo qué guardar. Es cómodo, pero acumula de todo y a veces generaliza mal.</span></li><li><span><b>Memoria con confirmación.</b> El agente propone la línea y tú la apruebas, la corriges o la descartas. Es la que eligió Daniela.</span></li><li><span><b>Memoria manual.</b> Solo se guarda lo que tú pides de forma explícita: «recuerda que…». Es la más predecible y la que menos aprende sola.</span></li></ol></div><div class="lab" id="06-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Tres días con el agente</h3></div><p class="hint">Trabaja tres días con el agente de Daniela. Cada día pasa algo en la sesión: le cuenta datos, le pide trabajos, aparece el nombre de un cliente. Elige primero cómo se escribe la memoria (automática, con confirmación o manual) y avanza día por día. Mira qué líneas entran al archivo de memoria, cuáles quedan fuera, cuáles debiste rechazar y cuánto pesa el archivo en tokens al final del miércoles.</p><style>
+[id="06-lab-1"] .c6l1-fila{display:grid;gap:6px}
+[id="06-lab-1"] .c6l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="06-lab-1"] .c6l1-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="06-lab-1"] .c6l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="06-lab-1"] .c6l1-dias{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+[id="06-lab-1"] .c6l1-dia{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 10px;display:grid;gap:6px}
+[id="06-lab-1"] .c6l1-dia h4{margin:0;font:700 .78rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+[id="06-lab-1"] .c6l1-ev{display:grid;gap:3px;padding:4px 0 4px 8px;border-left:4px solid var(--line);font:400 .86rem/1.4 var(--f-body)}
+[id="06-lab-1"] .c6l1-ev q{quotes:"«" "»";overflow-wrap:anywhere}
+[id="06-lab-1"] .c6l1-dec{font:600 .74rem/1.35 var(--f-display);color:var(--muted)}
+[id="06-lab-1"] .c6l1-ev.ok{border-left-color:var(--c-enl)}
+[id="06-lab-1"] .c6l1-ev.ok .c6l1-dec{color:var(--good)}
+[id="06-lab-1"] .c6l1-ev.mal{border-left-color:var(--warm)}
+[id="06-lab-1"] .c6l1-ev.mal .c6l1-dec{color:var(--warm)}
+[id="06-lab-1"] .c6l1-ev.fuera .c6l1-dec{color:var(--muted)}
+[id="06-lab-1"] .c6l1-ev.perdido{border-left-color:var(--warm);border-left-style:dashed}
+[id="06-lab-1"] .c6l1-mem{border:1.5px solid var(--c-enl);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:6px;min-width:0}
+[id="06-lab-1"] .c6l1-mem ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font:400 .78rem/1.4 var(--f-mono)}
+[id="06-lab-1"] .c6l1-mem li{padding:4px 7px;border-radius:5px;background:var(--c-enl-s);overflow-wrap:anywhere}
+[id="06-lab-1"] .c6l1-mem li.mal{background:var(--warm-soft);border:1px solid var(--warm)}
+[id="06-lab-1"] .c6l1-mem li.sobra{background:var(--paper);border:1px dashed var(--line);color:var(--muted)}
+[id="06-lab-1"] .c6l1-mem li small{display:block;font:600 .66rem var(--f-display);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+[id="06-lab-1"] .c6l1-mem li.mal small{color:var(--warm)}
+[id="06-lab-1"] .c6l1-vacio{font:400 .8rem var(--f-body);color:var(--muted);margin:0}
+</style>
+<div class="c6l1-fila">
+  <p class="c6l1-rot" id="c6l1-r1">Cómo se escribe la memoria</p>
+  <div class="btns" role="group" aria-labelledby="c6l1-r1" id="c6l1-modos">
+    <button type="button" data-m="auto" aria-pressed="false">Automática: decide el agente</button>
+    <button type="button" data-m="conf" aria-pressed="true">Con confirmación de Daniela</button>
+    <button type="button" data-m="man" aria-pressed="false">Manual: solo si dice «recuerda»</button>
+  </div>
+</div>
+<div class="btns">
+  <button type="button" class="primary" id="c6l1-sig">Siguiente día</button>
+  <button type="button" id="c6l1-reset">Empezar de nuevo</button>
+</div>
+<div class="c6l1-grid">
+  <ol class="c6l1-dias" id="c6l1-dias" aria-live="polite" aria-label="Días de trabajo"></ol>
+  <div class="c6l1-mem">
+    <p class="c6l1-rot">MEMORIA.md</p>
+    <ul id="c6l1-mem"></ul>
+  </div>
+</div>
+<div class="readout texto" id="c6l1-out" aria-live="polite"></div></div><div class="prose"><p>En el laboratorio, la memoria automática guarda más cosas (incluso los totales de la semana, que ya están en la planilla), pero tres de ellas son problemas: el nombre y la dirección de un cliente, un comentario de pasillo sobre un técnico y una generalización equivocada («Raúl no tiene vehículo los jueves», cuando era solo el 26). La memoria con confirmación guarda casi lo mismo de útil y deja fuera lo que no debía entrar, a cambio de seis decisiones rápidas de Daniela. La manual es la más limpia y la que más se olvida: la decisión de no hacer visitas los sábados se pierde porque nadie dijo «recuerda».</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Un archivo de memoria que puedes leer</h3></div><p>Vas a crear a mano, en la carpeta de prueba <code>agente-prueba</code> del capítulo 1, el archivo de memoria que el agente de Daniela escribiría en su primera semana, y vas a buscar en él como lo haría el arnés.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>[IO.File]::WriteAllLines("$PWD\MEMORIA.md", [string[]]@("# Memoria del agente de Daniela","","- 2026-11-23: Raúl no tiene vehículo el jueves 26 (avisó Julia). Caduca: 2026-11-27.","- 2026-11-23: Andrés lee el informe en el celular antes del comité: tabla corta, totales arriba.","- 2026-11-24: las visitas de la zona Sur se agrupan por la tarde."))</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-Content -Encoding utf8 MEMORIA.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Select-String -Path MEMORIA.md -Pattern "Raúl"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-Content -Raw -Encoding utf8 MEMORIA.md).Length</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "# Memoria del agente de Daniela" "" "- 2026-11-23: Raúl no tiene vehículo el jueves 26 (avisó Julia). Caduca: 2026-11-27." "- 2026-11-23: Andrés lee el informe en el celular antes del comité: tabla corta, totales arriba." "- 2026-11-24: las visitas de la zona Sur se agrupan por la tarde." &gt; MEMORIA.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>cat MEMORIA.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>grep -n "Raúl" MEMORIA.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>wc -m MEMORIA.md</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Lee el archivo completo: es todo lo que el agente «sabe» de esa semana.</span></li><li><span>Mira la búsqueda: así encuentra un arnés el recuerdo que sirve para un pedido sobre Raúl.</span></li><li><span>Divide los caracteres por 4 para estimar los tokens, como en el capítulo 2.</span></li></ol><p><b>Qué observar:</b> la memoria de un agente no es nada misterioso: son unas líneas de texto con fecha, que caben en menos de 100 tokens y que tú puedes abrir con el Bloc de notas. Fíjate en la marca «Caduca»: un recuerdo con fecha de vencimiento le dice al agente, y a ti, cuándo deja de valer. Los recuerdos sin fecha son los que más tarde se vuelven errores.</p></div></section>
+<section><h2>Reanudar una sesión y bifurcarla</h2><div class="prose"><p>La memoria entre sesiones guarda lo que vale para siempre o por un tiempo. Pero a veces lo que quieres es volver a la misma conversación, con todo su detalle. Para eso están dos operaciones que ofrecen muchos agentes:</p><ul><li><b>Reanudar</b> (<i>resume</i>): el programa vuelve a cargar el historial guardado de una sesión y sigues donde quedaste. Lo viste en el capítulo 2: trae todo, incluidos los resultados de herramientas que ya no sirven, y cuesta muchos tokens.</li><li><b>Bifurcar</b> (<i>fork</i>): el programa copia una sesión hasta cierto punto y abre una rama nueva desde ahí. La sesión original queda intacta; la rama sigue por otro camino.</li></ul></div><div class="analogia"><b>Imagínalo así</b><p>Bifurcar es como guardar una partida de un videojuego antes de una decisión difícil. Si eliges mal, vuelves a la partida guardada sin tener que jugar todo desde el principio. Y puedes probar los dos caminos a partir del mismo punto para ver cuál te gusta más.</p></div><div class="prose"><p>¿Para qué sirve bifurcar en el trabajo de Daniela? El lunes, el agente leyó la planilla y los correos y armó el informe en tabla. Andrés pide una versión más corta, «solo totales y las tres visitas con problemas». En vez de pedirle al agente que la transforme y arriesgarse a perder la versión larga, Daniela bifurca la sesión justo después de la lectura de los datos: en una rama queda el informe completo y en la otra se arma la versión corta, sin volver a leer nada.</p></div><figure class="fig fig-esquema" id="06-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" style="min-width:720px" role="img" aria-label="Esquema de reanudar y bifurcar. La sesión del lunes tiene cuatro vueltas: lee la planilla, lee el correo, arma el informe y lo guarda. Desde la vuelta 2 sale una bifurcación que arma la versión corta para Andrés sin volver a leer. El martes, una sesión reanudada sigue la rama principal con todo el historial. Abajo, el archivo de memoria, que llega a cualquier sesión nueva con unas pocas líneas.">
+  <defs>
+    <marker id="d06c-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d06c-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-enl"/></marker>
+  </defs>
+  <text x="30" y="40" class="t t-xs t-b t-m">SESIÓN DEL LUNES</text>
+  <line x1="60" y1="100" x2="610" y2="100" class="ln" style="stroke-width:4"/>
+  <g class="t t-s" text-anchor="middle">
+    <circle cx="90" cy="100" r="16" class="caja"/><text x="90" y="105" class="t-b">1</text>
+    <text x="90" y="138">lee la</text><text x="90" y="153">planilla</text>
+    <circle cx="230" cy="100" r="16" class="caja"/><text x="230" y="105" class="t-b">2</text>
+    <text x="230" y="70">lee el correo</text>
+    <circle cx="390" cy="100" r="16" class="caja"/><text x="390" y="105" class="t-b">3</text>
+    <text x="390" y="138">arma el informe</text><text x="390" y="153">en tabla</text>
+    <circle cx="550" cy="100" r="16" class="caja"/><text x="550" y="105" class="t-b">4</text>
+    <text x="550" y="138">guarda</text><text x="550" y="153">informe-semana-47.md</text>
+  </g>
+
+  
+  <path d="M230 116 C 230 190, 300 220, 360 220" class="ln" style="stroke-width:3;stroke-dasharray:7 5;fill:none"/>
+  <line x1="360" y1="220" x2="560" y2="220" class="ln" style="stroke-width:3;stroke-dasharray:7 5"/>
+  <g class="t t-s" text-anchor="middle">
+    <circle cx="390" cy="220" r="16" class="caja" style="stroke-dasharray:4 3"/><text x="390" y="225" class="t-b">3'</text>
+    <text x="390" y="256">versión corta:</text><text x="390" y="271">totales y 3 problemas</text>
+    <circle cx="550" cy="220" r="16" class="caja" style="stroke-dasharray:4 3"/><text x="550" y="225" class="t-b">4'</text>
+    <text x="550" y="256">guarda</text><text x="550" y="271">informe-corto.md</text>
+  </g>
+  <text x="120" y="200" class="t t-s t-b">bifurcar</text>
+  <text x="120" y="216" class="t t-s t-m">copia las vueltas 1-2</text>
+  <text x="120" y="232" class="t t-s t-m">y abre otro camino</text>
+
+  
+  <line x1="610" y1="100" x2="640" y2="100" class="ln ln-d" style="stroke-width:2"/>
+  <text x="625" y="80" class="t t-xs t-b t-m" text-anchor="middle">NOCHE</text>
+  <line x1="650" y1="100" x2="860" y2="100" class="ln" style="stroke-width:4" marker-end="url(#d06c-n)"/>
+  <text x="660" y="40" class="t t-xs t-b t-m">MARTES · REANUDADA</text>
+  <circle cx="740" cy="100" r="16" class="caja"/><text x="740" y="105" class="t t-s t-b" text-anchor="middle">5</text>
+  <text x="740" y="138" class="t t-s" text-anchor="middle">sigue con el</text>
+  <text x="740" y="153" class="t t-s" text-anchor="middle">historial completo</text>
+  <text x="740" y="172" class="t t-s t-m" text-anchor="middle">(18.000 tokens)</text>
+
+  
+  <rect x="30" y="310" width="840" height="86" rx="10" class="c-enl"/>
+  <text x="50" y="336" class="t t-b">MEMORIA.md no es una rama</text>
+  <text x="50" y="358" class="t t-s">Son unas pocas líneas con fecha que llegan a cualquier sesión nueva, sin cargar el historial (menos de 100 tokens).</text>
+  <text x="50" y="378" class="t t-s">Reanuda para seguir la misma tarea · bifurca para probar otro camino · guarda en la memoria lo que vale para otras tareas.</text>
+  <line x1="740" y1="306" x2="740" y2="182" class="ln s-enl" style="stroke-width:2;stroke-dasharray:5 4" marker-end="url(#d06c-e)"/>
+  <text x="752" y="250" class="t t-s k-enl">también llega</text>
+  <text x="752" y="265" class="t t-s k-enl">a sesiones nuevas</text>
+</svg></div><figcaption><b>Reanudar y bifurcar, como ramas de una sesión.</b> La línea gruesa de arriba es la sesión del lunes, con sus vueltas numeradas: lee la planilla, lee el correo, arma el informe, lo guarda. Desde la vuelta 2 sale una rama hacia abajo: la bifurcación, que copia todo hasta ahí y arma la versión corta para Andrés. A la derecha, la sesión del martes reanuda la rama principal y sigue con el historial completo. Abajo, en verde, el archivo de memoria: no es una rama, sino unas pocas líneas que llegan a cualquier sesión nueva sin cargar el historial.</figcaption></figure><div class="prose"><p>La regla práctica del capítulo 2 se completa así: <b>reanuda para seguir la misma tarea, bifurca para probar otro camino desde el mismo punto y guarda en la memoria lo que deba valer para otras tareas</b>. A noviembre de 2026, por ejemplo, los agentes de terminal como Claude Code y Codex permiten reanudar desde la línea de comandos, y varios asistentes de chat permiten editar un mensaje anterior para abrir una rama nueva de la conversación; los nombres de los comandos cambian de un agente a otro.</p></div></section>
+<section><h2>Qué conviene que recuerde y qué no</h2><div class="prose"><p>Una memoria útil se parece a la hoja de relevo de la analogía: corta, con datos que cambian lo que el agente hace y que no se pueden deducir de los archivos. Una memoria dañina se parece a un cajón donde todo se guarda «por si acaso». El cajón crece, ocupa tokens en cada vuelta, y un día el agente usa un dato viejo como si fuera de hoy.</p><div class="tbl"><table><thead><tr><th>Conviene recordar</th><th>No conviene recordar</th></tr></thead><tbody><tr><td>Hechos con fecha que afectan el trabajo: «Raúl sin vehículo el jueves 26»</td><td>Datos personales de clientes: nombres, direcciones, teléfonos</td></tr><tr><td>Preferencias que no están en las instrucciones: «Andrés lee en el celular»</td><td>Contraseñas, claves, números de tarjeta o de cuenta</td></tr><tr><td>Decisiones tomadas: «desde diciembre no hay visitas los sábados»</td><td>Opiniones sobre personas: «Tomás es lento»</td></tr><tr><td>Lo que salió mal y cómo se corrigió: «la zona Sur se agrupa por la tarde»</td><td>Lo que ya está en un archivo que el agente puede leer</td></tr><tr><td>Atajos de su carpeta: «las actas están en <code>actas/2026</code>»</td><td>Datos de salud, sindicales o de la vida privada de alguien</td></tr></tbody></table></div><p>La columna de la derecha tiene tres razones distintas. Algunas cosas no deben guardarse porque son <b>datos personales</b> (<i>personal data</i>): el nombre y la dirección de un cliente, o algo sobre la salud de un técnico, están protegidos por las leyes de protección de datos de casi todos los países y por la política de tu empresa, y una memoria que vive en los servidores de un proveedor es una copia más de esos datos. Otras no deben guardarse porque son un riesgo: una clave en la memoria es una clave que el agente puede repetir donde no debe (los secretos se tratan en el capítulo 7). Y otras, simplemente, sobran: si la planilla de visitas ya dice quién hizo qué, copiar eso en la memoria solo crea dos versiones que pueden contradecirse.</p></div><div class="ml"><b>En la práctica</b><p>Un recuerdo que se volvió regla. El lunes, Daniela le dijo al agente que Raúl no tenía vehículo el jueves. El agente, con memoria automática, guardó: «Raúl no tiene vehículo los jueves». Tres semanas después, al armar la agenda del jueves 17 de diciembre, el agente dejó a Raúl sin visitas y repartió las suyas entre Tomás e Inés. Nadie entendía por qué. Bastó abrir el archivo de memoria para encontrar la línea, corregirla y agregarle la fecha de caducidad. La lección sirve con cualquier agente: un recuerdo sin fecha y sin revisión se convierte, con el tiempo, en una regla que nadie decidió.</p></div></section>
+<section><h2>Revisar, corregir y borrar lo recordado</h2><div class="prose"><p>Si la memoria es texto, revisarla es leerla. Esa es la gran ventaja de la memoria explícita frente a la idea de un agente que «aprende» por dentro: lo que recuerda está escrito y se puede auditar. Daniela se dio una rutina simple, que cabe en cinco minutos cada viernes:</p><ol class="steps"><li><span><b>Leer</b> el archivo completo de arriba abajo.</span></li><li><span><b>Borrar</b> lo vencido: lo que tiene fecha de caducidad pasada o ya no aplica.</span></li><li><span><b>Corregir</b> lo que quedó mal escrito o demasiado general.</span></li><li><span><b>Subir</b> a las instrucciones permanentes lo que se volvió estable. Si «Andrés lee en el celular» se cumplió cuatro semanas seguidas, ya no es un recuerdo: es una regla del informe.</span></li><li><span><b>Sacar</b> lo que nunca debió entrar, como el nombre de un cliente.</span></li></ol></div><div class="analogia"><b>Imagínalo así</b><p>Es como la puerta del refrigerador de una casa. Los papeles pegados sirven mientras están vigentes: el turno del dentista, la lista del súper, el teléfono del plomero. Si nadie los quita, a los seis meses la puerta está cubierta, el turno del dentista es del año pasado y ya no se encuentra el papel que importa. Alguien tiene que mirar la puerta cada tanto y tirar lo viejo.</p></div><div class="prose"><p>Borrar tiene una trampa: hay que borrar en todos los lugares donde vive el dato. Si el agente guarda la memoria en un archivo de tu carpeta, basta con editarlo. Si la guarda en los servidores del proveedor, se borra desde la configuración del agente, y conviene leer qué dice el proveedor sobre cuánto tarda en desaparecer y si las conversaciones viejas siguen guardadas aparte. Y si el dato está también en una sesión guardada, reanudar esa sesión lo vuelve a traer aunque lo hayas quitado de la memoria.</p></div><div class="lab" id="06-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Corrige un recuerdo</h3></div><p class="hint">El archivo de memoria del agente de Daniela tiene seis líneas, y dos están mal: una generaliza de más y otra se venció. Hazle una pregunta al agente y mira qué responde y qué línea usó. Luego corrige, marca como vencida o borra las líneas que quieras, y vuelve a preguntar. Mira cómo cambia la respuesta y cuántos tokens pesa la memoria después de la limpieza.</p><style>
+[id="06-lab-2"] .c6l2-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="06-lab-2"] .c6l2-grid{grid-template-columns:minmax(0,1fr)}}
+[id="06-lab-2"] .c6l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="06-lab-2"] .c6l2-mem{border:1.5px solid var(--c-enl);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:6px;min-width:0}
+[id="06-lab-2"] .c6l2-mem ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+[id="06-lab-2"] .c6l2-mem li{display:grid;gap:4px;padding:6px 8px;border-radius:6px;background:var(--c-enl-s);border:1px solid transparent}
+[id="06-lab-2"] .c6l2-mem li.usada{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+[id="06-lab-2"] .c6l2-mem li.borrada{background:var(--paper);color:var(--muted)}
+[id="06-lab-2"] .c6l2-mem li.borrada code{text-decoration:line-through}
+[id="06-lab-2"] .c6l2-mem code{font:400 .8rem/1.4 var(--f-mono);overflow-wrap:anywhere;background:none;padding:0}
+[id="06-lab-2"] .c6l2-acc{display:flex;flex-wrap:wrap;gap:6px}
+[id="06-lab-2"] .c6l2-acc button{font-size:.74rem;padding:3px 9px}
+[id="06-lab-2"] .c6l2-chat{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:8px;min-width:0}
+[id="06-lab-2"] .c6l2-m{padding:7px 10px;border-radius:10px;font:400 .88rem/1.4 var(--f-body);overflow-wrap:anywhere}
+[id="06-lab-2"] .c6l2-m small{display:block;font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-bottom:2px}
+[id="06-lab-2"] .c6l2-d{background:var(--warm-soft);border:1px solid var(--warm);justify-self:end;max-width:92%}
+[id="06-lab-2"] .c6l2-a{background:var(--paper);border:1px solid var(--line);justify-self:start;max-width:96%}
+[id="06-lab-2"] .c6l2-fuente{font:600 .74rem/1.35 var(--f-display);color:var(--muted)}
+[id="06-lab-2"] .c6l2-estado{display:inline-block;font:700 .66rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;color:var(--card);background:var(--good)}
+[id="06-lab-2"] .c6l2-estado.mal{background:var(--warm)}
+[id="06-lab-2"] .c6l2-estado.pregunta{background:var(--accent)}
+</style>
+<p class="c6l2-rot" id="c6l2-rp">Pregúntale al agente</p>
+<div class="btns" role="group" aria-labelledby="c6l2-rp" id="c6l2-preg"></div>
+<div class="c6l2-grid">
+  <div class="c6l2-mem">
+    <p class="c6l2-rot">MEMORIA.md · edítala</p>
+    <ul id="c6l2-mem"></ul>
+  </div>
+  <div class="c6l2-chat" id="c6l2-chat" aria-live="polite"></div>
+</div>
+<div class="readout texto" id="c6l2-out" aria-live="polite"></div></div><div class="prose"><p>En el laboratorio, la misma pregunta («¿puedo darle a Raúl la visita del jueves 3 de diciembre?») cambia de respuesta según una sola línea. Con la línea generalizada, el agente dice que no. Con la línea corregida, dice que sí y explica por qué. Borrar la línea por completo también da un «sí», pero sin explicación: el agente no sabe que hubo un problema el 26. A veces corregir es mejor que borrar.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Revisa lo que recuerda tu asistente</h3></div><p>Usa el asistente de IA gratuito que usaste en los capítulos anteriores (cualquiera sirve). No le des datos reales ni del trabajo.</p><ol class="steps"><li><span>Busca en su configuración una sección llamada «Memoria», «Personalización» o similar. Anota si la memoria está activada y si distingue entre «datos guardados» e «historial de conversaciones».</span></li><li><span>Si está activada, abre la lista de lo que recuerda. Lee cada entrada y marca cuáles agregaste tú a propósito y cuáles guardó solo.</span></li><li><span>En una conversación nueva, escribe: «Recuerda que mi técnico Raúl no tiene vehículo el jueves 26». Mira si te avisa que lo guardó.</span></li><li><span>Abre otra conversación nueva y pregunta: «¿Qué sabes de Raúl?».</span></li><li><span>Vuelve a la configuración, busca esa entrada y bórrala. Repite la pregunta en otra conversación nueva.</span></li></ol><p><b>Qué observar:</b> si tu asistente tiene memoria, en el paso 4 responde con el dato sin que se lo hayas repetido, y en el paso 5 deja de saberlo. Fíjate en si la entrada guardada dice exactamente lo que escribiste o una versión resumida o generalizada. Si tu asistente no tiene memoria entre conversaciones, en el paso 4 no sabrá nada: es la sesión sin estado del capítulo 2. Algunos asistentes, además, pueden consultar conversaciones anteriores aunque borres la entrada; si es tu caso, revisa también el historial.</p></div></section>
+<section><h2>Memoria compartida en un equipo</h2><div class="prose"><p>Julia Paredes, la supervisora de técnicos, también empieza a usar un agente. Pronto aparece la pregunta obvia: ¿por qué cada una tiene que contarle a su agente lo de Raúl? ¿No pueden compartir lo que saben?</p><p>Pueden, y hay dos formas sensatas de hacerlo. La primera es un <b>archivo compartido del equipo</b>: una carpeta común, con un archivo de memoria que los agentes de todas leen y en el que solo se escriben hechos del trabajo (cambios de turno, decisiones de comité, zonas cerradas). La segunda es separar capas: cada persona tiene su memoria personal (sus preferencias, sus atajos) y el equipo tiene una memoria común, igual que las instrucciones globales, por proyecto y por carpeta del capítulo 4.</p></div><div class="caso"><b>Un caso real</b><p>Un equipo de operaciones de campo armó una carpeta compartida con un archivo <code>memoria-equipo.md</code> que leían los agentes de tres coordinadoras. Las primeras semanas funcionó bien: un cambio de turno escrito por una aparecía en el agente de las otras. El problema llegó cuando dos coordinadoras escribieron versiones distintas del mismo cierre de zona y los agentes empezaron a dar respuestas contradictorias. Lo resolvieron con tres reglas: el archivo se edita con historial de cambios (como un documento con control de versiones), cada línea lleva quién la escribió y cuándo, y una persona lo revisa los viernes. La memoria del equipo pasó a tener dueña.</p></div><div class="prose"><p>Compartir memoria trae los mismos cuidados que compartir cualquier documento, y alguno más. Lo que entra en la memoria común lo ven los agentes de todo el equipo, así que vale el doble la columna derecha de la tabla: nada de clientes, nada de opiniones sobre personas, nada de secretos. Y como un agente lee esa memoria como si fueran instrucciones, una línea maliciosa o descuidada en un archivo compartido puede cambiar lo que hacen todos los agentes: es una variante de la inyección de instrucciones del capítulo 7. Cómo se acuerda y se versiona la configuración de un equipo es el capítulo 13; cómo se diseña la memoria de un agente dentro de un producto, con bases de datos y búsqueda por similitud, está en <a href="https://aaramirez.github.io/aplicaciones-con-ia/temario.html" target="_blank" rel="noopener">Aplicaciones con IA</a>.</p><p>Lo que te llevas de este capítulo cabe en una frase: <b>memoria explícita, que se revisa y se puede borrar</b>. El agente no recuerda: lee lo que alguien escribió. Si sabes dónde está ese texto, quién lo escribe y cómo se borra, la memoria es una ayuda. Si no lo sabes, es un cajón que crece solo.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué diferencia hay entre la memoria de la sesión y la memoria entre sesiones?</summary><p>La memoria de la sesión es el historial de la conversación en curso: se reenvía en cada vuelta, se compacta y desaparece al abrir una sesión nueva. La memoria entre sesiones son notas guardadas (en un archivo o en el proveedor) que el programa carga al empezar la sesión siguiente.</p></details><details><summary>¿En qué se diferencian las instrucciones permanentes y el archivo de memoria?</summary><p>Las instrucciones las escribe la persona y cambian poco: reglas, formato, prohibiciones. La memoria la escribe el agente (con o sin confirmación) y cambia cada semana: hechos, decisiones y lo aprendido.</p></details><details><summary>¿Por qué conviene ponerle fecha de caducidad a un recuerdo como «Raúl sin vehículo el jueves 26»?</summary><p>Porque sin fecha el recuerdo puede seguir usándose cuando ya no vale, o generalizarse («los jueves») hasta convertirse en una regla que nadie decidió.</p></details><details><summary>¿Cuándo conviene bifurcar una sesión en lugar de reanudarla?</summary><p>Cuando quieres probar otro camino desde el mismo punto sin perder el original, por ejemplo una versión corta del informe a partir de los datos ya leídos.</p></details><details><summary>Nombra tres cosas que no deben ir en la memoria de un agente y por qué.</summary><p>Datos personales de clientes (protección de datos), contraseñas o claves (el agente podría repetirlas donde no debe) y opiniones sobre personas; también lo que ya está en un archivo que el agente puede leer, porque crea versiones que se contradicen.</p></details><details><summary>Borraste un dato de la memoria, pero el agente lo vuelve a mencionar. ¿Dónde más puede estar?</summary><p>En una sesión guardada que se reanudó, en el historial de conversaciones que el asistente consulta, o en otro archivo de memoria (por ejemplo, uno compartido del equipo).</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es la búsqueda por similitud con <i>embeddings</i> y por qué algunos agentes la usan para buscar en memorias muy grandes?<small>Pista: busca «memoria vectorial para agentes de IA».</small></li><li>¿Qué derechos te da una ley de protección de datos, como el RGPD europeo, sobre la información que un servicio guarda de ti, y en particular el derecho de supresión?<small>Pista: busca «derecho al olvido RGPD artículo 17».</small></li><li>¿Cuánto tiempo guardan las conversaciones los principales asistentes de IA después de que las borras, y por qué a veces hay un plazo?<small>Pista: busca la política de retención de datos de tu asistente.</small></li><li>¿Qué es un sistema de control de versiones como Git y cómo permite ver quién cambió cada línea de un archivo?<small>Pista: busca «git blame».</small></li><li>¿Qué es la «memoria episódica» y la «memoria semántica» en psicología, y por qué algunos diseñadores de agentes toman esos nombres prestados?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Manage Claude's memory <small>un ejemplo del mercado: archivos de instrucciones y de memoria en un agente de terminal (en inglés)</small></a><a class="vid" href="https://help.openai.com/en/articles/8590148-memory-faq" target="_blank" rel="noopener">Memory FAQ <small>un ejemplo del mercado: cómo se revisa y se borra la memoria de un asistente de chat (en inglés)</small></a><a class="vid" href="https://aaramirez.github.io/aplicaciones-con-ia/temario.html" target="_blank" rel="noopener">Aplicaciones con IA <small>la memoria de un agente dentro de un producto, desde el lado técnico</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="06-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  // tipo: util | mal | sobra ; cada evento dice qué pasa en cada modo
+  const DIAS=[
+    {n:'Lunes 23',ev:[
+      {t:'Daniela: «Raúl no tiene vehículo el jueves 26, me avisó Julia. Recuérdalo.»',
+       auto:{l:'Raúl no tiene vehículo los jueves.',k:'mal',d:'Guardó una generalización: era solo el jueves 26.'},
+       conf:{l:'2026-11-23: Raúl sin vehículo el jueves 26. Caduca: 2026-11-27.',k:'util',d:'El agente propuso «los jueves»; Daniela lo corrigió y le puso fecha.',c:1},
+       man:{l:'2026-11-23: Raúl sin vehículo el jueves 26. Caduca: 2026-11-27.',k:'util',d:'Daniela dijo «recuérdalo»: se guarda tal cual.'}},
+      {t:'Daniela: «Andrés lee el informe en el celular; los totales van arriba. Recuérdalo.»',
+       auto:{l:'Andrés lee el informe en el celular: totales arriba.',k:'util',d:'Preferencia útil que no está en las instrucciones.'},
+       conf:{l:'Andrés lee el informe en el celular: totales arriba.',k:'util',d:'Propuesta aprobada.',c:1},
+       man:{l:'Andrés lee el informe en el celular: totales arriba.',k:'util',d:'Daniela dijo «recuérdalo».'}},
+      {t:'El agente lee un correo: la clienta Marta Gil, de la calle Los Olmos 123, reclama su visita.',
+       auto:{l:'Clienta Marta Gil (Los Olmos 123) reclamó por su visita.',k:'mal',d:'Guardó datos personales de una clienta.'},
+       conf:{k:'fuera',d:'El agente lo propuso; Daniela lo rechazó: datos de una clienta.',c:1},
+       man:{k:'fuera',d:'Nadie dijo «recuerda»: no se guarda.'}}]},
+    {n:'Martes 24',ev:[
+      {t:'En la revisión de zonas, Julia decide: desde diciembre no hay visitas los sábados.',
+       auto:{l:'Desde diciembre de 2026 no hay visitas los sábados (decidió Julia).',k:'util',d:'Decisión que cambia el trabajo: útil.'},
+       conf:{l:'Desde diciembre de 2026 no hay visitas los sábados (decidió Julia).',k:'util',d:'Propuesta aprobada.',c:1},
+       man:{k:'perdido',d:'Daniela no dijo «recuerda»: la decisión se perdió al cerrar la sesión.'}},
+      {t:'Daniela, de pasada: «Tomás anda lento esta semana».',
+       auto:{l:'Tomás trabaja lento.',k:'mal',d:'Guardó una opinión sobre una persona, y además sin fecha.'},
+       conf:{k:'fuera',d:'El agente lo propuso; Daniela lo rechazó: es una opinión.',c:1},
+       man:{k:'fuera',d:'No se guarda.'}},
+      {t:'El agente cuenta la planilla: 7 hechas, 2 reprogramadas y 1 pendiente en la semana 47.',
+       auto:{l:'Semana 47: 7 hechas, 2 reprogramadas, 1 pendiente.',k:'sobra',d:'Sobra: ya está en la planilla y puede contradecirla si se corrige.'},
+       conf:{k:'fuera',d:'Daniela lo rechazó: ya está en la planilla.',c:1},
+       man:{k:'fuera',d:'No se guarda.'}}]},
+    {n:'Miércoles 25',ev:[
+      {t:'Daniela: «Las visitas de la zona Sur se agrupan por la tarde. Recuérdalo.»',
+       auto:{l:'Zona Sur: agrupar las visitas por la tarde.',k:'util',d:'Útil.'},
+       conf:{l:'Zona Sur: agrupar las visitas por la tarde.',k:'util',d:'Daniela lo pidió: se guarda sin preguntar.'},
+       man:{l:'Zona Sur: agrupar las visitas por la tarde.',k:'util',d:'Daniela dijo «recuérdalo».'}},
+      {t:'Daniela pide: «Arma la propuesta de visitas del jueves 26».',
+       uso:true}]}
+  ];
+  const NOMBRE={auto:'automática',conf:'con confirmación',man:'manual'};
+  let modo='conf',dia=1;
+  const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function memoria(){
+    const l=[];
+    DIAS.slice(0,dia).forEach(d=>d.ev.forEach(e=>{if(e.uso)return;const r=e[modo];if(r.l)l.push({l:r.l,k:r.k,dia:d.n});}));
+    return l;
+  }
+  function pintar(){
+    raiz.querySelectorAll('#c6l1-modos button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===modo)));
+    const mem=memoria();
+    q('#c6l1-dias').innerHTML=DIAS.slice(0,dia).map(d=>'<li class="c6l1-dia"><h4>'+d.n+'</h4>'+d.ev.map(e=>{
+      if(e.uso){
+        const tieneR=mem.some(x=>/Raúl/.test(x.l));const gen=mem.some(x=>x.l==='Raúl no tiene vehículo los jueves.');
+        const r=tieneR?(gen?'Deja a Raúl sin visitas el jueves. Funciona esta semana, pero la línea «los jueves» volverá a sacarlo de la agenda cada jueves.':'Mueve las dos visitas de Raúl de la zona Sur al viernes, por la tarde, y pregunta si otro técnico las toma.'):'Le asigna a Raúl sus dos visitas del jueves: no sabe lo del vehículo.';
+        return '<div class="c6l1-ev '+(tieneR&&!gen?'ok':'mal')+'"><span>'+esc(e.t)+'</span><span class="c6l1-dec">Usa la memoria: '+r+'</span></div>';}
+      const r=e[modo];
+      const cls=r.k==='util'?'ok':(r.k==='mal'?'mal':(r.k==='perdido'?'perdido':'fuera'));
+      const pre=r.l?(r.k==='util'?'Guarda: ':(r.k==='mal'?'Guarda (problema): ':'Guarda (sobra): ')):'';
+      return '<div class="c6l1-ev '+cls+'"><span>'+esc(e.t)+'</span><span class="c6l1-dec">'+pre+esc(r.d)+'</span></div>';
+    }).join('')+'</li>').join('')||'<li class="c6l1-vacio">Elige un modo y pulsa «Siguiente día».</li>';
+    q('#c6l1-mem').innerHTML=mem.length?mem.map(x=>'<li class="'+(x.k==='mal'?'mal':(x.k==='sobra'?'sobra':''))+'"><small>'+x.dia+(x.k==='mal'?' · problema':(x.k==='sobra'?' · sobra':''))+'</small>- '+esc(x.l)+'</li>').join(''):'<li class="sobra">(vacío)</li>';
+    // métricas
+    let utiles=0,malas=0,sobra=0,perd=0,clics=0;
+    DIAS.slice(0,dia).forEach(d=>d.ev.forEach(e=>{if(e.uso)return;const r=e[modo];if(r.c)clics++;if(r.k==='perdido')perd++;if(r.l){if(r.k==='util')utiles++;else if(r.k==='mal')malas++;else sobra++;}}));
+    const chars=mem.reduce((a,x)=>a+x.l.length+3,0);
+    let h='<span>Memoria '+NOMBRE[modo]+' · día '+dia+' de 3 · útiles: <b>'+utiles+'</b> · problemas: <b>'+malas+'</b> · sobran: <b>'+sobra+'</b> · perdidas: <b>'+perd+'</b> · confirmaciones: <b>'+clics+'</b> · archivo: <b>~'+fmt(Math.ceil(chars/4))+' tokens</b></span>';
+    if(dia===3){
+      if(modo==='auto')h+='<span class="warn">La memoria automática no se olvidó de nada útil, pero guardó tres problemas: datos de una clienta, una opinión sobre Tomás y una regla que nadie decidió («los jueves»). Todo eso viaja en cada sesión y en el proveedor, si la memoria vive allá.</span>';
+      else if(modo==='conf')h+='<span class="ok">Con confirmación, el archivo tiene solo lo útil, con fecha, a cambio de '+clics+' decisiones rápidas de Daniela. Es la configuración que eligió.</span>';
+      else h+='<span class="warn">La memoria manual quedó limpia, pero perdió la decisión de los sábados: nadie dijo «recuerda». Es predecible, y depende por completo de la disciplina de Daniela.</span>';
+    }else if(dia>0)h+='<span>Sigue con «Siguiente día». Las líneas en rojo son las que no debieron entrar.</span>';
+    q('#c6l1-out').innerHTML=h;
+    q('#c6l1-sig').disabled=dia>=3;
+  }
+  q('#c6l1-modos').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;modo=b.dataset.m;dia=0;pintar();});
+  q('#c6l1-sig').addEventListener('click',()=>{if(dia<3){dia++;pintar();}});
+  q('#c6l1-reset').addEventListener('click',()=>{dia=0;pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="06-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const MEM=[
+    {k:'raul',o:'Raúl no tiene vehículo los jueves.',c:'2026-11-23: Raúl sin vehículo el jueves 26. Caduca: 2026-11-27.',mal:'generaliza de más'},
+    {k:'comite',o:'El comité de operaciones es los lunes a las 9:00.',c:'Desde noviembre, el comité de operaciones es los lunes a las 10:00.',mal:'vencida: el comité pasó a las 10:00'},
+    {k:'andres',o:'Andrés lee el informe en el celular: totales arriba.'},
+    {k:'sabados',o:'Desde diciembre de 2026 no hay visitas los sábados (decidió Julia).'},
+    {k:'sur',o:'Zona Sur: agrupar las visitas por la tarde.'},
+    {k:'actas',o:'Las actas están en la carpeta actas/2026.'}];
+  const est={};MEM.forEach(m=>est[m.k]='o');
+  const PREG=[
+    {k:'raul',p:'¿Puedo darle a Raúl la visita del jueves 3 de diciembre?',
+     o:['No: Raúl no tiene vehículo los jueves. Te propongo dársela a Tomás.','mal','Respuesta equivocada: el problema era solo el jueves 26.'],
+     c:['Sí: el problema de vehículo era solo el jueves 26 y ya venció. Raúl está libre el jueves 3.','ok','Correcta, y explica por qué: sabe que hubo un problema y que terminó.'],
+     b:['Sí, Raúl no tiene nada anotado para el jueves 3.','ok','Correcta, pero sin contexto: el agente ya no sabe que el 26 hubo un problema. A veces corregir es mejor que borrar.']},
+    {k:'comite',p:'¿Hasta qué hora tengo para dejar listo el informe del comité?',
+     o:['Hasta las 9:00, que es cuando empieza el comité.','mal','Equivocada: usa un dato vencido. Daniela correría para nada, o peor, Andrés recibiría una versión a medias.'],
+     c:['Hasta las 10:00, la hora del comité desde noviembre.','ok','Correcta, con el dato vigente.'],
+     b:['No tengo la hora en mi memoria: miro la agenda… el comité es el lunes 23 a las 10:00.','pregunta','Correcta: sin el recuerdo, el agente va a la fuente (la agenda). Un recuerdo vencido es peor que no tener ninguno.']},
+    {k:'sabados',p:'¿Agendo una visita para el sábado 5 de diciembre?',
+     o:['No: desde diciembre no hay visitas los sábados. Te propongo el viernes 4 o el lunes 7.','ok','Correcta: esta línea está bien y sirve.'],
+     b:['Sí, el sábado 5 hay horarios libres.','mal','Equivocada: borraste una decisión vigente. Limpiar la memoria no es borrar todo, sino lo que no vale.']}];
+  let preg='raul';
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const texto=m=>est[m.k]==='c'?m.c:m.o;
+  function pintar(){
+    raiz.querySelectorAll('#c6l2-preg button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===preg)));
+    q('#c6l2-mem').innerHTML=MEM.map(m=>{
+      const e=est[m.k];
+      let acc='';
+      if(e!=='b'){if(m.c&&e==='o')acc+='<button type="button" data-a="c" data-k="'+m.k+'">Corregir</button>';acc+='<button type="button" data-a="b" data-k="'+m.k+'">Borrar</button>';}
+      if(e!=='o')acc+='<button type="button" data-a="o" data-k="'+m.k+'">Volver al original</button>';
+      return '<li class="'+(e==='b'?'borrada':'')+(m.k===preg?' usada':'')+'"><code>- '+esc(texto(m))+'</code><div class="c6l2-acc">'+acc+'</div></li>';
+    }).join('');
+    const p=PREG.find(x=>x.k===preg);const e=est[preg];
+    const r=p[e]||p.o;
+    q('#c6l2-chat').innerHTML='<div class="c6l2-m c6l2-d"><small>Daniela</small>'+esc(p.p)+'</div><div class="c6l2-m c6l2-a"><small>Agente</small>'+esc(r[0])+'</div><span class="c6l2-fuente">'+(e==='b'?'Línea usada: ninguna (está borrada)':'Línea usada: «'+esc(texto(MEM.find(m=>m.k===preg)))+'»')+'</span><span><span class="c6l2-estado '+(r[1]==='mal'?'mal':(r[1]==='pregunta'?'pregunta':''))+'">'+(r[1]==='mal'?'Equivocada':(r[1]==='pregunta'?'Va a la fuente':'Correcta'))+'</span></span>';
+    const vivas=MEM.filter(m=>est[m.k]!=='b');
+    const tok=Math.ceil(vivas.reduce((a,m)=>a+texto(m).length+3,0)/4);
+    const malas=MEM.filter(m=>m.mal&&est[m.k]==='o');
+    let h='<span>'+esc(r[2])+'</span><span>Memoria: <b>'+vivas.length+' líneas</b> · ~<b>'+tok+' tokens</b> en cada sesión · líneas con problemas: <b>'+malas.length+'</b></span>';
+    if(malas.length)h+='<span class="warn">Quedan por revisar: '+malas.map(m=>'«'+esc(m.o)+'» ('+m.mal+')').join('; ')+'.</span>';
+    else if(MEM.some(m=>!m.mal&&est[m.k]==='b'))h+='<span class="warn">Borraste una línea que estaba bien. Prueba la pregunta que la usa.</span>';
+    else h+='<span class="ok">Memoria limpia: sin líneas vencidas ni generalizadas.</span>';
+    q('#c6l2-out').innerHTML=h;
+  }
+  q('#c6l2-preg').innerHTML=PREG.map(p=>'<button type="button" data-k="'+p.k+'">'+esc(p.p)+'</button>').join('');
+  q('#c6l2-preg').addEventListener('click',e=>{const b=e.target.closest('button');if(b){preg=b.dataset.k;pintar();}});
+  q('#c6l2-mem').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;est[b.dataset.k]=b.dataset.a;preg=PREG.some(p=>p.k===b.dataset.k)?b.dataset.k:preg;pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

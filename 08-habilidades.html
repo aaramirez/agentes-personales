@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Habilidades y comandos · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="habilidades">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 08 DE 13</span><h1>Habilidades, comandos y subagentes</h1><p class="lede">Cada lunes, Daniela le explicaba al agente cómo armar el informe, con otras palabras y algún detalle olvidado. Ahora el procedimiento vive en una carpeta: el agente lo encuentra solo cuando hace falta, lo sigue igual cada semana, y una regla automática se asegura de que nada salga sin ella.</p></header>
+<section><h2>Del pedido repetido al procedimiento guardado</h2><div class="prose"><p>Lunes 30 de noviembre, 7:30. Es el tercer lunes que Daniela le pide al agente el informe de visitas. El primero le explicó todo: qué planilla leer, que las reprogramadas no cuentan como hechas, que los totales van arriba porque Andrés lo lee en el celular, que no ponga nombres de clientes, que deje un borrador y no lo envíe. El segundo lunes se olvidó de decir lo de los totales y el informe salió con los totales al final. Hoy, antes de escribir, se pregunta: ¿por qué tengo que volver a explicar esto cada semana?</p><p>Parte de la respuesta ya la tiene. Las reglas estables (quién es Andrés, qué cuenta como reprogramada, «nunca enviar») están en su archivo de instrucciones permanentes desde el capítulo 4. Pero el informe no es una regla: es un <b>procedimiento</b> (<i>procedure</i>), una secuencia de pasos con una plantilla, que solo hace falta los lunes. Meterlo entero en las instrucciones sería cargar cada día, en cada vuelta, algo que se usa una vez por semana.</p></div><div class="analogia"><b>Imagínalo así</b><p>En una cocina profesional, las reglas de la casa están pegadas en la pared: lavarse las manos, etiquetar todo con fecha, nada de celulares en la línea. Las recetas no están en la pared: están en un recetario. El cocinero no lee el recetario completo al entrar cada mañana; lo abre en la página de la salsa cuando le piden la salsa. Las instrucciones permanentes son la pared. Las habilidades son el recetario.</p></div><div class="prose"><p>Los agentes ofrecen cuatro mecanismos para que lo que se repite no dependa de tu memoria, y conviene distinguirlos desde el principio, porque resuelven problemas distintos:</p><div class="tbl"><table><thead><tr><th>Mecanismo</th><th>Quién lo dispara</th><th>Qué resuelve</th><th>Ejemplo con Daniela</th></tr></thead><tbody><tr><td><b>Comando</b></td><td>tú, escribiendo su nombre</td><td>no volver a escribir un pedido largo</td><td><code>/informe 48</code></td></tr><tr><td><b>Habilidad</b></td><td>el agente, cuando la tarea coincide</td><td>un procedimiento con pasos, plantilla y archivos</td><td>«informe semanal»</td></tr><tr><td><b>Subagente</b></td><td>el agente principal, que le delega</td><td>una tarea pesada que ensuciaría el contexto</td><td>el lector de los 20 correos</td></tr><tr><td><b>Gancho</b></td><td>el arnés, siempre, sin preguntarle al modelo</td><td>una regla que no puede fallar</td><td>bloquear cualquier envío</td></tr></tbody></table></div></div><figure class="fig fig-comparacion" id="08-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" style="min-width:720px" role="img" aria-label="Cuatro mecanismos para no repetir, en un eje de quién decide. Comando: lo decides tú, se carga cuando escribes su nombre. Habilidad: la decide el agente, se carga cuando la tarea coincide con su descripción. Subagente: lo decide el agente principal, trabaja en un contexto propio. Gancho: lo ejecuta el arnés siempre, sin consultar al modelo. Las tres primeras son texto que el modelo sigue con su criterio; el gancho es un programa que no depende del modelo.">
+  <defs>
+    <marker id="d08a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+  </defs>
+  <line x1="30" y1="40" x2="870" y2="40" class="ln" style="stroke-width:1.6" marker-end="url(#d08a-n)"/>
+  <text x="30" y="28" class="t t-xs t-b k-warm">DECIDES TÚ</text>
+  <text x="450" y="28" class="t t-xs t-b t-m" text-anchor="middle">DECIDE EL AGENTE (EL MODELO)</text>
+  <text x="870" y="28" class="t t-xs t-b k-tra" text-anchor="end">DECIDE EL ARNÉS, SIEMPRE</text>
+
+  <g>
+    <rect x="20" y="60" width="200" height="200" rx="10" class="c-fis"/>
+    <text x="36" y="86" class="t t-b">Comando</text>
+    <text x="36" y="104" class="t t-s t-mono">/informe 48</text>
+    <text x="36" y="132" class="t t-xs t-b t-m">SE CARGA</text>
+    <text x="36" y="148" class="t t-s">cuando escribes su nombre</text>
+    <text x="36" y="176" class="t t-xs t-b t-m">GARANTIZA</text>
+    <text x="36" y="192" class="t t-s">el mismo pedido completo,</text>
+    <text x="36" y="207" class="t t-s">sin olvidos al escribirlo</text>
+    <text x="36" y="236" class="t t-s t-m">si no lo nombras, no se usa</text>
+
+    <rect x="235" y="60" width="200" height="200" rx="10" class="c-fis"/>
+    <text x="251" y="86" class="t t-b">Habilidad</text>
+    <text x="251" y="104" class="t t-s t-mono">informe-semanal/</text>
+    <text x="251" y="132" class="t t-xs t-b t-m">SE CARGA</text>
+    <text x="251" y="148" class="t t-s">cuando la tarea coincide</text>
+    <text x="251" y="163" class="t t-s">con su descripción</text>
+    <text x="251" y="191" class="t t-xs t-b t-m">GARANTIZA</text>
+    <text x="251" y="207" class="t t-s">los mismos pasos y plantilla</text>
+    <text x="251" y="236" class="t t-s t-m">si el modelo la elige bien</text>
+
+    <rect x="450" y="60" width="200" height="200" rx="10" class="c-fis"/>
+    <text x="466" y="86" class="t t-b">Subagente</text>
+    <text x="466" y="104" class="t t-s t-mono">lector de correo</text>
+    <text x="466" y="132" class="t t-xs t-b t-m">SE CARGA</text>
+    <text x="466" y="148" class="t t-s">cuando el principal delega</text>
+    <text x="466" y="176" class="t t-xs t-b t-m">GARANTIZA</text>
+    <text x="466" y="192" class="t t-s">un contexto limpio y</text>
+    <text x="466" y="207" class="t t-s">herramientas propias</text>
+    <text x="466" y="236" class="t t-s t-m">más tokens en total</text>
+
+    <rect x="680" y="60" width="200" height="200" rx="10" class="c-tra" style="stroke-width:2.5"/>
+    <text x="696" y="86" class="t t-b">Gancho</text>
+    <text x="696" y="104" class="t t-s t-mono">sin-envios</text>
+    <text x="696" y="132" class="t t-xs t-b t-m">SE EJECUTA</text>
+    <text x="696" y="148" class="t t-s">antes o después de cada</text>
+    <text x="696" y="163" class="t t-s">acción, sin preguntar</text>
+    <text x="696" y="191" class="t t-xs t-b t-m">GARANTIZA</text>
+    <text x="696" y="207" class="t t-s">que la regla se cumpla</text>
+    <text x="696" y="222" class="t t-s">aunque el modelo no quiera</text>
+    <text x="696" y="246" class="t t-s t-m">requiere configurarlo bien</text>
+  </g>
+
+  <line x1="665" y1="56" x2="665" y2="300" class="ln ln-d" style="stroke-width:2"/>
+  <rect x="20" y="282" width="630" height="78" rx="10" class="c-fis" style="stroke-dasharray:5 4;fill-opacity:.5"/>
+  <text x="335" y="312" class="t t-s t-b" text-anchor="middle">Texto que el modelo lee y sigue con su criterio</text>
+  <text x="335" y="332" class="t t-s" text-anchor="middle">ayuda mucho, pero se puede olvidar, malinterpretar o ser engañado</text>
+  <rect x="680" y="282" width="200" height="78" rx="10" class="c-tra" style="stroke-dasharray:5 4"/>
+  <text x="780" y="312" class="t t-s t-b" text-anchor="middle">Un programa</text>
+  <text x="780" y="332" class="t t-s" text-anchor="middle">que corre siempre</text>
+</svg></div><figcaption><b>Cuatro formas de no repetir, según quién decide y cuánto garantiza.</b> El eje horizontal va de lo que decides tú (comando) a lo que decide el agente (habilidad y subagente) y a lo que decide el arnés sin consultar al modelo (gancho). Cada tarjeta dice cuándo se carga y qué garantiza. Las tres primeras, en naranja, son texto que el modelo lee y sigue con su criterio: ayudan, pero el modelo puede equivocarse. La cuarta, en violeta como los permisos, es un programa que se ejecuta siempre: no depende de que el modelo la entienda ni de que quiera cumplirla.</figcaption></figure></section>
+<section><h2>Comandos: atajos con nombre</h2><div class="prose"><p>Un <b>comando</b> (<i>command</i>, también <i>slash command</i>, porque en muchos agentes se escribe con una barra delante) es un pedido guardado con un nombre corto. Escribes <code>/informe</code> y el agente recibe, en lugar de esas ocho letras, el texto completo que guardaste: «Prepara el informe de visitas de la semana anterior siguiendo la plantilla, con los totales arriba, sin nombres de clientes, y deja un borrador para Andrés». Muchos comandos aceptan un dato al final: <code>/informe 48</code> pone «48» donde el texto guardado dice «la semana».</p><p>Los agentes traen comandos propios para manejar el programa. Ya viste dos en el curso: <code>/compact</code> para compactar (capítulo 2) y <code>/memory</code> para ver la memoria (capítulo 6), ambos en Claude Code a noviembre de 2026. Y casi todos los agentes de terminal permiten crear comandos propios guardando el texto en un archivo con el nombre del comando, dentro de una carpeta que el agente conoce.</p></div><div class="analogia"><b>Imagínalo así</b><p>Un comando es la marcación rápida del teléfono. Guardas una vez el número largo con un nombre corto y después basta un toque. No hace la llamada más inteligente: solo evita que te equivoques al marcar.</p></div><div class="prose"><p>El comando tiene una virtud y un límite. La virtud: <b>lo disparas tú</b>, así que sabes exactamente cuándo se usa. El límite: también depende de ti. Si un lunes Daniela escribe «armame lo de las visitas» en vez de <code>/informe</code>, el comando no se usa y el agente improvisa. Para que el procedimiento se use aunque no lo nombres, hace falta una habilidad.</p></div></section>
+<section><h2>Habilidades (<i>skills</i>): instrucciones, plantillas y scripts que el agente carga cuando hacen falta</h2><div class="prose"><p>Una <b>habilidad</b> (<i>skill</i>) es una carpeta con un procedimiento que el agente puede cargar por su cuenta. Adentro hay, como mínimo, un archivo de instrucciones con dos partes: una cabecera con el <b>nombre</b> y una <b>descripción</b> de cuándo usarla, y un cuerpo con los pasos. Puede tener además plantillas, ejemplos y pequeños programas, llamados <b>scripts</b> (<i>scripts</i>), que hacen una parte del trabajo de forma exacta, como sumar una columna.</p><p>La idea clave es la <b>carga progresiva</b> (<i>progressive disclosure</i>). Al empezar cada sesión, el agente no lee todas sus habilidades: solo lee el nombre y la descripción de cada una, unas pocas decenas de tokens por habilidad. Cuando un pedido coincide con una descripción, carga el cuerpo de esa habilidad. Y solo si los pasos lo piden, abre la plantilla o ejecuta el script. Así, un agente puede tener veinte habilidades sin que el contexto se llene.</p></div><figure class="fig fig-capas" id="08-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" style="min-width:720px" role="img" aria-label="Carga progresiva de una habilidad en tres niveles. Arriba, el catálogo con el nombre y la descripción de cada habilidad, siempre en el contexto, unos 40 tokens por habilidad. En el medio, el cuerpo de informe semanal, que entra solo cuando el pedido coincide, unos 600 tokens. Abajo, la plantilla y el script de conteo, que entran solo cuando un paso los pide.">
+  <defs>
+    <marker id="d08b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+  </defs>
+  <text x="20" y="34" class="t t-xs t-b t-m">CUÁNDO ENTRA</text>
+  <text x="220" y="34" class="t t-xs t-b t-m">QUÉ ENTRA EN EL CONTEXTO</text>
+  <text x="880" y="34" class="t t-xs t-b t-m" text-anchor="end">TOKENS</text>
+
+  <text x="20" y="74" class="t t-b">Siempre</text>
+  <text x="20" y="92" class="t t-s t-m">al empezar la sesión</text>
+  <rect x="220" y="50" width="560" height="70" rx="8" class="c-fis"/>
+  <text x="236" y="72" class="t t-b">Catálogo: nombre + descripción de cada habilidad</text>
+  <text x="236" y="92" class="t t-s t-mono">informe-semanal · «Arma el informe semanal de visitas… Úsala cuando…»</text>
+  <text x="236" y="110" class="t t-s t-mono t-m">ordenar-actas · «…»   preparar-reunion · «…»</text>
+  <text x="880" y="80" class="t t-b t-mono" text-anchor="end">~40 c/u</text>
+
+  <text x="20" y="166" class="t t-b">Si la tarea coincide</text>
+  <text x="20" y="184" class="t t-s t-m">«prepara el informe</text>
+  <text x="20" y="199" class="t t-s t-m">del lunes»</text>
+  <rect x="220" y="142" width="420" height="70" rx="8" class="c-fis" style="fill-opacity:.7"/>
+  <text x="236" y="164" class="t t-b">Cuerpo de informe-semanal (SKILL.md)</text>
+  <text x="236" y="184" class="t t-s">los 5 pasos: leer, contar y comprobar,</text>
+  <text x="236" y="200" class="t t-s">completar la plantilla, sin clientes, borrador</text>
+  <text x="880" y="180" class="t t-b t-mono" text-anchor="end">~600</text>
+
+  <text x="20" y="258" class="t t-b">Si un paso lo pide</text>
+  <text x="20" y="276" class="t t-s t-m">paso 3: «completa</text>
+  <text x="20" y="291" class="t t-s t-m">plantilla.md»</text>
+  <rect x="220" y="234" width="200" height="70" rx="8" class="d-casa"/>
+  <text x="236" y="256" class="t t-b">plantilla.md</text>
+  <text x="236" y="276" class="t t-s">totales arriba,</text>
+  <text x="236" y="292" class="t t-s">tabla por técnico</text>
+  <rect x="432" y="234" width="208" height="70" rx="8" class="d-casa" style="stroke-dasharray:5 4"/>
+  <text x="448" y="256" class="t t-b">contar.py (script)</text>
+  <text x="448" y="276" class="t t-s">suma exacta: solo entra</text>
+  <text x="448" y="292" class="t t-s">su resultado, no el código</text>
+  <text x="880" y="272" class="t t-b t-mono" text-anchor="end">~150</text>
+
+  <line x1="190" y1="58" x2="190" y2="300" class="ln" style="stroke-width:2" marker-end="url(#d08b-n)"/>
+  <text x="450" y="340" class="t t-s" text-anchor="middle">Veinte habilidades instaladas cuestan unos 800 tokens por vuelta; solo la que se usa carga su cuerpo.</text>
+</svg></div><figcaption><b>La carga progresiva de una habilidad.</b> Tres franjas, de arriba abajo, con el tamaño en tokens a la derecha. Arriba, el catálogo: el nombre y la descripción de cada habilidad, que están en el contexto siempre (unos 40 tokens por habilidad). En el medio, el cuerpo de «informe semanal», que entra solo cuando Daniela pide el informe (unos 600 tokens). Abajo, la plantilla y el script de conteo, que entran solo cuando un paso los necesita. La flecha de la izquierda marca el disparador de cada nivel: siempre, cuando la tarea coincide, cuando el paso lo pide.</figcaption></figure><div class="prose"><p>La habilidad «informe semanal» de Daniela se ve así:</p><div class="code-copia"><pre><code>---
+name: informe-semanal
+description: Arma el informe semanal de visitas de campo a partir de la planilla visitas-semana-NN.csv. Úsala cuando pidan el informe del lunes, el resumen de visitas o los totales de la semana.
+---
+# Informe semanal de visitas
+
+1. Lee visitas/visitas-semana-NN.csv de la semana anterior.
+2. Cuenta hechas, reprogramadas y pendientes. Comprueba que la suma da el total de filas; si no, detente y avisa.
+3. Completa plantilla.md: totales arriba, una tabla por técnico, y la lista de reprogramadas y pendientes con fecha y zona.
+4. No escribas nombres de clientes.
+5. Guarda informes/informe-semana-NN.md y deja un borrador para Andrés. No lo envíes.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Fíjate en la descripción. Es lo único que el agente lee antes de decidir, así que tiene que decir <b>qué hace y cuándo usarla</b>, con las palabras que Daniela usa de verdad: «informe del lunes», «resumen de visitas», «totales de la semana». Una descripción vaga («ayuda con informes») hace que la habilidad se cargue para el informe de gastos y no para «¿cómo nos fue la semana pasada?». Una descripción demasiado amplia («para todo lo de visitas, técnicos y correo») hace que se cargue cuando no corresponde.</p></div><div class="lab" id="08-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>De pedido repetido a habilidad</h3></div><p class="hint">Elige una descripción para la habilidad «informe semanal» (o ninguna) y marca qué pasos incluye. Después mira los seis pedidos de Daniela: cuáles cargan la habilidad, cuáles no, y si el agente acertó. Abajo verás el informe que sale para «Prepara el informe del lunes» con los pasos que marcaste, y cuántos tokens cuesta tener la habilidad instalada frente a usarla.</p><style>
+[id="08-lab-1"] .c8l1-fila{display:grid;gap:6px}
+[id="08-lab-1"] .c8l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="08-lab-1"] .c8l1-desc button{text-align:left;border-left:5px solid var(--c-fis);flex:1 1 220px;display:flex;flex-direction:column;align-items:flex-start}
+[id="08-lab-1"] .c8l1-desc button small{font:400 .74rem/1.35 var(--f-body);opacity:.9}
+[id="08-lab-1"] .c8l1-pasos button{border-left:5px solid var(--c-fis)}
+[id="08-lab-1"] .c8l1-pasos button[aria-pressed="false"]{border-left-color:var(--line);text-decoration:line-through;opacity:.8}
+[id="08-lab-1"] .c8l1-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="08-lab-1"] .c8l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="08-lab-1"] .c8l1-ped{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+[id="08-lab-1"] .c8l1-ped li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 8px;align-items:center;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);font:400 .85rem/1.35 var(--f-body)}
+[id="08-lab-1"] .c8l1-ped li small{grid-column:1 / -1;color:var(--muted);font-size:.76rem}
+[id="08-lab-1"] .c8l1-ped li.carga{border-left:5px solid var(--c-fis);background:var(--c-fis-s)}
+[id="08-lab-1"] .c8l1-ped li.error{box-shadow:0 0 0 2px var(--warm)}
+[id="08-lab-1"] .c8l1-chip{font:700 .64rem var(--f-display);letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:4px;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+[id="08-lab-1"] .c8l1-chip.ok{border-color:var(--good);color:var(--good);background:var(--good-soft)}
+[id="08-lab-1"] .c8l1-chip.mal{border-color:var(--warm);color:var(--warm);background:var(--warm-soft)}
+[id="08-lab-1"] .c8l1-inf{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:6px;min-width:0}
+[id="08-lab-1"] .c8l1-inf pre{margin:0;font:400 .76rem/1.45 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere;background:var(--paper);border-radius:6px;padding:8px}
+[id="08-lab-1"] .c8l1-inf ul{margin:0;padding-left:1.1em;font:400 .8rem/1.4 var(--f-body)}
+[id="08-lab-1"] .c8l1-inf li.mal{color:var(--warm)}
+[id="08-lab-1"] .c8l1-inf li.ok{color:var(--good)}
+</style>
+<div class="c8l1-fila">
+  <p class="c8l1-rot" id="c8l1-r1">Descripción de la habilidad «informe-semanal»</p>
+  <div class="btns c8l1-desc" role="group" aria-labelledby="c8l1-r1" id="c8l1-desc"></div>
+</div>
+<div class="c8l1-fila">
+  <p class="c8l1-rot" id="c8l1-r2">Pasos del cuerpo: toca para quitar o poner</p>
+  <div class="btns c8l1-pasos" role="group" aria-labelledby="c8l1-r2" id="c8l1-pasos"></div>
+</div>
+<div class="c8l1-grid">
+  <div class="c8l1-fila">
+    <p class="c8l1-rot">Seis pedidos de Daniela</p>
+    <ul class="c8l1-ped" id="c8l1-ped" aria-live="polite"></ul>
+  </div>
+  <div class="c8l1-inf">
+    <p class="c8l1-rot">«Prepara el informe del lunes»: lo que sale</p>
+    <pre id="c8l1-pre"></pre>
+    <ul id="c8l1-chk"></ul>
+  </div>
+</div>
+<div class="readout texto" id="c8l1-out" aria-live="polite"></div></div><div class="prose"><p>En el laboratorio, la descripción buena acierta los seis pedidos: carga la habilidad en los tres que hablan de visitas, aunque solo uno diga «informe», y la deja quieta en el informe de gastos. Los pasos se notan en el resultado: sin «comprobar la suma», el informe no detecta una fila mal cargada; sin «no enviar», el procedimiento queda en manos de las instrucciones permanentes, que por suerte lo dicen. Y el costo de tenerla instalada es mínimo: la descripción viaja siempre, el cuerpo solo los lunes.</p><p>A noviembre de 2026, el formato de habilidades como carpeta con un archivo <code>SKILL.md</code> se publicó como estándar abierto (<a href="https://agentskills.io/" target="_blank" rel="noopener">agentskills.io</a>) y lo leen varios agentes, entre ellos Claude Code y Codex. Otros agentes tienen equivalentes con otro nombre. El concepto es el mismo en todos: un procedimiento en una carpeta, con una descripción que el agente usa para decidir cuándo abrirlo.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Escribe la habilidad «informe semanal»</h3></div><p>Vas a crear, dentro de la carpeta de prueba <code>agente-prueba</code>, la carpeta de la habilidad con su archivo de instrucciones y su plantilla. No necesitas ningún agente: es un ejercicio de escribir el procedimiento. Si tienes un agente que lea habilidades, puedes copiar la carpeta adonde su documentación indique, siempre con esta carpeta de prueba. En Windows se usa <code>[IO.File]::WriteAllLines</code> porque escribe el archivo sin la marca invisible del inicio (<i>BOM</i>) que agrega <code>Set-Content</code> en Windows PowerShell 5.1 y que puede impedir que un agente reconozca la cabecera.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>New-Item -ItemType Directory -Force habilidades\informe-semanal</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>[IO.File]::WriteAllLines("$PWD\habilidades\informe-semanal\SKILL.md", [string[]]@("---","name: informe-semanal","description: Arma el informe semanal de visitas de campo a partir de la planilla visitas-semana-NN.csv. Úsala cuando pidan el informe del lunes, el resumen de visitas o los totales de la semana.","---","# Informe semanal de visitas","","1. Lee visitas/visitas-semana-NN.csv de la semana anterior.","2. Cuenta hechas, reprogramadas y pendientes. Comprueba que la suma da el total de filas.","3. Completa plantilla.md: totales arriba, tabla por técnico, reprogramadas y pendientes con fecha y zona.","4. No escribas nombres de clientes.","5. Guarda informes/informe-semana-NN.md y deja un borrador para Andrés. No lo envíes."))</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>[IO.File]::WriteAllLines("$PWD\habilidades\informe-semanal\plantilla.md", [string[]]@("# Informe de visitas, semana NN","","Hechas: X · Reprogramadas: Y · Pendientes: Z · Total: N","","| Técnico | Hechas | Reprogramadas | Pendientes |","|---|---|---|---|","","Reprogramadas y pendientes:"))</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-ChildItem -Recurse habilidades</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-Content -Encoding utf8 habilidades\informe-semanal\SKILL.md -TotalCount 4</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>mkdir -p habilidades/informe-semanal</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "---" "name: informe-semanal" "description: Arma el informe semanal de visitas de campo a partir de la planilla visitas-semana-NN.csv. Úsala cuando pidan el informe del lunes, el resumen de visitas o los totales de la semana." "---" "# Informe semanal de visitas" "" "1. Lee visitas/visitas-semana-NN.csv de la semana anterior." "2. Cuenta hechas, reprogramadas y pendientes. Comprueba que la suma da el total de filas." "3. Completa plantilla.md: totales arriba, tabla por técnico, reprogramadas y pendientes con fecha y zona." "4. No escribas nombres de clientes." "5. Guarda informes/informe-semana-NN.md y deja un borrador para Andrés. No lo envíes." &gt; habilidades/informe-semanal/SKILL.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "# Informe de visitas, semana NN" "" "Hechas: X · Reprogramadas: Y · Pendientes: Z · Total: N" "" "| Técnico | Hechas | Reprogramadas | Pendientes |" "|---|---|---|---|" "" "Reprogramadas y pendientes:" &gt; habilidades/informe-semanal/plantilla.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>ls -R habilidades</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>head -n 4 habilidades/informe-semanal/SKILL.md</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Mira las cuatro primeras líneas: es la cabecera, lo único que el agente lee de esta habilidad al empezar cada sesión.</span></li><li><span>Abre <code>plantilla.md</code> y complétala a mano con la planilla de la semana 47: 7 hechas, 2 reprogramadas, 1 pendiente.</span></li><li><span>Reescribe la descripción para un procedimiento tuyo que repitas cada semana, con las palabras con que lo pides.</span></li></ol><p><b>Qué observar:</b> una habilidad no es un programa misterioso: es una carpeta con texto y, si quieres, una plantilla. La cabecera decide cuándo se usa; el cuerpo, cómo. Si al completar la plantilla a mano dudaste en algún paso («¿la pendiente del viernes va en la tabla?»), ese es un paso que falta escribir: el agente dudaría en el mismo lugar.</p></div></section>
+<section><h2>Subagentes: un especialista con su propio contexto</h2><div class="prose"><p>El lunes, además del informe, Daniela quiere saber si alguno de los veinte correos del fin de semana cambia la agenda. Si el agente principal los lee todos, su contexto se llena de mensajes que no importan para el informe: en el capítulo 2 viste lo que eso cuesta y lo que se pierde al compactar. Para esto existen los <b>subagentes</b> (<i>subagents</i>): agentes que el agente principal crea para una tarea concreta, cada uno con su propio contexto limpio, sus propias instrucciones y, si conviene, menos herramientas.</p></div><div class="analogia"><b>Imagínalo así</b><p>Una jefa de proyecto no lee los cuarenta informes técnicos de su equipo. Le pide a un analista que los lea y le traiga una página con lo importante. El analista se llena la cabeza de detalles; ella recibe la conclusión y sigue con la cabeza despejada para decidir. El subagente es ese analista: trabaja en su escritorio, no en el de ella.</p></div><figure class="fig fig-flujo" id="08-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" style="min-width:740px" role="img" aria-label="Diagrama de secuencia de una tarea delegada a un subagente. Daniela pide el informe y la revisión de los correos. El agente principal le encarga los correos al subagente lector de correo, que en su propio contexto lee los veinte correos, unos 30.000 tokens, y devuelve un resumen de unos 200 tokens: uno cambia la agenda, Raúl sin vehículo el jueves 26. El agente principal responde a Daniela con el informe y el resumen. El contexto del subagente se descarta al terminar.">
+  <defs>
+    <marker id="d08c-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d08c-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d08c-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-fis"/></marker>
+    <marker id="d08c-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-casa"/></marker>
+  </defs>
+  <rect x="10" y="14" width="120" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="70" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="70" y="54" class="t t-s t-m" text-anchor="middle">encarga</text>
+  <rect x="220" y="14" width="140" height="52" rx="10" class="d-inet"/><text x="290" y="36" class="t t-b" text-anchor="middle">Agente principal</text><text x="290" y="54" class="t t-s t-m" text-anchor="middle">arma el informe</text>
+  <rect x="450" y="14" width="150" height="52" rx="10" class="c-fis"/><text x="525" y="36" class="t t-b" text-anchor="middle">Subagente</text><text x="525" y="54" class="t t-s t-m" text-anchor="middle">lector de correo</text>
+  <rect x="690" y="14" width="120" height="52" rx="10" class="d-casa"/><text x="750" y="36" class="t t-b" text-anchor="middle">Correo</text><text x="750" y="54" class="t t-s t-m" text-anchor="middle">20 mensajes</text>
+  <line x1="70" y1="66" x2="70" y2="410" class="vida"/>
+  <line x1="290" y1="66" x2="290" y2="410" class="vida"/>
+  <line x1="525" y1="66" x2="525" y2="410" class="vida"/>
+  <line x1="750" y1="66" x2="750" y2="410" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="70" y1="104" x2="287" y2="104" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d08c-w)"/>
+    <text x="78" y="97">① «el informe y mira los correos»</text>
+    <line x1="290" y1="144" x2="522" y2="144" class="ln s-fis" style="stroke-width:2" marker-end="url(#d08c-f)"/>
+    <text x="298" y="137">② «clasifica los 20 correos»</text>
+    <rect x="533" y="160" width="120" height="96" rx="6" class="c-fis" style="stroke-dasharray:4 3"/>
+    <text x="543" y="178" class="t-b">contexto propio</text>
+    <text x="543" y="194">solo herramientas</text>
+    <text x="543" y="209">de lectura</text>
+    <line x1="525" y1="276" x2="747" y2="276" class="ln" style="stroke-width:2" marker-end="url(#d08c-n)"/>
+    <text x="533" y="269">③ leer 20 correos</text>
+    <line x1="750" y1="306" x2="528" y2="306" class="ln" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d08c-c)"/>
+    <text x="560" y="299">④ ~30.000 tokens</text>
+    <line x1="525" y1="346" x2="293" y2="346" class="ln s-fis" style="stroke-width:2" marker-end="url(#d08c-f)"/>
+    <text x="300" y="339">⑤ resumen: «1 cambia la agenda»</text>
+    <line x1="290" y1="386" x2="73" y2="386" class="ln" style="stroke-width:2" marker-end="url(#d08c-n)"/>
+    <text x="80" y="379">⑥ informe + resumen</text>
+    <rect x="160" y="160" width="120" height="70" rx="6" class="d-inet" style="stroke-dasharray:4 3"/>
+    <text x="170" y="178" class="t-b">mientras tanto</text>
+    <text x="170" y="194">arma el informe</text>
+    <text x="170" y="209">en su contexto</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <text x="830" y="92" class="t-m">TAMAÑO DEL</text><text x="830" y="106" class="t-m">CONTEXTO</text>
+    <text x="830" y="128">PRINCIPAL</text>
+    <rect x="830" y="136" width="30" height="12" rx="3" class="d-inet"/>
+    <text x="866" y="146" class="t-m">~12.000</text>
+    <text x="830" y="176" class="k-fis">SUBAGENTE</text>
+    <rect x="830" y="184" width="96" height="12" rx="3" class="c-fis"/>
+    <text x="830" y="212" class="t-m">~32.000</text>
+    <text x="830" y="228" class="t-m">se descarta</text>
+    <text x="830" y="244" class="t-m">al terminar</text>
+  </g>
+  <rect x="10" y="430" width="920" height="70" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="470" y="458" class="t t-s" text-anchor="middle">Al principal solo llega el resumen (⑤, unos 200 tokens). Su contexto queda limpio para el informe.</text>
+  <text x="470" y="478" class="t t-s t-m" text-anchor="middle">El costo: en total se gastan más tokens, y lo que el resumen omite, el principal no lo sabe.</text>
+</svg></div><figcaption><b>Flujo de una tarea delegada a un subagente.</b> Los participantes son Daniela, el agente principal, el subagente «lector de correo» y el correo. Daniela pide el informe y la revisión de los correos (①). El agente principal arma el informe en su contexto y le encarga los correos al subagente (②). El subagente, en su propio contexto, lee los veinte correos (③ y ④), que ocupan unos 30.000 tokens, y devuelve un resumen de unas pocas líneas (⑤): «uno cambia la agenda: Raúl sin vehículo el jueves 26». El agente principal solo recibe ese resumen, unos 200 tokens, y responde a Daniela (⑥). A la derecha, el tamaño de cada contexto: el del subagente se descarta al terminar.</figcaption></figure><div class="prose"><p>Un subagente sirve para tres cosas:</p><ul><li><b>Proteger el contexto principal.</b> Lee mucho y devuelve poco. El agente principal no se llena de resultados que no necesita.</li><li><b>Especializar.</b> El subagente puede tener instrucciones propias («solo clasifica: pide algo, informa, se puede ignorar») y solo herramientas de lectura, aunque el principal pueda escribir. Menos herramientas, menos riesgo, como en el capítulo 7.</li><li><b>Trabajar en paralelo.</b> Tres subagentes pueden leer tres carpetas a la vez. Cómo repartir el trabajo entre varios agentes es parte del capítulo 11.</li></ul><p>Tiene un costo: cada subagente arranca con su propio contexto y consume sus propios tokens, así que el total gastado suele ser mayor que si el principal lo hiciera solo. Y el agente principal solo sabe lo que el subagente le resume: si el resumen omite algo, el principal no se entera. A noviembre de 2026, por ejemplo, Claude Code permite definir subagentes como archivos con una descripción, una lista de herramientas y sus instrucciones, y el agente principal los elige por su descripción, igual que las habilidades; otros agentes los crean por su cuenta cuando la tarea lo pide. Cómo se construye por dentro un orquestador con subagentes está en <a href="https://aaramirez.github.io/arneses/temario.html" target="_blank" rel="noopener">Cómo construir un arnés</a>.</p></div></section>
+<section><h2>Ganchos (<i>hooks</i>): reglas que corren antes o después de cada acción</h2><div class="prose"><p>Todo lo anterior (comandos, habilidades, subagentes) tiene algo en común: es texto que el modelo lee y sigue con su criterio. Casi siempre lo sigue bien. Pero en el capítulo 7 viste que el modelo puede ser engañado, y en el capítulo 2, que una regla puede perderse al compactar. Para lo que no puede fallar nunca hay un mecanismo de otra naturaleza: el <b>gancho</b> (<i>hook</i>).</p><p>Un gancho es un pequeño programa que el arnés ejecuta automáticamente en un momento fijo del trabajo del agente, sin preguntarle al modelo. Los momentos más comunes son:</p><ul><li><b>Antes de usar una herramienta.</b> El gancho mira qué herramienta se pidió y con qué datos, y puede dejarla pasar, bloquearla o pedir confirmación. Es el único momento en que se puede impedir algo.</li><li><b>Después de usar una herramienta.</b> Puede revisar el resultado (por ejemplo, buscar nombres de clientes en el informe recién escrito) o anotar la acción en un registro. Lo hecho ya está hecho.</li><li><b>Al empezar o al terminar una sesión, o cuando el agente dice «listo».</b> Puede cargar la agenda del día, avisarte por una notificación o comprobar que el informe existe antes de aceptar el «terminado».</li></ul></div><div class="analogia"><b>Imagínalo así</b><p>Un gancho es el detector de metales de la entrada de un edificio. No le pregunta a nadie si trae algo prohibido ni escucha explicaciones: suena cada vez que pasa metal, venga de quien venga. Las habilidades son como el manual del empleado, que la gente sigue porque lo entiende. El detector funciona aunque nadie lo entienda.</p></div><div class="prose"><p>¿En qué se diferencia de las reglas de permisos del capítulo 7? Las reglas miran el nombre de la herramienta y la carpeta: «prohibir <code>enviar_correo</code>». Un gancho puede mirar el contenido: el destinatario, el texto del comando, las palabras del archivo. Así puede atrapar lo que una regla por nombre no ve. Por eso Daniela agregó, además de no tener herramienta de envío, un gancho que bloquea cualquier envío:</p><div class="code-copia"><pre><code>cuándo:   antes de usar cualquier herramienta
+si:       el nombre o los datos dicen enviar,
+          reenviar, send, mail o publicar
+excepto:  herramientas que solo leen
+          (leer_, buscar_, listar_)
+entonces: bloquear, avisar al modelo
+          y anotar en registro/bloqueos.log</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>¿Para qué, si su agente ni siquiera tiene <code>enviar_correo</code>? Porque la configuración cambia. El mes que viene alguien conectará un conector de mensajería que tiene una herramienta <code>publicar_mensaje</code>, o el agente intentará enviar un correo con un comando de terminal. El gancho no depende de que Daniela recuerde todas las herramientas que existen: mira lo que se intenta hacer. Es la tercera pata de la tríada letal cortada dos veces.</p></div><figure class="fig fig-flujo" id="08-diagrama-4"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 540" style="min-width:740px" role="img" aria-label="Diagrama de secuencia de un gancho. El modelo pide ejecutar un comando que envía un correo. Antes de ejecutarlo, el arnés le pasa al gancho sin envíos el nombre de la herramienta y sus datos. El gancho encuentra la palabra mail y responde bloquear. El arnés no ejecuta nada, le dice al modelo que está bloqueado y anota el intento en el registro. En un segundo caso, crear un borrador pasa por el mismo gancho, que lo deja seguir, y la herramienta se ejecuta.">
+  <defs>
+    <marker id="d08d-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d08d-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-tra"/></marker>
+    <marker id="d08d-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-red"/></marker>
+  </defs>
+  <rect x="10" y="14" width="120" height="52" rx="10" class="d-inet"/><text x="70" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="70" y="54" class="t t-s t-m" text-anchor="middle">pide</text>
+  <rect x="230" y="14" width="120" height="52" rx="10" class="caja"/><text x="290" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="290" y="54" class="t t-s t-m" text-anchor="middle">ejecuta</text>
+  <rect x="450" y="14" width="150" height="52" rx="10" class="c-tra"/><text x="525" y="36" class="t t-b" text-anchor="middle">Gancho</text><text x="525" y="54" class="t t-s t-m" text-anchor="middle">«sin envíos»</text>
+  <rect x="690" y="14" width="130" height="52" rx="10" class="d-casa"/><text x="755" y="36" class="t t-b" text-anchor="middle">Herramienta</text><text x="755" y="54" class="t t-s t-m" text-anchor="middle">y registro</text>
+  <line x1="70" y1="66" x2="70" y2="470" class="vida"/>
+  <line x1="290" y1="66" x2="290" y2="470" class="vida"/>
+  <line x1="525" y1="66" x2="525" y2="470" class="vida"/>
+  <line x1="755" y1="66" x2="755" y2="470" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="70" y1="104" x2="287" y2="104" class="ln" style="stroke-width:2" marker-end="url(#d08d-n)"/>
+    <text x="78" y="97">① ejecutar_comando «Send-Mail…»</text>
+    <line x1="290" y1="142" x2="522" y2="142" class="ln s-tra" style="stroke-width:2" marker-end="url(#d08d-t)"/>
+    <text x="298" y="135">② ¿pasa? nombre + datos</text>
+    <rect x="533" y="152" width="170" height="40" rx="6" class="c-tra" style="stroke-dasharray:4 3"/>
+    <text x="543" y="169" class="t-b">encuentra «mail»</text>
+    <text x="543" y="184">en los datos</text>
+    <line x1="525" y1="214" x2="293" y2="214" class="ln s-tra" style="stroke-width:2" marker-end="url(#d08d-t)"/>
+    <text x="300" y="207">③ «bloquear»</text>
+    <line x1="290" y1="250" x2="73" y2="250" class="ln s-tra" style="stroke-width:2;stroke-dasharray:6 4" marker-end="url(#d08d-t)"/>
+    <text x="80" y="243">④ «bloqueado: no se envían correos»</text>
+    <line x1="290" y1="286" x2="752" y2="286" class="ln" style="stroke:var(--d-casa);stroke-width:2;stroke-dasharray:3 3" marker-end="url(#d08d-n)"/>
+    <text x="560" y="279">⑤ anota en el registro</text>
+    <text x="620" y="320" class="t-m">el comando nunca se ejecuta</text>
+
+    <line x1="20" y1="338" x2="840" y2="338" class="ln ln-d"/>
+
+    <line x1="70" y1="370" x2="287" y2="370" class="ln" style="stroke-width:2" marker-end="url(#d08d-n)"/>
+    <text x="78" y="363">①' crear_borrador para Andrés</text>
+    <line x1="290" y1="404" x2="522" y2="404" class="ln s-tra" style="stroke-width:2" marker-end="url(#d08d-t)"/>
+    <text x="298" y="397">②' ¿pasa?</text>
+    <line x1="525" y1="434" x2="293" y2="434" class="ln s-tra" style="stroke-width:2" marker-end="url(#d08d-t)"/>
+    <text x="300" y="427">③' «sigue»</text>
+    <line x1="290" y1="462" x2="752" y2="462" class="ln s-red" style="stroke-width:2" marker-end="url(#d08d-r)"/>
+    <text x="560" y="455">④' crea el borrador</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M858 86v240" class="ln s-tra" style="stroke-width:3"/><text x="866" y="200" class="k-tra">BLOQUEA</text>
+    <path d="M858 352v116" class="ln" style="stroke-width:3"/><text x="866" y="414">DEJA</text><text x="866" y="428">PASAR</text>
+  </g>
+  <rect x="10" y="486" width="920" height="44" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="470" y="513" class="t t-s" text-anchor="middle">El modelo no participa en la decisión del gancho: no puede convencerlo ni saltárselo.</text>
+</svg></div><figcaption><b>Flujo de un gancho que bloquea un envío.</b> Los participantes son el modelo, el arnés, el gancho «sin envíos» (violeta) y la herramienta. El modelo pide ejecutar un comando que envía un correo (①). Antes de ejecutarlo, el arnés le pasa al gancho el nombre de la herramienta y sus datos (②). El gancho encuentra «mail» en el comando y responde «bloquear» (③). El arnés no ejecuta nada, le devuelve al modelo «bloqueado por una regla: no se envían correos» (④) y anota el intento en el registro (⑤). En la parte de abajo, un pedido normal, crear un borrador, pasa por el mismo gancho, que lo deja seguir (②' y ③'), y la herramienta se ejecuta.</figcaption></figure><div class="lab" id="08-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Un gancho que bloquea una acción</h3></div><p class="hint">Escribe la regla del gancho eligiendo cuándo corre (antes o después de la acción), qué busca (el nombre exacto, palabras en el nombre o palabras en el nombre y en los datos), si exceptúa las herramientas de lectura y qué hace al encontrarla. Después pruébala contra siete acciones del agente, entre ellas cuatro formas distintas de enviar algo. Mira cuántos envíos se escapan y cuántas acciones inocentes bloquea por error.</p><style>
+[id="08-lab-2"] .c8l2-fila{display:grid;gap:6px}
+[id="08-lab-2"] .c8l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="08-lab-2"] .c8l2-regla{font:400 .8rem/1.5 var(--f-mono);background:var(--c-tra-s);border-left:5px solid var(--c-tra);border-radius:0 8px 8px 0;padding:8px 10px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+[id="08-lab-2"] .c8l2-acc{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+[id="08-lab-2"] .c8l2-acc li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;align-items:center;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+[id="08-lab-2"] .c8l2-acc code{font:400 .8rem/1.35 var(--f-mono);overflow-wrap:anywhere;background:none;padding:0}
+[id="08-lab-2"] .c8l2-acc small{grid-column:1 / -1;font:400 .77rem/1.35 var(--f-body);color:var(--muted)}
+[id="08-lab-2"] .c8l2-acc li.envio{border-left:4px solid var(--warm)}
+[id="08-lab-2"] .c8l2-acc li.mal{box-shadow:0 0 0 2px var(--warm)}
+[id="08-lab-2"] .c8l2-chip{font:700 .64rem var(--f-display);letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap}
+[id="08-lab-2"] .c8l2-chip.pasa{background:var(--good-soft);color:var(--good);border:1px solid var(--good)}
+[id="08-lab-2"] .c8l2-chip.bloq{background:var(--c-tra-s);color:var(--c-tra);border:1px solid var(--c-tra)}
+[id="08-lab-2"] .c8l2-chip.preg{background:var(--warm-soft);color:var(--warm);border:1px solid var(--warm)}
+[id="08-lab-2"] .c8l2-chip.tarde{background:var(--paper);color:var(--warm);border:1px dashed var(--warm)}
+[id="08-lab-2"] .c8l2-metr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+[id="08-lab-2"] .c8l2-metr div{border:1px solid var(--line);border-radius:8px;background:var(--card);padding:6px 8px;display:grid;gap:2px}
+[id="08-lab-2"] .c8l2-metr b{font:700 1.2rem var(--f-display)}
+[id="08-lab-2"] .c8l2-metr span{font:600 .68rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+</style>
+<div class="c8l2-fila">
+  <p class="c8l2-rot" id="c8l2-r1">Cuándo corre</p>
+  <div class="btns" role="group" aria-labelledby="c8l2-r1" id="c8l2-cuando">
+    <button type="button" data-v="antes" aria-pressed="true">Antes de la acción</button>
+    <button type="button" data-v="despues" aria-pressed="false">Después de la acción</button>
+  </div>
+</div>
+<div class="c8l2-fila">
+  <p class="c8l2-rot" id="c8l2-r2">Qué busca</p>
+  <div class="btns" role="group" aria-labelledby="c8l2-r2" id="c8l2-busca">
+    <button type="button" data-v="exacto" aria-pressed="true">Nombre exacto «enviar_correo»</button>
+    <button type="button" data-v="nombre" aria-pressed="false">Palabras en el nombre</button>
+    <button type="button" data-v="datos" aria-pressed="false">Palabras en el nombre y en los datos</button>
+  </div>
+</div>
+<div class="c8l2-fila">
+  <p class="c8l2-rot" id="c8l2-r3">Excepción y acción</p>
+  <div class="btns" role="group" aria-labelledby="c8l2-r3" id="c8l2-extra">
+    <button type="button" data-x="exc" aria-pressed="false">Exceptuar herramientas de lectura</button>
+  </div>
+  <div class="btns" role="group" aria-label="Qué hace al encontrarla" id="c8l2-hace">
+    <button type="button" data-v="bloquear" aria-pressed="true">Bloquear</button>
+    <button type="button" data-v="preguntar" aria-pressed="false">Preguntarle a Daniela</button>
+    <button type="button" data-v="registrar" aria-pressed="false">Solo registrar</button>
+  </div>
+</div>
+<pre class="c8l2-regla" id="c8l2-regla"></pre>
+<div class="c8l2-metr" id="c8l2-metr" aria-live="polite"></div>
+<ul class="c8l2-acc" id="c8l2-acc" aria-label="Acciones de prueba"></ul>
+<div class="readout texto" id="c8l2-out" aria-live="polite"></div></div><div class="prose"><p>En el laboratorio aparecen los errores clásicos al escribir un gancho. Si busca solo el nombre exacto <code>enviar_correo</code>, se escapan tres de cuatro envíos: el reenvío, el comando de terminal y el mensaje al chat. Si busca palabras también en los datos, los atrapa todos, pero bloquea una búsqueda inocente de un correo que dice «reenviar»; la excepción para las herramientas de lectura corrige eso. Y si el gancho corre <i>después</i> de la acción, no bloquea nada: solo anota que el correo ya salió.</p></div><div class="caso"><b>Un caso real</b><p>Una analista de compras configuró un gancho que revisaba cada archivo que su agente escribía, buscando números de tarjeta y de cuenta bancaria, porque su equipo manejaba pagos a proveedores. Durante semanas no saltó nunca y casi lo quita por inútil. Un día, el agente armó un resumen de facturas a partir de unos PDF escaneados y copió, sin que nadie lo pidiera, el número de cuenta completo de un proveedor en un archivo que iba a una carpeta compartida. El gancho bloqueó la escritura y dejó el aviso. Los ganchos que importan son así: casi nunca saltan, y cuando saltan, es por algo que nadie había previsto.</p></div><div class="prose"><p>Los ganchos son la pieza más técnica de este capítulo. Configurarlos suele requerir escribir un archivo de configuración y, a veces, un pequeño programa. A noviembre de 2026, Claude Code los configura en su archivo <code>settings.json</code>, con momentos como «antes de usar una herramienta» y «después de usarla»; otros agentes tienen mecanismos parecidos o ninguno. Si tu agente no tiene ganchos, la defensa equivalente es la que ya viste: no darle la herramienta y prohibirla con una regla. Si los tiene y no sabes programar, pídele ayuda a alguien de sistemas: es una de las configuraciones que más vale la pena revisar entre dos.</p></div></section>
+<section><h2>Compartir habilidades con el equipo</h2><div class="prose"><p>Julia ve el informe del lunes y pregunta si puede usar la misma habilidad para el informe de sus técnicos. Puede: una habilidad es una carpeta, y una carpeta se comparte. Pero compartir procedimientos que un agente ejecuta pide los mismos cuidados que compartir cualquier cosa que se ejecuta.</p><ul><li><b>Un lugar común y con historial.</b> Las habilidades del equipo viven en una carpeta compartida o en un repositorio con control de versiones, donde se ve quién cambió qué y cuándo, y se puede volver atrás.</li><li><b>Una dueña por habilidad.</b> Alguien responde por cada procedimiento y aprueba los cambios. Si dos personas editan «informe semanal» a la vez, el lunes siguiente nadie sabe qué formato sale.</li><li><b>Revisar antes de instalar.</b> Una habilidad de un tercero puede incluir scripts, y un script es un programa que corre en tu equipo. Léela completa antes de instalarla, igual que con los servidores MCP del capítulo 5. Una habilidad maliciosa puede, además, traer instrucciones escondidas para tu agente.</li><li><b>Nada personal adentro.</b> Una habilidad compartida no lleva tus preferencias, tus contactos ni datos de clientes: eso va en la memoria o en las instrucciones de cada persona.</li></ul><p>Muchos agentes, a noviembre de 2026, permiten además empaquetar habilidades, comandos, subagentes y ganchos juntos en un <b>complemento</b> (<i>plugin</i>) que se instala de una vez, a veces desde un catálogo público. Es práctico y tiene el mismo riesgo multiplicado: un complemento puede traer un gancho, y un gancho corre siempre. Cómo acuerda un equipo su configuración común, con reglas que nadie puede saltarse, es el capítulo 13.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Lee una habilidad pública por dentro</h3></div><p>Vas a mirar habilidades reales publicadas en un repositorio público de GitHub. Solo vas a leer: no instales nada. Abre <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">github.com/anthropics/skills</a>, un repositorio de ejemplo de un fabricante de modelos (hay otros; cualquiera con archivos <code>SKILL.md</code> sirve).</p><ol class="steps"><li><span>Entra en la carpeta de habilidades y elige una que entiendas por el nombre.</span></li><li><span>Abre su archivo <code>SKILL.md</code> y lee la cabecera: copia el <code>name</code> y la <code>description</code>.</span></li><li><span>Lee el cuerpo y cuenta cuántos pasos tiene y si menciona otros archivos (plantillas, scripts, ejemplos).</span></li><li><span>Mira si la carpeta trae scripts. Si los trae, abre uno y trata de entender, aunque sea a grandes rasgos, qué hace.</span></li><li><span>Responde: ¿la descripción dice cuándo usarla, o solo qué hace?</span></li></ol><p><b>Qué observar:</b> las buenas descripciones dicen las dos cosas, y usan las palabras con que una persona pediría esa tarea. Las habilidades más largas suelen dejar los detalles en archivos aparte que solo se abren cuando hacen falta: es la carga progresiva. Si encontraste un script, acabas de ver por qué una habilidad de un tercero se revisa antes de instalarla: puede ejecutar código en tu equipo.</p></div><div class="prose"><p>Lo que te llevas de este capítulo cabe en una frase: <b>lo que se hace dos veces se convierte en habilidad</b>. Un pedido largo que repites se vuelve comando; un procedimiento con pasos y plantilla, habilidad; una tarea pesada que ensucia el contexto, subagente; y una regla que no puede fallar, gancho. Con esto, el agente de Daniela tiene sus cinco piezas: instrucciones, herramientas, memoria, permisos y habilidades. En la parte 3 aprenderás a trabajar con él: delegar bien, aprobar y dejarlo correr solo los lunes a las 7:00.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué diferencia hay entre un comando y una habilidad?</summary><p>El comando lo dispara la persona al escribir su nombre; la habilidad la carga el agente por su cuenta cuando el pedido coincide con su descripción, aunque no la nombres.</p></details><details><summary>¿Qué es la carga progresiva y por qué permite tener muchas habilidades instaladas?</summary><p>El agente lee siempre solo el nombre y la descripción de cada habilidad (pocos tokens); carga el cuerpo solo cuando un pedido coincide, y las plantillas o scripts solo cuando un paso los pide. Así el contexto no se llena.</p></details><details><summary>La habilidad del informe se carga para el informe de gastos y no para «¿cómo nos fue la semana pasada?». ¿Qué hay que corregir?</summary><p>La descripción: es vaga. Tiene que decir qué hace y cuándo usarla, con las palabras que la persona usa de verdad («informe del lunes», «resumen de visitas», «totales de la semana»).</p></details><details><summary>¿Para qué sirve un subagente y cuál es su costo?</summary><p>Para hacer una tarea pesada en un contexto propio y devolver solo un resumen, para especializarse con menos herramientas o para trabajar en paralelo. El costo: consume más tokens en total, y el agente principal solo sabe lo que el resumen le cuenta.</p></details><details><summary>¿Por qué un gancho es más confiable que una instrucción para bloquear envíos?</summary><p>Porque lo ejecuta el arnés siempre, sin consultar al modelo: no se pierde al compactar ni lo puede convencer un texto escondido. Una instrucción es texto que el modelo puede olvidar o malinterpretar.</p></details><details><summary>Un gancho que bloquea envíos corre «después de usar la herramienta». ¿Qué problema tiene?</summary><p>Que no puede bloquear nada: cuando corre, el correo ya salió. Para impedir una acción, el gancho tiene que correr antes.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es el formato YAML que se usa en la cabecera de muchos archivos de habilidades y por qué va entre líneas de tres guiones?<small>Pista: busca «YAML front matter».</small></li><li>¿Qué es un código de salida (<i>exit code</i>) de un programa y cómo lo usan los ganchos para decir «bloquear» o «dejar pasar»?</li><li>¿Qué es un ataque a la cadena de suministro de software y qué tiene que ver con instalar complementos de terceros?<small>Pista: busca «supply chain attack paquetes maliciosos».</small></li><li>¿Qué diferencia hay entre un repositorio de GitHub y una carpeta compartida en la nube para guardar las habilidades de un equipo?</li><li>¿Qué son las expresiones regulares y por qué se usan para escribir el «si» de un gancho?<small>Pista: busca «expresiones regulares para principiantes».</small></li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills <small>el estándar abierto del formato de habilidades con <code>SKILL.md</code> (en inglés)</small></a><a class="vid" href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener">Agent Skills en Claude Code <small>un ejemplo del mercado: cómo un agente de terminal carga habilidades (en inglés)</small></a><a class="vid" href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Hooks reference <small>un ejemplo del mercado: los momentos en que corre un gancho y cómo bloquea una acción (en inglés)</small></a><a class="vid" href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Subagents <small>un ejemplo del mercado: subagentes con contexto y herramientas propias (en inglés)</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="08-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const DESC=[
+    {k:'no',n:'Sin habilidad',d:'Daniela explica todo en cada pedido, o se le olvida algo.',tok:0},
+    {k:'vaga',n:'Vaga',d:'«Ayuda con informes.»',tok:8},
+    {k:'buena',n:'Qué hace y cuándo',d:'«Arma el informe semanal de visitas… Úsala cuando pidan el informe del lunes, el resumen de visitas o los totales de la semana.»',tok:45},
+    {k:'amplia',n:'Demasiado amplia',d:'«Úsala para cualquier pedido sobre visitas, técnicos o correo.»',tok:14}];
+  const PASOS=[
+    {k:'tot',n:'Totales arriba (plantilla)'},
+    {k:'suma',n:'Comprobar que la suma da el total'},
+    {k:'cli',n:'Sin nombres de clientes'},
+    {k:'bor',n:'Dejar borrador, no enviar'}];
+  // debe: si debería cargar la habilidad
+  const PED=[
+    {t:'Prepara el informe del lunes',debe:1,vaga:1,amplia:1},
+    {t:'¿Cómo nos fue la semana pasada con las visitas? Dame los totales',debe:1,vaga:0,amplia:1},
+    {t:'Hazme el resumen de visitas de la semana 47 para Andrés',debe:1,vaga:0,amplia:1},
+    {t:'Responde el correo de Julia sobre Raúl',debe:0,vaga:0,amplia:1},
+    {t:'¿Qué tengo en la agenda el martes?',debe:0,vaga:0,amplia:0},
+    {t:'Escribe el informe de gastos del mes',debe:0,vaga:1,amplia:0}];
+  let desc='buena';const paso={tot:true,suma:true,cli:true,bor:true};
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function carga(p){if(desc==='no')return 0;if(desc==='buena')return p.debe;return p[desc];}
+  function pintar(){
+    q('#c8l1-desc').innerHTML=DESC.map(d=>'<button type="button" data-k="'+d.k+'" aria-pressed="'+(d.k===desc)+'"><b>'+d.n+'</b><small>'+esc(d.d)+'</small></button>').join('');
+    q('#c8l1-pasos').innerHTML=PASOS.map(p=>'<button type="button" data-k="'+p.k+'" aria-pressed="'+paso[p.k]+'"'+(desc==='no'?' disabled':'')+'>'+p.n+'</button>').join('');
+    let ac=0,fp=0,fn=0;
+    q('#c8l1-ped').innerHTML=PED.map(p=>{
+      const c=carga(p);let ok,nota;
+      if(desc==='no'){ok=true;nota=p.debe?'Sin habilidad: el agente improvisa con lo que diga el pedido.':'No hay habilidad que cargar.';}
+      else{ok=c===p.debe;if(ok)ac++;else if(c)fp++;else fn++;
+        nota=c?(p.debe?'Carga la habilidad: corresponde.':'Carga la habilidad sin que corresponda: '+(desc==='vaga'?'la palabra «informe» basta para la descripción vaga.':'la descripción abarca de más.')):(p.debe?'No la carga: la descripción no reconoce el pedido, y el agente improvisa.':'No la carga: corresponde.');}
+      return '<li class="'+(c?'carga':'')+(ok?'':' error')+'"><span>'+esc(p.t)+'</span><span class="c8l1-chip '+(desc==='no'?'':(ok?'ok':'mal'))+'">'+(c?'carga':'no carga')+'</span><small>'+esc(nota)+'</small></li>';
+    }).join('');
+    // informe
+    const usa=desc!=='no'&&carga(PED[0]);
+    const P=usa?paso:{tot:false,suma:false,cli:false,bor:false};
+    let inf='# Informe de visitas, semana 48\n\n';
+    const tot='Hechas: 8 · Reprogramadas: 1 · Pendientes: 1 · Total: 10'+(P.suma?' (suma comprobada)':'');
+    if(P.tot)inf+=tot+'\n\n';
+    inf+='| Técnico | Hechas | Reprog. | Pend. |\n|---|---|---|---|\n| Tomás | 4 | 0 | 0 |\n| Inés | 3 | 0 | 0 |\n| Raúl | 1 | 1 | 1 |\n\n';
+    inf+='Reprogramada: Raúl, 24/11, Sur'+(P.cli?'':' (casa de Marta Gil)')+'\nPendiente: Raúl, 27/11, Sur\n';
+    if(!P.tot)inf+='\n'+tot+'\n';
+    q('#c8l1-pre').textContent=inf;
+    const chk=[
+      [P.tot,'Totales arriba, como los lee Andrés en el celular','Totales al final: Andrés tiene que bajar hasta el fondo'],
+      [P.suma,'Comprobó que 8 + 1 + 1 = 10 filas','No comprobó la suma: una fila mal cargada pasaría sin aviso'],
+      [P.cli,'Sin nombres de clientes','Se coló el nombre de una clienta'],
+      [P.bor,'Dejó un borrador para Andrés, sin enviar','No preparó el borrador; por suerte las instrucciones permanentes prohíben enviar']];
+    q('#c8l1-chk').innerHTML=chk.map(c=>'<li class="'+(c[0]?'ok':'mal')+'">'+esc(c[0]?c[1]:c[2])+'</li>').join('');
+    const d=DESC.find(x=>x.k===desc);
+    let h='';
+    if(desc==='no')h='<span>Sin habilidad, cada lunes depende de lo que Daniela recuerde escribir. El informe sale distinto cada semana.</span>';
+    else{
+      h='<span>Aciertos: <b>'+ac+' de 6</b> · cargas indebidas: <b>'+fp+'</b> · pedidos que no reconoce: <b>'+fn+'</b> · costo instalada: <b>~'+d.tok+' tokens por vuelta</b> (la descripción) · al usarla: <b>+600 tokens</b> (el cuerpo), solo en los pedidos que la cargan</span>';
+      if(desc==='buena'&&PASOS.every(p=>paso[p.k]))h+='<span class="ok">La descripción reconoce los tres pedidos de visitas aunque solo uno diga «informe», ignora el de gastos, y los cuatro pasos dan el mismo informe cada lunes.</span>';
+      else if(desc==='buena')h+='<span class="warn">La descripción acierta, pero al cuerpo le faltan pasos: el agente los sigue al pie de la letra, también lo que falta.</span>';
+      else if(desc==='vaga')h+='<span class="warn">La descripción vaga se fija en la palabra «informe»: carga la habilidad para el de gastos y no reconoce «¿cómo nos fue la semana pasada?».</span>';
+      else h+='<span class="warn">La descripción amplia carga 600 tokens de procedimiento para responder un correo que no tiene nada que ver con el informe.</span>';
+    }
+    q('#c8l1-out').innerHTML=h;
+  }
+  q('#c8l1-desc').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;desc=b.dataset.k;pintar();});
+  q('#c8l1-pasos').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;paso[b.dataset.k]=!paso[b.dataset.k];pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="08-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const PAL=/enviar|reenviar|send|mail|publicar/i;
+  const ACC=[
+    {h:'enviar_correo',d:'para: andres.molina@ejemplo.com',envio:1},
+    {h:'reenviar_correo',d:'002-julia.txt → ofertas@herramientas-ejemplo.com',envio:1},
+    {h:'ejecutar_comando',d:'Send-MailMessage -To ofertas@herramientas-ejemplo.com',envio:1},
+    {h:'publicar_mensaje',d:'canal del equipo: «lista de técnicos y teléfonos»',envio:1},
+    {h:'crear_borrador',d:'para: andres.molina@ejemplo.com · informe semana 48',envio:0},
+    {h:'buscar_correo',d:'"reenviar factura"',envio:0,lect:1},
+    {h:'leer_archivo',d:'correo/001-andres.txt',envio:0,lect:1}];
+  const st={cuando:'antes',busca:'exacto',exc:false,hace:'bloquear'};
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function coincide(a){
+    if(st.exc&&a.lect)return false;
+    if(st.busca==='exacto')return a.h==='enviar_correo';
+    if(st.busca==='nombre')return PAL.test(a.h);
+    return PAL.test(a.h)||PAL.test(a.d);
+  }
+  function pintar(){
+    [['#c8l2-cuando','cuando'],['#c8l2-busca','busca'],['#c8l2-hace','hace']].forEach(([s,k])=>raiz.querySelectorAll(s+' button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===st[k]))));
+    q('#c8l2-extra button').setAttribute('aria-pressed',String(st.exc));
+    const si=st.busca==='exacto'?'la herramienta se llama «enviar_correo»':(st.busca==='nombre'?'el nombre contiene enviar, reenviar, send, mail o publicar':'el nombre o los datos contienen enviar, reenviar, send, mail o publicar');
+    q('#c8l2-regla').textContent='cuándo:   '+(st.cuando==='antes'?'antes':'después')+' de usar cualquier herramienta\nsi:       '+si+(st.exc?'\nexcepto:  herramientas de lectura (leer_, buscar_, listar_)':'')+'\nentonces: '+({bloquear:'bloquear y anotar en registro/bloqueos.log',preguntar:'preguntarle a Daniela',registrar:'solo anotar en el registro'})[st.hace];
+    let parados=0,escapan=0,falsos=0;
+    q('#c8l2-acc').innerHTML=ACC.map(a=>{
+      const c=coincide(a);let r,txt,mal=false;
+      if(!c){r='pasa';txt=a.envio?'El gancho no la reconoce: el envío sale.':'Pasa: no coincide con la regla.';if(a.envio){escapan++;mal=true;}}
+      else if(st.cuando==='despues'){r='tarde';txt=a.envio?'El gancho corre cuando la acción ya pasó: lo anota, pero ya salió.':'Anotada después. Nada que impedir.';if(a.envio){escapan++;mal=true;}}
+      else if(st.hace==='registrar'){r='pasa';txt=a.envio?'Coincide, pero la acción es solo registrar: el envío sale y queda anotado.':'Coincide y queda anotada.';if(a.envio){escapan++;mal=true;}else{falsos++;}}
+      else if(st.hace==='preguntar'){r='preg';txt=a.envio?'Coincide: depende de que Daniela diga que no.':'Pregunta sin motivo: una acción inocente interrumpe a Daniela.';if(a.envio)parados++;else{falsos++;mal=true;}}
+      else{r='bloq';txt=a.envio?'Coincide: bloqueada antes de ejecutarse.':'Bloqueo por error: '+(a.lect?'la palabra está en los datos de una lectura inocente.':'acción inocente bloqueada.');if(a.envio)parados++;else{falsos++;mal=true;}}
+      const nom={pasa:'Pasa',bloq:'Bloqueada',preg:'Pregunta',tarde:'Ya pasó'}[r];
+      return '<li class="'+(a.envio?'envio':'')+(mal?' mal':'')+'"><code>'+esc(a.h)+' · '+esc(a.d)+'</code><span class="c8l2-chip '+r+'">'+nom+'</span><small>'+esc(txt)+'</small></li>';
+    }).join('');
+    q('#c8l2-metr').innerHTML='<div><b>'+parados+' de 4</b><span>envíos detenidos</span></div><div><b>'+escapan+'</b><span>envíos que salen</span></div><div><b>'+falsos+'</b><span>falsas alarmas</span></div>';
+    let h;
+    if(st.cuando==='despues')h='<span class="warn">Un gancho que corre después no impide nada: solo deja constancia. Para bloquear, tiene que correr antes.</span>';
+    else if(st.hace==='registrar')h='<span class="warn">Registrar sirve para auditar, no para proteger: los envíos salen igual.</span>';
+    else if(escapan)h='<span class="warn">Se escapan '+escapan+' envío'+(escapan>1?'s':'')+'. '+(st.busca==='exacto'?'Una regla por nombre exacto solo ve la herramienta que ya conocías.':'El comando de terminal no se llama «enviar»: el envío está en sus datos.')+'</span>';
+    else if(falsos)h='<span class="warn">Atrapa los cuatro envíos, pero hay '+falsos+' falsa'+(falsos>1?'s':'')+' alarma'+(falsos>1?'s':'')+'. Prueba exceptuar las herramientas de lectura.</span>';
+    else h='<span class="ok">Los cuatro envíos se detienen antes de ejecutarse y ninguna acción inocente se bloquea. Es el gancho de Daniela.</span>';
+    if(st.hace==='preguntar'&&!escapan&&st.cuando==='antes')h+='<span>Preguntar deja la última palabra a Daniela; bloquear no depende de que esté atenta.</span>';
+    q('#c8l2-out').innerHTML=h;
+  }
+  [['#c8l2-cuando','cuando'],['#c8l2-busca','busca'],['#c8l2-hace','hace']].forEach(([s,k])=>q(s).addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;st[k]=b.dataset.v;pintar();}));
+  q('#c8l2-extra').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;st.exc=!st.exc;pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

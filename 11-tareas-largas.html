@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tareas largas y programadas · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="tareas-largas">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 11 DE 13</span><h1>Tareas largas, en segundo plano y programadas</h1><p class="lede">Lunes 7:00. Daniela todavía no salió de su casa y el agente ya está leyendo la planilla de la semana. A las 7:40 ella abre el aviso, revisa el borrador del informe y lo deja listo para el comité. Para llegar ahí hace falta algo más que configurar: un horario, un presupuesto y una revisión al volver.</p></header>
+<section><h2>Tareas en segundo plano y avisos al terminar</h2><div class="prose"><p>Hasta ahora, Daniela trabajó con su agente como se trabaja con un chat: escribe un encargo, mira cómo avanza, contesta sus preguntas y revisa el resultado. Funciona, pero la tiene sentada frente a la pantalla mientras el agente lee treinta actas. El viernes 27 prueba otra cosa: le encarga ordenar la carpeta de actas, se va a la revisión de zonas con Julia y vuelve una hora después.</p><p>Una tarea en <b>segundo plano</b> (<i>background</i>) es la que el agente hace sin que estés mirando, mientras tú haces otra cosa. El trabajo pasa a ser <b>asíncrono</b> (<i>asynchronous</i>): encargas ahora y revisas después, como con un correo, y no en el momento, como en una llamada. Para que eso funcione hacen falta dos cosas que en una sesión normal das por sentadas.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en la diferencia entre cocinar con alguien al lado y dejarle una receta a quien cocina mientras estás en el trabajo. Si estás al lado, te pregunta «¿le pongo más sal?» y le contestas. Si no estás, la receta tiene que decir qué hacer cuando falta un ingrediente, y tú necesitas saber, al volver, si la comida está lista, si se quemó o si quedó a medias. La receta es el encargo; la nota en la puerta de la heladera es el aviso.</p></div><div class="prose"><p>La primera es <b>qué hacer cuando querría preguntarte</b>. En una sesión normal, el agente se detiene y espera tu respuesta. En segundo plano, una pregunta sin respuesta deja la tarea colgada durante horas. Por eso un encargo para segundo plano dice de antemano qué hacer en cada caso: si falta un dato, anotarlo en <i>Pendientes</i> y seguir con el resto; si una acción necesita aprobación, dejarla propuesta y no ejecutarla; si algo sale muy mal, detenerse y dejar escrito por qué. Los permisos del capítulo 7 siguen valiendo, pero cambia su efecto: lo que en una sesión era «pregunta antes» en segundo plano se convierte en «queda propuesto para cuando vuelvas».</p><p>La segunda es el <b>aviso</b> (<i>notification</i>): la señal de que la tarea terminó, se detuvo o falló. Puede ser una notificación en la pantalla o en el celular, un mensaje en la aplicación del agente o, en la configuración de Daniela, un archivo de resumen en la carpeta, porque su agente no puede enviar correos ni a ella misma. Un buen aviso dice en una línea cómo terminó (terminado, te pregunta o se detuvo) y dónde mirar.</p><p>A noviembre de 2026, muchos agentes del mercado ya trabajan así. Los agentes de terminal como Claude Code o Codex pueden dejar una tarea corriendo en segundo plano o en una máquina en la nube y avisar al terminar; asistentes como ChatGPT agent trabajan en su propio navegador y te avisan cuando necesitan algo. Los nombres y los botones cambian; las dos preguntas, qué hace cuando querría preguntarte y cómo te enteras, son las mismas en todos.</p></div></section>
+<section><h2>Tareas programadas: el resumen de cada mañana</h2><div class="prose"><p>Una tarea en segundo plano la lanzas tú. Una <b>tarea programada</b> (<i>scheduled task</i>) la lanza un reloj: se ejecuta sola en un horario fijo, una vez o de forma recurrente. Lo que la dispara se llama <b>disparador</b> (<i>trigger</i>), y el más común es un horario.</p><p>El informe de Daniela es el candidato perfecto: se hace cada semana, con el mismo procedimiento (la habilidad «informe semanal» del capítulo 8, en <code>habilidades/informe-semanal/</code>), con datos que llegan a la misma carpeta, y tiene una fecha límite clara, el comité de las 10:00. La tarea programada queda así: <b>cada lunes a las 7:00</b>, el agente recibe el mismo pedido que el comando <code>/informe</code> del capítulo 8, arma el informe de la semana anterior con la habilidad y su plantilla, lo deja como borrador en <code>informes/</code>, prepara un borrador de correo para Andrés y escribe un resumen de la ejecución. A las 7:40 Daniela lo revisa con el café.</p><p>Muchos programadores de tareas expresan el horario con la notación de <b>cron</b> (<i>cron</i>), el programador clásico de los sistemas Unix: «lunes a las 7:00» se escribe <code>0 7 * * 1</code>. No hace falta saber escribirla, porque la mayoría de los agentes la arman a partir de una frase, pero conviene saber leerla para comprobar que el agente entendió bien. Y conviene mirar un detalle que causa muchos sustos: la <b>zona horaria</b> (<i>time zone</i>). Si la tarea corre en un servidor que usa otra zona, «las 7:00» pueden ser las 3:00 o las 11:00 de Daniela.</p></div><figure class="fig fig-flujo" id="11-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" style="min-width:720px" role="img" aria-label="Diagrama de secuencia del informe programado de cada lunes. A las 7:00 el programador dispara la tarea; el arnés arranca una sesión nueva con la habilidad y el encargo fijo; el modelo lee la planilla y el correo, escribe el borrador del informe y el del correo para Andrés y comprueba los totales; el arnés guarda el resumen de la ejecución y deja el aviso. Daniela no participa hasta las 7:40, cuando lee el aviso, revisa y decide.">
+  <defs>
+    <marker id="d11a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d11a-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d11a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-red"/></marker>
+    <marker id="d11a-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-casa"/></marker>
+  </defs>
+  <rect x="10" y="14" width="120" height="52" rx="10" class="caja" style="stroke-dasharray:4 3"/><text x="70" y="36" class="t t-b" text-anchor="middle">Programador</text><text x="70" y="54" class="t t-s t-m" text-anchor="middle">lunes 7:00</text>
+  <rect x="185" y="14" width="110" height="52" rx="10" class="caja"/><text x="240" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="240" y="54" class="t t-s t-m" text-anchor="middle">el programa</text>
+  <rect x="365" y="14" width="110" height="52" rx="10" class="d-inet"/><text x="420" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="420" y="54" class="t t-s t-m" text-anchor="middle">decide</text>
+  <rect x="535" y="14" width="150" height="52" rx="10" class="d-casa"/><text x="610" y="36" class="t t-b" text-anchor="middle">Carpeta y correo</text><text x="610" y="54" class="t t-s t-m" text-anchor="middle">vía herramientas</text>
+  <rect x="725" y="14" width="120" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="785" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="785" y="54" class="t t-s t-m" text-anchor="middle">revisa a las 7:40</text>
+  <line x1="70" y1="66" x2="70" y2="600" class="vida"/>
+  <line x1="240" y1="66" x2="240" y2="600" class="vida"/>
+  <line x1="420" y1="66" x2="420" y2="600" class="vida"/>
+  <line x1="610" y1="66" x2="610" y2="600" class="vida"/>
+  <line x1="785" y1="66" x2="785" y2="600" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="70" y1="104" x2="237" y2="104" class="ln" style="stroke-width:2" marker-end="url(#d11a-n)"/>
+    <text x="78" y="97">① 7:00 · dispara la tarea</text>
+    <line x1="240" y1="150" x2="417" y2="150" class="ln" style="stroke-width:2" marker-end="url(#d11a-n)"/>
+    <text x="248" y="129">② sesión nueva:</text><text x="248" y="143">habilidad + encargo fijo</text>
+
+    <line x1="420" y1="188" x2="607" y2="188" class="ln s-red" style="stroke-width:2" marker-end="url(#d11a-r)"/>
+    <text x="428" y="181">③ lee la planilla</text>
+    <line x1="610" y1="214" x2="423" y2="214" class="ln ln-d" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d11a-c)"/>
+    <text x="440" y="230">④ filas de la semana 48</text>
+    <line x1="420" y1="262" x2="607" y2="262" class="ln s-red" style="stroke-width:2" marker-end="url(#d11a-r)"/>
+    <text x="428" y="255">⑤ busca en el correo</text>
+    <line x1="610" y1="288" x2="423" y2="288" class="ln ln-d" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d11a-c)"/>
+    <text x="440" y="304">⑥ 2 correos de la semana</text>
+    <line x1="420" y1="338" x2="607" y2="338" class="ln s-red" style="stroke-width:2" marker-end="url(#d11a-r)"/>
+    <text x="428" y="331">⑦ escribe el informe</text>
+    <line x1="420" y1="374" x2="607" y2="374" class="ln s-red" style="stroke-width:2" marker-end="url(#d11a-r)"/>
+    <text x="428" y="367">⑧ borrador para Andrés</text>
+    <line x1="420" y1="410" x2="607" y2="410" class="ln s-red" style="stroke-width:2" marker-end="url(#d11a-r)"/>
+    <text x="428" y="403">⑨ relee y suma: cumple</text>
+
+    <line x1="420" y1="450" x2="243" y2="450" class="ln" style="stroke-width:2" marker-end="url(#d11a-n)"/>
+    <text x="250" y="443">⑩ terminado</text>
+    <line x1="240" y1="486" x2="607" y2="486" class="ln s-red" style="stroke-width:2" marker-end="url(#d11a-r)"/>
+    <text x="248" y="479">⑪ guarda el resumen y deja el aviso</text>
+    <line x1="610" y1="512" x2="782" y2="512" class="ln ln-d" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d11a-w)"/>
+    <text x="620" y="505">aviso: «Terminado»</text>
+  </g>
+
+  <line x1="20" y1="534" x2="860" y2="534" class="ln ln-d"/>
+  <text x="26" y="552" class="t t-xs t-b t-m">7:40</text>
+  <g class="t t-s">
+    <line x1="785" y1="588" x2="613" y2="588" class="ln" style="stroke:var(--warm);stroke-width:2.5" marker-end="url(#d11a-w)"/>
+    <text x="628" y="562">⑫ lee el aviso, revisa</text><text x="643" y="577">y decide</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M870 92v428" class="ln" style="stroke:var(--d-inet);stroke-width:3"/>
+    <text transform="translate(886 306) rotate(-90)" class="k-inet" text-anchor="middle">SIN DANIELA · DE 7:00 A 7:05</text>
+    <path d="M870 544v50" class="ln" style="stroke:var(--warm);stroke-width:3"/>
+  </g>
+  <rect x="10" y="612" width="880" height="40" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="637" class="t t-s" text-anchor="middle">El arnés ejecuta cada herramienta (③ a ⑨), como en el capítulo 1. Nada sale de la carpeta: el correo queda en borrador.</text>
+</svg></div><figcaption><b>Flujo del informe programado de cada lunes.</b> Los participantes son el programador (el reloj), el arnés, el modelo, la carpeta y el correo, y Daniela. A las 7:00 el programador dispara la tarea (①); el arnés arranca una sesión nueva con las instrucciones, la habilidad y el encargo fijo (②). El modelo lee la planilla y el correo (③ a ⑥), escribe el borrador del informe y el del correo para Andrés (⑦ y ⑧), y comprueba los totales (⑨). El arnés escribe el resumen de la ejecución y deja el aviso (⑩ y ⑪). Daniela no participa hasta las 7:40, cuando lee el aviso, revisa y decide (⑫). La franja de la derecha separa lo que pasa sin ella de lo que pasa con ella.</figcaption></figure><div class="prose"><p>Antes de programar, hay que decidir <b>dónde corre</b> la tarea, y cada opción tiene su precio:</p><div class="tbl"><table><thead><tr><th></th><th>En tu computadora</th><th>En la nube</th></tr></thead><tbody><tr><td>¿Necesita la computadora encendida?</td><td>Sí: si a las 7:00 está apagada o dormida, la tarea no corre</td><td>No</td></tr><tr><td>¿Ve tus archivos locales?</td><td>Sí, con los permisos de siempre</td><td>No: solo lo que esté en una carpeta en la nube o en un conector</td></tr><tr><td>¿Dónde quedan los datos?</td><td>En tu equipo</td><td>Viajan a los servidores del proveedor</td></tr><tr><td>¿Quién responde si algo pregunta?</td><td>Nadie, igual que en la nube</td><td>Nadie</td></tr></tbody></table></div><p>A noviembre de 2026, Claude Code, por ejemplo, ofrece las dos variantes con esos mismos compromisos (tareas de escritorio, que necesitan la computadora encendida y ven tus archivos, y tareas en la nube, que no la necesitan pero trabajan sobre una copia o con conectores), y ChatGPT tiene tareas programadas que corren en sus servidores. Para Daniela, la decisión depende de dónde vive la planilla y de qué permite la política de su organización sobre datos en la nube; cómo se arma esa política está en <a href="https://aaramirez.github.io/adopcion-de-ia/temario.html" target="_blank" rel="noopener">IA en la empresa</a>.</p><p>El encargo de una tarea programada es el más exigente de todos, porque se va a ejecutar decenas de veces sin nadie mirando. Además de las cuatro partes del capítulo 9, necesita tres cláusulas más:</p><ul><li><b>Qué hacer si faltan los datos.</b> «Si no está la planilla de la semana, no inventes el informe: escribe en el resumen que falta y detente.»</li><li><b>Qué hacer si algo falla.</b> «Si una herramienta falla, reintenta una vez; si vuelve a fallar, detente y anótalo.»</li><li><b>Qué dejar al terminar.</b> «Escribe <code>informes/ejecucion-AAAA-MM-DD.md</code> con el estado, los archivos que tocaste, lo que quedó pendiente, las vueltas y el tiempo.»</li></ul><p>Mira qué pasa en ocho lunes seguidos con distintas configuraciones.</p></div><div class="lab" id="11-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Ocho lunes de informe programado</h3></div><p class="hint">La tarea corre cada lunes a las 7:00 desde el 30 de noviembre. Elige dónde corre, qué hace si algo falla y si tiene un presupuesto. La línea de tiempo muestra las ocho ejecuciones: las que salieron bien, las que fallaron con aviso, las que fallaron en silencio y las que ni siquiera corrieron. Debajo de cada lunes, qué pasó y cuándo se enteró Daniela. Busca la configuración con la que ningún lunes la sorprende en el comité.</p><style>
+[id="11-lab-1"] .c11l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="11-lab-1"] .c11l1-fila{display:grid;gap:5px}
+[id="11-lab-1"] .c11l1-ctl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:760px){[id="11-lab-1"] .c11l1-ctl{grid-template-columns:minmax(0,1fr)}}
+[id="11-lab-1"] .c11l1-linea{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:640px){[id="11-lab-1"] .c11l1-linea{grid-template-columns:repeat(2,minmax(0,1fr))}}
+[id="11-lab-1"] .c11l1-lun{border:1px solid var(--line);border-top:6px solid var(--line);border-radius:8px;background:var(--card);padding:7px 9px;display:grid;gap:3px;align-content:start}
+[id="11-lab-1"] .c11l1-lun h4{margin:0;font:700 .82rem var(--f-display)}
+[id="11-lab-1"] .c11l1-lun .est{font:700 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase}
+[id="11-lab-1"] .c11l1-lun p{margin:0;font:400 .78rem/1.35 var(--f-body)}
+[id="11-lab-1"] .c11l1-lun small{font:500 .72rem var(--f-mono);color:var(--muted)}
+[id="11-lab-1"] .c11l1-lun.ok{border-top-color:var(--good)}
+[id="11-lab-1"] .c11l1-lun.ok .est{color:var(--good)}
+[id="11-lab-1"] .c11l1-lun.tarde{border-top-color:var(--accent)}
+[id="11-lab-1"] .c11l1-lun.tarde .est{color:var(--accent)}
+[id="11-lab-1"] .c11l1-lun.aviso{border-top-color:var(--c-tra)}
+[id="11-lab-1"] .c11l1-lun.aviso .est{color:var(--c-tra)}
+[id="11-lab-1"] .c11l1-lun.silencio{border-top-color:var(--warm);background:var(--warm-soft)}
+[id="11-lab-1"] .c11l1-lun.silencio .est{color:var(--warm)}
+[id="11-lab-1"] .c11l1-tarj{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:560px){[id="11-lab-1"] .c11l1-tarj{grid-template-columns:repeat(2,minmax(0,1fr))}}
+[id="11-lab-1"] .c11l1-tarj div{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+[id="11-lab-1"] .c11l1-tarj b{display:block;font:700 1.1rem var(--f-display);color:var(--ink)}
+[id="11-lab-1"] .c11l1-tarj small{font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+</style>
+<div class="c11l1-ctl">
+  <div class="c11l1-fila"><p class="c11l1-rot" id="c11l1-r1">Dónde corre</p>
+    <div class="btns" role="group" aria-labelledby="c11l1-r1" id="c11l1-donde">
+      <button type="button" data-v="local" aria-pressed="true">En mi computadora</button>
+      <button type="button" data-v="nube" aria-pressed="false">En la nube</button>
+    </div></div>
+  <div class="c11l1-fila"><p class="c11l1-rot" id="c11l1-r2">Si algo falla</p>
+    <div class="btns" role="group" aria-labelledby="c11l1-r2" id="c11l1-falla">
+      <button type="button" data-v="nada" aria-pressed="true">Nada</button>
+      <button type="button" data-v="reintento" aria-pressed="false">Reintentar</button>
+      <button type="button" data-v="aviso" aria-pressed="false">Avisar</button>
+      <button type="button" data-v="ambos" aria-pressed="false">Reintentar y avisar</button>
+    </div></div>
+  <div class="c11l1-fila"><p class="c11l1-rot" id="c11l1-r3">Presupuesto</p>
+    <div class="btns" role="group" aria-labelledby="c11l1-r3" id="c11l1-pres">
+      <button type="button" data-v="sin" aria-pressed="true">Sin límite</button>
+      <button type="button" data-v="con" aria-pressed="false">25 vueltas o US$ 1,50</button>
+    </div></div>
+</div>
+<p class="c11l1-rot">Cada lunes a las 7:00 · cron <code>0 7 * * 1</code> · Daniela revisa a las 7:40, comité a las 10:00</p>
+<ol class="c11l1-linea" id="c11l1-linea" aria-label="Ocho ejecuciones de la tarea"></ol>
+<div class="c11l1-tarj" id="c11l1-tarj"></div>
+<div class="readout texto" id="c11l1-out" aria-live="polite"></div></div><div class="prose"><p>Lo que muestra el laboratorio: los problemas de una tarea programada casi nunca son del modelo. Son una computadora dormida, una planilla que nadie exportó, un permiso de conector que venció o un servicio que no respondió a las 7:00. Ninguno se arregla con un mejor encargo, pero todos se vuelven inofensivos con dos cosas: un <b>reintento</b> (<i>retry</i>) para lo pasajero y un aviso para lo demás. Lo grave no es fallar; es fallar en silencio y que Daniela se entere en el comité.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Mira las tareas programadas que ya tiene tu computadora</h3></div><p>Tu computadora ya ejecuta tareas programadas: actualizaciones, copias de seguridad, sincronizaciones. Vas a listarlas con comandos de solo lectura para ver qué información guarda un programador de tareas, que es la misma que conviene mirar en una tarea de un agente.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac">macOS</button><button type="button" role="tab" data-so="linux">Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>Get-ScheduledTask | Where-Object State -eq 'Ready' | Select-Object -First 15 TaskName, TaskPath</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-ScheduledTask | Where-Object State -eq 'Ready' | Select-Object -First 5 | Get-ScheduledTaskInfo | Format-List TaskName, LastRunTime, NextRunTime, LastTaskResult</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac"><div class="cmd-l"><code>launchctl list | head -20</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="linux"><div class="cmd-l"><code>systemctl list-timers --all</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>crontab -l</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Anota dos tareas y, en Windows y Linux, cuándo corrieron por última vez y cuándo corren la próxima. En Linux, <code>crontab -l</code> puede decir que no tienes tareas propias: es normal.</span></li><li><span>En Windows, mira <code>LastTaskResult</code>: un 0 significa que la última ejecución terminó bien; otro número es un código de error.</span></li><li><span>Abre <a href="https://crontab.guru/" target="_blank" rel="noopener">crontab.guru</a>, un traductor público y gratuito de expresiones cron, escribe <code>0 7 * * 1</code> y lee cómo lo describe. Prueba después <code>0 7 * * 1-5</code> y <code>30 6 1 * *</code>.</span></li></ol><p><b>Qué observar:</b> cada tarea programada tiene un nombre, un horario, una última ejecución con su resultado y una próxima ejecución. Son los cuatro datos que tienes que poder ver en la tarea programada de un agente: si tu agente no te muestra cuándo corrió y cómo le fue, no sabrás que falló hasta que falte el informe. crontab.guru te deja comprobar que «lunes a las 7:00» quedó escrito como querías; fíjate en que no dice en qué zona horaria.</p></div></section>
+<section><h2>Varios agentes en paralelo y cómo repartir el trabajo</h2><div class="prose"><p>El 30 de noviembre toca el cierre del mes. Además del informe semanal, Daniela necesita el consolidado de las cuatro semanas, el resumen de treinta actas y la clasificación de sesenta correos pendientes. Un solo agente lo haría en una hora larga, tarea tras tarea. Tres agentes a la vez, cada uno con una parte, lo harían en menos de la mitad.</p><p>Trabajar <b>en paralelo</b> (<i>in parallel</i>) es repartir una tarea entre varios agentes que corren al mismo tiempo, cada uno en su propia sesión y con su propio contexto. Ya viste una forma en el capítulo 8: los <b>subagentes</b> (<i>subagents</i>), especialistas que un agente principal lanza para una parte del trabajo y que le devuelven solo el resultado. El «lector de correo» de Daniela es uno: lee los sesenta correos en su propio contexto y devuelve un resumen corto. La otra forma es más simple: abrir tú misma varias sesiones o varias tareas en segundo plano.</p></div><div class="analogia"><b>Imagínalo así</b><p>Es como preparar una cena con tres cocineros. Si cada uno se ocupa de un plato, con su propia tabla y su propia olla, la cena sale en la mitad del tiempo. Si los tres meten la mano en la misma olla, uno le pone sal y otro se la vuelve a poner. Y alguien tiene que juntar los platos y servirlos: la cena no está lista cuando cada uno terminó su parte, sino cuando está en la mesa.</p></div><figure class="fig fig-esquema" id="11-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" style="min-width:720px" role="img" aria-label="Daniela reparte el cierre del mes en tres encargos. Tres agentes trabajan a la vez, cada uno con su propio contexto: el A consolida las planillas, el B resume las actas y el C clasifica el correo. Cada uno escribe en su propio archivo de salida. Un paso de integración junta los tres archivos en el documento de cierre. La regla de abajo: dos agentes nunca escriben en el mismo archivo.">
+  <defs>
+    <marker id="d11b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d11b-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d11b-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-casa"/></marker>
+  </defs>
+  <rect x="15" y="170" width="140" height="80" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="85" y="198" class="t t-b" text-anchor="middle">Daniela</text>
+  <text x="85" y="218" class="t t-s" text-anchor="middle">reparte el cierre</text>
+  <text x="85" y="234" class="t t-s" text-anchor="middle">en tres encargos</text>
+  <g class="ln" style="stroke:var(--warm);stroke-width:2">
+    <line x1="155" y1="190" x2="222" y2="92" marker-end="url(#d11b-w)"/>
+    <line x1="155" y1="210" x2="222" y2="210" marker-end="url(#d11b-w)"/>
+    <line x1="155" y1="230" x2="222" y2="328" marker-end="url(#d11b-w)"/>
+  </g>
+
+  
+  <g class="t t-s">
+    <rect x="226" y="40" width="300" height="104" rx="8" class="caja"/>
+    <text x="240" y="62" class="t t-b">Agente A · planillas</text>
+    <rect x="240" y="72" width="70" height="24" rx="5" class="d-inet"/><text x="275" y="88" text-anchor="middle">modelo</text>
+    <rect x="316" y="72" width="196" height="24" rx="5" class="c-fis"/><text x="414" y="88" text-anchor="middle">instrucciones + habilidad</text>
+    <text x="240" y="118">su contexto: solo las 4 planillas</text>
+    <text x="240" y="134" class="t-m">12 min de trabajo</text>
+
+    <rect x="226" y="158" width="300" height="104" rx="8" class="caja"/>
+    <text x="240" y="180" class="t t-b">Agente B · actas</text>
+    <rect x="240" y="190" width="70" height="24" rx="5" class="d-inet"/><text x="275" y="206" text-anchor="middle">modelo</text>
+    <rect x="316" y="190" width="196" height="24" rx="5" class="c-fis"/><text x="414" y="206" text-anchor="middle">instrucciones + habilidad</text>
+    <text x="240" y="236">su contexto: solo las 30 actas</text>
+    <text x="240" y="252" class="t-m">20 min de trabajo: el más lento</text>
+
+    <rect x="226" y="276" width="300" height="104" rx="8" class="caja"/>
+    <text x="240" y="298" class="t t-b">Agente C · correo</text>
+    <rect x="240" y="308" width="70" height="24" rx="5" class="d-inet"/><text x="275" y="324" text-anchor="middle">modelo</text>
+    <rect x="316" y="308" width="196" height="24" rx="5" class="c-fis"/><text x="414" y="324" text-anchor="middle">instrucciones + habilidad</text>
+    <text x="240" y="354">su contexto: solo los 60 correos</text>
+    <text x="240" y="370" class="t-m">15 min de trabajo</text>
+  </g>
+
+  
+  <g class="ln s-red" style="stroke-width:2">
+    <line x1="526" y1="92" x2="572" y2="92" marker-end="url(#d11b-c)" style="stroke:var(--d-casa)"/>
+    <line x1="526" y1="210" x2="572" y2="210" marker-end="url(#d11b-c)" style="stroke:var(--d-casa)"/>
+    <line x1="526" y1="328" x2="572" y2="328" marker-end="url(#d11b-c)" style="stroke:var(--d-casa)"/>
+  </g>
+  <g class="t t-s">
+    <rect x="576" y="72" width="150" height="40" rx="6" class="d-casa"/><text x="651" y="97" text-anchor="middle" class="t-mono">cierre/planillas.md</text>
+    <rect x="576" y="190" width="150" height="40" rx="6" class="d-casa"/><text x="651" y="215" text-anchor="middle" class="t-mono">cierre/actas.md</text>
+    <rect x="576" y="308" width="150" height="40" rx="6" class="d-casa"/><text x="651" y="333" text-anchor="middle" class="t-mono">cierre/correo.md</text>
+  </g>
+  <g class="ln" style="stroke-width:1.6">
+    <line x1="726" y1="92" x2="768" y2="186" marker-end="url(#d11b-n)"/>
+    <line x1="726" y1="210" x2="766" y2="210" marker-end="url(#d11b-n)"/>
+    <line x1="726" y1="328" x2="768" y2="234" marker-end="url(#d11b-n)"/>
+  </g>
+  <rect x="770" y="164" width="115" height="92" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="827" y="188" class="t t-b" text-anchor="middle">Integración</text>
+  <text x="827" y="206" class="t t-s" text-anchor="middle">un agente</text>
+  <text x="827" y="220" class="t t-s" text-anchor="middle">o Daniela</text>
+  <text x="827" y="242" class="t t-s t-mono" text-anchor="middle">cierre.md</text>
+
+  <text x="376" y="404" class="t t-s t-m" text-anchor="middle">cada agente paga su propio arranque: más tokens, menos tiempo</text>
+  <rect x="15" y="418" width="870" height="40" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="443" class="t t-s" text-anchor="middle">Dos agentes nunca escriben en el mismo archivo. Tiempo total = el agente más lento + la integración.</text>
+</svg></div><figcaption><b>Tres agentes en paralelo para el cierre del mes.</b> A la izquierda, Daniela reparte el trabajo en tres encargos. En el centro, tres agentes, cada uno con su propio contexto (instrucciones, habilidad y solo los datos de su parte): el A consolida las planillas, el B resume las actas y el C clasifica el correo. Cada uno escribe en su propio archivo de salida. A la derecha, un paso de integración junta los tres archivos en el documento de cierre. Abajo, la línea punteada marca la regla que no se rompe: dos agentes nunca escriben en el mismo archivo.</figcaption></figure><div class="prose"><p>Repartir bien tiene cuatro reglas:</p><ul><li><b>Partes independientes.</b> Cada agente debe poder terminar sin esperar el resultado de otro. El consolidado de las planillas no necesita las actas; el resumen de las actas no necesita el correo.</li><li><b>Cada uno escribe en lo suyo.</b> Un archivo de salida por agente: <code>cierre/planillas.md</code>, <code>cierre/actas.md</code>, <code>cierre/correo.md</code>. Si dos agentes escriben en el mismo archivo, el último en guardar borra lo del otro.</li><li><b>Alguien integra.</b> Un último paso, de un agente o de Daniela, junta las salidas, revisa que no se contradigan y arma el documento final. Sin ese paso, tienes tres resultados y ningún entregable.</li><li><b>El mismo criterio de terminado para todos.</b> Cada encargo lleva su criterio, y la integración comprueba que todos se cumplieron.</li></ul><p>El paralelo ahorra tiempo, pero no tokens. Cada agente arranca de cero: carga sus instrucciones, sus herramientas y su habilidad, y explora la carpeta por su cuenta. Ese costo de arranque se paga una vez por agente, y la integración agrega lectura. Con tres agentes, el cierre del mes tarda menos de la mitad y cuesta algo más que con uno.</p></div><div class="lab" id="11-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Reparte el cierre del mes entre tres agentes</h3></div><p class="hint">Cuatro tareas del cierre: el consolidado de las planillas, el resumen de las actas, la clasificación del correo y la agenda de diciembre. Asígnale cada una a un agente (A, B o C) y elige si cada agente escribe en su propio archivo o todos en el mismo. Mira el diagrama de tiempos, el tiempo total, los tokens y el costo, y compáralos con un solo agente. Si dos agentes escriben en el mismo archivo, mira qué se pierde.</p><style>
+[id="11-lab-2"] .c11l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="11-lab-2"] .c11l2-tareas{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+[id="11-lab-2"] .c11l2-tareas li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--card);padding:6px 9px}
+@media (max-width:520px){[id="11-lab-2"] .c11l2-tareas li{grid-template-columns:minmax(0,1fr)}}
+[id="11-lab-2"] .c11l2-tareas b{font:600 .88rem var(--f-body)}
+[id="11-lab-2"] .c11l2-tareas small{display:block;font:500 .72rem var(--f-mono);color:var(--muted)}
+[id="11-lab-2"] .c11l2-tareas .btns button{min-width:42px}
+[id="11-lab-2"] .c11l2-gantt{display:grid;gap:5px;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px}
+[id="11-lab-2"] .c11l2-fila{display:grid;grid-template-columns:86px minmax(0,1fr);gap:8px;align-items:center}
+[id="11-lab-2"] .c11l2-fila > span{font:600 .74rem var(--f-display);color:var(--muted)}
+[id="11-lab-2"] .c11l2-pista{position:relative;height:26px;background:var(--paper);border-radius:5px;overflow:hidden}
+[id="11-lab-2"] .c11l2-seg{position:absolute;top:2px;bottom:2px;border-radius:4px;font:600 .66rem/22px var(--f-body);padding:0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);border:1px solid var(--line)}
+[id="11-lab-2"] .c11l2-seg.arr{background:var(--grid)}
+[id="11-lab-2"] .c11l2-seg.t0{background:var(--c-apl-s);border-color:var(--c-apl)}
+[id="11-lab-2"] .c11l2-seg.t1{background:var(--c-enl-s);border-color:var(--c-enl)}
+[id="11-lab-2"] .c11l2-seg.t2{background:var(--c-red-s);border-color:var(--c-red)}
+[id="11-lab-2"] .c11l2-seg.t3{background:var(--c-fis-s);border-color:var(--c-fis)}
+[id="11-lab-2"] .c11l2-seg.int{background:var(--warm-soft);border-color:var(--warm)}
+[id="11-lab-2"] .c11l2-seg.perdido{background:repeating-linear-gradient(45deg,var(--warm-soft),var(--warm-soft) 4px,var(--card) 4px,var(--card) 8px);border-color:var(--warm);text-decoration:line-through}
+[id="11-lab-2"] .c11l2-eje{display:flex;justify-content:space-between;font:400 .7rem var(--f-mono);color:var(--muted);margin-left:94px}
+[id="11-lab-2"] .c11l2-tarj{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:560px){[id="11-lab-2"] .c11l2-tarj{grid-template-columns:repeat(2,minmax(0,1fr))}}
+[id="11-lab-2"] .c11l2-tarj div{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+[id="11-lab-2"] .c11l2-tarj b{display:block;font:700 1.1rem var(--f-display);color:var(--ink)}
+[id="11-lab-2"] .c11l2-tarj small{font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+[id="11-lab-2"] .c11l2-tarj em{display:block;font:400 .72rem var(--f-body);color:var(--muted);font-style:normal}
+</style>
+<div class="btns" id="c11l2-pre">
+  <button type="button" data-p="uno">Un solo agente</button>
+  <button type="button" data-p="bien">Uno por tarea grande</button>
+  <button type="button" data-p="mal">Reparto desbalanceado</button>
+</div>
+<p class="c11l2-rot">Tareas del cierre del mes y a qué agente van</p>
+<ol class="c11l2-tareas" id="c11l2-tareas"></ol>
+<div class="btns" role="group" aria-label="Dónde escriben los agentes" id="c11l2-arch">
+  <button type="button" data-v="propio" aria-pressed="true">Cada agente en su archivo</button>
+  <button type="button" data-v="comun" aria-pressed="false">Todos en cierre.md</button>
+</div>
+<div class="c11l2-gantt" id="c11l2-gantt" aria-label="Diagrama de tiempos"></div>
+<div class="c11l2-tarj" id="c11l2-tarj"></div>
+<div class="readout texto" id="c11l2-out" aria-live="polite"></div></div></section>
+<section><h2>Presupuestos de tiempo y de costo</h2><div class="prose"><p>Una tarea que corre sin nadie mirando necesita un límite. Si la planilla no está y el encargo no dice qué hacer, un agente puede pasar cuarenta vueltas buscándola en cada carpeta y en cada correo, y cada vuelta reenvía todo el contexto (capítulo 2). Un <b>presupuesto</b> (<i>budget</i>) es el tope que le pones a una tarea antes de que empiece: de tiempo, de vueltas o de dinero.</p><p>Haz la cuenta del informe del lunes con los precios de ejemplo del curso (US$ 3 por millón de tokens de entrada y US$ 15 por millón de salida). Una ejecución normal tiene unas 8 vueltas, envía en total unos 120.000 tokens de entrada y escribe unos 6.000 de salida:</p><div class="tbl"><table><thead><tr><th></th><th>Tokens de entrada</th><th>Tokens de salida</th><th>Costo aproximado</th></tr></thead><tbody><tr><td>Una ejecución normal</td><td>120.000</td><td>6.000</td><td>US$ 0,36 + US$ 0,09 = US$ 0,45</td></tr><tr><td>52 lunes al año</td><td>6.240.000</td><td>312.000</td><td>US$ 23,40</td></tr><tr><td>Un lunes descontrolado (60 vueltas buscando una planilla que no está)</td><td>1.900.000</td><td>30.000</td><td>US$ 5,70 + US$ 0,45 = US$ 6,15</td></tr></tbody></table></div><p>Un solo lunes descontrolado cuesta lo que más de trece normales. Por eso el presupuesto no se piensa en el promedio, sino en el peor caso. Un presupuesto razonable para esta tarea podría ser: <b>máximo 25 vueltas, 15 minutos o US$ 1,50, lo que llegue primero</b>. Si los planes de tu agente no cobran por token sino con un límite de uso por semana, la cuenta es la misma en otra moneda: un lunes descontrolado se come el uso de varios días.</p><p>Tan importante como el tope es <b>qué hace el agente al llegar</b>: no cortar en seco, sino detenerse ordenadamente, guardar lo que tiene en el archivo de avance, escribir en el resumen que se detuvo por presupuesto y en qué paso iba, y avisar. Un presupuesto que corta sin dejar rastro te ahorra dinero, pero te deja sin saber qué pasó.</p></div></section>
+<section><h2>Qué revisar cuando vuelves</h2><div class="prose"><p>Lunes, 7:40. El aviso dice «Terminado». ¿Alcanza con eso? No. La revisión de una tarea que corrió sola es distinta de la del capítulo 9, porque no viste nada de lo que pasó. Necesitas un orden fijo, que se haga en dos minutos, y que empiece por lo que más rápido delata un problema.</p></div><figure class="fig fig-esquema" id="11-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" style="min-width:720px" role="img" aria-label="A la izquierda, el archivo de resumen de la ejecución del lunes 30 de noviembre con seis bloques: estado, duración y costo frente a lo habitual, archivos tocados, acciones bloqueadas o propuestas, pendientes y registro. A la derecha, el orden de revisión de Daniela del 1 al 6 con la pregunta de cada bloque. Abajo, en rojo, las señales que obligan a mirar a fondo.">
+  <defs>
+    <marker id="d11c-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+  </defs>
+  <rect x="15" y="14" width="470" height="350" rx="8" class="d-casa"/>
+  <text x="30" y="38" class="t t-b t-mono">informes/ejecucion-2026-11-30.md</text>
+  <g class="t t-s">
+    <rect x="30" y="50" width="440" height="40" rx="5" class="caja"/>
+    <text x="42" y="68" class="t-b">1 · Estado</text><text x="42" y="83">Terminado · 7:00 a 7:04</text>
+    <rect x="30" y="96" width="440" height="40" rx="5" class="caja"/>
+    <text x="42" y="114" class="t-b">2 · Duración y costo</text><text x="42" y="129">4 min (habitual: 4) · US$ 0,45 (habitual: 0,45) · 8 vueltas</text>
+    <rect x="30" y="142" width="440" height="56" rx="5" class="caja"/>
+    <text x="42" y="160" class="t-b">3 · Archivos tocados</text><text x="42" y="175">informes/informe-semana-48.md (nuevo) · este resumen</text><text x="42" y="190">correo: borrador para Andrés (sin enviar)</text>
+    <rect x="30" y="204" width="440" height="40" rx="5" class="caja"/>
+    <text x="42" y="222" class="t-b">4 · Bloqueado o propuesto</text><text x="42" y="237">ninguna acción bloqueada · nada propuesto</text>
+    <rect x="30" y="250" width="440" height="56" rx="5" class="caja"/>
+    <text x="42" y="268" class="t-b">5 · Pendientes</text><text x="42" y="283">las 2 visitas de Raúl del jueves 26 siguen</text><text x="42" y="298">reprogramadas sin fecha nueva</text>
+    <rect x="30" y="312" width="440" height="40" rx="5" class="caja"/>
+    <text x="42" y="330" class="t-b">6 · Registro</text><text x="42" y="345">sesión del 30-nov 7:00, con cada herramienta y su resultado</text>
+  </g>
+
+  <text x="520" y="38" class="t t-xs t-b k-warm">EL ORDEN DE DANIELA, DE LO RÁPIDO A LO LENTO</text>
+  <g class="t t-s">
+    <text x="520" y="73"><tspan class="t-b">1</tspan> ¿Terminó, se detuvo o falló?</text>
+    <text x="520" y="119"><tspan class="t-b">2</tspan> ¿Tardó o costó distinto de lo habitual?</text>
+    <text x="520" y="168"><tspan class="t-b">3</tspan> ¿Tocó solo lo que esperaba?</text>
+    <text x="520" y="227"><tspan class="t-b">4</tspan> ¿Intentó algo que no le pedí?</text>
+    <text x="520" y="276"><tspan class="t-b">5</tspan> ¿Qué me deja a mí?</text>
+    <text x="520" y="329"><tspan class="t-b">6</tspan> Al final, el informe contra su criterio;</text><text x="533" y="344">el registro, si algo no cuadra</text>
+  </g>
+  <g class="ln" style="stroke-width:1.2">
+    <line x1="472" y1="70" x2="512" y2="70" marker-end="url(#d11c-n)"/>
+    <line x1="472" y1="116" x2="512" y2="116" marker-end="url(#d11c-n)"/>
+    <line x1="472" y1="165" x2="512" y2="165" marker-end="url(#d11c-n)"/>
+    <line x1="472" y1="224" x2="512" y2="224" marker-end="url(#d11c-n)"/>
+    <line x1="472" y1="273" x2="512" y2="273" marker-end="url(#d11c-n)"/>
+    <line x1="472" y1="332" x2="512" y2="332" marker-end="url(#d11c-n)"/>
+  </g>
+
+  <rect x="15" y="378" width="870" height="60" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="30" y="401" class="t t-b k-warm">Señales para mirar a fondo antes de leer el informe</text>
+  <text x="30" y="424" class="t t-s">un archivo tocado fuera de informes/ · duración o costo muy distintos de lo habitual · un envío bloqueado que nadie pidió</text>
+</svg></div><figcaption><b>El resumen de una ejecución y qué mirar primero.</b> A la izquierda, el archivo de resumen que dejó el agente el lunes 30 de noviembre, con seis bloques: estado, duración y costo comparados con lo habitual, archivos tocados, acciones bloqueadas o propuestas, pendientes y registro. A la derecha, el orden de revisión de Daniela, numerado del 1 al 6, con la pregunta que responde cada bloque. Abajo, en rojo, las señales que obligan a mirar más a fondo antes de leer el informe: un archivo tocado fuera de lo esperado, una duración o un costo muy distintos de lo habitual y un envío bloqueado que nadie pidió.</figcaption></figure><div class="prose"><p>El orden, de la mirada más rápida a la más lenta:</p><ol class="steps"><li><span><b>Estado.</b> ¿Terminó, se detuvo o falló? Si se detuvo, ¿por qué: presupuesto, falta de datos, error de una herramienta?</span></li><li><span><b>Duración y costo frente a lo habitual.</b> Si el informe siempre toma 4 minutos y US$ 0,45, y hoy tomó 14 minutos y US$ 2,10, algo cambió, aunque diga «Terminado».</span></li><li><span><b>Archivos tocados.</b> La lista debe coincidir con lo esperado: un informe nuevo en <code>informes/</code>, un borrador en el correo y el resumen. Cualquier otro archivo es una señal.</span></li><li><span><b>Acciones bloqueadas o propuestas.</b> Lo que el agente quiso hacer y no pudo, o dejó propuesto para tu aprobación. Un intento de envío bloqueado por el gancho, sin que nadie lo pidiera, merece mirar el registro.</span></li><li><span><b>Pendientes.</b> Lo que el agente no pudo resolver y te deja a ti.</span></li><li><span><b>El resultado.</b> Recién ahora, el informe mismo, revisado contra su criterio de terminado como en el capítulo 9.</span></li></ol><p>Los pasos 1 a 5 se responden con el resumen que el agente deja y con una mirada a la carpeta. Para el paso 3 no hace falta confiar en el resumen: el propio sistema operativo sabe qué archivos cambiaron.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>¿Qué archivos cambiaron desde ayer?</h3></div><p>Vas a listar los archivos de <code>agente-prueba</code> modificados en las últimas 24 horas, como harías al volver de una tarea en segundo plano. Son comandos de solo lectura.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>Get-ChildItem -Recurse -File $HOME\agente-prueba | Where-Object LastWriteTime -gt (Get-Date).AddDays(-1) | Select-Object LastWriteTime, FullName</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-ChildItem $HOME\agente-prueba\informes | Sort-Object LastWriteTime -Descending | Select-Object LastWriteTime, Name</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>find ~/agente-prueba -type f -mtime -1</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>ls -lt ~/agente-prueba/informes</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Mira la lista del primer comando: ¿qué archivos cambiaron en el último día? Si hiciste las prácticas de los capítulos 9 y 10, aparecerán <code>encargos/</code> y <code>revision/</code>.</span></li><li><span>Escribe al lado de cada archivo si «lo esperabas» o «no lo esperabas».</span></li><li><span>Si no aparece nada, cambia <code>-1</code> por <code>-7</code> en los dos sistemas para ver la última semana.</span></li></ol><p><b>Qué observar:</b> el sistema operativo lleva su propio registro de qué cambió y cuándo, independiente de lo que diga el agente. Comparar esa lista con la del resumen de la ejecución es la forma más rápida de detectar un agente que «de paso» tocó algo que no debía. Si la tarea programada del lunes solo debía escribir en <code>informes/</code>, cualquier archivo cambiado fuera de esa carpeta es lo primero que investigas.</p></div></section>
+<section><h2>Cuándo un proceso recurrente merece una automatización de verdad</h2><div class="prose"><p>Después de dos meses, Daniela nota algo: el informe del lunes sale igual todas las semanas. La planilla tiene siempre las mismas columnas, los estados son siempre los mismos y la cuenta es siempre la misma suma. El agente no está decidiendo nada: está ejecutando la misma receta, con un modelo que cuesta dinero y que, de vez en cuando, se equivoca de maneras nuevas.</p><p>Ahí aparece una pregunta que conviene hacerse con cada tarea programada: ¿esto necesita un agente o necesita una <b>automatización</b> (<i>automation</i>) clásica? Un <b>script</b> (<i>script</i>), un programa corto que hace siempre lo mismo, o un flujo armado en una herramienta de automatización, cuenta los estados de la planilla en un segundo, gratis, siempre igual y sin inventar nada. Los comandos con que revisaste el informe en el capítulo 9 ya eran, en el fondo, ese script.</p><div class="tbl"><table><thead><tr><th>Señal</th><th>Le conviene un agente</th><th>Le conviene una automatización</th></tr></thead><tbody><tr><td>Los pasos</td><td>Cambian según lo que encuentra</td><td>Son siempre los mismos</td></tr><tr><td>Los datos</td><td>Texto libre: correos, actas, notas</td><td>Tablas con columnas fijas</td></tr><tr><td>El juicio</td><td>Hay que interpretar o redactar</td><td>No hay nada que interpretar</td></tr><tr><td>Un error</td><td>Se nota al revisar</td><td>Tiene que ser imposible</td></tr><tr><td>El costo por ejecución</td><td>Se justifica por lo que ahorra</td><td>Tiene que ser casi cero</td></tr></tbody></table></div><p>La respuesta casi nunca es todo o nada. Para el informe de Daniela, lo sensato es un <b>híbrido</b>: un script calcula los totales de la planilla, exactos y gratis, y el agente se ocupa de lo que sí necesita lenguaje: leer los correos de la semana, explicar por qué se reprogramaron las visitas y redactar el párrafo de contexto para Andrés. El agente deja de contar y empieza a explicar. Cuando un proceso recurrente se vuelve importante para muchas personas, construirlo bien, con código, pruebas y monitoreo, es tema de <a href="https://aaramirez.github.io/aplicaciones-con-ia/temario.html" target="_blank" rel="noopener">Aplicaciones con IA</a>.</p><p>Lo que te llevas de este capítulo cabe en una frase: <b>trabajo asíncrono con presupuesto y revisión al final</b>. Un agente que trabaja solo necesita un encargo que diga qué hacer cuando querría preguntarte, un tope de tiempo y de costo con una salida ordenada, un aviso que no falle en silencio y una revisión fija al volver, de lo más rápido a lo más lento. Con eso, el informe de las 7:00 deja de ser un riesgo y se vuelve una costumbre. En la parte 4 verás el mismo agente aplicado a otros casos personales y, después, compartido por un equipo.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué dos cosas necesita una tarea en segundo plano que en una sesión normal das por sentadas?</summary><p>Saber qué hacer cuando querría preguntarte (seguir y anotar en pendientes, dejar propuesto, o detenerse y explicar) y un aviso que diga cómo terminó y dónde mirar.</p></details><details><summary>¿Qué significa <code>0 7 * * 1</code> y qué detalle conviene comprobar además del horario?</summary><p>Cada lunes a las 7:00. Conviene comprobar la zona horaria en que corre la tarea, porque si el servidor usa otra, «las 7:00» pueden ser otra hora para ti.</p></details><details><summary>¿Qué ventajas y qué costos tiene correr la tarea en la nube frente a hacerlo en tu computadora?</summary><p>En la nube no necesita la computadora encendida, pero no ve tus archivos locales (solo carpetas en la nube o conectores) y los datos viajan al proveedor. En tu computadora ve tus archivos con los permisos de siempre, pero si a la hora programada está apagada o dormida, no corre.</p></details><details><summary>Al repartir el cierre del mes entre tres agentes, ¿por qué baja el tiempo pero sube el costo?</summary><p>Porque los agentes trabajan a la vez, así que el tiempo total es el del más lento más la integración; pero cada agente paga su propio arranque (instrucciones, herramientas, exploración de la carpeta) y la integración agrega lectura.</p></details><details><summary>¿Qué debe hacer un agente cuando llega al límite de su presupuesto?</summary><p>Detenerse ordenadamente: guardar el avance, escribir en el resumen que se detuvo por presupuesto y en qué paso iba, y avisar. No cortar sin dejar rastro.</p></details><details><summary>¿Cuál es el orden de revisión al volver de una tarea programada?</summary><p>Estado; duración y costo frente a lo habitual; archivos tocados; acciones bloqueadas o propuestas; pendientes; y al final el resultado, contra su criterio de terminado.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿De dónde viene el nombre «cron» y qué significa cada uno de los cinco campos de una expresión?<small>Pista: busca «cron expression fields» o lee la página de ayuda de crontab.</small></li><li>¿Qué le pasa a una tarea programada a las 2:30 de la madrugada el día en que cambia el horario de verano?<small>Pista: busca «cron daylight saving time».</small></li><li>¿Qué es un <i>webhook</i> y en qué se diferencia de un horario como disparador de una tarea?</li><li>¿Qué es la idempotencia y por qué importa cuando una tarea se reintenta después de un fallo?<small>Pista: busca «idempotencia en APIs».</small></li><li>¿Qué dice la ley de Amdahl sobre cuánto se acelera un trabajo al repartirlo entre más trabajadores?</li><li>¿Qué es un árbol de trabajo de Git (<i>git worktree</i>) y por qué lo usan quienes corren varios agentes de programación a la vez?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://code.claude.com/docs/en/scheduled-tasks" target="_blank" rel="noopener">Run prompts on a schedule <small>un ejemplo del mercado: tareas en la nube, en la computadora y dentro de una sesión, comparadas (en inglés)</small></a><a class="vid" href="https://help.openai.com/en/articles/10291617-tasks-in-chatgpt" target="_blank" rel="noopener">Tasks in ChatGPT <small>otro ejemplo: tareas programadas en un asistente de chat (en inglés)</small></a><a class="vid" href="https://crontab.guru/" target="_blank" rel="noopener">crontab.guru <small>traductor de expresiones cron a lenguaje natural</small></a><a class="vid" href="https://aaramirez.github.io/aplicaciones-con-ia/temario.html" target="_blank" rel="noopener">Aplicaciones con IA <small>cuándo y cómo un proceso recurrente se construye como una aplicación de verdad</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="11-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const st={donde:'local',falla:'nada',pres:'sin'};
+  const DIAS=['Lun 30-nov','Lun 7-dic','Lun 14-dic','Lun 21-dic','Lun 28-dic','Lun 4-ene','Lun 11-ene','Lun 18-ene'];
+  const EV=['normal','dormida','sinplanilla','normal','caido','conector','normal','normal'];
+  const usd=x=>'US$ '+x.toFixed(2).replace('.',',');
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function lunes(ev){
+    const re=st.falla==='reintento'||st.falla==='ambos', av=st.falla==='aviso'||st.falla==='ambos', pr=st.pres==='con';
+    const ok={c:'ok',e:'Terminado',t:'Informe y borrador para Andrés listos.',h:'7:04',costo:.45};
+    if(ev==='normal')return ok;
+    if(ev==='dormida'){
+      if(st.donde==='nube')return {c:'ok',e:'Terminado',t:'La laptop estaba cerrada, pero la tarea corre en la nube.',h:'7:04',costo:.45};
+      return {c:'tarde',e:'Tarde',t:'La laptop estaba dormida: no corrió a las 7:00. Corrió al abrirla.',h:'8:54',costo:.45};
+    }
+    if(ev==='sinplanilla'){
+      const una=pr?1.5:6.15, veces=re?2:1, fin=pr?'7:10':'7:25';
+      let t=pr?'Falta la planilla de la semana 50. El presupuesto lo detiene en la vuelta 25 y deja anotado por qué.':'Falta la planilla de la semana 50. Sin límite, la busca durante 60 vueltas.';
+      if(re)t+=' El reintento repite la búsqueda: reintentar no arregla un dato que falta.';
+      if(av)return {c:'aviso',e:'Falló, con aviso',t:t+' Daniela se entera y exporta la planilla.',h:fin,costo:una*veces};
+      return {c:'silencio',e:'Falló en silencio',t:t+' Daniela se entera a las 9:50, al buscar el informe.',h:'9:50',costo:una*veces};
+    }
+    if(ev==='caido'){
+      if(re)return {c:'ok',e:'Terminado al reintentar',t:'El servicio del modelo no respondió a las 7:00. El reintento de las 7:15 funcionó.',h:'7:19',costo:.47};
+      if(av)return {c:'aviso',e:'Falló, con aviso',t:'El servicio del modelo no respondió. Daniela ve el aviso y la lanza a mano.',h:'7:40',costo:.47};
+      return {c:'silencio',e:'Falló en silencio',t:'El servicio del modelo no respondió a las 7:00 y nadie se enteró.',h:'9:50',costo:.02};
+    }
+    if(ev==='conector'){
+      let t='Venció el permiso del conector de correo: arma el informe, pero no puede leer el correo ni dejar el borrador.';
+      if(re)t+=' Reintentar no renueva un permiso.';
+      if(av)return {c:'aviso',e:'Falló, con aviso',t:t+' Daniela renueva el permiso.',h:'7:40',costo:re?.6:.3};
+      return {c:'silencio',e:'Incompleto, en silencio',t:t+' Nadie lo nota hasta que Andrés pregunta.',h:'10:00',costo:re?.6:.3};
+    }
+  }
+  function marcar(id,v){raiz.querySelectorAll('#'+id+' button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));}
+  function pintar(){
+    marcar('c11l1-donde',st.donde);marcar('c11l1-falla',st.falla);marcar('c11l1-pres',st.pres);
+    const ol=q('#c11l1-linea');ol.innerHTML='';
+    let exitos=0,sorpresas=0,costo=0,tarde=0,avisos=0;
+    EV.forEach((ev,i)=>{
+      const r=lunes(ev);costo+=r.costo;
+      if(r.c==='ok')exitos++;if(r.c==='silencio')sorpresas++;if(r.c==='tarde')tarde++;if(r.c==='aviso')avisos++;
+      const li=el('li','c11l1-lun '+r.c);
+      li.appendChild(el('h4',null,DIAS[i]));li.appendChild(el('span','est',r.e));li.appendChild(el('p',null,r.t));
+      li.appendChild(el('small',null,'Daniela lo sabe: '+r.h+' · '+usd(r.costo)));
+      ol.appendChild(li);
+    });
+    const tj=q('#c11l1-tarj');tj.innerHTML='';
+    [['Terminados',exitos+' de 8'],['Fallos con aviso',avisos],['Sorpresas',sorpresas],['Costo de 8 lunes',usd(costo)]].forEach(([a,b])=>{const d=el('div');d.appendChild(el('small',null,a));const v=el('b',null,String(b));if(a==='Sorpresas'&&b>0)v.style.color='var(--warm)';d.appendChild(v);tj.appendChild(d);});
+    let t;
+    if(sorpresas>=3)t='Con esta configuración, '+sorpresas+' lunes Daniela se entera del problema en el peor momento: buscando el informe o en el comité. Nada de eso es culpa del modelo. Empieza por «Avisar».';
+    else if(sorpresas>0)t='Todavía hay '+sorpresas+(sorpresas===1?' lunes':' lunes')+' en que el fallo pasa en silencio. Mira cuál y qué opción lo haría visible.';
+    else if(st.pres==='sin')t='Ninguna sorpresa, pero mira el 14 de diciembre: sin presupuesto, buscar una planilla que no existe cuesta '+(st.falla==='ambos'||st.falla==='reintento'?'US$ 12,30':'US$ 6,15')+', más que trece lunes normales. Pon un límite.';
+    else if(tarde)t='Sin sorpresas y con presupuesto. Queda el 7 de diciembre: en tu computadora, si está dormida, la tarea corre tarde. En la nube no pasa, pero los datos viajan al proveedor: es una decisión, no un detalle.';
+    else t='Configuración sólida: lo pasajero se arregla con el reintento, lo demás llega con aviso, y el presupuesto contiene el peor lunes. Daniela nunca se entera en el comité.';
+    q('#c11l1-out').textContent=t;
+  }
+  [['c11l1-donde','donde'],['c11l1-falla','falla'],['c11l1-pres','pres']].forEach(([id,k])=>q('#'+id).addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;st[k]=b.dataset.v;pintar();}));
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="11-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const T=[
+    {n:'Consolidado de 4 planillas',c:'planillas',min:12,tok:180000},
+    {n:'Resumen de 30 actas',c:'actas',min:20,tok:420000},
+    {n:'Clasificar 60 correos',c:'correo',min:15,tok:300000},
+    {n:'Agenda de diciembre',c:'agenda',min:5,tok:60000}];
+  const AG=['A','B','C'];const ARR_MIN=1,ARR_TOK=30000,INT_MIN=3,INT_TOK=50000;
+  let asig=[0,0,0,0],arch='propio';
+  const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const usd=x=>'US$ '+x.toFixed(2).replace('.',',');
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function calc(asg){
+    const ag=AG.map((a,i)=>{const ts=T.map((t,k)=>k).filter(k=>asg[k]===i);return {i,ts};}).filter(a=>a.ts.length);
+    let tok=0;const segs=[];let fin={};
+    ag.forEach(a=>{let t=0;segs.push({a:a.i,cls:'arr',ini:0,dur:ARR_MIN,txt:'arranque'});t+=ARR_MIN;tok+=ARR_TOK;
+      a.ts.forEach(k=>{segs.push({a:a.i,cls:'t'+k,ini:t,dur:T[k].min,txt:T[k].c,k});t+=T[k].min;tok+=T[k].tok;});fin[a.i]=t;});
+    const varios=ag.length>1;const maxFin=Math.max(...Object.values(fin));
+    let total=maxFin;
+    if(varios){segs.push({a:'int',cls:'int',ini:maxFin,dur:INT_MIN,txt:'integración'});total+=INT_MIN;tok+=INT_TOK;}
+    const out=tok*0.05;const costo=tok*3/1e6+out*15/1e6;
+    let perdidas=[];
+    if(arch==='comun'&&varios){
+      const ultimo=ag.reduce((m,a)=>fin[a.i]>fin[m.i]?a:m,ag[0]);
+      ag.forEach(a=>{if(a!==ultimo)a.ts.forEach(k=>perdidas.push(k));});
+      segs.forEach(s=>{if(s.k!=null&&perdidas.includes(s.k))s.cls+=' perdido';});
+    }
+    return {ag,segs,total,tok,costo,perdidas,varios};
+  }
+  function pintar(){
+    raiz.querySelectorAll('#c11l2-arch button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===arch));
+    const ul=q('#c11l2-tareas');ul.innerHTML='';
+    T.forEach((t,k)=>{const li=el('li');const d=el('div');d.appendChild(el('b',null,t.n));d.appendChild(el('small',null,t.min+' min · '+fmt(t.tok)+' tokens · cierre/'+(arch==='comun'?'cierre.md':t.c+'.md')));li.appendChild(d);
+      const g=el('div','btns');g.setAttribute('role','group');g.setAttribute('aria-label','Agente para '+t.n);
+      AG.forEach((a,i)=>{const b=el('button',null,a);b.type='button';b.setAttribute('aria-pressed',asig[k]===i);b.addEventListener('click',()=>{asig[k]=i;pintar();});g.appendChild(b);});
+      li.appendChild(g);ul.appendChild(li);});
+    const r=calc(asig),base=calc([0,0,0,0]);
+    const escala=Math.max(base.total,r.total);
+    const gt=q('#c11l2-gantt');gt.innerHTML='';
+    const filas=AG.map((a,i)=>i).filter(i=>r.ag.some(x=>x.i===i));
+    filas.concat(r.varios?['int']:[]).forEach(f=>{
+      const row=el('div','c11l2-fila');row.appendChild(el('span',null,f==='int'?'Integra':'Agente '+AG[f]));
+      const p=el('div','c11l2-pista');
+      r.segs.filter(s=>s.a===f).forEach(s=>{const d=el('div','c11l2-seg '+s.cls,s.txt);d.style.left=(s.ini/escala*100)+'%';d.style.width=(s.dur/escala*100)+'%';d.title=s.txt+' · '+s.dur+' min';p.appendChild(d);});
+      row.appendChild(p);gt.appendChild(row);});
+    const eje=el('div','c11l2-eje');[0,.25,.5,.75,1].forEach(x=>eje.appendChild(el('span',null,Math.round(x*escala)+' min')));gt.appendChild(eje);
+    const tj=q('#c11l2-tarj');tj.innerHTML='';
+    const pct=(a,b)=>(a>=b?'+':'−')+Math.abs(Math.round((a/b-1)*100))+' % frente a uno solo';
+    [['Tiempo total',r.total+' min',r.varios?pct(r.total,base.total):'la referencia'],['Tokens de entrada',fmt(r.tok),r.varios?pct(r.tok,base.tok):'la referencia'],['Costo aprox.',usd(r.costo),r.varios?pct(r.costo,base.costo):'la referencia'],['Partes perdidas',String(r.perdidas.length),r.perdidas.length?'sobrescritas en cierre.md':'ninguna']].forEach(([a,b,c])=>{const d=el('div');d.appendChild(el('small',null,a));const v=el('b',null,b);if(a==='Partes perdidas'&&r.perdidas.length)v.style.color='var(--warm)';d.appendChild(v);d.appendChild(el('em',null,c));tj.appendChild(d);});
+    let t;
+    if(!r.varios)t='Un solo agente hace las cuatro tareas una tras otra: '+r.total+' minutos. Es la referencia. Reparte las tareas entre A, B y C.';
+    else if(r.perdidas.length)t='Los agentes escribieron todos en cierre.md: el último en terminar sobrescribió lo de los demás y se perdieron '+r.perdidas.length+' partes ('+r.perdidas.map(k=>T[k].c).join(', ')+'). Un archivo por agente, y que alguien integre.';
+    else{
+      const lento=r.ag.reduce((m,a)=>{const s=a.ts.reduce((x,k)=>x+T[k].min,0);return s>m.s?{s,a}:m;},{s:0,a:null});
+      t='En paralelo el cierre tarda '+r.total+' minutos en lugar de '+base.total+', y cuesta '+usd(r.costo)+' en lugar de '+usd(base.costo)+': cada agente paga su arranque y la integración agrega lectura. El tiempo lo marca el agente más cargado ('+AG[lento.a.i]+', '+lento.s+' min de trabajo)'+(lento.s>22?': reparte mejor.':'.');
+    }
+    q('#c11l2-out').textContent=t;
+  }
+  q('#c11l2-pre').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const p=b.dataset.p;asig=p==='uno'?[0,0,0,0]:p==='bien'?[0,1,2,0]:[1,0,0,2];pintar();});
+  q('#c11l2-arch').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;arch=b.dataset.v;pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

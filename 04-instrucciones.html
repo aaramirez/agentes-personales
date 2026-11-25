@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Instrucciones permanentes · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="instrucciones">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 04 DE 13</span><h1>Instrucciones permanentes</h1><p class="lede">Cada lunes, Daniela le explicaba al agente lo mismo: quién es Andrés, cómo quiere la tabla, que una visita reprogramada no es una visita perdida y que no envíe nada. Un archivo de texto en la carpeta lo dice por ella, en cada sesión y en cada vuelta.</p></header>
+<section><h2>Por qué repetir lo mismo en cada conversación no escala</h2><div class="prose"><p>Lunes, 7:30, semana 48. Daniela abre su agente en la carpeta <code>agente-prueba</code> y, antes de pedirle el informe, escribe un párrafo que ya se sabe de memoria: «Soy Daniela, coordino catorce técnicos, el informe es para Andrés Molina, lo quiero en una tabla por técnico con los totales al final, una visita reprogramada no cuenta como no realizada, no pongas nombres de clientes y no envíes nada, déjame un borrador». Lo escribió el lunes pasado. Lo va a escribir el lunes que viene.</p><p>En el capítulo 2 viste por qué tiene que repetirlo: el modelo no recuerda nada entre sesiones, y una regla dicha al principio de una sesión larga puede perderse cuando el agente compacta. Repetirla en cada pedido tiene tres problemas. Cansa. Sale distinta cada vez, porque nadie escribe el mismo párrafo dos veces igual, y una palabra cambiada cambia el resultado. Y la regla vive en el historial de la conversación, que es justo lo que se resume y se pierde.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en un local que contrata un ayudante distinto cada mañana, uno que nunca vio el negocio. Puedes pasar media hora explicándole todo de palabra, y mañana otra media hora a otro. O puedes pegar en la pared del depósito una hoja: «Así trabajamos aquí». Cada ayudante nuevo la lee al llegar. La hoja no se olvida, no se cansa y dice lo mismo todos los días. Las instrucciones permanentes son esa hoja en la pared.</p></div><div class="prose"><p>Las <b>instrucciones permanentes</b> (<i>persistent instructions</i>) son un archivo de texto que el arnés carga al comienzo de cada sesión y pone en el contexto del modelo, antes de tu primer pedido. Si recuerdas las capas del contexto del capítulo 2, es la segunda, la que estaba vacía en la figura de la vuelta 4. Desde hoy se llena.</p><p>Tres cosas cambian cuando las reglas pasan de la conversación a un archivo:</p><ul><li><b>Valen en todas las sesiones.</b> El archivo se lee cada vez, sin que lo pidas.</li><li><b>Sobreviven a la compactación.</b> El historial se resume, pero el archivo se vuelve a cargar entero. El problema del capítulo 2, los nombres de clientes que reaparecieron después de compactar, se resuelve aquí.</li><li><b>Se pueden revisar.</b> Una regla escrita se lee, se corrige y se comparte. Una regla dicha en un chat de hace tres semanas no existe para nadie.</li></ul></div></section>
+<section><h2>Archivos de instrucciones: <code>AGENTS.md</code>, <code>CLAUDE.md</code> y sus equivalentes</h2><div class="prose"><p>El archivo tiene distintos nombres según el agente, pero en todos es lo mismo: texto plano, casi siempre escrito en <b>Markdown</b> (<i>Markdown</i>, un formato de texto donde un <code>#</code> marca un título y un <code>-</code> marca un punto de lista), guardado en la carpeta donde trabaja el agente. Cualquier editor de texto sirve para escribirlo.</p><p>Los nombres más comunes a noviembre de 2026, como ejemplos del mercado:</p><div class="tbl"><table><thead><tr><th>Archivo</th><th>Quién lo lee</th><th>Dónde va</th></tr></thead><tbody><tr><td><code>AGENTS.md</code></td><td>un formato abierto que leen Codex, opencode, Gemini CLI, GitHub Copilot y muchos otros</td><td>en la carpeta del proyecto y, si quieres, en subcarpetas</td></tr><tr><td><code>CLAUDE.md</code></td><td>Claude Code (que también puede leer un <code>AGENTS.md</code> si no hay <code>CLAUDE.md</code>)</td><td>en la carpeta del proyecto, en subcarpetas y en tu carpeta personal</td></tr><tr><td><code>GEMINI.md</code></td><td>Gemini CLI</td><td>en la carpeta del proyecto y en tu carpeta personal</td></tr><tr><td><code>.github/copilot-instructions.md</code></td><td>GitHub Copilot</td><td>dentro de la carpeta <code>.github</code> del proyecto</td></tr><tr><td>«Instrucciones personalizadas» o «instrucciones del proyecto»</td><td>los asistentes de chat y de escritorio</td><td>un campo de texto en la configuración, no un archivo</td></tr></tbody></table></div><p><code>AGENTS.md</code> merece un párrafo propio, porque es lo más parecido a un estándar. Su sitio oficial, <a href="https://agents.md/" target="_blank" rel="noopener">agents.md</a>, lo describe como «un lugar predecible» para las instrucciones de los agentes, separado del README que leen las personas, y dice que lo usan más de 60.000 proyectos de código abierto. A noviembre de 2026 lo administra la Agentic AI Foundation, dentro de la Linux Foundation. Si vas a escribir un solo archivo para que lo entiendan varios agentes, escribe un <code>AGENTS.md</code>. Si tu agente prefiere otro nombre, muchos permiten que ese archivo <b>importe</b> (<i>import</i>) el otro: Claude Code, por ejemplo, acepta una línea <code>@AGENTS.md</code> dentro de su <code>CLAUDE.md</code> para cargar su contenido.</p></div><figure class="fig fig-flujo" id="04-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" style="min-width:720px" role="img" aria-label="Diagrama de secuencia del arranque de una sesión. Daniela abre el agente en la carpeta agente-prueba. El arnés busca el archivo de instrucciones global y el de proyecto en el disco, los lee y arma el contexto con las instrucciones del sistema, las de Daniela y las herramientas. Después llega el pedido de Daniela y viaja al modelo junto con todo lo anterior. En la vuelta 30 el arnés compacta el historial en un resumen, pero vuelve a enviar las instrucciones completas.">
+  <defs>
+    <marker id="d04b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d04b-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d04b-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-apl"/></marker>
+    <marker id="d04b-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-casa"/></marker>
+  </defs>
+  <rect x="10" y="14" width="120" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="70" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="70" y="54" class="t t-s t-m" text-anchor="middle">abre y pide</text>
+  <rect x="220" y="14" width="120" height="52" rx="10" class="caja"/><text x="280" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="280" y="54" class="t t-s t-m" text-anchor="middle">el programa</text>
+  <rect x="440" y="14" width="130" height="52" rx="10" class="d-casa"/><text x="505" y="36" class="t t-b" text-anchor="middle">Disco</text><text x="505" y="54" class="t t-s t-m" text-anchor="middle">tus carpetas</text>
+  <rect x="640" y="14" width="120" height="52" rx="10" class="d-inet"/><text x="700" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="700" y="54" class="t t-s t-m" text-anchor="middle">decide</text>
+  <line x1="70" y1="66" x2="70" y2="590" class="vida"/>
+  <line x1="280" y1="66" x2="280" y2="590" class="vida"/>
+  <line x1="505" y1="66" x2="505" y2="590" class="vida"/>
+  <line x1="700" y1="66" x2="700" y2="590" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="70" y1="104" x2="277" y2="104" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d04b-w)"/>
+    <text x="78" y="84">① abre el agente</text><text x="90" y="98">en agente-prueba</text>
+    <line x1="280" y1="140" x2="502" y2="140" class="ln s-apl" style="stroke-width:2" marker-end="url(#d04b-a)"/>
+    <text x="288" y="133">② busca el global (~/…/AGENTS.md)</text>
+    <line x1="280" y1="176" x2="502" y2="176" class="ln s-apl" style="stroke-width:2" marker-end="url(#d04b-a)"/>
+    <text x="288" y="169">③ busca agente-prueba/AGENTS.md</text>
+    <line x1="505" y1="212" x2="283" y2="212" class="ln ln-d" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d04b-c)"/>
+    <text x="300" y="205">④ el texto de los dos archivos</text>
+    <rect x="160" y="228" width="240" height="44" rx="6" class="c-apl"/>
+    <text x="172" y="246">⑤ arma el contexto: sistema +</text><text x="186" y="262">instrucciones + herramientas</text>
+
+    <line x1="70" y1="310" x2="277" y2="310" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d04b-w)"/>
+    <text x="78" y="290">⑥ «Prepara el informe</text><text x="90" y="304">de la semana 47»</text>
+    <line x1="280" y1="346" x2="697" y2="346" class="ln" style="stroke-width:2" marker-end="url(#d04b-n)"/>
+    <text x="288" y="339">⑦ contexto completo, con las instrucciones, + el pedido</text>
+
+    <line x1="20" y1="388" x2="770" y2="388" class="ln ln-d"/>
+    <text x="395" y="408" class="t-m" text-anchor="middle">… 29 vueltas después: la ventana se llena …</text>
+
+    <rect x="160" y="428" width="240" height="44" rx="6" style="fill:var(--mark);stroke:var(--line)"/>
+    <text x="172" y="446">⑧ compacta: el historial viejo</text><text x="186" y="462">se reemplaza por un resumen</text>
+    <line x1="280" y1="514" x2="697" y2="514" class="ln s-apl" style="stroke-width:2" marker-end="url(#d04b-a)"/>
+    <text x="288" y="500">⑨ instrucciones completas (sin resumir)</text>
+    <text x="288" y="534" class="t-m">+ resumen + vueltas recientes + resultados</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M790 90v186" class="ln s-apl" style="stroke-width:3"/><text x="800" y="170" class="k-apl">ARRANQUE</text><text x="800" y="185" class="t-m">antes de que</text><text x="800" y="199" class="t-m">escribas nada</text>
+    <path d="M790 290v62" class="ln" style="stroke:var(--warm);stroke-width:3"/><text x="800" y="316" class="k-warm">PEDIDO</text><text x="800" y="331" class="t-m">vuelta 1</text>
+    <path d="M790 424v116" class="ln" style="stroke-width:3"/><text x="800" y="470" class="t-m">VUELTA 30</text><text x="800" y="485" class="t-m">compacta,</text><text x="800" y="499" class="t-m">pero no las</text><text x="800" y="513" class="t-m">instrucciones</text>
+  </g>
+  <rect x="10" y="596" width="880" height="36" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="619" class="t t-s" text-anchor="middle">Las instrucciones (en magenta) entran antes del primer pedido y viajan completas en cada vuelta.</text>
+</svg></div><figcaption><b>Flujo del arranque de una sesión: cuándo se leen las instrucciones.</b> Los participantes son Daniela, el arnés, la carpeta <code>agente-prueba</code> y el modelo. Daniela abre el agente en la carpeta (①). Antes de que escriba nada, el arnés busca archivos de instrucciones: primero el global de su carpeta personal (②), luego el del proyecto (③), y los lee (④). Arma el contexto con las instrucciones del sistema, las suyas y las herramientas (⑤). Recién entonces llega el pedido de Daniela (⑥) y viaja junto con todo lo anterior (⑦). Abajo, la vuelta 30: el agente compacta el historial (⑧), pero el arnés vuelve a poner las instrucciones completas (⑨). Las instrucciones nunca pasan por el resumen.</figcaption></figure><div class="prose"><p>Mira la figura con atención: el archivo se lee <b>antes</b> de tu primer mensaje y se reenvía en <b>cada</b> vuelta. Por eso cuesta tokens en todas las vueltas, igual que las descripciones de las herramientas, y por eso conviene que sea corto. Lo verás al final del capítulo.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Lee un <code>AGENTS.md</code> de verdad</h3></div><p>Vas a leer el archivo de instrucciones de un proyecto público: el del propio sitio de AGENTS.md. No necesitas cuenta. Ábrelo en <a href="https://github.com/agentsmd/agents.md/blob/main/AGENTS.md" target="_blank" rel="noopener">github.com/agentsmd/agents.md/blob/main/AGENTS.md</a> (en inglés; el traductor del navegador sirve).</p><ol class="steps"><li><span>Cuenta cuántas secciones tiene y ponle a cada una una etiqueta: ¿es contexto, preferencia, regla o prohibición?</span></li><li><span>Busca la prohibición más fuerte del archivo, la que está en negrita. ¿Por qué crees que el autor la escribió así?</span></li><li><span>Busca qué le explica al agente que una persona no necesitaría que le expliquen.</span></li><li><span>Mide el largo: ¿cabe en una pantalla?, ¿cuántas líneas tiene, más o menos?</span></li></ol><p><b>Qué observar:</b> es un archivo corto, de una pantalla y poco más, con contexto (qué hay en la carpeta), reglas de trabajo, una tabla de comandos y una prohibición explicada con su porqué: «no ejecutes la compilación de producción durante la sesión», porque deja el entorno en mal estado. Las mejores prohibiciones dicen la razón, porque el modelo la usa para decidir en los casos que la regla no previó. Vas a escribir uno así para Daniela en la sección siguiente.</p></div></section>
+<section><h2>Instrucciones globales, por proyecto y por carpeta</h2><div class="prose"><p>Daniela no trabaja en una sola carpeta. Tiene la de operaciones, la de actas del comité y una personal con su presupuesto de capacitación. Algunas reglas valen para todas («escribe en español, frases cortas»); otras, solo para una («el informe va en una tabla por técnico»). Por eso casi todos los agentes leen instrucciones en tres niveles, de lo general a lo particular:</p><ol class="steps"><li><span><b>Globales o de usuario.</b> Un archivo en tu carpeta personal que el agente lee en todas tus sesiones, trabaje donde trabaje. Por ejemplo, a noviembre de 2026, Codex lee <code>~/.codex/AGENTS.md</code>; opencode, <code>~/.config/opencode/AGENTS.md</code>; Claude Code, <code>~/.claude/CLAUDE.md</code>. El <code>~</code> es tu carpeta personal.</span></li><li><span><b>De proyecto.</b> El archivo en la carpeta donde abres el agente, como <code>agente-prueba/AGENTS.md</code>. Es el más importante y el que más vas a editar.</span></li><li><span><b>De subcarpeta.</b> Un archivo dentro de una subcarpeta, que agrega reglas para lo que vive ahí: <code>agente-prueba/actas/AGENTS.md</code> podría decir «las actas se nombran con la fecha al principio». Según el agente, se carga al arrancar o recién cuando el agente trabaja con archivos de esa subcarpeta.</span></li></ol></div><figure class="fig fig-capas" id="04-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" style="min-width:720px" role="img" aria-label="Tres niveles de archivos de instrucciones y cómo se apilan en el contexto. A la izquierda, la carpeta personal de Daniela con el archivo global, la carpeta agente-prueba con el archivo de proyecto y la subcarpeta actas con el suyo. A la derecha, el contexto del modelo de arriba hacia abajo: instrucciones del sistema, archivo global, archivo de proyecto, archivo de subcarpeta (se carga cuando el agente trabaja ahí) y el resto del contexto. Lo más cercano a la carpeta de trabajo se lee al final y suele pesar más.">
+  <defs>
+    <marker id="d04a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d04a-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-apl"/></marker>
+  </defs>
+  <text x="20" y="26" class="t t-xs t-b t-m">LAS CARPETAS DE DANIELA</text>
+  <text x="520" y="26" class="t t-xs t-b t-m">EL CONTEXTO QUE RECIBE EL MODELO</text>
+
+  
+  <rect x="20" y="42" width="380" height="380" rx="10" class="d-casa" style="opacity:.55"/>
+  <text x="34" y="66" class="t t-b t-mono">~/ (carpeta personal)</text>
+  <rect x="34" y="78" width="340" height="56" rx="8" class="c-apl"/>
+  <text x="46" y="100" class="t t-b">Global · ~/.codex/AGENTS.md, etc.</text>
+  <text x="46" y="120" class="t t-s">«Español, frases cortas, sin adornos»</text>
+
+  <text x="54" y="166" class="t t-b t-mono">agente-prueba/</text>
+  <rect x="54" y="178" width="320" height="74" rx="8" class="c-apl"/>
+  <text x="66" y="200" class="t t-b">Proyecto · agente-prueba/AGENTS.md</text>
+  <text x="66" y="220" class="t t-s">quién soy, la carpeta, el informe,</text>
+  <text x="66" y="238" class="t t-s">las reglas y las prohibiciones</text>
+
+  <text x="74" y="284" class="t t-b t-mono">agente-prueba/actas/</text>
+  <rect x="74" y="296" width="300" height="56" rx="8" class="c-apl" style="stroke-dasharray:5 4"/>
+  <text x="86" y="318" class="t t-b">Subcarpeta · actas/AGENTS.md</text>
+  <text x="86" y="338" class="t t-s">«Nombra las actas con la fecha al inicio»</text>
+  <text x="34" y="384" class="t t-s t-m">cuanto más adentro, más específico:</text>
+  <text x="34" y="402" class="t t-s t-m">cada nivel agrega, no reemplaza</text>
+
+  
+  <rect x="520" y="42" width="360" height="40" rx="6" class="d-inet"/>
+  <text x="534" y="67" class="t t-b">Instrucciones del sistema</text>
+  <rect x="520" y="92" width="360" height="40" rx="6" class="c-apl"/>
+  <text x="534" y="117" class="t t-b">Global</text>
+  <rect x="520" y="142" width="360" height="56" rx="6" class="c-apl"/>
+  <text x="534" y="166" class="t t-b">Proyecto</text>
+  <text x="534" y="186" class="t t-s">el más importante y el que más se edita</text>
+  <rect x="520" y="208" width="360" height="56" rx="6" class="c-apl" style="stroke-dasharray:5 4"/>
+  <text x="534" y="232" class="t t-b">Subcarpeta</text>
+  <text x="534" y="252" class="t t-s">al arrancar o al trabajar en actas/, según el agente</text>
+  <rect x="520" y="274" width="360" height="64" rx="6" class="caja"/>
+  <text x="534" y="298" class="t t-b">El resto del contexto</text>
+  <text x="534" y="318" class="t t-s t-m">herramientas, memoria, historial, resultados, pedido</text>
+
+  <g class="ln s-apl" style="stroke-width:1.8">
+    <line x1="374" y1="106" x2="516" y2="112" marker-end="url(#d04a-a)"/>
+    <line x1="374" y1="215" x2="516" y2="170" marker-end="url(#d04a-a)"/>
+    <line x1="374" y1="324" x2="516" y2="236" marker-end="url(#d04a-a)"/>
+  </g>
+  <line x1="505" y1="96" x2="505" y2="262" class="ln" style="stroke-width:2" marker-end="url(#d04a-n)"/>
+
+  <rect x="520" y="356" width="360" height="66" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="534" y="380" class="t t-s t-b">Se leen en orden, de lo general a lo particular.</text>
+  <text x="534" y="398" class="t t-s">Lo último suele pesar más si dos reglas chocan,</text>
+  <text x="534" y="414" class="t t-s">pero «suele» no es «siempre»: mejor que no choquen.</text>
+</svg></div><figcaption><b>Tres niveles de instrucciones y cómo se apilan en el contexto.</b> A la izquierda, las carpetas de Daniela: su carpeta personal con el archivo global, la carpeta <code>agente-prueba</code> con el de proyecto y la subcarpeta <code>actas</code> con el suyo. A la derecha, el contexto que recibe el modelo, de arriba hacia abajo: las instrucciones del sistema (gris), el archivo global, el de proyecto y el de subcarpeta (los tres en magenta, cada vez más específicos) y, debajo, el resto del contexto. La flecha recuerda la regla de casi todos los agentes: lo más cercano a la carpeta de trabajo se lee al final y, si dos reglas chocan, suele pesar más; pero «suele» no es «siempre».</figcaption></figure><div class="prose"><p>¿Qué pasa si dos niveles dicen cosas distintas? Los agentes no fusionan las reglas con lógica de abogado: concatenan los textos, uno debajo del otro, y el modelo los lee todos. La documentación de Codex explica que los archivos más cercanos a la carpeta de trabajo «aparecen después» y por eso sus indicaciones pesan más. La de AGENTS.md dice que gana el más cercano. La de Claude Code advierte otra cosa que conviene tomar al pie de la letra: si dos instrucciones se contradicen, el modelo «puede elegir una de forma arbitraria». La conclusión práctica es la misma para todos: no uses los niveles para corregirse entre sí. Pon en el global solo lo que vale de verdad en todas partes, y en el de proyecto lo propio de esa carpeta.</p></div></section>
+<section><h2>Qué poner: contexto, preferencias, reglas y prohibiciones</h2><div class="prose"><p>Un buen archivo de instrucciones responde cuatro preguntas que un ayudante nuevo te haría el primer día:</p><ul><li><b>Contexto: ¿dónde estoy y para quién trabajo?</b> Quién eres, qué hace tu equipo, qué hay en cada subcarpeta y quiénes son las personas que van a aparecer en los archivos.</li><li><b>Preferencias: ¿cómo te gusta el trabajo?</b> Formato, tono, idioma, largo, nombres de archivo.</li><li><b>Reglas: ¿qué significa cada cosa aquí?</b> Las definiciones que evitan que el mismo pedido salga distinto dos veces, como la de «reprogramada» del capítulo 2, y los pasos que no se saltan, como revisar que los totales cuadren.</li><li><b>Prohibiciones: ¿qué no hago nunca?</b> Pocas, claras y con su razón.</li></ul><p>Este es el archivo de Daniela. Va en <code>agente-prueba/AGENTS.md</code>:</p><div class="code-copia"><pre><code># Agente de Daniela: operaciones de campo
+
+## Quién soy
+Daniela Rivas, coordinadora de operaciones de campo. Coordino 14 técnicos
+(entre ellos Tomás, Inés y Raúl) que instalan y mantienen servicios en hogares.
+Mi jefe es Andrés Molina. La supervisora de técnicos es Julia Paredes.
+
+## Esta carpeta
+- visitas/: una planilla CSV por semana (fecha, tecnico, zona, estado).
+- correo/: correos de prueba, uno por archivo.
+- agenda/: la agenda de la semana.
+- informes/: aquí escribes. No escribas en otras carpetas.
+
+## Informe semanal de visitas
+- Una tabla por técnico con hechas, reprogramadas y pendientes, y una fila de totales.
+- «Reprogramada»: visita movida a otra fecha. No cuenta como no realizada.
+- «Pendiente»: visita sin hacer y sin fecha nueva.
+- Antes de terminar, comprueba que los totales sumen las filas de la planilla.
+- Nombre: informes/informe-semana-NN.md
+
+## Reglas
+- Sin nombres de clientes en informes ni borradores: usa la zona.
+  (Los informes circulan por el comité y no deben llevar datos personales.)
+- Nunca envíes correos: deja borradores para que yo los revise.
+- Si falta un dato o algo no cuadra, pregúntame. No lo inventes.
+- Español, frases cortas, sin adornos.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Son 26 líneas. Fíjate en tres decisiones. Las definiciones de «reprogramada» y «pendiente» terminan con el problema de los dos informes distintos del capítulo 2. La regla sobre los clientes dice su porqué, y eso ayuda al modelo a aplicarla en un caso que no está escrito, como un correo a Julia. Y la prohibición de enviar está escrita, aunque, como verás, no es la que de verdad impide que salga un correo.</p></div><figure class="fig fig-esquema" id="04-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" style="min-width:720px" role="img" aria-label="Anatomía del archivo de instrucciones de Daniela. Cuatro bloques: contexto, preferencias, reglas y prohibiciones. Cada uno cambia algo del trabajo del agente: a quién escribe, cómo se ve el informe, cómo cuenta las visitas y qué no hace. A la derecha, lo que no va en el archivo: los secretos, que no van a ningún lugar que el agente lea; lo que aprende semana a semana, que va a la memoria del capítulo 6; y lo que nunca debe poder hacer, que va a los permisos del capítulo 7.">
+  <defs>
+    <marker id="d04c-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-apl"/></marker>
+  </defs>
+  <text x="20" y="24" class="t t-xs t-b t-m">AGENTE-PRUEBA/AGENTS.MD</text>
+  <text x="360" y="24" class="t t-xs t-b t-m">QUÉ CAMBIA EN EL TRABAJO</text>
+  <text x="640" y="24" class="t t-xs t-b t-m">LO QUE NO VA EN EL ARCHIVO</text>
+  <rect x="20" y="34" width="290" height="420" rx="10" class="caja"/>
+
+  <rect x="34" y="48" width="262" height="86" rx="8" class="c-apl"/>
+  <text x="46" y="70" class="t t-xs t-b k-apl">CONTEXTO</text>
+  <text x="46" y="90" class="t t-s">Quién soy: Daniela, 14 técnicos,</text>
+  <text x="46" y="106" class="t t-s">jefe Andrés, supervisora Julia.</text>
+  <text x="46" y="122" class="t t-s">Qué hay en cada subcarpeta.</text>
+
+  <rect x="34" y="146" width="262" height="86" rx="8" class="c-apl"/>
+  <text x="46" y="168" class="t t-xs t-b k-apl">PREFERENCIAS</text>
+  <text x="46" y="188" class="t t-s">Tabla por técnico con totales.</text>
+  <text x="46" y="204" class="t t-s">Español, frases cortas.</text>
+  <text x="46" y="220" class="t t-s">informes/informe-semana-NN.md</text>
+
+  <rect x="34" y="244" width="262" height="86" rx="8" class="c-apl"/>
+  <text x="46" y="266" class="t t-xs t-b k-apl">REGLAS</text>
+  <text x="46" y="286" class="t t-s">Reprogramada: movida a otra fecha.</text>
+  <text x="46" y="302" class="t t-s">Pendiente: sin hacer y sin fecha.</text>
+  <text x="46" y="318" class="t t-s">Revisar que los totales cuadren.</text>
+
+  <rect x="34" y="342" width="262" height="100" rx="8" class="c-apl" style="stroke-width:2.5"/>
+  <text x="46" y="364" class="t t-xs t-b k-apl">PROHIBICIONES, CON SU PORQUÉ</text>
+  <text x="46" y="384" class="t t-s">Sin nombres de clientes (el informe</text>
+  <text x="46" y="400" class="t t-s">circula por el comité).</text>
+  <text x="46" y="416" class="t t-s">Nunca enviar: solo borradores.</text>
+  <text x="46" y="432" class="t t-s">Si falta un dato, preguntar.</text>
+
+  <g class="ln s-apl" style="stroke-width:1.8">
+    <line x1="296" y1="91" x2="356" y2="91" marker-end="url(#d04c-a)"/>
+    <line x1="296" y1="189" x2="356" y2="189" marker-end="url(#d04c-a)"/>
+    <line x1="296" y1="287" x2="356" y2="287" marker-end="url(#d04c-a)"/>
+    <line x1="296" y1="392" x2="356" y2="392" marker-end="url(#d04c-a)"/>
+  </g>
+  <g class="t t-s">
+    <rect x="360" y="60" width="250" height="62" rx="8" class="d-casa"/>
+    <text x="372" y="84">El borrador va para</text><text x="372" y="102" class="t-mono">andres.molina@ejemplo.com</text>
+    <rect x="360" y="158" width="250" height="62" rx="8" class="d-casa"/>
+    <text x="372" y="182">Tabla con totales, guardada</text><text x="372" y="200">en informes/, nunca en visitas/</text>
+    <rect x="360" y="256" width="250" height="62" rx="8" class="d-casa"/>
+    <text x="372" y="280">«2 reprogramadas y 1 pendiente»,</text><text x="372" y="298">no «3 visitas perdidas»</text>
+    <rect x="360" y="356" width="250" height="72" rx="8" class="d-casa"/>
+    <text x="372" y="380">Zonas en lugar de nombres; no</text><text x="372" y="398">ofrece enviar; pregunta por la</text><text x="372" y="416">semana 48 en vez de inventarla</text>
+  </g>
+
+  <rect x="630" y="34" width="255" height="420" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <g class="t t-s">
+    <rect x="644" y="52" width="227" height="110" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <text x="656" y="74" class="t-b">Secretos</text>
+    <text x="656" y="94">contraseñas, claves de API,</text><text x="656" y="110">enlaces privados</text>
+    <text x="656" y="134" class="t-b k-warm">→ a ningún lugar que</text><text x="656" y="150" class="t-b k-warm">el agente lea</text>
+    <rect x="644" y="176" width="227" height="124" rx="8" class="c-enl"/>
+    <text x="656" y="198" class="t-b">Lo que cambia cada semana</text>
+    <text x="656" y="218">«Raúl sin vehículo</text><text x="656" y="234">el jueves 26»</text>
+    <text x="656" y="260" class="t-b k-enl">→ memoria, que se revisa</text><text x="656" y="276" class="t-b k-enl">y se borra (cap. 6)</text>
+    <rect x="644" y="314" width="227" height="124" rx="8" class="c-tra"/>
+    <text x="656" y="336" class="t-b">Lo que nunca debe</text><text x="656" y="352" class="t-b">poder hacer</text>
+    <text x="656" y="372">enviar, borrar, salir</text><text x="656" y="388">de la carpeta</text>
+    <text x="656" y="412" class="t-b k-tra">→ herramientas y</text><text x="656" y="428" class="t-b k-tra">permisos (caps. 5 y 7)</text>
+  </g>
+</svg></div><figcaption><b>Anatomía del archivo de Daniela.</b> A la izquierda, el archivo partido en sus cuatro bloques (contexto, preferencias, reglas y prohibiciones), todos en magenta, el color de las instrucciones. Cada bloque tiene una flecha hacia lo que cambia en el trabajo del agente: a quién le escribe, cómo se ve el informe, cómo cuenta las visitas y qué deja sin hacer. A la derecha, con borde punteado, lo que no va en el archivo y adónde va cada cosa: los secretos, a ninguna parte que el agente lea; lo que el agente aprende semana a semana, a la memoria (capítulo 6); y lo que no debe poder hacer nunca, a los permisos (capítulo 7).</figcaption></figure><div class="prose"><p>Ahora prueba qué hace cada parte. El laboratorio pone al agente frente a la misma tarea con distintas versiones del archivo.</p></div><div class="lab" id="04-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Editor de instrucciones</h3></div><p class="hint">El encargo es siempre el mismo: «Prepara el informe de la semana 47, déjale a Andrés el correo listo y dime cómo vamos con la semana 48». Enciende y apaga las líneas del archivo de Daniela y mira cómo cambia lo que entrega el agente: dónde guarda el archivo, cómo se ve el informe, cómo cuenta las visitas, qué hace con el correo y qué responde sobre una semana de la que no tiene datos. El contador de abajo dice cuántas cosas tendría que corregir Daniela a mano.</p><style>
+[id="04-lab-1"] .c4l1-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:14px;align-items:start}
+@media (max-width:760px){[id="04-lab-1"] .c4l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="04-lab-1"] .c4l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+[id="04-lab-1"] .c4l1-archivo{border:1.5px solid var(--c-apl);background:var(--c-apl-s);border-radius:10px;padding:10px;display:grid;gap:5px;min-width:0}
+[id="04-lab-1"] .c4l1-archivo .c4l1-tit{font:600 .8rem var(--f-mono);margin:0}
+[id="04-lab-1"] .c4l1-linea{display:flex;gap:8px;align-items:flex-start;text-align:left;width:100%;font:400 .8rem/1.35 var(--f-mono);padding:5px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+[id="04-lab-1"] .c4l1-linea::before{content:"✓";font-weight:700;color:var(--good);width:1em;flex:none}
+[id="04-lab-1"] .c4l1-linea[aria-pressed="false"]{opacity:.55;text-decoration:line-through}
+[id="04-lab-1"] .c4l1-linea[aria-pressed="false"]::before{content:"–";color:var(--muted)}
+[id="04-lab-1"] .c4l1-linea span{overflow-wrap:anywhere}
+[id="04-lab-1"] .c4l1-sal{display:grid;gap:8px;min-width:0}
+[id="04-lab-1"] .c4l1-caja{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 10px;min-width:0}
+[id="04-lab-1"] .c4l1-caja.mal{border-color:var(--warm);box-shadow:0 0 0 1px var(--warm)}
+[id="04-lab-1"] .c4l1-caja p{margin:0;font:400 .88rem/1.45 var(--f-body)}
+[id="04-lab-1"] .c4l1-caja .c4l1-ruta{font:500 .8rem var(--f-mono);overflow-wrap:anywhere}
+[id="04-lab-1"] .c4l1-caja .c4l1-por{font:400 .78rem/1.4 var(--f-body);color:var(--muted);margin-top:4px}
+[id="04-lab-1"] .c4l1-caja .c4l1-por.mal{color:var(--warm)}
+[id="04-lab-1"] .c4l1-tabla{width:100%;border-collapse:collapse;font:400 .8rem var(--f-mono)}
+[id="04-lab-1"] .c4l1-tabla th,[id="04-lab-1"] .c4l1-tabla td{border-bottom:1px solid var(--line);padding:3px 5px;text-align:right}
+[id="04-lab-1"] .c4l1-tabla th:first-child,[id="04-lab-1"] .c4l1-tabla td:first-child{text-align:left}
+[id="04-lab-1"] .c4l1-tabla tr.tot td{font-weight:700}
+[id="04-lab-1"] .c4l1-tabla td.mal{color:var(--warm);font-weight:700}
+</style>
+<div class="c4l1-grid">
+  <div>
+    <p class="c4l1-rot" id="c4l1-ra">Archivo de instrucciones · haz clic en una línea para apagarla</p>
+    <div class="c4l1-archivo" role="group" aria-labelledby="c4l1-ra">
+      <p class="c4l1-tit">agente-prueba/AGENTS.md</p>
+      <div id="c4l1-lineas" style="display:grid;gap:5px"></div>
+    </div>
+    <div class="btns" style="margin-top:8px">
+      <button type="button" id="c4l1-todo">Encender todas</button>
+      <button type="button" id="c4l1-nada">Archivo vacío</button>
+    </div>
+  </div>
+  <div class="c4l1-sal" aria-live="polite">
+    <p class="c4l1-rot">Lo que entrega el agente</p>
+    <div class="c4l1-caja" id="c4l1-ruta"></div>
+    <div class="c4l1-caja" id="c4l1-inf"></div>
+    <div class="c4l1-caja" id="c4l1-cor"></div>
+    <div class="c4l1-caja" id="c4l1-s48"></div>
+  </div>
+</div>
+<div class="readout texto" id="c4l1-out" aria-live="polite"></div></div><div class="prose"><p>El laboratorio deja ver algo incómodo en la línea «nunca envíes correos». Si la apagas, el agente igual no envía nada: deja un borrador porque no tiene la herramienta <code>enviar_correo</code>. Las instrucciones <b>orientan</b> al modelo; no son una cerradura. La propia documentación de Claude Code lo dice sin rodeos: sus archivos de instrucciones son contexto, «no configuración que se haga cumplir», y para bloquear una acción hay que usar otro mecanismo. Por eso el agente de Daniela tiene las dos cosas: la regla escrita, para que no intente enviar ni lo ofrezca, y la herramienta quitada, para que no pueda aunque lo intente. Lo segundo es el tema de los capítulos 5 y 7.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Escribe el archivo de instrucciones de Daniela</h3></div><p>Vas a crear <code>AGENTS.md</code> en la carpeta <code>agente-prueba</code> del capítulo 1 con una versión corta del archivo de Daniela, y luego leerlo y medirlo. Solo escribe dentro de tu carpeta de prueba. En Windows se escribe con <code>WriteAllText</code> para que el archivo quede en UTF-8 sin la marca invisible (<i>BOM</i>) que agrega PowerShell 5.1 y que confunde a algunos agentes.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>$t = @("# Agente de Daniela: operaciones de campo","","## Quién soy","Daniela Rivas, coordinadora de operaciones de campo (14 técnicos). Jefe: Andrés Molina. Supervisora: Julia Paredes.","","## Informe semanal de visitas","- Tabla por técnico con hechas, reprogramadas y pendientes, y fila de totales.","- Reprogramada: visita movida a otra fecha. No cuenta como no realizada.","- Comprueba que los totales sumen las filas de la planilla.","- Escribe solo en informes/.","","## Reglas","- Sin nombres de clientes: usa la zona.","- Nunca envíes correos: deja borradores.","- Si falta un dato, pregunta. No lo inventes.") -join "`n"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>[IO.File]::WriteAllText("$HOME\agente-prueba\AGENTS.md", $t + "`n")</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-Content -Encoding utf8 AGENTS.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-Content -Encoding utf8 AGENTS.md).Count</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-Content -Raw -Encoding utf8 AGENTS.md).Length</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "# Agente de Daniela: operaciones de campo" "" "## Quién soy" "Daniela Rivas, coordinadora de operaciones de campo (14 técnicos). Jefe: Andrés Molina. Supervisora: Julia Paredes." "" "## Informe semanal de visitas" "- Tabla por técnico con hechas, reprogramadas y pendientes, y fila de totales." "- Reprogramada: visita movida a otra fecha. No cuenta como no realizada." "- Comprueba que los totales sumen las filas de la planilla." "- Escribe solo en informes/." "" "## Reglas" "- Sin nombres de clientes: usa la zona." "- Nunca envíes correos: deja borradores." "- Si falta un dato, pregunta. No lo inventes." &gt; AGENTS.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>cat AGENTS.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>wc -l AGENTS.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>wc -m AGENTS.md</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Comprueba que el archivo se vea con sus títulos y sus puntos de lista. Debe tener 15 líneas.</span></li><li><span>Divide los caracteres por 4, como en el capítulo 2: es una estimación de los tokens que este archivo sumará a <b>cada</b> vuelta.</span></li><li><span>Si tienes un agente de terminal instalado (cualquiera que lea <code>AGENTS.md</code>), ábrelo en <code>agente-prueba</code> y pregúntale: «¿Qué reglas tienes para esta carpeta?». Si no, abre cualquier asistente gratuito en el navegador, pega el archivo, pega debajo las filas de <code>visitas-semana-47.csv</code> y pídele el informe.</span></li></ol><p><b>Qué observar:</b> el archivo ronda los 600 caracteres, unos 150 tokens por vuelta: poco al lado de los miles que ocupan las instrucciones del sistema, pero se multiplica por cada vuelta de cada sesión. Si probaste con un agente, fíjate en que cita tus reglas sin que se las hayas dicho en la conversación: las leyó del archivo al arrancar. Si probaste pegándolo en un chat, el informe debería traer la tabla, 2 reprogramadas y 1 pendiente, sin mezclarlas.</p></div></section>
+<section><h2>Qué no poner: secretos, datos personales y reglas que se contradicen</h2><div class="prose"><p>Lo que escribes en el archivo de instrucciones viaja al modelo en cada vuelta, queda en el disco en texto plano y, si el archivo se comparte con el equipo o se sube a un repositorio, lo lee cualquiera que tenga acceso. Con eso en mente, hay tres cosas que no van.</p><p><b>Secretos.</b> Un <b>secreto</b> (<i>secret</i>) es cualquier dato que da acceso a algo: contraseñas, claves de API, el código de la alarma, el enlace privado de una planilla. «Para entrar al portal del proveedor usa la clave…» es la peor línea que puede tener un archivo de instrucciones: la manda al proveedor del modelo en cada vuelta y la deja escrita para siempre. Si el agente necesita entrar a un sistema, eso se resuelve con un conector que guarda la credencial aparte (capítulo 5) y con las reglas sobre secretos del capítulo 7.</p><p><b>Datos personales.</b> Ni de clientes ni de compañeros: nada de teléfonos, direcciones, documentos de identidad, sueldos o diagnósticos. El archivo de Daniela nombra a su jefe, a su supervisora y a tres técnicos porque el agente los va a encontrar en los correos y en la planilla; no dice nada más de ellos. La regla práctica: escribe solo lo que pondrías en una hoja pegada en la pared de la oficina.</p><p><b>Reglas que se contradicen.</b> Es el error más común y el más difícil de ver, porque cada regla, sola, tiene sentido. Aparece cuando el archivo crece por capas: alguien agrega una regla nueva sin leer las viejas, o el archivo global dice una cosa y el de proyecto otra. Como el modelo puede elegir cualquiera de las dos, el resultado cambia de un día al otro y nadie sabe por qué.</p></div><div class="analogia"><b>Imagínalo así</b><p>Un manual de cocina que en la página 3 dice «la salsa se sirve fría» y en la página 40 dice «sirve todo bien caliente». Cada cocinero nuevo hará algo distinto según qué página leyó con más atención, y el dueño pensará que el problema son los cocineros. El problema es el manual.</p></div><div class="lab" id="04-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Detector de contradicciones</h3></div><p class="hint">Cuatro archivos de instrucciones, cada uno con dos reglas que chocan. Haz clic en las dos que se contradicen. Si aciertas, verás qué haría el agente con cada una y cómo reescribirlas para que convivan. En el último archivo, el choque está entre el archivo global y el de proyecto.</p><style>
+[id="04-lab-2"] .c4l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+[id="04-lab-2"] .c4l2-archivo{border:1.5px solid var(--c-apl);background:var(--c-apl-s);border-radius:10px;padding:10px;display:grid;gap:5px;margin:6px 0}
+[id="04-lab-2"] .c4l2-sub{font:600 .78rem var(--f-mono);margin:6px 0 0;color:var(--muted)}
+[id="04-lab-2"] .c4l2-regla{display:block;width:100%;text-align:left;font:400 .84rem/1.4 var(--f-mono);padding:6px 9px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;overflow-wrap:anywhere}
+[id="04-lab-2"] .c4l2-regla[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+[id="04-lab-2"] .c4l2-regla.ok{border-color:var(--good);box-shadow:0 0 0 2px var(--good);background:var(--good-soft)}
+[id="04-lab-2"] .c4l2-regla.no{border-color:var(--warm);box-shadow:0 0 0 2px var(--warm)}
+[id="04-lab-2"] .c4l2-fix{border:1px dashed var(--good);border-radius:8px;padding:8px 10px;font:400 .84rem/1.45 var(--f-body);display:grid;gap:4px}
+[id="04-lab-2"] .c4l2-fix[hidden]{display:none}
+[id="04-lab-2"] .c4l2-fix code{font-size:.8rem}
+</style>
+<p class="c4l2-rot" id="c4l2-rr">Archivo</p>
+<div class="btns" role="group" aria-labelledby="c4l2-rr" id="c4l2-rondas"></div>
+<div class="c4l2-archivo" id="c4l2-archivo" role="group" aria-label="Reglas del archivo: elige dos"></div>
+<div class="c4l2-fix" id="c4l2-fix" hidden aria-live="polite"></div>
+<div class="btns"><button type="button" id="c4l2-limpiar">Limpiar selección</button><button type="button" id="c4l2-ver">Mostrar el choque</button></div>
+<div class="readout texto" id="c4l2-out" aria-live="polite"></div></div><div class="caso"><b>Un caso real</b><p>En un equipo de operaciones de la región, el archivo de instrucciones compartido de un agente tenía una regla de enero, «guarda cada informe junto a la planilla de su semana», y otra de marzo, «los informes van todos en la carpeta informes». Durante semanas, la mitad de los informes aparecía en un lugar y la otra mitad en el otro, según la sesión. Cada persona pensó que el agente «fallaba a veces». Nadie había vuelto a leer el archivo entero desde enero. Al borrar la regla vieja, el problema desapareció el mismo día.</p></div></section>
+<section><h2>Mantenerlas cortas y revisarlas</h2><div class="prose"><p>Un archivo de instrucciones tiende a crecer. Cada vez que el agente hace algo que no te gusta, la tentación es agregar una línea. Al cabo de unos meses tiene trescientas, y el agente sigue peor que al principio. Hay dos razones. La primera es el costo: el archivo viaja en cada vuelta, así que trescientas líneas son miles de tokens multiplicados por cada vuelta de cada sesión. La segunda es la atención: con muchas reglas, cada una pesa menos, y las importantes se pierden entre las triviales. La documentación de Claude Code recomienda, a noviembre de 2026, apuntar a menos de 200 líneas por archivo; la de Codex deja de agregar archivos cuando el total llega a 32 KiB. No son límites mágicos, pero dicen lo mismo: corto.</p><p>Cuatro hábitos para mantenerlo útil:</p><ol class="steps"><li><span><b>Escribe la regla cuando el error se repite, no la primera vez.</b> Una vez puede ser azar; dos veces es una regla que falta.</span></li><li><span><b>Prefiere definiciones a órdenes.</b> «Reprogramada: visita movida a otra fecha» resuelve más casos que «no cuentes las reprogramadas como no realizadas en el informe del lunes».</span></li><li><span><b>Saca lo que no es estable.</b> «Esta semana Raúl no tiene vehículo» no es una instrucción permanente: es algo que el agente debe recordar un tiempo y después olvidar. Va en la memoria del capítulo 6. Y un procedimiento largo que se usa solo los lunes va mejor en una habilidad (capítulo 8), que se carga cuando hace falta.</span></li><li><span><b>Revisa el archivo entero cada tanto.</b> Una vez al mes, o cada vez que el agente haga algo raro, léelo de punta a punta buscando reglas viejas, repetidas o que chocan. Algunos agentes ofrecen hacerlo por ti: Claude Code, por ejemplo, tiene un comando que revisa los archivos de instrucciones y propone cambios sin aplicarlos hasta que aceptes.</span></li></ol></div><div class="ml"><b>En la práctica</b><p>Al mes de usar su archivo, Daniela lo releyó y encontró tres cosas. Una línea agregada un día de apuro, «esta semana sin Raúl», que ya no era cierta. Una preferencia repetida con otras palabras en dos secciones. Y una regla que nunca se había usado. Lo dejó en 24 líneas y el informe salió igual. Desde entonces lo revisa el primer lunes de cada mes, antes del comité.</p></div><div class="prose"><p>Lo que te llevas de este capítulo cabe en una frase: <b>las reglas estables van en un archivo, no en cada pedido</b>. El archivo se lee en cada sesión, sobrevive a la compactación y se puede revisar y compartir. Pero orienta, no obliga: lo que el agente no debe poder hacer nunca se le quita con herramientas y permisos. El agente de Daniela ya sabe quién es ella y cómo quiere su informe. En el capítulo siguiente recibe sus manos: las herramientas y los conectores.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué tres ventajas tiene escribir una regla en el archivo de instrucciones en lugar de repetirla en cada pedido?</summary><p>Vale en todas las sesiones sin pedirla, sobrevive a la compactación porque el archivo se recarga entero en cada vuelta y se puede leer, corregir y compartir.</p></details><details><summary>Si quieres que varios agentes distintos entiendan tus instrucciones, ¿qué archivo conviene escribir y por qué?</summary><p>Un <code>AGENTS.md</code>, porque es un formato abierto que leen muchos agentes. Si alguno prefiere otro nombre, suele poder importarlo, como Claude Code con <code>@AGENTS.md</code>.</p></details><details><summary>El archivo global dice «responde en inglés» y el de proyecto «escribe en español». ¿Qué hará el agente?</summary><p>No se puede asegurar. Los archivos se concatenan y lo más cercano suele pesar más, pero ante una contradicción el modelo puede elegir cualquiera. Hay que sacar la regla del global o hacerla compatible.</p></details><details><summary>¿Por qué la línea «nunca envíes correos» no basta para que el agente no envíe nada?</summary><p>Porque las instrucciones son contexto que orienta al modelo, no una cerradura. Lo que impide enviar es que la herramienta <code>enviar_correo</code> no esté en la configuración o que un permiso la bloquee.</p></details><details><summary>¿Dónde va «Raúl no tiene vehículo el jueves 26»: en las instrucciones permanentes o en otro lugar?</summary><p>En la memoria (capítulo 6): es un dato temporal que el agente debe recordar un tiempo y después olvidar, no una regla estable.</p></details><details><summary>Nombra tres cosas que nunca deben ir en un archivo de instrucciones.</summary><p>Secretos (contraseñas, claves de API, enlaces privados), datos personales de clientes o compañeros y reglas que se contradicen.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Quién creó Markdown, en qué año y por qué casi todos los agentes lo usan para sus archivos de instrucciones?<small>Pista: busca «historia de Markdown».</small></li><li>¿Qué es la Linux Foundation y qué hace una fundación cuando «administra» un estándar abierto?</li><li>¿Qué es un KiB y en qué se diferencia de un kB?<small>Pista: busca «kibibyte».</small></li><li>¿Qué es el <i>front matter</i> de un archivo Markdown y para qué lo usan algunos agentes en sus archivos de reglas?<small>Pista: busca «YAML front matter».</small></li><li>¿Qué es un repositorio en GitHub y qué riesgo corre un secreto escrito en un archivo que se sube a uno público?<small>Pista: busca «secret scanning».</small></li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://agents.md/" target="_blank" rel="noopener">AGENTS.md <small>el sitio del formato abierto, con ejemplos y la lista de agentes que lo leen (en inglés)</small></a><a class="vid" href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">How Claude remembers your project <small>un ejemplo del mercado: niveles, importaciones, largo recomendado y contradicciones (en inglés)</small></a><a class="vid" href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener">AGENTS.md en Codex <small>cómo otro agente busca y combina sus archivos de instrucciones (en inglés)</small></a><a class="vid" href="https://opencode.ai/docs/rules/" target="_blank" rel="noopener">Rules en opencode <small>un agente abierto que lee <code>AGENTS.md</code> y, si no lo encuentra, <code>CLAUDE.md</code> (en inglés)</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="04-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const L=[
+    ['ctx','Quién soy: Daniela Rivas, coordinadora. Jefe: Andrés Molina.',22],
+    ['carpeta','informes/: aquí escribes. No escribas en otras carpetas.',16],
+    ['formato','Tabla por técnico (hechas, reprogramadas, pendientes) y fila de totales.',22],
+    ['def','Reprogramada: movida a otra fecha. No cuenta como no realizada.',20],
+    ['revisar','Comprueba que los totales sumen las filas de la planilla.',16],
+    ['enviar','Nunca envíes correos: deja borradores.',12],
+    ['preguntar','Si falta un dato, pregunta. No lo inventes.',14]];
+  const on=new Set(L.map(x=>x[0]));
+  // datos de visitas-semana-47.csv
+  const T=[['Tomás',3,1,0],['Inés',3,0,0],['Raúl',1,1,1]];
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function caja(id,rot,mal){const c=q(id);c.innerHTML='';c.className='c4l1-caja'+(mal?' mal':'');c.appendChild(el('p','c4l1-rot',rot));return c;}
+  function por(c,txt,mal){c.appendChild(el('p','c4l1-por'+(mal?' mal':''),txt));}
+  function pintarLineas(){
+    const d=q('#c4l1-lineas');d.innerHTML='';
+    L.forEach(([k,t])=>{const b=el('button','c4l1-linea');b.type='button';b.dataset.k=k;b.setAttribute('aria-pressed',on.has(k));b.appendChild(el('span',null,'- '+t));d.appendChild(b);});
+  }
+  function pintar(){
+    pintarLineas();
+    let corr=0;
+    // ruta
+    let c=caja('#c4l1-ruta','Dónde lo guarda',!on.has('carpeta'));
+    c.appendChild(el('p','c4l1-ruta',on.has('carpeta')?'informes/informe-semana-47.md':'visitas/informe.md'));
+    if(on.has('carpeta'))por(c,'Donde el archivo le dice que escriba.');
+    else{por(c,'Sin la regla, lo deja junto a la planilla, con un nombre genérico que la semana próxima pisará.',true);corr++;}
+    // informe
+    const fallaRev=!on.has('revisar');
+    c=caja('#c4l1-inf','El informe',!on.has('formato')||!on.has('def')||fallaRev);
+    const filas=T.map(([n,h,r,p])=>[n,(fallaRev&&n==='Raúl')?0:h,r,p]);
+    const tot=filas.reduce((a,f)=>[a[0]+f[1],a[1]+f[2],a[2]+f[3]],[0,0,0]);
+    if(on.has('formato')){
+      const tb=el('table','c4l1-tabla');
+      const hd=on.has('def')?['Técnico','Hechas','Reprog.','Pend.']:['Técnico','Hechas','No realizadas'];
+      const tr=el('tr');hd.forEach(h=>tr.appendChild(el('th',null,h)));tb.appendChild(tr);
+      filas.forEach(([n,h,r,p])=>{const t=el('tr');t.appendChild(el('td',null,n));const th=el('td',(fallaRev&&n==='Raúl')?'mal':null,String(h));t.appendChild(th);
+        if(on.has('def')){t.appendChild(el('td',null,String(r)));t.appendChild(el('td',null,String(p)));}else t.appendChild(el('td',null,String(r+p)));tb.appendChild(t);});
+      const tt=el('tr','tot');tt.appendChild(el('td',null,'Total'));tt.appendChild(el('td',fallaRev?'mal':null,String(tot[0])));
+      if(on.has('def')){tt.appendChild(el('td',null,String(tot[1])));tt.appendChild(el('td',null,String(tot[2])));}else tt.appendChild(el('td',null,String(tot[1]+tot[2])));
+      tb.appendChild(tt);c.appendChild(tb);
+    } else {
+      const s=on.has('def')?('La semana 47 tuvo '+(tot[0]+tot[1]+tot[2])+' visitas: '+tot[0]+' hechas, '+tot[1]+' reprogramadas y '+tot[2]+' pendiente. Tomás e Inés cumplieron casi todo; Raúl tuvo la semana más complicada.'):('La semana 47 tuvo '+(tot[0]+tot[1]+tot[2])+' visitas: '+tot[0]+' hechas y '+(tot[1]+tot[2])+' no realizadas. Raúl concentra la mayoría de las no realizadas.');
+      c.appendChild(el('p',null,s));
+    }
+    if(!on.has('formato')){por(c,'Sin formato, un párrafo distinto cada semana: Andrés no puede comparar con la anterior.',true);corr++;}
+    if(!on.has('def')){por(c,'Sin la definición, mezcla reprogramadas y pendientes en «no realizadas»: el mismo dato que en el capítulo 2 salió distinto dos veces.',true);corr++;}
+    if(fallaRev){por(c,'Se le pasó una visita de Raúl (la del 18) y nadie lo comprobó: los totales suman 9 de 10 filas.',true);corr++;}
+    if(on.has('formato')&&on.has('def')&&!fallaRev)por(c,'7 hechas, 2 reprogramadas y 1 pendiente: suman las 10 filas, y el agente lo comprobó antes de terminar.');
+    // correo
+    c=caja('#c4l1-cor','El correo para Andrés',!on.has('ctx'));
+    c.appendChild(el('p','c4l1-ruta','borrador · para: andres.molina@ejemplo.com · sin enviar'));
+    if(!on.has('ctx')){por(c,'No sabía quién es Andrés: gastó dos vueltas buscando en correo/ y le escribió como a un contacto cualquiera, sin mencionar el comité.',true);corr++;}
+    else por(c,'Sabe que Andrés es su jefe y que lo necesita antes del comité de las 10:00.');
+    if(on.has('enviar'))por(c,'Con la regla, ni lo intenta: deja el borrador y te avisa.');
+    else por(c,'Sin la regla, intenta enviarlo, descubre que no tiene la herramienta enviar_correo y deja el borrador igual. La regla no era la cerradura.');
+    // semana 48
+    c=caja('#c4l1-s48','«¿Cómo vamos con la semana 48?»',!on.has('preguntar'));
+    if(on.has('preguntar')){c.appendChild(el('p',null,'«No encuentro la planilla de la semana 48 en visitas/. ¿Me la pasas o espero a que la exportes el viernes?»'));por(c,'Te pregunta: el estado final es «Te pregunta», no «Terminado».');}
+    else{c.appendChild(el('p',null,'«La semana 48 viene bien, sin novedades importantes.»'));por(c,'Lo inventó: no hay ningún dato de la semana 48 en la carpeta.',true);corr++;}
+    const tok=L.filter(x=>on.has(x[0])).reduce((a,x)=>a+x[2],0);
+    let h='<span>Líneas encendidas: <b>'+on.size+' de 7</b> · tokens del archivo en cada vuelta: <b>~'+tok+'</b> · cosas que Daniela tendría que corregir: <b>'+corr+'</b></span>';
+    if(corr===0&&on.has('enviar'))h+='<span class="ok">Con el archivo completo, el agente entrega lo que Daniela quiere sin que ella repita nada. Cuesta unos '+tok+' tokens por vuelta.</span>';
+    else if(corr===0)h+='<span>Sin la línea de enviar, el resultado es el mismo: el borrador lo garantiza la herramienta que falta, no la regla. La regla igual sirve: evita que lo intente y que te ofrezca enviarlo.</span>';
+    else if(on.size===0)h+='<span class="warn">Archivo vacío: el agente vuelve a ser el de la sesión del martes del capítulo 2, que no sabe nada de Daniela.</span>';
+    else h+='<span>Cada línea apagada se nota en el resultado. Fíjate en cuáles cambian el contenido (definición, revisión, preguntar) y cuáles la forma (formato, carpeta).</span>';
+    q('#c4l1-out').innerHTML=h;
+  }
+  q('#c4l1-lineas').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);pintar();});
+  q('#c4l1-todo').addEventListener('click',()=>{L.forEach(x=>on.add(x[0]));pintar();});
+  q('#c4l1-nada').addEventListener('click',()=>{on.clear();pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="04-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const R=[
+    {n:'1 · Dónde guardar',grupos:[['agente-prueba/AGENTS.md',[
+      'Escribe en español, frases cortas.',
+      'Los informes van en informes/, uno por semana.',
+      'Reprogramada: visita movida a otra fecha.',
+      'Si falta un dato, pregúntame.',
+      'Guarda cada informe junto a la planilla de su semana, en visitas/.',
+      'Sin nombres de clientes: usa la zona.']]],
+      par:[1,4],
+      que:'Una sesión guarda en informes/ y otra en visitas/, según qué regla pese más ese día. Es el caso real del capítulo.',
+      fix:'Borra la regla vieja y deja una sola: <code>- Los informes van en informes/informe-semana-NN.md. No escribas en visitas/.</code>'},
+    {n:'2 · Enviar o no enviar',grupos:[['agente-prueba/AGENTS.md',[
+      'Mi jefe es Andrés Molina.',
+      'Nunca envíes correos: deja borradores para que yo los revise.',
+      'El informe va en una tabla con totales.',
+      'Cuando Andrés pida el informe, envíaselo apenas esté listo.',
+      'Comprueba que los totales sumen las filas.',
+      'Si algo no cuadra, avísame antes de seguir.']]],
+      par:[1,3],
+      que:'El modelo puede seguir la segunda y ofrecer enviar, o pedirte la herramienta para hacerlo. Si la tuviera, el correo saldría sin tu revisión.',
+      fix:'Haz que la segunda respete la primera: <code>- Cuando Andrés pida el informe, deja el borrador para él y avísame.</code> Y que enviar no esté entre sus herramientas.'},
+    {n:'3 · Cómo contar',grupos:[['agente-prueba/AGENTS.md',[
+      'Una fila por técnico y una fila de totales.',
+      'Reprogramada: visita movida a otra fecha. No cuenta como no realizada.',
+      'Usa la zona en lugar del nombre del cliente.',
+      'Escribe solo en informes/.',
+      'En los totales, suma como no realizada toda visita que no se hizo en su fecha.',
+      'Español, sin adornos.']]],
+      par:[1,4],
+      que:'Una reprogramada «no se hizo en su fecha»: según la regla que pese, el informe dice 2 reprogramadas y 1 pendiente, o 3 no realizadas. Las dos parecen razonables por separado.',
+      fix:'Una sola definición para cada estado y que los totales la usen: <code>- Totales: hechas, reprogramadas y pendientes, por separado.</code>'},
+    {n:'4 · Global contra proyecto',grupos:[['~/.codex/AGENTS.md (global)',[
+      'Respuestas breves.',
+      'Responde siempre en inglés.',
+      'No borres archivos sin preguntar.']],['agente-prueba/AGENTS.md (proyecto)',[
+      'Escribe en español: el informe va al comité.',
+      'Tabla por técnico con totales.',
+      'Escribe solo en informes/.']]],
+      par:[1,3],
+      que:'Daniela agregó «siempre en inglés» al global para otro trabajo. El de proyecto se lee después y suele pesar más, pero el modelo puede mezclar: el informe en español y el resumen del correo en inglés.',
+      fix:'Saca la regla del global: lo que no vale en todas tus carpetas no va ahí. Ponla en el proyecto donde se necesita inglés.'}];
+  let ronda=0,sel=[],resueltas=new Set(),fallos=0;
+  function reglas(){const out=[];R[ronda].grupos.forEach(g=>g[1].forEach(t=>out.push(t)));return out;}
+  function pintar(){
+    const rr=q('#c4l2-rondas');rr.innerHTML='';
+    R.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.dataset.i=i;b.textContent=r.n+(resueltas.has(i)?' ✓':'');b.setAttribute('aria-pressed',i===ronda);rr.appendChild(b);});
+    const a=q('#c4l2-archivo');a.innerHTML='';let idx=0;
+    R[ronda].grupos.forEach(([nom,ls])=>{
+      const p=document.createElement('p');p.className='c4l2-sub';p.textContent=nom;a.appendChild(p);
+      ls.forEach(t=>{const b=document.createElement('button');b.type='button';b.className='c4l2-regla';b.dataset.i=idx;b.textContent='- '+t;b.setAttribute('aria-pressed',sel.includes(idx));
+        if(resueltas.has(ronda)&&R[ronda].par.includes(idx))b.classList.add('ok');a.appendChild(b);idx++;});
+    });
+    const f=q('#c4l2-fix');
+    if(resueltas.has(ronda)){f.hidden=false;f.innerHTML='<b>Qué haría el agente:</b> <span>'+R[ronda].que+'</span><b>Cómo arreglarlo:</b> <span>'+R[ronda].fix+'</span>';}
+    else f.hidden=true;
+    let h='<span>Archivos resueltos: <b>'+resueltas.size+' de '+R.length+'</b> · intentos fallidos: <b>'+fallos+'</b></span>';
+    if(resueltas.size===R.length)h+='<span class="ok">Las cuatro contradicciones tienen algo en común: cada regla, sola, tenía sentido. Aparecen cuando el archivo crece por capas sin que nadie lo relea entero.</span>';
+    else if(resueltas.has(ronda))h+='<span>Bien. Pasa al archivo siguiente.</span>';
+    else if(sel.length===1)h+='<span>Elegiste una. ¿Con cuál otra choca?</span>';
+    else h+='<span>Haz clic en las dos reglas que no pueden cumplirse a la vez.</span>';
+    q('#c4l2-out').innerHTML=h;
+  }
+  function elegir(i){
+    if(resueltas.has(ronda))return;
+    if(sel.includes(i)){sel=sel.filter(x=>x!==i);pintar();return;}
+    sel.push(i);
+    if(sel.length===2){
+      const par=R[ronda].par;const bien=sel.includes(par[0])&&sel.includes(par[1]);
+      if(bien){resueltas.add(ronda);sel=[];pintar();return;}
+      fallos++;pintar();
+      raiz.querySelectorAll('.c4l2-regla[aria-pressed="true"]').forEach(b=>b.classList.add('no'));
+      const t=reglas();
+      q('#c4l2-out').innerHTML='<span>Archivos resueltos: <b>'+resueltas.size+' de '+R.length+'</b> · intentos fallidos: <b>'+fallos+'</b></span><span class="warn">Esas dos pueden cumplirse a la vez: «'+t[sel[0]]+'» y «'+t[sel[1]]+'» no se pisan. Busca dos que pidan cosas opuestas sobre lo mismo.</span>';
+      sel=[];
+    } else pintar();
+  }
+  q('#c4l2-archivo').addEventListener('click',e=>{const b=e.target.closest('button');if(b)elegir(+b.dataset.i);});
+  q('#c4l2-rondas').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;ronda=+b.dataset.i;sel=[];pintar();});
+  q('#c4l2-limpiar').addEventListener('click',()=>{sel=[];pintar();});
+  q('#c4l2-ver').addEventListener('click',()=>{resueltas.add(ronda);sel=[];pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delegar bien · Agentes personales · Agentes personales</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es un agente de IA y cómo configurarlo con herramientas, memoria y permisos para delegarle trabajo real, con aprobación humana y casos personales y de equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="delegar">
+<header class="topbar"><a class="brand" href="index.html">Agentes <b>personales</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 09 DE 13</span><h1>Delegar bien</h1><p class="lede">El agente de Daniela ya tiene instrucciones, herramientas, memoria, permisos y una habilidad para el informe. Aun así, «hazme el informe» puede salir mal. Lo que falta no es configuración: es un buen encargo, con un criterio claro de cuándo está terminado.</p></header>
+<section><h2>Qué tareas delegar y cuáles no</h2><div class="prose"><p>Miércoles 25 de noviembre, 16:30. El agente de Daniela está completo: tiene su archivo de instrucciones permanentes (capítulo 4), herramientas para la carpeta, el correo y la agenda (capítulo 5), una memoria que ella revisa (capítulo 6), permisos que lo dejan leer sin preguntar y escribir solo con su visto bueno (capítulo 7), y la habilidad «informe semanal» (<code>habilidades/informe-semanal/SKILL.md</code>, con su plantilla), un comando <code>/informe</code>, un subagente «lector de correo» y el gancho «sin envíos» que bloquea cualquier envío (capítulo 8). Daniela abre una sesión y escribe: «Hazme el informe de la semana». Dos minutos después el agente responde «Listo» con un informe titulado «semana 48», la semana en curso, armado con la única planilla que encontró, la de la semana 47. Las dos visitas reprogramadas aparecen como «no realizadas», junto con la pendiente, y hay un porcentaje de cumplimiento contra una meta que nadie fijó.</p><p>El agente no está roto. Hizo lo que entendió. Configurar un agente le da capacidades; <b>delegar</b> (<i>delegate</i>) es otra cosa: decidir qué tarea le pasas, explicarle qué esperas y comprobar lo que te devuelve. La parte 3 del curso trata de eso. Empieza por la pregunta más simple, que casi nadie se hace: ¿esta tarea conviene delegarla?</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en cómo reparte el trabajo una buena jefa de cocina. Al ayudante nuevo le da picar cebolla, porque es repetitivo, se ve enseguida si quedó bien y, si se equivoca, se pican otras. No le da el punto de sal del plato del cliente importante ni la decisión de cambiar el menú. No es desconfianza: es que en esas tareas ella no sabría explicar con precisión qué es «bien hecho», y un error llega a la mesa.</p></div><div class="prose"><p>Una tarea es buena candidata para un agente cuando cumple casi todas estas condiciones:</p><ul><li><b>Tiene varios pasos y se repite.</b> El informe de cada lunes, la primera pasada por el correo, ordenar actas.</li><li><b>Los datos están a su alcance.</b> Están en la carpeta, el correo o la agenda que el agente puede leer, y la política de tu organización permite usarlos.</li><li><b>Sabes reconocer un buen resultado.</b> Puedes decir, antes de empezar, qué tiene que tener el entregable para estar bien.</li><li><b>Los errores se pueden deshacer.</b> El resultado es un borrador, un archivo nuevo o una propuesta, no un hecho consumado.</li></ul><p>Y conviene no delegarla, o delegar solo una parte, cuando falla alguna de estas:</p><div class="tbl"><table><thead><tr><th>Señal</th><th>Ejemplo en el trabajo de Daniela</th><th>Qué hacer</th></tr></thead><tbody><tr><td>Decide sobre personas</td><td>Evaluar el desempeño de Raúl</td><td>El agente junta los datos; la evaluación es de Daniela</td></tr><tr><td>Pide tacto o relación</td><td>Llamar a un cliente molesto por la visita reprogramada</td><td>El agente prepara el resumen del caso; la llamada la hace una persona</td></tr><tr><td>No sabrías revisarla</td><td>Un análisis de costos de una zona que Daniela no conoce</td><td>Primero aprende o pide ayuda a quien sabe</td></tr><tr><td>Es irreversible</td><td>Enviar el informe al comité, cancelar una visita en el sistema</td><td>El agente deja un borrador; el envío pasa por Daniela (capítulo 10)</td></tr><tr><td>Es más rápido hacerla</td><td>Cambiar una palabra en un correo</td><td>Hazlo tú: explicar cuesta más que hacer</td></tr></tbody></table></div><p>Lo que queda en la columna de la derecha casi nunca es «no usar el agente». Es partir la tarea: el agente hace la parte mecánica y verificable, y la persona se queda con el juicio, la relación y lo que no se puede deshacer. Las tareas que necesitan un agente y no un chat ya las separaste en el capítulo 1; aquí la pregunta es otra: no si el agente puede, sino si tú puedes delegarla bien.</p></div></section>
+<section><h2>Un buen encargo: objetivo, contexto, restricciones y criterio de terminado</h2><div class="prose"><p>Un <b>encargo</b> (<i>brief</i>) es el pedido con el que le pasas una tarea al agente. «Hazme el informe de la semana» es un encargo, pero uno que deja al modelo adivinando cuatro cosas: para qué es, con qué datos, qué no debe hacer y cuándo terminó. Cada hueco lo rellena con lo más probable, y lo más probable no siempre es lo que tú querías.</p><p>Un buen encargo tiene cuatro partes:</p><ol class="steps"><li><span><b>Objetivo</b> (<i>goal</i>): qué resultado quieres y para qué sirve. No «un informe», sino «el informe de visitas de la semana 47 para que Andrés lo lea en dos minutos, en el celular, antes del comité del lunes a las 10:00».</span></li><li><span><b>Contexto</b> (<i>context</i>): dónde están los datos y qué tiene que saber el agente que no esté ya en su configuración. «Los datos están en <code>visitas/visitas-semana-47.csv</code>. Andrés lo pidió en el correo <code>001-andres.txt</code>.»</span></li><li><span><b>Restricciones</b> (<i>constraints</i>): lo que no debe hacer o los límites dentro de los cuales trabaja. «Solo lees en <code>visitas/</code> y escribes en <code>informes/</code>. Una visita reprogramada no es una pendiente. No toques la planilla.»</span></li><li><span><b>Criterio de terminado</b> (<i>definition of done</i>): la lista de condiciones que el resultado tiene que cumplir para darse por terminado, escritas de forma que se puedan comprobar. «Está terminado cuando existe <code>informes/informe-semana-47.md</code>, los totales de la tabla suman las 10 filas de la planilla, cada reprogramada lleva técnico y fecha, y al final hay una lista de lo que no pudiste resolver.»</span></li></ol></div><figure class="fig fig-esquema" id="09-diagrama-1"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 472" style="min-width:720px" role="img" aria-label="Arriba, el encargo vago «Hazme el informe de la semana» y las cuatro cosas que el agente tuvo que adivinar. En el medio, el mismo encargo en cuatro bloques: objetivo, contexto, restricciones y criterio de terminado, con el texto de Daniela. A la izquierda, lo que ya está en la configuración y no se repite: las instrucciones permanentes y la habilidad informe semanal. Abajo, el resultado que se comprueba punto por punto.">
+  <defs>
+    <marker id="d09a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d09a-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+  </defs>
+
+  
+  <text x="15" y="20" class="t t-xs t-b t-m">ENCARGO VAGO</text>
+  <rect x="15" y="28" width="168" height="52" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+  <text x="99" y="50" class="t t-b" text-anchor="middle">«Hazme el informe</text>
+  <text x="99" y="68" class="t t-b" text-anchor="middle">de la semana»</text>
+  <text x="200" y="20" class="t t-xs t-b t-m">LO QUE EL AGENTE TUVO QUE ADIVINAR</text>
+  <g class="t t-s" text-anchor="middle">
+    <rect x="200" y="28" width="162" height="52" rx="8" class="caja" style="stroke-dasharray:4 3"/>
+    <text x="281" y="50">¿qué semana?</text><text x="281" y="66">¿para quién?</text>
+    <rect x="374" y="28" width="162" height="52" rx="8" class="caja" style="stroke-dasharray:4 3"/>
+    <text x="455" y="50">¿dónde están</text><text x="455" y="66">los datos?</text>
+    <rect x="548" y="28" width="162" height="52" rx="8" class="caja" style="stroke-dasharray:4 3"/>
+    <text x="629" y="50">¿qué no</text><text x="629" y="66">debe hacer?</text>
+    <rect x="722" y="28" width="163" height="52" rx="8" class="caja" style="stroke-dasharray:4 3"/>
+    <text x="803" y="50">¿cuándo</text><text x="803" y="66">terminó?</text>
+  </g>
+  <g class="ln" style="stroke-width:1.4">
+    <line x1="430" y1="80" x2="430" y2="98" marker-end="url(#d09a-n)"/>
+    <line x1="560" y1="80" x2="560" y2="98" marker-end="url(#d09a-n)"/>
+    <line x1="700" y1="80" x2="700" y2="98" marker-end="url(#d09a-n)"/>
+    <line x1="840" y1="80" x2="840" y2="98" marker-end="url(#d09a-n)"/>
+  </g>
+
+  
+  <text x="15" y="112" class="t t-xs t-b t-m">YA EN LA CONFIGURACIÓN</text>
+  <rect x="15" y="122" width="168" height="88" rx="8" class="c-apl"/>
+  <text x="27" y="143" class="t t-b">Instrucciones</text>
+  <text x="27" y="161" class="t t-s">cap. 4 · tabla con totales,</text>
+  <text x="27" y="177" class="t t-s">sin nombres de clientes,</text>
+  <text x="27" y="193" class="t t-s">nunca enviar</text>
+  <rect x="15" y="222" width="168" height="78" rx="8" class="c-fis"/>
+  <text x="27" y="243" class="t t-b">Habilidad</text>
+  <text x="27" y="261" class="t t-s">cap. 8 · «informe semanal»:</text>
+  <text x="27" y="277" class="t t-s">pasos y plantilla</text>
+  <text x="99" y="320" class="t t-s t-m" text-anchor="middle">se carga sola:</text>
+  <text x="99" y="335" class="t t-s t-m" text-anchor="middle">no se repite</text>
+
+  
+  <text x="200" y="112" class="t t-xs t-b k-warm">EL ENCARGO BIEN DEFINIDO: LO DE ESTA VEZ</text>
+  <g class="t t-s">
+    <rect x="200" y="122" width="162" height="178" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <text x="212" y="144" class="t t-b">1 · Objetivo</text>
+    <text x="212" y="166">Informe de visitas de</text>
+    <text x="212" y="182">la semana 47, para que</text>
+    <text x="212" y="198">Andrés lo lea en dos</text>
+    <text x="212" y="214">minutos antes del</text>
+    <text x="212" y="230">comité del lunes 23,</text>
+    <text x="212" y="246">a las 10:00.</text>
+
+    <rect x="374" y="122" width="162" height="178" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <text x="386" y="144" class="t t-b">2 · Contexto</text>
+    <text x="386" y="166">Los datos están en</text>
+    <text x="386" y="182" class="t-mono">visitas/visitas-</text>
+    <text x="386" y="198" class="t-mono">semana-47.csv</text>
+    <text x="386" y="220">Andrés lo pidió en</text>
+    <text x="386" y="236" class="t-mono">001-andres.txt</text>
+
+    <rect x="548" y="122" width="162" height="178" rx="8" style="fill:var(--warm-soft);stroke:var(--warm)"/>
+    <text x="560" y="144" class="t t-b">3 · Restricciones</text>
+    <text x="560" y="166">Una reprogramada no</text>
+    <text x="560" y="182">es una pendiente.</text>
+    <text x="560" y="204">No inventes datos.</text>
+    <text x="560" y="226">No cambies la</text>
+    <text x="560" y="242">planilla.</text>
+
+    <rect x="722" y="122" width="163" height="178" rx="8" style="fill:var(--warm-soft);stroke:var(--warm);stroke-width:2.5"/>
+    <text x="734" y="144" class="t t-b">4 · Terminado si…</text>
+    <text x="734" y="166">• tabla con 3 estados</text>
+    <text x="734" y="186">• totales = 10 filas</text>
+    <text x="734" y="206">• técnico y fecha en</text>
+    <text x="748" y="222">cada reprogramada</text>
+    <text x="734" y="242">• sección Pendientes</text>
+    <text x="734" y="262">• si falta un dato,</text>
+    <text x="748" y="278">anotarlo, no inventarlo</text>
+  </g>
+
+  
+  <line x1="542" y1="300" x2="542" y2="340" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d09a-w)"/>
+  <rect x="200" y="344" width="685" height="66" rx="8" class="d-casa"/>
+  <text x="214" y="367" class="t t-b">Resultado: <tspan class="t-mono">informes/informe-semana-47.md</tspan></text>
+  <text x="214" y="393" class="t t-s">✓ 3 estados    ✓ totales = 10    ✓ técnico y fecha    ✓ Pendientes: Raúl, día 20, sin nueva fecha</text>
+  <text x="99" y="372" class="t t-s t-b" text-anchor="middle">se comprueba</text>
+  <text x="99" y="388" class="t t-s t-b" text-anchor="middle">punto por punto</text>
+  <line x1="160" y1="377" x2="196" y2="377" class="ln" style="stroke-width:1.4" marker-end="url(#d09a-n)"/>
+
+  <rect x="15" y="426" width="870" height="38" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="450" class="t t-s" text-anchor="middle">El encargo lleva lo de esta vez. Lo que repites en cada encargo sube a la configuración.</text>
+</svg></div><figcaption><b>Las cuatro partes de un buen encargo.</b> Arriba, el encargo vago de Daniela y lo que el agente tuvo que adivinar. Abajo, el mismo encargo partido en cuatro bloques: objetivo, contexto, restricciones y criterio de terminado, cada uno con el texto que escribió Daniela. A la izquierda, en magenta y naranja, lo que ya está en la configuración y no hace falta repetir (las instrucciones permanentes y la habilidad «informe semanal»). La flecha final lleva al resultado que se puede comprobar punto por punto.</figcaption></figure><div class="prose"><p>Fíjate en lo que el encargo no dice: no repite que el informe va en una tabla con totales, que no lleva nombres de clientes ni que nunca se envía nada. Eso ya está en las instrucciones permanentes y en la habilidad, y se carga en cada sesión. El encargo lleva <b>lo de esta vez</b>: qué semana, para quién, con qué urgencia y qué datos nuevos. Si te descubres escribiendo la misma restricción en cada encargo, esa restricción ya no es del encargo: súbela a las instrucciones.</p><p>De las cuatro partes, la que más cambia el resultado es la última. El criterio de terminado le sirve al agente para saber cuándo parar y qué comprobar antes de decir «listo»; y te sirve a ti para revisar sin releer todo. Un buen criterio de terminado tiene tres rasgos:</p><ul><li><b>Se puede comprobar con un sí o un no.</b> «Los totales suman las filas de la planilla» se comprueba; «que quede claro» no.</li><li><b>Habla del entregable, no del esfuerzo.</b> «El archivo existe y tiene la tabla» y no «revisa bien todo».</li><li><b>Dice qué hacer con lo que no se pudo.</b> «Si falta un dato, no lo inventes: anótalo en una sección <i>Pendientes</i> y sigue.» Sin esta cláusula, un agente con prisa rellena huecos.</li></ul></div><div class="analogia"><b>Imagínalo así</b><p>Es la diferencia entre decirle a un taxista «lléveme al centro» y darle la dirección exacta. Con la primera frase llegas a algún lugar del centro, y la discusión de si es el lugar correcto empieza al bajarte. Con la dirección, el taxista sabe cuándo terminó el viaje y tú sabes, sin discutir, si te dejó donde era.</p></div><div class="prose"><p>Ahora compara los dos encargos en el agente simulado.</p></div><div class="lab" id="09-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>El mismo encargo, vago y bien definido</h3></div><p class="hint">Empiezas con el encargo vago: «Hazme el informe de la semana». Agrégale una a una las cuatro partes (objetivo, contexto, restricciones y criterio de terminado) y mira cómo cambia lo que entrega el agente: qué semana elige, cómo cuenta las reprogramadas, si comprueba los totales, si te pregunta algo y cómo termina. El panel de abajo compara el resultado con lo que Daniela necesitaba, punto por punto.</p><style>
+[id="09-lab-1"] .c9l1-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="09-lab-1"] .c9l1-fila{display:grid;gap:6px}
+[id="09-lab-1"] .c9l1-partes button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border-left:5px solid var(--warm);flex:1 1 150px}
+[id="09-lab-1"] .c9l1-partes button small{font:400 .72rem/1.3 var(--f-body);opacity:.85}
+[id="09-lab-1"] .c9l1-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="09-lab-1"] .c9l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="09-lab-1"] .c9l1-col{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px;display:grid;gap:8px;min-width:0}
+[id="09-lab-1"] .c9l1-enc{margin:0;padding:8px 10px;border-left:5px solid var(--warm);background:var(--warm-soft);border-radius:0 8px 8px 0;font:400 .86rem/1.45 var(--f-body);display:grid;gap:4px}
+[id="09-lab-1"] .c9l1-enc span{display:block}
+[id="09-lab-1"] .c9l1-enc b{font:700 .66rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+[id="09-lab-1"] .c9l1-conf{margin:0;font:400 .78rem/1.4 var(--f-body);color:var(--muted)}
+[id="09-lab-1"] .c9l1-conf i{font-style:normal;padding:1px 5px;border-radius:4px}
+[id="09-lab-1"] .c9l1-vueltas{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:v}
+[id="09-lab-1"] .c9l1-vueltas li{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;padding:5px 8px;border-left:4px solid var(--c-red);background:var(--c-red-s);border-radius:0 6px 6px 0;font:400 .82rem/1.35 var(--f-body)}
+[id="09-lab-1"] .c9l1-vueltas li code{font:500 .76rem var(--f-mono);overflow-wrap:anywhere}
+[id="09-lab-1"] .c9l1-vueltas li span{color:var(--muted)}
+[id="09-lab-1"] .c9l1-vueltas li.extra{border-left-style:dashed}
+[id="09-lab-1"] .c9l1-vueltas li.verif{border-left-color:var(--good)}
+[id="09-lab-1"] .c9l1-inf{margin:0;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font:400 .78rem/1.45 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
+[id="09-lab-1"] .c9l1-inf mark{background:var(--warm-soft);color:var(--ink);outline:1px solid var(--warm);border-radius:2px}
+[id="09-lab-1"] .c9l1-check{list-style:none;margin:0;padding:0;display:grid;gap:3px;font:400 .84rem/1.35 var(--f-body)}
+[id="09-lab-1"] .c9l1-check li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;align-items:start}
+[id="09-lab-1"] .c9l1-check li::before{content:"✓";font-weight:700;color:var(--good)}
+[id="09-lab-1"] .c9l1-check li.no::before{content:"✗";color:var(--warm)}
+[id="09-lab-1"] .c9l1-tarj{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:520px){[id="09-lab-1"] .c9l1-tarj{grid-template-columns:repeat(2,minmax(0,1fr))}}
+[id="09-lab-1"] .c9l1-tarj div{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+[id="09-lab-1"] .c9l1-tarj b{display:block;font:700 1.1rem var(--f-display);color:var(--ink)}
+[id="09-lab-1"] .c9l1-tarj small{font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+[id="09-lab-1"] .c9l1-estado{display:inline-block;font:700 .68rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;color:var(--card);background:var(--good)}
+[id="09-lab-1"] .c9l1-estado.pregunta{background:var(--accent)}
+[id="09-lab-1"] .c9l1-estado.falso{background:var(--warm)}
+</style>
+<div class="c9l1-fila">
+  <p class="c9l1-rot" id="c9l1-r1">Agrega partes al encargo</p>
+  <div class="btns c9l1-partes" role="group" aria-labelledby="c9l1-r1" id="c9l1-partes">
+    <button type="button" data-k="obj" aria-pressed="false">Objetivo<small>semana 47, para Andrés, antes del comité</small></button>
+    <button type="button" data-k="ctx" aria-pressed="false">Contexto<small>los datos están en visitas-semana-47.csv</small></button>
+    <button type="button" data-k="res" aria-pressed="false">Restricciones<small>reprogramada no es pendiente; no inventes</small></button>
+    <button type="button" data-k="ter" aria-pressed="false">Criterio de terminado<small>totales que suman, sección Pendientes</small></button>
+  </div>
+  <div class="btns">
+    <button type="button" id="c9l1-todas">Las cuatro partes</button>
+    <button type="button" id="c9l1-vago">Volver al encargo vago</button>
+  </div>
+</div>
+<div class="c9l1-grid">
+  <div class="c9l1-col">
+    <p class="c9l1-rot">El encargo de Daniela</p>
+    <div class="c9l1-enc" id="c9l1-enc"></div>
+    <p class="c9l1-conf">Ya cargado en cada sesión, sin repetirlo: <i style="background:var(--c-apl-s)">instrucciones permanentes</i> (tabla con totales, sin nombres de clientes, nunca enviar) y <i style="background:var(--c-fis-s)">habilidad «informe semanal»</i>.</p>
+    <p class="c9l1-rot">Vueltas del agente</p>
+    <ol class="c9l1-vueltas" id="c9l1-vueltas" aria-label="Vueltas del agente"></ol>
+  </div>
+  <div class="c9l1-col">
+    <p class="c9l1-rot">Lo que entrega · <span id="c9l1-est"></span></p>
+    <pre class="c9l1-inf" id="c9l1-inf"></pre>
+    <p class="c9l1-rot">Lo que Daniela necesitaba</p>
+    <ul class="c9l1-check" id="c9l1-check"></ul>
+  </div>
+</div>
+<div class="c9l1-tarj" id="c9l1-tarj"></div>
+<div class="readout texto" id="c9l1-out" aria-live="polite"></div></div><div class="prose"><p>Lo que muestra el laboratorio: sin objetivo, el agente elige la semana equivocada; sin contexto, busca los datos por toda la carpeta y gasta vueltas; sin restricciones, inventa una meta de cumplimiento y, si tampoco hay criterio, junta reprogramadas con pendientes; y sin criterio de terminado, declara «listo» sin haber sumado nada. Con las cuatro partes, termina con un informe que se revisa en un minuto. Ninguna de las cuatro hace más inteligente al modelo: le quitan cosas que adivinar.</p><p>Escribir encargos así cuesta al principio. Un truco que funciona con cualquier agente es guardar los buenos en archivos, en una carpeta <code>encargos/</code>, y reusarlos cambiando lo de esta vez.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Escribe un encargo con criterio de terminado</h3></div><p>Vas a guardar un encargo bien definido en la carpeta de prueba <code>agente-prueba</code>, la del capítulo 1, y probarlo frente al vago con cualquier asistente gratuito (cualquiera sirve). En Windows se escribe con <code>WriteAllText</code>, como en el capítulo 4, para que el archivo quede sin la marca invisible (<i>BOM</i>) que confunde a algunos agentes. Los datos son inventados; no pegues nada del trabajo.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>New-Item -ItemType Directory -Force encargos</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>$t = @("# Encargo: informe de la semana 47","Objetivo: informe de visitas de la semana 47 para que Andrés lo lea en dos minutos antes del comité del lunes 23 a las 10:00.","Contexto: los datos están en visitas/visitas-semana-47.csv.","Restricciones: una visita reprogramada no es una pendiente. No inventes datos. No cambies la planilla.","Terminado cuando: hay una tabla con hechas, reprogramadas y pendientes; los totales suman las filas de la planilla; cada reprogramada lleva técnico y fecha; al final, una sección Pendientes con lo que no pudiste resolver.") -join "`n"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>[IO.File]::WriteAllText("$HOME\agente-prueba\encargos\informe-semana-47.md", $t + "`n")</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-Content -Encoding utf8 encargos\informe-semana-47.md</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>mkdir -p encargos</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>printf '%s\n' "# Encargo: informe de la semana 47" "Objetivo: informe de visitas de la semana 47 para que Andrés lo lea en dos minutos antes del comité del lunes 23 a las 10:00." "Contexto: los datos están en visitas/visitas-semana-47.csv." "Restricciones: una visita reprogramada no es una pendiente. No inventes datos. No cambies la planilla." "Terminado cuando: hay una tabla con hechas, reprogramadas y pendientes; los totales suman las filas de la planilla; cada reprogramada lleva técnico y fecha; al final, una sección Pendientes con lo que no pudiste resolver." &gt; encargos/informe-semana-47.md</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>cat encargos/informe-semana-47.md</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Abre una conversación nueva en tu asistente, pega el contenido de <code>visitas-semana-47.csv</code> y escribe solo: «Hazme el informe de la semana». Guarda la respuesta.</span></li><li><span>Abre otra conversación nueva, pega la planilla y, debajo, el contenido de <code>encargos/informe-semana-47.md</code>.</span></li><li><span>Compara las dos respuestas con el criterio de terminado, punto por punto: ¿hay tabla?, ¿los totales suman 10?, ¿las reprogramadas tienen técnico y fecha?, ¿hay sección <i>Pendientes</i>?</span></li></ol><p><b>Qué observar:</b> con el encargo vago, el asistente decide solo el formato, puede llamar «no realizadas» a las reprogramadas y casi nunca comprueba que los totales sumen. Con el encargo completo cumple la mayoría de los puntos, y los que no cumple los ves enseguida, porque tienes una lista contra la cual mirar. Eso es lo que te da el criterio de terminado: no un mejor modelo, sino una forma de saber si terminó.</p></div></section>
+<section><h2>Dividir una tarea grande en pasos verificables</h2><div class="prose"><p>El jueves, Daniela quiere delegar algo más grande: «Prepara todo para el comité del lunes». Eso incluye el informe de la semana, mover las dos visitas de Raúl del jueves 26 (correo de Julia), revisar la agenda de la semana, resumir el acta del comité anterior y dejar un correo en borrador para Andrés. Son cinco tareas encadenadas, con datos distintos y con decisiones que dependen unas de otras.</p><p>Si se lo pide de una sola vez, pasan tres cosas que ya conoces. El contexto se llena con la planilla, veinte correos y un acta de doce páginas, y el agente compacta a mitad de camino (capítulo 2). Un error temprano, como contar mal las reprogramadas, se arrastra hasta el correo para Andrés. Y al final el agente revisa, si revisa, solo lo último que hizo.</p><p>La salida es <b>dividir la tarea</b> (<i>task decomposition</i>) en pasos que se puedan comprobar uno por uno:</p><ol class="steps"><li><span><b>Informe.</b> Terminado cuando: los totales suman las filas de la planilla.</span></li><li><span><b>Visitas de Raúl.</b> Terminado cuando: hay una propuesta para las dos visitas, con fecha y técnico, sin cambiar nada en el sistema.</span></li><li><span><b>Agenda.</b> Terminado cuando: la lista de reuniones de la semana 48 coincide con <code>agenda/semana-48.txt</code> y marca los choques con la propuesta del paso 2.</span></li><li><span><b>Acta.</b> Terminado cuando: el resumen cita la decisión de cerrar las visitas del sábado desde diciembre.</span></li><li><span><b>Correo para Andrés.</b> Terminado cuando: el borrador adjunta el informe y menciona la propuesta del paso 2, sin enviarse.</span></li></ol></div><figure class="fig fig-esquema" id="09-diagrama-2"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 446" style="min-width:720px" role="img" aria-label="Arriba, la tarea Prepara todo para el comité hecha de un tirón: un solo bloque con cinco partes, una compactación a mitad de camino y una sola revisión al final; el error de conteo del primer paso llega hasta el correo. Abajo, la misma tarea en cinco pasos con una compuerta de verificación entre cada uno; el error del paso 1 se detiene en la primera compuerta y se corrige ahí. Debajo, el archivo de avance donde el agente anota cada paso terminado.">
+  <defs>
+    <marker id="d09b-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d09b-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d09b-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" style="fill:var(--good)"/></marker>
+  </defs>
+
+  
+  <text x="15" y="22" class="t t-xs t-b t-m">DE UN TIRÓN: UNA SESIÓN, UNA REVISIÓN AL FINAL</text>
+  <rect x="15" y="34" width="740" height="56" rx="8" class="caja"/>
+  <g class="t t-s" text-anchor="middle">
+    <text x="85" y="58">informe</text><text x="85" y="74" class="k-warm t-b">✗ cuenta mal</text>
+    <text x="230" y="66">visitas de Raúl</text>
+    <rect x="315" y="42" width="110" height="40" rx="6" style="fill:var(--mark)"/>
+    <text x="370" y="58">compacta:</text><text x="370" y="74">pierde una regla</text>
+    <text x="500" y="66">agenda · acta</text>
+    <text x="660" y="58">correo para Andrés</text><text x="660" y="74" class="k-warm t-b">«3 reprogramadas»</text>
+  </g>
+  <line x1="85" y1="98" x2="655" y2="98" class="ln" style="stroke:var(--warm);stroke-width:2;stroke-dasharray:6 4" marker-end="url(#d09b-w)"/>
+  <text x="370" y="114" class="t t-s k-warm" text-anchor="middle">el error viaja intacto hasta el entregable</text>
+  <rect x="770" y="34" width="115" height="56" rx="8" class="caja" style="stroke-dasharray:4 3"/>
+  <text x="827" y="58" class="t t-s" text-anchor="middle">revisión final:</text>
+  <text x="827" y="74" class="t t-s" text-anchor="middle">solo lo último</text>
+
+  
+  <text x="15" y="146" class="t t-xs t-b t-m">EN CINCO PASOS, CADA UNO CON SU COMPROBACIÓN</text>
+  <g class="t t-s">
+    <rect x="15" y="190" width="140" height="70" rx="8" class="caja" style="stroke:var(--warm);stroke-width:2"/>
+    <text x="27" y="212" class="t t-b">1 · Informe</text>
+    <text x="27" y="230">totales = filas</text>
+    <text x="27" y="248" class="k-warm t-b">✗ cuenta mal</text>
+
+    <rect x="190" y="190" width="140" height="70" rx="8" class="caja"/>
+    <text x="202" y="212" class="t t-b">2 · Raúl</text>
+    <text x="202" y="230">propuesta, sin</text>
+    <text x="202" y="248">cambiar nada</text>
+
+    <rect x="365" y="190" width="140" height="70" rx="8" class="caja"/>
+    <text x="377" y="212" class="t t-b">3 · Agenda</text>
+    <text x="377" y="230">choques con</text>
+    <text x="377" y="248">el paso 2</text>
+
+    <rect x="540" y="190" width="140" height="70" rx="8" class="caja"/>
+    <text x="552" y="212" class="t t-b">4 · Acta</text>
+    <text x="552" y="230">cita la decisión</text>
+    <text x="552" y="248">de los sábados</text>
+
+    <rect x="715" y="190" width="170" height="70" rx="8" class="caja"/>
+    <text x="727" y="212" class="t t-b">5 · Correo</text>
+    <text x="727" y="230">adjunta el informe,</text>
+    <text x="727" y="248">sin enviar</text>
+  </g>
+  <g>
+    <rect x="160" y="209" width="26" height="32" rx="6" style="fill:var(--card);stroke:var(--good);stroke-width:2"/>
+    <text x="173" y="230" class="t t-b" text-anchor="middle" style="fill:var(--good)">✓</text>
+    <rect x="335" y="209" width="26" height="32" rx="6" style="fill:var(--card);stroke:var(--good);stroke-width:2"/>
+    <text x="348" y="230" class="t t-b" text-anchor="middle" style="fill:var(--good)">✓</text>
+    <rect x="510" y="209" width="26" height="32" rx="6" style="fill:var(--card);stroke:var(--good);stroke-width:2"/>
+    <text x="523" y="230" class="t t-b" text-anchor="middle" style="fill:var(--good)">✓</text>
+    <rect x="685" y="209" width="26" height="32" rx="6" style="fill:var(--card);stroke:var(--good);stroke-width:2"/>
+    <text x="698" y="230" class="t t-b" text-anchor="middle" style="fill:var(--good)">✓</text>
+  </g>
+  <path d="M173 186 C173 166 90 166 90 186" class="ln" style="stroke:var(--good);stroke-width:2;fill:none" marker-end="url(#d09b-g)"/>
+  <text x="186" y="176" class="t t-s t-b" style="fill:var(--good)">la compuerta lo atrapa: se corrige aquí</text>
+
+  
+  <g class="ln ln-d" style="stroke-width:1.2">
+    <line x1="85" y1="260" x2="85" y2="312"/><line x1="260" y1="260" x2="260" y2="312"/><line x1="435" y1="260" x2="435" y2="312"/><line x1="610" y1="260" x2="610" y2="312"/><line x1="800" y1="260" x2="800" y2="312"/>
+  </g>
+  <rect x="15" y="312" width="870" height="56" rx="8" class="d-casa"/>
+  <text x="29" y="335" class="t t-b"><tspan class="t-mono">avance.md</tspan> · 1 ✓ informe · 2 ✓ propuesta para Raúl · 3 ✓ agenda · 4 … </text>
+  <text x="29" y="355" class="t t-s t-m">Un archivo no se compacta: si la sesión se corta, el agente lo relee y sigue desde el último paso hecho.</text>
+
+  <rect x="15" y="388" width="870" height="44" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="415" class="t t-s" text-anchor="middle">Comprobar pronto: el error se detiene en la primera compuerta y no contamina los pasos que usan su resultado.</text>
+</svg></div><figcaption><b>Una tarea grande, en pasos con su comprobación.</b> Arriba, «Prepara todo para el comité» hecho de un tirón: un solo bloque largo y una sola revisión al final, donde el error del paso 1 llega intacto al correo. Abajo, la misma tarea en cinco pasos; entre cada uno hay una compuerta de verificación en verde con su criterio. El error del paso 1 se detiene en la primera compuerta y se corrige ahí, antes de que lo usen los pasos siguientes. Debajo, el archivo de avance donde el agente anota qué pasos terminó.</figcaption></figure><div class="prose"><p>Hay tres reglas para partir bien:</p><ul><li><b>Cada paso deja algo que se puede mirar.</b> Un archivo, una lista, un borrador. Si un paso solo «piensa», no hay qué comprobar.</li><li><b>Los pasos que dependen de otros van después.</b> La agenda se revisa después de proponer las visitas de Raúl, porque la propuesta puede chocar con una reunión.</li><li><b>El avance va a un archivo.</b> Pídele al agente que lleve un archivo <code>avance.md</code> con los pasos hechos y lo que encontró. Si la sesión se compacta o se corta, el archivo sigue ahí: el agente lo vuelve a leer y continúa.</li></ul><p>En cada paso puedes elegir quién comprueba: el propio agente, con una verificación que tú le pediste («relee y suma»), o tú, que miras el resultado antes de dejarlo seguir. Las comprobaciones del agente son baratas y atrapan errores mecánicos; las tuyas son caras y atrapan errores de criterio. No hace falta que revises cada paso: alcanza con revisar los que alimentan a los demás. En este caso, el informe del paso 1, porque sus números terminan en el correo.</p></div><div class="lab" id="09-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Divide una tarea grande en pasos</h3></div><p class="hint">La tarea es «Prepara todo para el comité del lunes». Primero ejecútala de una sola vez y mira dónde se equivoca el agente y hasta dónde llega el error. Luego pásala a cinco pasos y elige en cuáles poner una comprobación. El laboratorio muestra en qué paso se atrapa cada error, cuánto trabajo hay que rehacer y qué le llega a Daniela al final.</p><style>
+[id="09-lab-2"] .c9l2-rot{font:700 .7rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+[id="09-lab-2"] .c9l2-fila{display:grid;gap:6px}
+[id="09-lab-2"] .c9l2-pasos{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+[id="09-lab-2"] .c9l2-paso{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--line);border-radius:0 10px 10px 0;background:var(--card);padding:8px 10px}
+[id="09-lab-2"] .c9l2-paso h4{margin:0;font:700 .9rem var(--f-display)}
+[id="09-lab-2"] .c9l2-paso p{margin:0;font:400 .8rem/1.35 var(--f-body);color:var(--muted)}
+[id="09-lab-2"] .c9l2-paso .c9l2-ev{grid-column:1/-1;font:400 .82rem/1.4 var(--f-body);color:var(--ink);display:grid;gap:2px}
+[id="09-lab-2"] .c9l2-paso .c9l2-ev span{padding-left:8px;border-left:3px solid var(--line)}
+[id="09-lab-2"] .c9l2-paso .c9l2-ev span.err{border-left-color:var(--warm)}
+[id="09-lab-2"] .c9l2-paso .c9l2-ev span.cont{border-left-color:var(--warm);border-left-style:dashed}
+[id="09-lab-2"] .c9l2-paso .c9l2-ev span.cat{border-left-color:var(--good)}
+[id="09-lab-2"] .c9l2-paso.ok{border-left-color:var(--good)}
+[id="09-lab-2"] .c9l2-paso.mal{border-left-color:var(--warm);background:var(--warm-soft)}
+[id="09-lab-2"] .c9l2-paso.rehecho{border-left-color:var(--accent)}
+[id="09-lab-2"] .c9l2-chk[aria-pressed="true"]{border-color:var(--good)}
+[id="09-lab-2"] .c9l2-chk[disabled]{opacity:.45}
+[id="09-lab-2"] .c9l2-tarj{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:520px){[id="09-lab-2"] .c9l2-tarj{grid-template-columns:repeat(2,minmax(0,1fr))}}
+[id="09-lab-2"] .c9l2-tarj div{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+[id="09-lab-2"] .c9l2-tarj b{display:block;font:700 1.1rem var(--f-display);color:var(--ink)}
+[id="09-lab-2"] .c9l2-tarj small{font:600 .66rem var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+[id="09-lab-2"] .c9l2-final{border:1.5px solid var(--warm);border-radius:10px;padding:8px 10px;background:var(--card);display:grid;gap:4px}
+[id="09-lab-2"] .c9l2-final ul{margin:0;padding-left:18px;font:400 .86rem/1.4 var(--f-body)}
+[id="09-lab-2"] .c9l2-estado{display:inline-block;font:700 .68rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;color:var(--card);background:var(--good)}
+[id="09-lab-2"] .c9l2-estado.falso{background:var(--warm)}
+</style>
+<div class="c9l2-fila">
+  <p class="c9l2-rot" id="c9l2-r1">Cómo se le pide la tarea</p>
+  <div class="btns" role="group" aria-labelledby="c9l2-r1" id="c9l2-modo">
+    <button type="button" data-m="uno" aria-pressed="true">De una sola vez</button>
+    <button type="button" data-m="pasos" aria-pressed="false">En cinco pasos</button>
+  </div>
+  <div class="btns" id="c9l2-atajos">
+    <button type="button" data-a="ninguna">Sin comprobaciones</button>
+    <button type="button" data-a="final">Solo al final</button>
+    <button type="button" data-a="primero">Solo en el paso 1</button>
+    <button type="button" data-a="todas">En todos</button>
+  </div>
+</div>
+<ol class="c9l2-pasos" id="c9l2-pasos" aria-label="Pasos de la tarea"></ol>
+<div class="c9l2-tarj" id="c9l2-tarj"></div>
+<div class="c9l2-final" id="c9l2-final" aria-live="polite"></div>
+<div class="readout texto" id="c9l2-out" aria-live="polite"></div></div><div class="prose"><p>El laboratorio deja ver algo que sorprende: no hace falta comprobar todo, pero sí comprobar pronto. Una comprobación en el paso 1 atrapa el error de conteo rehaciendo un solo paso; la misma comprobación puesta solo al final lo atrapa cuando ya contaminó el correo, y hay que rehacer los dos. Partir no siempre sale más barato en tokens, porque cada paso vuelve a leer algo, pero casi siempre sale más barato en <b>retrabajo</b> (<i>rework</i>), que es lo que de verdad cuesta.</p></div></section>
+<section><h2>Pedir un plan antes de actuar</h2><div class="prose"><p>Antes de que el agente empiece una tarea larga, puedes pedirle que te diga cómo la va a hacer. Un <b>plan</b> (<i>plan</i>) es la lista de pasos que el agente se propone seguir, con los archivos que piensa leer y escribir, escrita antes de tocar nada. Tú lo lees, lo corriges si hace falta, y recién entonces lo dejas trabajar.</p><p>Pedir un plan sirve para tres cosas. Ves si el agente entendió el encargo antes de que gaste vueltas en la dirección equivocada. Atrapas a tiempo pasos que no querías (por ejemplo, «renombro los archivos de visitas para ordenarlos»). Y conviertes muchas aprobaciones pequeñas en una sola grande: apruebas el plan y no cada lectura.</p></div><figure class="fig fig-flujo" id="09-diagrama-3"><div class="lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 790" style="min-width:720px" role="img" aria-label="Diagrama de secuencia de un encargo con plan. Daniela pide preparar el comité y primero el plan. El modelo solo lee y escribe un plan de cinco pasos. El arnés se lo muestra a Daniela, que corrige el paso 2 y lo aprueba. Luego el modelo ejecuta cada paso y lo comprueba con su criterio. Al final entrega el resultado con la evidencia de cada criterio y la lista de pendientes.">
+  <defs>
+    <marker id="d09c-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="fl-muted"/></marker>
+    <marker id="d09c-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-warm"/></marker>
+    <marker id="d09c-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-red"/></marker>
+    <marker id="d09c-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="k-casa"/></marker>
+  </defs>
+  <rect x="10" y="14" width="110" height="52" rx="10" style="fill:var(--warm-soft);stroke:var(--warm)"/><text x="65" y="36" class="t t-b" text-anchor="middle">Daniela</text><text x="65" y="54" class="t t-s t-m" text-anchor="middle">encarga y aprueba</text>
+  <rect x="210" y="14" width="120" height="52" rx="10" class="caja"/><text x="270" y="36" class="t t-b" text-anchor="middle">Arnés</text><text x="270" y="54" class="t t-s t-m" text-anchor="middle">el programa</text>
+  <rect x="480" y="14" width="120" height="52" rx="10" class="d-inet"/><text x="540" y="36" class="t t-b" text-anchor="middle">Modelo</text><text x="540" y="54" class="t t-s t-m" text-anchor="middle">planea y decide</text>
+  <rect x="650" y="14" width="130" height="52" rx="10" class="c-red"/><text x="715" y="36" class="t t-b" text-anchor="middle">Herramientas</text><text x="715" y="54" class="t t-s t-m" text-anchor="middle">carpeta y correo</text>
+  <line x1="65" y1="66" x2="65" y2="726" class="vida"/>
+  <line x1="270" y1="66" x2="270" y2="726" class="vida"/>
+  <line x1="540" y1="66" x2="540" y2="726" class="vida"/>
+  <line x1="715" y1="66" x2="715" y2="726" class="vida"/>
+
+  <g class="t t-s">
+    <line x1="65" y1="104" x2="267" y2="104" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d09c-w)"/>
+    <text x="73" y="83">① «Prepara todo para el</text><text x="88" y="97">comité. Primero, el plan»</text>
+    <line x1="270" y1="138" x2="537" y2="138" class="ln" style="stroke-width:2" marker-end="url(#d09c-n)"/>
+    <text x="278" y="131">② encargo · modo plan: solo leer</text>
+
+    <line x1="540" y1="176" x2="273" y2="176" class="ln s-red" style="stroke-width:2" marker-end="url(#d09c-r)"/>
+    <text x="280" y="169">③ pide leer planilla, correo y agenda</text>
+    <line x1="270" y1="196" x2="712" y2="196" class="ln s-red" style="stroke-width:1.4" marker-end="url(#d09c-r)"/>
+    <text x="560" y="190" class="t-m">ejecuta</text>
+    <line x1="715" y1="222" x2="543" y2="222" class="ln ln-d" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d09c-c)"/>
+    <text x="560" y="215">④ lo que leyó</text>
+
+    <line x1="540" y1="262" x2="273" y2="262" class="ln" style="stroke-width:2" marker-end="url(#d09c-n)"/>
+    <text x="280" y="255">⑤ plan: 5 pasos, cada uno con su criterio</text>
+    <line x1="270" y1="298" x2="68" y2="298" class="ln" style="stroke-width:2" marker-end="url(#d09c-n)"/>
+    <text x="80" y="291">⑥ le muestra el plan</text>
+    <line x1="65" y1="346" x2="267" y2="346" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d09c-w)"/>
+    <text x="73" y="325">⑦ «Paso 2: solo proponer,</text><text x="88" y="339">no cambies nada». Aprobado</text>
+    <line x1="270" y1="384" x2="537" y2="384" class="ln" style="stroke-width:2" marker-end="url(#d09c-n)"/>
+    <text x="278" y="377">⑧ plan aprobado, con la corrección</text>
+
+    <line x1="540" y1="424" x2="273" y2="424" class="ln s-red" style="stroke-width:2" marker-end="url(#d09c-r)"/>
+    <text x="280" y="417">⑨ paso 1: pide escribir_archivo(informe)</text>
+    <line x1="270" y1="444" x2="712" y2="444" class="ln s-red" style="stroke-width:1.4" marker-end="url(#d09c-r)"/>
+    <line x1="715" y1="470" x2="543" y2="470" class="ln ln-d" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d09c-c)"/>
+    <text x="560" y="463">⑩ informe escrito</text>
+
+    <line x1="540" y1="510" x2="273" y2="510" class="ln s-red" style="stroke-width:2" marker-end="url(#d09c-r)"/>
+    <text x="280" y="503">⑪ comprueba: pide leer_archivo(informe)</text>
+    <line x1="270" y1="530" x2="712" y2="530" class="ln s-red" style="stroke-width:1.4" marker-end="url(#d09c-r)"/>
+    <line x1="715" y1="556" x2="543" y2="556" class="ln ln-d" style="stroke:var(--d-casa);stroke-width:2" marker-end="url(#d09c-c)"/>
+    <text x="560" y="549">⑫ 7 + 2 + 1 = 10: cumple</text>
+
+    <rect x="280" y="576" width="500" height="40" rx="8" class="caja" style="stroke-dasharray:5 4"/>
+    <text x="530" y="600" text-anchor="middle">pasos 2 a 5: la misma idea y vuelta, cada uno con su comprobación</text>
+
+    <line x1="540" y1="652" x2="273" y2="652" class="ln" style="stroke-width:2" marker-end="url(#d09c-n)"/>
+    <text x="280" y="645">⑬ terminado: evidencia de cada criterio</text>
+    <line x1="270" y1="710" x2="68" y2="710" class="ln" style="stroke:var(--warm);stroke-width:2" marker-end="url(#d09c-w)"/>
+    <text x="76" y="689">⑭ resultado + evidencia</text><text x="88" y="703">+ lista de pendientes</text>
+  </g>
+
+  <g class="t t-xs t-b">
+    <path d="M802 124v234" class="ln" style="stroke:var(--d-inet);stroke-width:3"/><text x="812" y="230" class="k-inet">PLANEAR</text><text x="812" y="245" class="t-m">nada cambia</text>
+    <path d="M802 370v256" class="ln s-red" style="stroke-width:3"/><text x="812" y="490" class="k-red">EJECUTAR</text><text x="812" y="505" class="t-m">paso por paso</text>
+    <path d="M802 638v80" class="ln" style="stroke:var(--warm);stroke-width:3"/><text x="812" y="672" class="k-warm">ENTREGAR</text><text x="812" y="687" class="t-m">para revisar</text>
+  </g>
+  <rect x="10" y="740" width="880" height="40" rx="10" class="caja" style="stroke-dasharray:5 4"/>
+  <text x="450" y="765" class="t t-s" text-anchor="middle">Corregir el plan cuesta una línea (⑦). Corregir lo ya ejecutado cuesta rehacer pasos.</text>
+</svg></div><figcaption><b>Flujo de un encargo con plan.</b> Los participantes son Daniela, el arnés, el modelo y las herramientas. Primero el modelo solo lee (①-④) y escribe un plan de cinco pasos (⑤). El arnés se lo muestra a Daniela, que corrige el paso 2: «no muevas nada en el sistema, solo proponlo» (⑥ y ⑦). Con el plan aprobado, el modelo ejecuta paso por paso, y después de cada uno comprueba su criterio (⑧-⑬). Al final, el agente entrega el resultado con la evidencia de cada criterio y la lista de pendientes (⑭). La franja de la derecha separa la fase de planear, donde nada cambia, de la fase de ejecutar.</figcaption></figure><div class="prose"><p>Muchos agentes tienen una forma de pedir esto sin tener que escribirlo cada vez. A noviembre de 2026, por ejemplo, Claude Code tiene un <b>modo plan</b> (<i>plan mode</i>) en el que el agente solo puede leer y proponer, y otros agentes de terminal y de escritorio ofrecen algo equivalente con otros nombres. Si el tuyo no lo tiene, funciona igual escribirlo en el encargo: «Antes de cambiar nada, escríbeme el plan en pasos, con los archivos que vas a leer y escribir, y espera mi visto bueno».</p><p>Un buen plan se revisa con tres preguntas: ¿cada paso tiene su criterio de terminado?, ¿hay algún paso que escribe, mueve o envía algo que yo no pedí?, ¿falta algo del encargo? Un plan que no pasa la revisión no se discute en abstracto: se corrige en una línea («el paso 2 es solo una propuesta») y el agente sigue.</p><p>No todo merece un plan. Para el informe del lunes, que la habilidad ya define paso a paso, el plan es la propia habilidad. El plan rinde en lo nuevo, lo largo o lo que toca varias carpetas.</p></div></section>
+<section><h2>Revisar el resultado, no solo leerlo</h2><div class="prose"><p>El agente responde: «Listo. Informe en <code>informes/informe-semana-47.md</code>: 7 hechas, 2 reprogramadas, 1 pendiente». El texto está bien escrito, la tabla se ve prolija y el resumen es convincente. Nada de eso dice si es correcto.</p><p>Un modelo escribe con la misma fluidez cuando acierta y cuando se equivoca. Leer un resultado, de corrido, como se lee un correo, es dejarse convencer por esa fluidez. <b>Revisar</b> (<i>review</i>) es otra cosa: tomar el criterio de terminado y comprobar cada punto contra la fuente.</p></div><div class="analogia"><b>Imagínalo así</b><p>Es lo que hace un buen contador con una conciliación. No lee el informe del banco y asiente: toma tres movimientos al azar y los busca en el extracto, y comprueba que el saldo final cierre. Si los tres están y el saldo cierra, confía en el resto. Si uno no está, revisa todo.</p></div><div class="prose"><p>Cuatro formas de revisar, de la más barata a la más cara:</p><ul><li><b>Contra el criterio de terminado.</b> Recorres la lista: ¿existe el archivo?, ¿la tabla tiene las tres filas?, ¿hay sección <i>Pendientes</i>? Toma un minuto.</li><li><b>Con una cuenta propia.</b> Los números del informe salen de la planilla; cuéntalos tú, con un comando o una fórmula, y compara. Lo haces en la práctica de abajo.</li><li><b>Por muestreo.</b> Eliges dos o tres afirmaciones y las buscas en la fuente: «Tomás reprogramó el 19», ¿está en la fila del 19?</li><li><b>Con evidencia del agente.</b> Le pides que, para cada número, diga de qué archivo y de qué filas sale. Un agente que tiene que citar la fila se equivoca menos, y tú compruebas más rápido.</li></ul><p>Hay una quinta forma, útil en tareas largas: pedirle la revisión a otro agente, por ejemplo un <b>subagente</b> (<i>subagent</i>) revisor, como el «lector de correo» del capítulo 8 pero dedicado a revisar, que empieza con su contexto limpio, sin el historial de la tarea, y recibe solo el resultado, la fuente y el criterio. Al no haber hecho el trabajo, no tiene el sesgo de quien lo hizo. Sirve como filtro, no como reemplazo de tu revisión en lo que importa.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Comprueba los números del informe tú mismo</h3></div><p>Vas a contar las visitas de la planilla por estado con un comando de solo lectura, como haría un revisor. Así puedes comprobar cualquier informe que te entregue un agente o un asistente sobre esos datos.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>cd $HOME\agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Import-Csv visitas\visitas-semana-47.csv).Count</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Import-Csv visitas\visitas-semana-47.csv | Group-Object estado | Select-Object Name, Count</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Import-Csv visitas\visitas-semana-47.csv | Where-Object estado -ne 'hecha'</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>cd ~/agente-prueba</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>tail -n +2 visitas/visitas-semana-47.csv | wc -l</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>tail -n +2 visitas/visitas-semana-47.csv | cut -d, -f4 | sort | uniq -c</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>grep -v ',hecha$' visitas/visitas-semana-47.csv</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>El primer comando cuenta las filas sin el encabezado; el segundo, cuántas hay de cada estado; el tercero muestra las que no están hechas, con fecha y técnico (en macOS y Linux sale también la línea de encabezado).</span></li><li><span>Toma la respuesta que te dio el asistente en la práctica anterior y compara sus totales con los tuyos.</span></li><li><span>Busca en la salida del tercer comando las dos reprogramadas: ¿coinciden los técnicos y las fechas con lo que escribió el asistente?</span></li></ol><p><b>Qué observar:</b> tus comandos dan 10 filas, 7 hechas, 2 reprogramadas y 1 pendiente, y muestran a Raúl el 17 y a Tomás el 19 como reprogramadas, y a Raúl el 20 como pendiente. Si el asistente escribió otra cosa, encontraste un error que una lectura de corrido no habría visto. Esta cuenta tiene una ventaja que el modelo no tiene: da siempre el mismo resultado. Cuando un número importa, compruébalo con algo que no adivine.</p></div></section>
+<section><h2>Corregir sin empezar de nuevo</h2><div class="prose"><p>Supón que la revisión encuentra un error: en la tabla, la visita de Raúl del 20 figura como reprogramada y no como pendiente. La reacción natural es borrar todo y volver a pedir el informe. Casi nunca es lo mejor: el agente ya leyó la planilla, el resto del informe está bien y empezar de nuevo puede introducir errores distintos (capítulo 2: el mismo pedido no sale igual dos veces).</p><p>Una buena corrección se parece a un buen encargo, en chico:</p><ul><li><b>Señala el lugar exacto.</b> «En la tabla, la fila del 20 de noviembre.»</li><li><b>Di qué está mal y cuál es la fuente.</b> «Figura como reprogramada; en la planilla dice pendiente.»</li><li><b>Limita el alcance.</b> «Corrige solo esa fila y los totales. No cambies el resto del informe.»</li><li><b>Pide que vuelva a comprobar.</b> «Después, vuelve a verificar que los totales sumen las filas.»</li></ul><p>Limitar el alcance importa más de lo que parece. Un agente al que le dices «está mal, arréglalo» tiende a reescribir todo, y entonces tienes que revisar todo otra vez. A ese ensancharse de una tarea más allá de lo pedido se le llama <b>deriva de alcance</b> (<i>scope creep</i>), y en un agente se nota en que «de paso» mejora redacciones, cambia formatos o reordena archivos que nadie le pidió tocar.</p><p>Empezar de nuevo sí conviene en tres casos: cuando el agente entendió mal el objetivo desde el principio (corriges el encargo, no el resultado), cuando la sesión se compactó y ya no recuerda las reglas del encargo, o cuando llevas tres correcciones sobre lo mismo y cada una rompe algo. En esos casos abre una sesión nueva con un encargo mejor, que incluya lo que aprendiste: «Ojo: una visita con estado <i>pendiente</i> nunca se cuenta como reprogramada».</p></div><div class="ml"><b>En la práctica</b><p>Las tres primeras semanas, Daniela corrigió el mismo error en el informe: el agente contaba las visitas del viernes que quedaban en estado <i>en curso</i> como hechas. Lo corregía en cada sesión y el lunes siguiente volvía a pasar. A la tercera vez subió la corrección a la habilidad «informe semanal»: «<i>en curso</i> se cuenta como pendiente y se marca en la sección Pendientes». El error no volvió a aparecer. La regla práctica: <b>una corrección que repites dos veces no va en la conversación, va en la configuración</b>: en las instrucciones si es una regla general, en la habilidad si es del procedimiento, en <code>MEMORIA.md</code> si es un dato que cambia.</p></div><div class="prose"><p>Delegar, entonces, es un ciclo: encargas con criterio de terminado, el agente trabaja (con un plan si la tarea es nueva), revisas contra el criterio, corriges en el lugar exacto, y lo que aprendiste sube a la configuración para que la próxima vez el encargo sea más corto. Lo que no cambia en ese ciclo es quién decide que está terminado.</p><p>Lo que te llevas de este capítulo cabe en una frase: <b>delegar con criterio de terminado</b>. Un encargo dice qué quieres, con qué datos y qué no debe hacer el agente; el criterio de terminado dice, antes de empezar, cómo vas a saber que está bien. Sin él, «listo» es solo una palabra del agente. Con él, es algo que puedes comprobar. En el capítulo 10 verás qué pasa cuando lo que el agente entrega no es un archivo, sino una acción: cuándo tiene que pedirte permiso y cómo se deshace lo que hizo.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Cuáles son las cuatro partes de un buen encargo?</summary><p>Objetivo (qué resultado y para qué), contexto (dónde están los datos y qué debe saber), restricciones (qué no debe hacer y dentro de qué límites) y criterio de terminado (las condiciones comprobables que el resultado debe cumplir).</p></details><details><summary>«Que el informe quede claro y bien hecho» como criterio de terminado: ¿qué le falta?</summary><p>No se puede comprobar con un sí o un no. Un buen criterio habla del entregable y es verificable: «los totales suman las filas de la planilla», «cada reprogramada lleva técnico y fecha».</p></details><details><summary>¿Por qué el encargo no repite que el informe no lleva nombres de clientes?</summary><p>Porque esa regla ya está en las instrucciones permanentes y en la habilidad, que se cargan en cada sesión. El encargo lleva solo lo de esta vez; si una restricción se repite en cada encargo, hay que subirla a la configuración.</p></details><details><summary>En una tarea de cinco pasos, ¿dónde conviene poner una comprobación si solo puedes poner una?</summary><p>En el paso cuyo resultado usan los demás, lo antes posible. En el ejemplo, el informe del paso 1, porque sus números terminan en el correo para Andrés: atrapar el error ahí evita rehacer los pasos siguientes.</p></details><details><summary>El agente dice «listo» con un informe prolijo y bien escrito. ¿Qué haces antes de aceptarlo?</summary><p>Revisarlo contra el criterio de terminado y comprobar los números contra la fuente (con una cuenta propia, por muestreo o pidiendo que cite las filas). La fluidez del texto no dice nada sobre si es correcto.</p></details><details><summary>Encuentras un error en una fila del informe. ¿Cómo lo corriges sin empezar de nuevo?</summary><p>Señalas el lugar exacto, dices qué está mal y cuál es la fuente, limitas el alcance («corrige solo esa fila y los totales») y pides que vuelva a comprobar. Si el mismo error se repite, la corrección sube a la configuración.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿De dónde viene la expresión «definición de terminado» (<i>definition of done</i>) y cómo la usan los equipos que trabajan con Scrum?<small>Pista: busca «Definition of Done Scrum Guide».</small></li><li>¿Qué es la técnica SMART para escribir objetivos y en qué se parece a un criterio de terminado?</li><li>¿Qué es el sesgo de automatización (<i>automation bias</i>) y qué estudios lo midieron en pilotos o en médicos?<small>Pista: busca «automation bias» junto con «aviation» o «clinical decision support».</small></li><li>¿Por qué los modelos de lenguaje tienden a darle la razón a quien les pregunta, y cómo se llama ese comportamiento en inglés?<small>Pista: busca «sycophancy in language models».</small></li><li>¿Qué es la delegación según el modelo de niveles de Jurgen Appelo (<i>delegation poker</i>) y qué niveles propone?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective agents <small>cuándo conviene dividir una tarea en pasos fijos y cuándo dejar que el agente decida (en inglés)</small></a><a class="vid" href="https://code.claude.com/docs/en/common-workflows" target="_blank" rel="noopener">Common workflows <small>un ejemplo del mercado: cómo un agente de terminal propone explorar, planear y luego ejecutar (en inglés)</small></a><a class="vid" href="https://aaramirez.github.io/ia-generativa/temario.html" target="_blank" rel="noopener">IA generativa <small>cómo pedir bien a un modelo, la base de cualquier encargo</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/agentes-personales" target="_blank" rel="noopener">github.com/aaramirez/agentes-personales</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="09-lab-1"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const on=new Set();
+  const TXT={obj:'Informe de visitas de la semana 47 para que Andrés lo lea en dos minutos antes del comité del lunes 23 a las 10:00.',
+    ctx:'Los datos están en visitas/visitas-semana-47.csv.',
+    res:'Una visita reprogramada no es una pendiente. No inventes datos. No cambies la planilla.',
+    ter:'Terminado cuando: tabla con hechas, reprogramadas y pendientes; los totales suman las filas de la planilla; cada reprogramada con técnico y fecha; sección Pendientes al final.'};
+  const ROT={obj:'Objetivo',ctx:'Contexto',res:'Restricciones',ter:'Terminado'};
+  const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const usd=x=>'US$ '+x.toFixed(2).replace('.',',');
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function simular(){
+    const O=on.has('obj'),C=on.has('ctx'),R=on.has('res'),T=on.has('ter');
+    const separa=R||T, inventa=!R, extra=!C, semanaOk=O;
+    const v=[];
+    if(extra){
+      v.push(['listar_carpeta(".")','No sabe dónde están los datos: mira toda la carpeta.','extra']);
+      v.push(['buscar_correo("informe")','Busca pistas en el correo: encuentra el pedido de Andrés.','extra']);
+      v.push(['listar_carpeta("visitas")','Encuentra una sola planilla: la de la semana 47.','extra']);
+    }
+    v.push(['leer_archivo("visitas/visitas-semana-47.csv")','10 filas: 7 hechas, 2 reprogramadas, 1 pendiente.','']);
+    v.push(['escribir_archivo("informes/informe-semana-'+(semanaOk?'47':'48')+'.md")', semanaOk?'Escribe el informe de la semana 47.':'«La semana» es la actual: titula el informe «semana 48».','']);
+    let pregunta=false;
+    if(T){
+      if(!semanaOk){pregunta=true;v.push(['leer_archivo("informes/informe-semana-48.md")','Comprueba: los totales suman 10, pero la planilla es de la semana 47 y el título dice 48. Para y pregunta.','verif']);}
+      else v.push(['leer_archivo("informes/informe-semana-47.md")','Comprueba: 7 + 2 + 1 = 10, igual que las filas de la planilla. Reprogramadas con técnico y fecha.','verif']);
+    }
+    const sem=semanaOk?'47':'48';
+    let inf='# Informe de visitas · semana '+sem+(O?'\nPara: Andrés Molina · comité del lunes 23, 10:00':'')+'\n\n';
+    if(separa) inf+='| Estado        | Visitas |\n| Hechas        |    7    |\n| Reprogramadas |    2    |\n| Pendientes    |    1    |\n| Total         |   10    |\n';
+    else inf+='| Estado          | Visitas |\n| Hechas          |    7    |\n| [[No realizadas]]   |    3    |\n| Total           |   10    |\n';
+    if(separa) inf+='\nReprogramadas: Raúl (17-nov), Tomás (19-nov).';
+    if(inventa) inf+='\n[[Cumplimiento: 70 % frente a una meta del 90 %.]]';
+    if(!O) inf+='\n\nAnálisis por técnico, por zona y por día, con\ncomentarios sobre cada visita… (40 líneas más)';
+    if(T) inf+='\n\n## Pendientes\n- Raúl (20-nov, zona Sur): sin nueva fecha.'+(semanaOk?'':'\n- ¿El informe es de la semana 47 o de la 48?');
+    if(!semanaOk) inf=inf.replace('semana 48','[[semana 48]]');
+    const checks=[
+      [semanaOk,'Semana 47, breve, para el comité de Andrés'],
+      [!extra,'Va directo a la planilla, sin dar vueltas'],
+      [separa,'Reprogramadas y pendientes por separado'],
+      [!inventa,'Ningún dato inventado'],
+      [T,'Totales comprobados contra la planilla'],
+      [T,'Sección Pendientes con lo que falta']];
+    const cumple=checks.filter(c=>c[0]).length;
+    let estado,cls;
+    if(pregunta){estado='Te pregunta';cls='pregunta';}
+    else if(cumple===checks.length){estado='Terminado';cls='';}
+    else {estado='Dice «listo»';cls='falso';}
+    // tokens
+    let ctx=9000,entrada=0;v.forEach(()=>{entrada+=ctx;ctx+=2500;});
+    const salida=v.length*600;const costo=entrada*3/1e6+salida*15/1e6;
+    return {v,inf,checks,cumple,estado,cls,entrada,costo,pregunta,O,C,R,T};
+  }
+  function pintar(){
+    raiz.querySelectorAll('#c9l1-partes button').forEach(b=>b.setAttribute('aria-pressed',on.has(b.dataset.k)));
+    const enc=q('#c9l1-enc');enc.innerHTML='';
+    if(!on.size){enc.appendChild(el('span',null,'«Hazme el informe de la semana.»'));}
+    else ['obj','ctx','res','ter'].forEach(k=>{if(!on.has(k))return;const s=el('span');s.appendChild(el('b',null,ROT[k]));s.appendChild(document.createTextNode(TXT[k]));enc.appendChild(s);});
+    const r=simular();
+    const ol=q('#c9l1-vueltas');ol.innerHTML='';
+    r.v.forEach((x,i)=>{const li=el('li',x[2]);const c=el('code',null,(i+1)+' · '+x[0]);li.appendChild(c);li.appendChild(el('span',null,x[1]));ol.appendChild(li);});
+    const pre=q('#c9l1-inf');pre.innerHTML='';
+    r.inf.split(/(\[\[.*?\]\])/).forEach(p=>{if(p.startsWith('[[')){pre.appendChild(el('mark',null,p.slice(2,-2)));}else pre.appendChild(document.createTextNode(p));});
+    const est=q('#c9l1-est');est.innerHTML='';est.appendChild(el('span','c9l1-estado '+r.cls,r.estado));
+    const ul=q('#c9l1-check');ul.innerHTML='';
+    r.checks.forEach(c=>ul.appendChild(el('li',c[0]?'':'no',c[1])));
+    const tj=q('#c9l1-tarj');tj.innerHTML='';
+    [['Vueltas',r.v.length],['Cumple',r.cumple+' de 6'],['Tokens de entrada',fmt(r.entrada)],['Costo aprox.',usd(r.costo)]].forEach(([a,b])=>{const d=el('div');d.appendChild(el('small',null,a));d.appendChild(el('b',null,String(b)));tj.appendChild(d);});
+    let t;
+    if(!on.size) t='Con el encargo vago, el agente adivina todo: elige la semana en curso, busca los datos dando vueltas, junta reprogramadas con pendientes, inventa una meta y dice «listo» sin comprobar nada. Lo marcado en el informe es lo que Daniela tendría que corregir.';
+    else if(r.pregunta) t='El criterio de terminado hizo su trabajo: al comprobar, el agente vio que la planilla es de la semana 47 y el título dice 48, y en lugar de entregar te pregunta. Agrega el objetivo y la pregunta desaparece.';
+    else if(r.cumple===6) t='Las cuatro partes juntas: el agente va directo a la planilla, separa los estados, no inventa, comprueba los totales y deja los pendientes a la vista. Daniela revisa en un minuto, porque tiene la lista contra la cual mirar.';
+    else {
+      const f=[];if(!r.O)f.push('sin objetivo elige la semana equivocada y escribe de más');if(!r.C)f.push('sin contexto gasta tres vueltas buscando los datos');if(!r.R)f.push('sin restricciones inventa una meta de cumplimiento');if(!r.T)f.push('sin criterio de terminado no comprueba nada y no deja pendientes');
+      t='Todavía falta: '+f.join('; ')+'.';
+    }
+    q('#c9l1-out').textContent=t;
+  }
+  q('#c9l1-partes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);pintar();});
+  q('#c9l1-todas').addEventListener('click',()=>{['obj','ctx','res','ter'].forEach(k=>on.add(k));pintar();});
+  q('#c9l1-vago').addEventListener('click',()=>{on.clear();pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const raiz=document.querySelector('[id="09-lab-2"]')||document;
+  const q=s=>raiz.querySelector(s);
+  const PASOS=[
+    {n:'1 · Informe de la semana 47',c:'Comprobar: los totales suman las filas de la planilla.'},
+    {n:'2 · Visitas de Raúl del jueves 26',c:'Comprobar: propuesta con fecha y técnico disponibles, sin cambiar nada.'},
+    {n:'3 · Agenda de la semana 48',c:'Comprobar: coincide con semana-48.txt y marca choques con el paso 2.'},
+    {n:'4 · Resumen del acta',c:'Comprobar: cita la decisión de cerrar los sábados desde diciembre.'},
+    {n:'5 · Borrador para Andrés',c:'Comprobar: adjunta el informe, cita la propuesta y no se envía.'}];
+  // errores: paso donde nace, pasos que contamina, texto
+  const ERR=[
+    {k:0,cont:[4],t:'Cuenta la pendiente de Raúl (día 20) como reprogramada: 3 reprogramadas y 0 pendientes.',d:'El correo para Andrés dice «3 reprogramadas».'},
+    {k:1,cont:[2,4],t:'Propone las visitas de Raúl el mismo jueves 26 en la tarde, cuando no tiene vehículo en todo el día.',d:'La propuesta para Raúl es imposible.'},
+    {k:3,cont:[],t:'El resumen del acta omite la decisión de cerrar las visitas del sábado desde diciembre.',d:'Falta en el resumen la decisión sobre los sábados.'}];
+  const VUELTAS=3;
+  let modo='uno';const chk=new Set();
+  function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  function simular(){
+    const ev=PASOS.map(()=>[]);const est=PASOS.map(()=>'ok');
+    let retrabajo=0;const escapan=[];
+    const extras=[];
+    if(modo==='uno'){
+      ERR.forEach(e=>{ev[e.k].push(['err','✗ '+e.t]);est[e.k]='mal';e.cont.forEach(c=>{ev[c].push(['cont','Usa el dato equivocado del paso '+(e.k+1)+'.']);est[c]='mal';});escapan.push(e.d);});
+      ev[2].push(['err','El contexto se llena (planilla, 20 correos, acta de 12 páginas) y el agente compacta: se pierde la regla «sin nombres de clientes».']);
+      ev[4].push(['err','✗ El borrador nombra a dos clientes.']);est[4]='mal';
+      escapan.push('El borrador nombra a dos clientes.');
+      return {ev,est,retrabajo,escapan,vueltas:16,checks:0,ctxMax:118000};
+    }
+    ERR.forEach(e=>{
+      let c=-1;for(let i=e.k;i<PASOS.length;i++){if(chk.has(i)){c=i;break;}}
+      ev[e.k].push(['err','✗ '+e.t]);
+      if(c<0){est[e.k]='mal';e.cont.forEach(x=>{ev[x].push(['cont','Usa el dato equivocado del paso '+(e.k+1)+'.']);est[x]='mal';});escapan.push(e.d);}
+      else{
+        const rehacer=[e.k].concat(e.cont.filter(x=>x<=c));
+        retrabajo+=rehacer.length*VUELTAS;
+        rehacer.forEach(x=>{if(x!==e.k)ev[x].push(['cont','Usó el dato equivocado del paso '+(e.k+1)+': se rehace.']);if(est[x]!=='mal')est[x]='rehecho';});
+        ev[c].push(['cat','✓ La comprobación atrapa el error del paso '+(e.k+1)+(c===e.k?' en el mismo paso':', '+(c-e.k)+(c-e.k===1?' paso':' pasos')+' después')+'. Se rehace'+(rehacer.length>1?'n '+rehacer.length+' pasos':' 1 paso')+'.']);
+      }
+    });
+    return {ev,est,retrabajo,escapan,vueltas:PASOS.length*VUELTAS+chk.size+retrabajo,checks:chk.size,ctxMax:42000};
+  }
+  function pintar(){
+    raiz.querySelectorAll('#c9l2-modo button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===modo));
+    raiz.querySelectorAll('#c9l2-atajos button').forEach(b=>b.disabled=modo==='uno');
+    const r=simular();
+    const ol=q('#c9l2-pasos');ol.innerHTML='';
+    PASOS.forEach((p,i)=>{
+      const li=el('li','c9l2-paso '+r.est[i]);
+      const tx=el('div');tx.appendChild(el('h4',null,p.n));tx.appendChild(el('p',null,modo==='uno'?(i===0?'Todo en una sola sesión larga, sin comprobaciones intermedias.':'Sigue en la misma sesión.'):p.c));
+      li.appendChild(tx);
+      const b=el('button','c9l2-chk',chk.has(i)&&modo==='pasos'?'Comprobación: sí':'Comprobación: no');
+      b.type='button';b.setAttribute('aria-pressed',modo==='pasos'&&chk.has(i));b.disabled=modo==='uno';b.dataset.i=i;
+      b.setAttribute('aria-label','Comprobación en el paso '+(i+1));
+      li.appendChild(b);
+      if(r.ev[i].length){const d=el('div','c9l2-ev');r.ev[i].forEach(([c,t])=>d.appendChild(el('span',c,t)));li.appendChild(d);}
+      ol.appendChild(li);
+    });
+    const tj=q('#c9l2-tarj');tj.innerHTML='';
+    [['Vueltas',r.vueltas],['Retrabajo',r.retrabajo+' vueltas'],['Contexto máx.',fmt(r.ctxMax)+' tokens'],['Errores que llegan',r.escapan.length]].forEach(([a,b])=>{const d=el('div');d.appendChild(el('small',null,a));d.appendChild(el('b',null,String(b)));tj.appendChild(d);});
+    const f=q('#c9l2-final');f.innerHTML='';
+    const h=el('p','c9l2-rot','Lo que le llega a Daniela ');h.appendChild(el('span','c9l2-estado'+(r.escapan.length?' falso':''),r.escapan.length?'«Listo», con errores':'Terminado'));f.appendChild(h);
+    if(r.escapan.length){const ul=el('ul');r.escapan.forEach(t=>ul.appendChild(el('li',null,t)));f.appendChild(ul);}
+    else f.appendChild(el('p',null,'Los cinco entregables cumplen su criterio. Ningún error llegó al correo para Andrés.'));
+    let t;
+    if(modo==='uno') t='De una sola vez, el contexto llega a unos 118.000 tokens, el agente compacta a mitad de camino y pierde una regla, y no hay ninguna compuerta: los tres errores, más el de los nombres, llegan intactos a Daniela. Pasa a «En cinco pasos».';
+    else if(r.checks===0) t='Partir la tarea ya evitó la compactación (cada paso trabaja con poco contexto y anota su avance), pero sin comprobaciones los tres errores siguen llegando. Activa una comprobación.';
+    else if(r.escapan.length) t='Las comprobaciones atrapan lo que pasa por ellas y nada más. Mira qué paso dejó salir su error: una comprobación solo ve los errores nacidos en su paso o antes.';
+    else if(chk.size===PASOS.length) t='Con comprobaciones en todos los pasos cada error se atrapa donde nace, con el menor retrabajo posible, a cambio de '+chk.size+' vueltas de revisión. Prueba a quitar la del paso 3: ¿cuánto cambia?';
+    else t='Ningún error llega a Daniela con '+r.checks+(r.checks===1?' comprobación':' comprobaciones')+'. Compara el retrabajo con «Solo al final»: comprobar tarde también atrapa, pero hay que rehacer lo que el error contaminó.';
+    q('#c9l2-out').textContent=t;
+  }
+  q('#c9l2-modo').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;modo=b.dataset.m;pintar();});
+  q('#c9l2-pasos').addEventListener('click',e=>{const b=e.target.closest('.c9l2-chk');if(!b||b.disabled)return;const i=+b.dataset.i;chk.has(i)?chk.delete(i):chk.add(i);pintar();});
+  q('#c9l2-atajos').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;chk.clear();const a=b.dataset.a;if(a==='final')chk.add(4);if(a==='primero')chk.add(0);if(a==='todas')PASOS.forEach((_,i)=>chk.add(i));pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>
